@@ -6,9 +6,11 @@
 
 Aus den gewonnenen Daten, die nachfolgend vorgestellt werden, kann man
 den Elastizitätsmodul der untersuchten Metalle und Legierungen
-errechnen. Um eine lineare Regression anwenden zu können, stellt man die
-Zusammenhänge \eqref{eq:durchbiegung-einseitig} und
-\eqref{eq:durchbiegung-beidseitig} so dar:
+errechnen. Um eine lineare Regression\footnote{benutzt wurde hierfür die
+  \texttt{ipython}-Umgebung mit der \texttt{numpy}-Bibliothek in der Version
+  1.6.2} anwenden zu können, stellt man die Zusammenhänge
+\eqref{eq:durchbiegung-einseitig} und \eqref{eq:durchbiegung-beidseitig}
+so dar:
 %
 \begin{align}
   \label{eq:lineare-durchbiegung-einseitig}
@@ -17,10 +19,12 @@ Zusammenhänge \eqref{eq:durchbiegung-einseitig} und
 Dies ist für die einseitige Aufhängung des Stabes. Für die beidseitige
 Aufhängung ergibt sich:
 \begin{align}
-  \label{eq:lineare-durchbiegung-beidseitig1}
-  D(x) &= g(3L^2x-4x^3) & g(u) &:= \frac{F}{48EI}u\\
-  \label{eq:lineare-durchbiegung-beidseitig2}
-  D(x) &= g(4x^3-12Lx^2 + 9L^2x - L^3)
+  \label{eq:lineare-durchbiegung-beidseitig}
+  D(x) &= \begin{cases}
+    g(3L^2x-4x^3) & 0\le x\le \frac{L}{2}\\
+    g(4x^3-12Lx^2 + 9L^2x - L^3) & \frac{L}{2}\le x\le L
+  \end{cases}
+  & g(u) &:= \frac{F}{48EI}u
 \end{align}
 %
 Hier können nun die Größen $A_g = F/(48EI)$ und $A_f = F/(2EI)$ bestimmt
@@ -41,14 +45,158 @@ durchgeführt:
   \label{eq:gaussfehler-g}
   \Delta E = \sqrt{\left(\frac{\partial E}{\partial A_g}\cdot\Delta
       A_g\right)^2}
-  = \frac{3}{3}
+  = \frac{F\cdot\Delta A_g}{48A^2_gI}
 \end{equation}
 
 \subsection{Bestimmung des Elastizitätsmoduls von Stahl}
 
+Die gemessenen Durchbiegung in Abhängigkeit vom Ort können in der
+Tabelle~\ref{tab:stahl} nachgesehen werden. Es wurden immer die
+Durchbiegungen $D_v(x)$ ohne Gewicht und die Durchbiegungen $D_n(x)$ mit
+Gewicht bestimmt. Gemäß dieser Formel errechnet sich die effektive
+Durchbiegung~$D(x)$, die Grundlage für weitere Berechnungen ist:
+%
+\begin{equation}
+  D(x) = D_n(x) - D_v(x)
+\end{equation}
+%
+Die Werte zur Bestimmung des Durchmessers $d$ findet man in
+Tabelle~\ref{tab:stahl-durchmesser}. Er wurde zu folgendem Wert
+bestimmt:
+%
+\begin{equation}
+  d = \SI{9.985(3)}{\milli\meter}
+\end{equation}
+%
+Es ergibt sich nach Regression und Fehlerrechnung folgender Wert für
+$E$:
+%
+\begin{equation}
+  \label{eq:wert-stahl-emodul}
+  E = \SI{1077(53)}{\kilo\newton\per\milli\metre}
+\end{equation}
+%
+
+\begin{table}
+  \centering\small
+  \begin{tabular}{SSS}
+    \toprule
+    {$x/\si{\centi\metre}$} &
+    {$D_v/\si{\micro\metre}$} &
+    {$D_n/\si{\micro\metre}$} \\
+    \midrule
+    2.7 &    550 &    510 \\
+    5.0 &    600 &    470 \\
+    9.0 &    600 &    220 \\
+    13.0 &    590 &    185 \\
+    17.0 &    540 &    136 \\
+    21.0 &    530 &    280 \\
+    25.0 &    460 &    312 \\
+    27.0 &    430 &    377 \\
+    32.0 &    310 &    475 \\
+    35.0 &    200 &    490 \\
+    38.0 &    170 &    544 \\
+    40.0 &    198 &    600 \\
+    42.0 &    198 &    647 \\
+    44.0 &    195 &    700 \\
+    46.0 &    180 &    749 \\
+    48.0 &    177 &    795 \\
+    \bottomrule
+  \end{tabular}
+  \caption{Meßwerte zur Durchbiegung des Stahlstabes}
+  \label{tab:stahl}
+\end{table}
+
+\begin{table}
+  \centering\small
+  \begin{tabular}{S}
+    \toprule
+    {$d/\si{\milli\metre}$}\\
+    \midrule
+    9.986 \\
+    9.989 \\
+    9.983 \\
+    9.988 \\
+    9.986 \\
+    9.982 \\
+    9.982 \\
+    9.985 \\
+    9.985 \\
+    9.981 \\
+    \bottomrule
+  \end{tabular}
+  \caption{Durchmesser des Stahlstabes}
+  \label{tab:stahl-durchmesser}
+\end{table}
 
 \subsection{Bestimmung des Elastizitätsmoduls von Aluminium}
 
+Die gemessenen Durchbiegungen für den Aluminiumstab ist in
+Tabelle~\ref{tab:aluminium} zu finden. Die Werte zum Durchmesser in
+Tabelle~\ref{tab:aluminium-durchmesser}. Für diesen ergibt sich:
+%
+\begin{equation}
+  d = \SI{9.985(3)}{\milli\metre}
+\end{equation}
+%
+Nach der Regression und der Fehlerrechnung läßt sich ein Wert für den
+E-Modul angeben:
+%
+\begin{equation}
+  E = \SI{73.0(7)}{\kilo\newton\per\milli\metre}
+\end{equation}
+
+\begin{table}
+  \centering\small
+  \begin{tabular}{SSS}
+    \toprule
+    {$x/\si{\centi\metre}$} & 
+    {$D_v/\si{\micro\metre}$} & 
+    {$D_n/\si{\micro\metre} $} \\
+    \midrule
+    2.7  &   920   &    930 \\
+    7.5  &  1030   &  1170  \\
+    12.5 &  1210   &  1550  \\
+    17.5 &  1430   &  2060  \\
+    22.5 &  1680   &  2680  \\
+    27.5 &  2020   &  3410  \\
+    30.0 &  2220   &  3800  \\
+    32.0 &  2350   &  4150  \\
+    34.0 &  2520   &  4480  \\
+    36.0 &  2710   &  4850  \\
+    38.0 &  2850   &  5230  \\
+    40.0 &  3030   &  5610  \\
+    42.0 &  3190   &  6000  \\
+    44.0 &  3320   &  6410  \\
+    46.0 &  3660   &  6770  \\
+    48.0 &  3800   &  7240  \\
+    \bottomrule
+  \end{tabular}
+  \caption{Meßwerte zur Durchbiegung des Aluminiumstabes}
+  \label{tab:aluminium}
+\end{table}
+
+\begin{table}
+  \centering\small
+  \begin{tabular}{S}
+    \toprule
+    {$d/\si{\milli\metre}$}\\
+    \midrule
+    9.984 \\
+    9.988 \\
+    9.984 \\
+    9.971 \\
+    9.979 \\
+    9.980 \\
+    9.994 \\
+    9.986 \\
+    9.988 \\
+    9.982 \\
+    \bottomrule
+  \end{tabular}
+  \caption{Durchmesserx des Aluminiumstabes}
+  \label{tab:aluminium-durchmesser}
+\end{table}
 
 \subsection{Bestimmung des Elastizitätsmoduls von Messing}
 
