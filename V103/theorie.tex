@@ -1,0 +1,78 @@
+% This work is licensed under the Creative Commons
+% Attribution-NonCommercial 3.0 Unported License. To view a copy of this
+% license, visit http://creativecommons.org/licenses/by-nc/3.0/.
+
+\section{Theorie}
+
+Kräfte können Körper nicht nur beschleunigen, sondern auch
+verformen. Zumeist betrachtet man diese Kräfte dann auf die Fläche, an
+der sie angreifen, normiert und nennt die so erhaltene Größe
+\emph{Spannung}. Die zur Oberfläche senkrechte Komponente heißt
+\emph{Normalspannung}, die parallele \emph{Tangentialspannung}.
+
+\subsection{Der Elastizitätsmodul}
+
+Wenn die relative Längenänderung $\Delta L/L$ eines Körpers unter
+Einfluß obengenannter Spannungen hinreichend klein ist, so kann man
+einen linearen Zusammenhang, der häufig auch als \name{Hook}sches Gesetz
+bezeichnet wird, beobachten:
+%
+\begin{equation}
+  \label{eq:hook's-law}
+  \sigma = E\frac{\Delta L}{L}
+\end{equation}
+%
+Hier bezeichnet $\sigma$ die Normalspannung, die in Richtung der
+Längenausdehnung $L$ des Körpers wirkt. Mit $E$ bezeichnet man den
+sogenannten \emph{Elastizitätsmodul}. Dieser ist vom Material abhängig.
+
+\subsection{Durchbiegung eines homogenen Stabes bei einseitiger
+  Einspannung}
+
+Wird ein Stab mit Masse $m$ und Länge $L$ an seinem einen Ende fest
+eingespannt und an seinem anderen Ende mit einem Gewicht versehen, so
+biegt er sich durch und es kann unter Betrachtung der auftretenden
+Drehmomente folgende Beziehung für die Durchbiegung $D(x)$ hergeleitet
+werden:
+%
+\begin{equation}
+  \label{eq:durchbiegung-einseitig}
+  D(x) = \frac{mg}{2EI}\left(Lx^2 - \frac{x^3}{3}\right), \quad (0\le
+  x\le L)
+\end{equation}
+%
+Der Buchstabe $E$ bezeichnet hier den zuvor erwähnten Elastizitätsmodul
+und $I$ bezeichnet das Flächenträgheitsmoment, das sich wie folgt
+bestimmt:
+%
+\begin{equation}
+  \label{eq:flaechentraeg.moment}
+  I = \int_Q y^2\:\mathrm{d}(x, y)
+\end{equation}
+%
+Hier bezeichnet $Q$ die Querschnittsfläche des Stabes und $y$ den
+Abstand zur sogenannten \emph{neutralen Faser}. Dies ist eine gedachte
+Schnittlinie mit derjenigen Ebene, in der keine Spannungen auftreten,
+in der also die Länge des Stabes nicht verändert wird.
+
+\subsection{Durchbiegung eines homogenen Stabes bei beidseitiger
+  Einspannung}
+
+Betrachtet man nun denselben Stab an beiden Enden eingespannt und in
+seiner Mitte durch ein Gewicht belastet, so kommt man unter ähnlicher
+Betrachtung der auftretenden Drehmomente wieder zu einem Zusammenhang
+zwischen der Durchbiegung $D(x)$ und dem Ort $x$:
+%
+\begin{equation}
+  \label{eq:durchbiegung-beidseitig}
+  D(x) = \frac{F}{48 E I} \cdot 
+  \begin{cases}
+    (3 L^2 x - 4 x^3) & 0\le x\le \frac{L}{2}\\
+    (4 x^3 - 12 L x^2 + 9 L^2 x - L^3) & \frac{L}{2}\le x\le L
+  \end{cases}
+\end{equation}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "protokoll"
+%%% End: 

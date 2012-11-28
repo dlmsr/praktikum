@@ -1,0 +1,60 @@
+% This work is licensed under the Creative Commons
+% Attribution-NonCommercial 3.0 Unported License. To view a copy of this
+% license, visit http://creativecommons.org/licenses/by-nc/3.0/.
+
+\section{Auswertung}
+
+Aus den gewonnenen Daten, die nachfolgend vorgestellt werden, kann man
+den Elastizitätsmodul der untersuchten Metalle und Legierungen
+errechnen. Um eine lineare Regression anwenden zu können, stellt man die
+Zusammenhänge \eqref{eq:durchbiegung-einseitig} und
+\eqref{eq:durchbiegung-beidseitig} so dar:
+%
+\begin{align}
+  \label{eq:lineare-durchbiegung-einseitig}
+  D(x) &= f(Lx^2-\frac{x^3}{3}) & f(u) &:= \frac{F}{2EI}u
+\end{align}
+Dies ist für die einseitige Aufhängung des Stabes. Für die beidseitige
+Aufhängung ergibt sich:
+\begin{align}
+  \label{eq:lineare-durchbiegung-beidseitig1}
+  D(x) &= g(3L^2x-4x^3) & g(u) &:= \frac{F}{48EI}u\\
+  \label{eq:lineare-durchbiegung-beidseitig2}
+  D(x) &= g(4x^3-12Lx^2 + 9L^2x - L^3)
+\end{align}
+%
+Hier können nun die Größen $A_g = F/(48EI)$ und $A_f = F/(2EI)$ bestimmt
+werden. Umstellen von der beiden Größen nach $E$ liefert:
+\begin{align}
+  E &= \frac{F}{2A_fI} & E =& \frac{F}{48A_gI}
+\end{align}
+Da diese fehlerbehaftet sind, wird eine \name{Gauß}-Fehlerfortpflanzung
+durchgeführt:
+%
+\begin{equation}
+  \label{eq:gaussfehler-f}
+  \Delta E = \sqrt{\left(\frac{\partial E}{\partial A_f}\cdot\Delta A_f\right)^2}
+  = \frac{F\cdot\Delta A_f}{2A_f^2I}
+\end{equation}
+%
+\begin{equation}
+  \label{eq:gaussfehler-g}
+  \Delta E = \sqrt{\left(\frac{\partial E}{\partial A_g}\cdot\Delta
+      A_g\right)^2}
+  = \frac{3}{3}
+\end{equation}
+
+\subsection{Bestimmung des Elastizitätsmoduls von Stahl}
+
+
+\subsection{Bestimmung des Elastizitätsmoduls von Aluminium}
+
+
+\subsection{Bestimmung des Elastizitätsmoduls von Messing}
+
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "protokoll"
+%%% End: 
