@@ -1,0 +1,22 @@
+# This work is licensed under the Creative Commons
+# Attribution-NonCommercial 3.0 Unported License. To view a copy of this
+# license, visit http://creativecommons.org/licenses/by-nc/3.0/.  
+
+# x/cm D_v/μm D_n/μm
+ 3.0   1010    1040   
+ 8.0   1080    1310   
+ 13.0  1170    1640   
+ 18.0  1230    1940   
+ 20.0  1230    2040   
+ 22.0  1250    2140   
+ 24.0  1250    2220   
+ 26.0  1280    2280   
+ 31.6  2880    3910   
+ 33.0  2860    3900   
+ 35.0  2820    3810   
+ 37.0  2770    3750   
+ 39.0  2750    3680   
+ 44.0  2680    3370   
+ 49.0  2620    3020   
+ 54.0  2600    2690   
+

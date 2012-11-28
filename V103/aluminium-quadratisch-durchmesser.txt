@@ -1,0 +1,15 @@
+# This work is licensed under the Creative Commons
+# Attribution-NonCommercial 3.0 Unported License. To view a copy of this
+# license, visit http://creativecommons.org/licenses/by-nc/3.0/.  
+
+# Durchmesser in mm
+9.984
+9.988
+9.984
+9.971
+9.979
+9.980
+9.994
+9.986
+9.988
+9.982
