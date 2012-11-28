@@ -1,0 +1,148 @@
+% This work is licensed under the Creative Commons
+% Attribution-NonCommercial 3.0 Unported License. To view a copy of this
+% license, visit http://creativecommons.org/licenses/by-nc/3.0/.
+
+% ==========================================================================
+%                     Festlegung der Dokumentenklasse
+% ==========================================================================
+
+% Dokumentklasse für Aufsätze, Berichte, etc.
+\documentclass[paper=a4, german, titlepage]{scrartcl}
+
+% Behebt ein paar Fehler in Latex
+\usepackage{fixltx2e}	
+
+% ==========================================================================
+%                             Zeichenkodierung
+% ==========================================================================
+
+% UTF-8 als Eingabe-Kodierung und T1 als Fontkodierung
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% ==========================================================================
+%                               Schriftarten
+% ==========================================================================
+
+\usepackage{lmodern}
+
+% ==========================================================================
+%                           Spracheinstellungen
+% ==========================================================================
+
+% Deutsche Zeichenketten und deutsche Namen für die Referenzobjeke
+\usepackage[german]{babel, varioref}
+
+% ==========================================================================
+%                  Aufzählungen, Referenzen und Links
+% ==========================================================================
+
+\usepackage{enumitem}
+
+% Verlinkungen innerhalb und außerhalb des PDF-Dokuments
+\usepackage{hyperref}
+
+% Formattiert URLs, so dass sie sich z.B. besser vom Text abheben
+\usepackage{url}
+
+% TrueType-Schrift für URLs		
+% \urlstyle{tt}		
+
+% ==========================================================================
+%                        Bibliograhphie und Anhang
+% ==========================================================================
+
+\newcommand{\theappendix}{
+  \clearpage
+  \appendix
+}
+
+% Deutsche Guillemets mit \enquote{}
+\usepackage[german=guillemets]{csquotes}
+
+\usepackage[style=numeric]{biblatex}
+\bibliography{../literatur.bib}
+
+% Nachnamen in Kapitälchen
+\renewcommand*{\mkbibnamelast}[1]{\textsc{#1}}
+
+% ==========================================================================
+%                    Grafiken, Abbildungen und Tabellen
+% ==========================================================================
+
+% Verwenden von Farben und Grafiken
+\usepackage{graphicx}
+\usepackage{xcolor}
+
+% Einbinden von ganzen PDF-Seiten
+\usepackage{pdfpages}
+
+% kleine Schrift für Bildunterschriften, Fettgedruckte Bildunterschriften
+\usepackage[font=small,	labelfont=bf]{caption}
+
+% Für mehrere Objekte nebeneinander mit eigenen Bildunterschriften
+\usepackage{subcaption}
+
+% Text umläuft Fließobjekte
+%\usepackage{wrapfig}
+
+% Tabellensatz
+% \usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{longtable}
+
+% Zum Verdrehen von Objekten. Nur mäßig verwenden.
+% \usepackage{rotating}
+
+% Setzen des Pfades für eingebundene Bilder
+% \graphicspath{{figs/}{bilder/}}
+
+% ==========================================================================
+%                    Mathematikumgebungen und Einheiten
+% ==========================================================================
+
+\usepackage{amsmath}	% Paket für mathematische Umgebungen und Funktionen
+\usepackage{amsfonts}	% Zusätzliche Mathematische Schriftarten
+\usepackage{amssymb}	% Zusätzliche Mathematische Symbole
+% \usepackage{amscd}	% Zum Setzen Kommutativer Diagramme
+\usepackage{amstext}	% Textsatz in der Matheumgebung
+%\usepackage{upgreek}	% Aufrechte griechische Buchstaben
+
+
+% Diagramme mit tikz und Gnuplot zeichnen
+% \usepackage{tikz}
+% \usepackage{tikz-qtree}
+% \usepackage{gnuplot-lua-tikz}
+
+% ==========================================================================
+%               automatischer Satz von Einheiten mit SIUnitX
+% ==========================================================================
+
+\usepackage[
+% Stellt den Fehler separat dar: Siehe SIUnitX-Manual
+  separate-uncertainty = true,
+% Bruchstriche nutzen
+  quotient-mode = fraction,
+  per-mode = fraction,
+]{siunitx}
+
+% Babel stellt SIUnitX auf deutsch ein, wenn german gewählt wird
+\addto\extrasgerman{\sisetup{locale = DE}}
+
+% Kürzen von Einheiten in SIUnitX ermöglichen
+% \usepackage{cancel}
+
+
+% ==========================================================================
+%                            Textsatzparameter
+% ==========================================================================
+
+% Vermeidung von "Schusterjungen" Höchstwert 10000, dann dürfen
+% theoretisch keine Schusterjungen mehr auftreten.
+\clubpenalty = 3000
+% Vermeidkung von "Hurenkindern" Höchstwert 10000, dann dürfen
+% theoretisch keine Hurenkinder mehr auftreten.  Es werden beide
+% Einstellungen benötigt.
+\widowpenalty = 3000
+\displaywidowpenalty = 3000
+
