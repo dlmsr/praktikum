@@ -60,7 +60,7 @@
 % Deutsche Guillemets mit \enquote{}
 \usepackage[german=guillemets]{csquotes}
 
-\usepackage[style=numeric]{biblatex}
+\usepackage[style=authortitle, backend=biber]{biblatex}
 \bibliography{../literatur.bib}
 
 % Nachnamen in Kapitälchen
@@ -101,12 +101,23 @@
 %                    Mathematikumgebungen und Einheiten
 % ==========================================================================
 
-\usepackage{amsmath}	% Paket für mathematische Umgebungen und Funktionen
-\usepackage{amsfonts}	% Zusätzliche Mathematische Schriftarten
-\usepackage{amssymb}	% Zusätzliche Mathematische Symbole
-% \usepackage{amscd}	% Zum Setzen Kommutativer Diagramme
-\usepackage{amstext}	% Textsatz in der Matheumgebung
-%\usepackage{upgreek}	% Aufrechte griechische Buchstaben
+% Paket für mathematische Umgebungen und Funktionen
+\usepackage[intlimits]{amsmath}	
+
+% Zusätzliche Mathematische Schriftarten
+\usepackage{amsfonts}	
+
+% Zusätzliche Mathematische Symbole
+\usepackage{amssymb}
+
+% Zum Setzen Kommutativer Diagramme
+% \usepackage{amscd}
+
+% Textsatz in der Matheumgebung
+\usepackage{amstext}
+
+% Aufrechte griechische Buchstaben
+%\usepackage{upgreek}
 
 
 % Diagramme mit tikz und Gnuplot zeichnen

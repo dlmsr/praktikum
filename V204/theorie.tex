@@ -3,3 +3,85 @@
 % license, visit http://creativecommons.org/licenses/by-nc/3.0/.
 
 \section{Theorie}
+
+Hat ein Metall an zwei verschiedenen Punkten eine unterschiedliche
+Temperatur, so wird diese Temperaturdifferenz durch einen Wärmetransport
+aufgelöst. In Metallen geschieht dieser Transport durch die sogenannte
+\emph{Wärmeleitung}, die über Phononen (Quantisierte Schwingungen in der
+Gitterstruktur des Metalls\footcite[vgl. hierzu][]{uni-kiel:phononen})
+und die frei beweglichen Elektronen des Elektronengases passiert.
+
+Es wird nun ein Stab der Länge $L$ mit Querschnitt $A$, Dichte $\rho$
+sowie spezifischer Wärme $c$ untersucht. Der Wärmestrom $\d Q/\d t$ hat
+dabei folgende Gestalt:
+%
+\begin{equation}
+  \label{eq:waermestrom}
+  \td{Q}{t} = -\kappa A\pd{T}{x}
+\end{equation}
+%
+Hier taucht neben der Querschnittsfläche $A$ noch die materialabhängige
+Wärmeleitfähigkeit $\kappa$ als Proportionalitätskonstante auf. Normiert
+man den Wärmestrom auf die Querschnittsfläche $A$ so ergibt sich die
+Wärmestromdichte $j_w$ durch
+%
+\begin{equation}
+  \label{eq:waermestromdichte}
+  j_w = -\kappa\pd{T}{x}
+\end{equation}
+%
+Aus dieser Größe kann man mit der Kontinuitätsgleichung die
+eindimensionale Wärmeleitungsgleichung ableiten.
+%
+\begin{equation}
+  \label{eq:wellengl.}
+  \pd{T}{t} = \sigma_T\pdd{T}{x}
+\end{equation}
+%
+Hier bezeichnet $\sigma_T := \kappa/(\rho c)$ die
+\emph{Temperaturleitfähigkeit} des Materials. Je nach Rand- und
+Anfangsbedingungen, d.\,h. auch je nach Stabgeometrie, sieht die Lösung
+der Gl.~\eqref{eq:wellengl.} anders aus.
+
+Nimmt man einen sehr langen Stab und erwärmt und kühlt ihn abwechselnd
+mit der Periode $\tilde{T} = 2\pi/\omega$ so ergibt sich als Lösung die
+Funktion $T$ mit
+%
+\begin{equation}
+  \label{eq:temp.fkt.}
+  T(x, t) = T_\text{max}\cdot e^{-kx}\cos(\omega t - kx), \quad k
+  = \sqrt{\frac{\omega\rho c}{2\kappa}}\text{.}
+\end{equation}
+%
+Diese Funktion beschreibt die Ausbreitung der Temperaturwelle räumlich
+und zeitlich. Man kann daraus auch die Phasengeschwindigkeit der Welle
+bestimmen.
+%
+\begin{equation}
+  \label{eq:phasengeschw.}
+  v_\text{Ph} = \frac{\omega}{k} = \sqrt{\frac{2\kappa\omega}{\rho c}}
+\end{equation}
+
+Zur Bestimmung der Wärmeleitfähigkeit $\kappa$ kann man die Dämpfung
+heranziehen. In Gl.~\eqref{temp.fkt.} kann man den Faktor mit der
+Exponentialfunktion als Dämpfungsterm identifizieren. Betrachtet man nun
+die Amplituden $A_1, A_2$ an zwei Meßstellen $x_1, x_2$, kann man daraus
+die Wärmeleitfähigkeit $\kappa$ errechnen. Wenn man noch $\omega =
+2\pi/\tilde{T}$ und $\varphi = 2\pi\Delta t/\tilde{T}$ dazu nimmt, sowie
+$\Delta x := x_2-x_1$ setzt, ergibt sich:
+%
+\begin{equation}
+  \label{eq:kappa-aus-daempfung}
+  \kappa = \frac{\rho c(\Delta x)^2}{2\Delta t\log(A_1/A_2)}
+\end{equation}
+%
+Dort bezeichnet $\Delta t$ den Gangunterschied der Temperaturwelle
+zwischen den beiden Meßstellen $x_1, x_2$.
+
+% Füge Praktikumsanleitung zu den Quellen hinzu
+\nocite{v204}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "protokoll"
+%%% End: 
