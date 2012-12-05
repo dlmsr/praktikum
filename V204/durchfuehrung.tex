@@ -3,3 +3,44 @@
 % license, visit http://creativecommons.org/licenses/by-nc/3.0/.
 
 \section{Durchführung}
+
+\subsection{Versuchsaufbau}
+
+Der Versuch besteht prinzipiell aus drei Teilen: Einer Platine, auf der
+die Metalle, das Peltier-Element und die Thermoelemente befestigt sind,
+einer Spannungsquelle und dem Datenlogger.
+
+Eine Skizze der rechteckigen Platine findet man in
+Abbildung~\ref{fig:platine}. In der Mitte sieht man das Peltier-Element,
+das sowohl für die Heizung, als auch die Kühlung der Metalle zuständig
+ist. Rechts und links vom Peltier-Element verlaufen die Stäbe. In
+gleichen Abständen finden sich dort die Thermoelemente
+\texttt{T1}--\texttt{T8}.
+
+Die Spannungsquelle ist für die Versorgung des Peltier-Elements
+zuständig und mit dem Datenlogger werden über ein sogenanntes
+\emph{Temperature Array} die Meßdaten aufgenommen und zur
+Weiterverarbeitung auf einem USB-Stick gespeichert.
+
+\begin{figure}
+  \centering
+  \includegraphics{platine}
+  \caption{Schematische Darstellung der Platine mit den Aufbauten}
+  \label{fig:platine}
+\end{figure}
+
+\subsection{Statische Messung}
+
+Bei der statischen Methode wird der zeitliche Temperaturverlauf bei
+einer Heizspannung~$U_P = \SI{5}{\volt}$ aufgezeichnet. Die Abtastrate
+des Datenloggers wird hierbei auf \SI{5}{\second} eingestellt. Die
+Messung wird beendet, wenn das Thermoelement \texttt{T7} ungefähr
+\SI{45}{\degreeCelsius} anzeigt.
+
+\subsection{Dynamische Messung}
+
+Bei der dynamischen Methode, die auch \name{\r Angström}-Methode genannt
+wird, heizt bzw. kühlt das Peltier-Element mit einer Periode von
+\SI{80}{s}. Die Heizspannung~$U_P$ beträgt hierbei \SI{8}{\volt}. Jetzt
+wird die Auflösung des Datenloggers auf \SI{2}{\second} eingestell. Nun
+werden zehn Perioden gemessen.
