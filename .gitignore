@@ -2,4 +2,7 @@
 *.pdf
 *.log
 *.toc
+*.bcf
+*.bbl
+*.blg
 *.aux
