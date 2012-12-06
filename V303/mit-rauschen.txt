@@ -1,0 +1,15 @@
+# This work is licensed under the Creative Commons
+# Attribution-NonCommercial 3.0 Unported License. To view a copy of this
+# license, visit http://creativecommons.org/licenses/by-nc/3.0/.
+
+# ϕ [°]  U_out [mV]
+0           504
+15          280
+30         -424
+75        -2240
+45        -1080
+60        -1840
+90        -2360
+105       -2400
+180        -536
+270        2320
