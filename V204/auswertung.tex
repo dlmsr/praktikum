@@ -3,3 +3,182 @@
 % license, visit http://creativecommons.org/licenses/by-nc/3.0/.
 
 \section{Auswertung}
+\subsection{Statische Messung}
+
+In Abb. \ref{fig:t1undt4} ist ein Plot der gemessenen Temperaturen der
+Thermoelemente T1 und T4 gegen die Zeit zu finden. In
+Abb. \ref{fig:t5undt8} ist selbiges für die gemessenen Temperaturen der
+Thermoelemente T5 und T8 abgebildet.  Aus der Betrachtung dieser Plots
+stellt man fest, dass Die Temperaturen bei T1 und T4 zunächst ungefähr
+gleich ansteigen, die Temperatur bei T1 allerdings immer etwas höher ist
+als bei T4. Im späteren Verlauf scheinen die Kurven parallel zu
+verlaufen.  Die Temperaturverläufe bei T5 und T8 hingegen unterscheiden
+sich deutlich stärker voneinander. Die Temperatur bei T5 nimmt am Anfang
+der Messung deutlich zu, wohingegen die Temperatur bei T8 kaum
+ansteigt. Dennoch verlaufen auch hier die Kurven im späteren Verlauf
+beinahe parallel zueinander, aber mit einem größeren
+Temperaturunterschied als zwischen T1 und T4.
+
+\begin{figure}
+  \centering
+  \includegraphics{T1undT4}
+  \caption{Temperaturverläufe bei T1 und T4}
+  \label{fig:t1undt4}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics{T5undT8}
+  \caption{Temperaturverläufe bei T5 und T8}
+  \label{fig:t5undt8}
+\end{figure}
+ 
+In Tabelle \ref{tab:700sekunden} sind die gemessenen Temperaturen der
+äußeren Thermoelemente nach einer Messzeit von \SI{700}{\second} zu
+finden. Es ist festzustellen, dass die Temperatur bei T5 nach
+\SI{700}{\second} am größten ist, d.h., dass Aluminium von allen
+verwendeten Metallen die größte Wärmeleitfähigkeit besitzt.
+
+\begin{table}
+  \centering
+  \begin{tabular}{cS}
+    \toprule
+     T & {Temperatur in \si{\degreeCelsius}} \\
+    \midrule
+    1 &  42.73 \\
+    4 &  40.67 \\
+    5 &  45.26 \\
+    8 &  32.93 \\
+    \bottomrule
+  \end{tabular}
+  \caption{Temperaturen nach \SI{700}{\second}}
+  \label{tab:700sekunden}
+\end{table}
+
+In Tabelle \ref{tab:waermestrom} sind für alle verwendeten Metallstäbe
+die Wärmeströme $\frac{\Delta Q}{\Delta t}$ in \si{\joule\per\second}
+nach jeweils \SI{200}{\second} angegeben, welche mit Formel
+\eqref{eq:waermestrom} berechnet sind. Dabei wird für jedes Metall der
+im folgenden Unterkapitel berechnete Wert für die Wärmeleitfähigkeit
+$\kappa$ verwendet.
+
+\begin{table}
+  \centering
+  \begin{tabular}{cSSSSS}
+    \toprule
+     Stab & {nach \SI{200}{\second}} & {nach \SI{400}{\second}} &
+     {nach \SI{600}{\second}} & {nach \SI{800}{\second}} &
+     {nach \SI{1000}{\second}}\\
+    \midrule
+    Messing (breit) & -0.193 & -0.625 & -0.504 & -0.485 & -0.483 \\
+    Messing (schmal) & -0.109 & -0.349 & -0.301 & -0.295 & -0.295 \\
+    Aluminium & -0.215 & -0.285 & -0.135 & -0.100 & -0.085 \\
+    Edelstahl & -0.025 & -0.196 & -0.193 & -0.191 & -0.189 \\
+    \bottomrule
+  \end{tabular}
+  \caption{Wärmestrom ${\Delta Q}/{\Delta t}$ in \si[per-mode=symbol]
+    {\joule\per\second} der Stäbe}
+  \label{tab:waermestrom}
+\end{table}
+
+Im Diagramm \ref{fig:t7-t8} ist die Differenz der Temperaturen der
+Thermoelemente T7 und T8 zu sehen.  Die Kurve steigt zunächst stark an,
+bis zu einem Wert von ca. \SI{8.3}{\degreeCelsius}. Dannach fällt die
+Kurve leicht und scheint sich bei einem Wert von
+ca. \SI{7.8}{\degreeCelsius} nicht mehr deutlich zu verändern. Das heißt
+also, dass die Temperatur bei T7 zunächst ansteigt. Bei T8 setzt diese
+Steigerung der Temperatur nach ca. \SI{180}{\second} ein. Da sich ein
+annähernd konstanter Wert als Differenz der Temperaturen einstellt,
+folgt daraus, dass zwischen T7 und T8 immer ungefähr eine Temperatur von
+\SI{7.8}{\degreeCelsius} an die Umgebung abgegeben wird.
+
+Im Diagramm \ref{fig:t2-t1} ist die Differenz der Temperaturen der
+Theormoelemnte T2 und T1 abgebildet. Die Beobachtung bei dieser Kurve
+weicht leicht von der Beobachtung der Kurve der Differenztemperatur
+$\text{T7}-\text{T8}$ ab.  In Abb. \ref{fig:t2-t1} steigt die
+Temperatur natürlich erst bei T2 an, bevor sie nach ca. \SI{60}{\second}
+bei T1 ansteigt. Allerdings fällt die Differenztemperatur ab diesem
+Zeitpunkt stark auf einen Wert von ca. \SI{2.5}{\degreeCelsius} ab. Es
+werden hier also \SI{2.5}{\degreeCelsius} auf der Strecke zwischen den
+beiden Thermoelementen abgegeben. Da die Umgebungstemperatur während der
+Messreihe bei allen Stäben gleich war und der Abstand von T7 zu T8
+gleich dem Abstand von T1 zu T2 ist, folgt daraus, dass Edelstahl eine
+geringere Wärmeleitfähigkeit besitzt als Messing.
+
+
+\begin{figure}
+  \centering
+  \includegraphics{T7-T8}
+  \caption{Zeitlicher Verlauf der Differenztemperatur T7--T8}
+  \label{fig:t7-t8}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics{T2-T1}
+  \caption{Zeitlicher Verlauf der Differenztemperatur T2--T1}
+  \label{fig:t2-t1}
+\end{figure}
+
+\subsection{Dynamische Messung}
+Im Folgenden wird die Wärmeleitfähigkeit $\kappa$ für die verwendeten
+Metallstäbe bestimmt. Dazu wird Formel \eqref{eq:kappa-aus-daempfung}
+verwendet. Die Materialwerte, die beim Rechnen benutzt werden, findet
+man in Tabelle~\ref{tab:materialkonst}.
+
+\begin{table}
+  \centering
+  \begin{tabular}{lSSS}
+    \toprule
+     & {Messing} & {Aluminium} & {Edelstahl} \\
+    \midrule
+    $\rho\left[\si{\kilogram\per\cubic\metre}\right]$ & 8520 & 2800 &
+    8000
+    \\\addlinespace[1pt]
+    $c\left[\si{\joule\per\kilogram\per\kelvin}\right]$ & 385 & 830 &
+    400 \\\addlinespace[1pt]
+    $\kappa\left[\si{\watt\per\metre\per\kelvin}\right]$ &
+    118(14) & 313(28) & 15(1) \\\addlinespace[1pt]
+    $A\left[\si{\milli\metre\squared}\right]$ (breit) & 48 & 48 & 48 
+    \\\addlinespace[1pt]
+    $A\left[\si{\milli\metre\squared}\right]$ (schmal)& 28 \\
+    \bottomrule
+  \end{tabular}
+  \caption{Materialkonstanten der verwendeten Metalle}
+  \label{tab:materialkonst}
+\end{table}
+
+Um die Phasendifferenzen zu bestimmen, wird immer die zeitliche
+Verschiebung zweier aufeinanderfolgender Maxima bestimmt. Der Wert einer
+Amplitude wird bestimmt, indem eine Gerade durch die beiden Minima
+gelegt wird, die links und rechts von einem Maximum liegen. Anschließend
+wird der Abstand zwischen der Gerade und dem Maximum
+ausgerechnet. Dieses Vorgehen ist erforderlich, da der
+\enquote{Nulldurchgang} der Schwingungen in der Zeit weder konstant noch
+linear ist. Die Auswertung der Messwerte liefert die in
+Tabelle~\ref{tab:materialkonst} dargestellten Ergebnisse für die
+Wärmeleitfähigkeit $\kappa$.
+
+\begin{figure}
+  \centering
+  \includegraphics{dyn_Messing}
+  \caption{Zeitlicher Temperaturverlauf an T1 und T2}
+  \label{fig:dyn_messing}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics{dyn_Aluminium}
+  \caption{Zeitlicher Temperaturverlauf an T5 und T6}
+  \label{fig:dyn_aluminium}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics{dyn_Edelstahl}
+  \caption{Zeitlicher Temperaturverlauf an T7 und T8}
+  \label{fig:dyn_edelstahl}
+\end{figure}
+
+In den Abbildungen~\vrefrange{fig:dyn_messing}{fig:dyn_edelstahl} sieht
+man den zeitlichen Verlauf der Temperatur graphisch dargestellt.
