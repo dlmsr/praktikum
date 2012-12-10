@@ -3,3 +3,28 @@
 % license, visit http://creativecommons.org/licenses/by-nc/3.0/.
 
 \section{Theorie}
+Mit dem Lock-In-Verstärker ist es möglich, stark verrauschte Signale zu messen.
+Dazu wird das verrauschte Signal in mehreren Schritten so bearbeitet. Als erstes wird das verrauschte Signal im Preamplifier verstärkt. Anschließend wird das Signal im Bandpassfilter durch einen Tief- und Hochpass von Frequenzen befreit, die stark von einer einstellbaren Frequenz $\omega_0$ abweichen.
+ Im nächsten Bearbeitungsschritt wird das Signal in einem Mischer mit einem Referenzsignal einstellbarer Phase multipliziert. Die Frequenz des Referenzsignals entspricht dabei der des zu messenden Signals. 
+In diesem Versuch wird eine Sinusspannung als Referenzsignal verwendet. D.h. das Referenzsignal hat die in Formel \eqref{eq:refsig} wiedergegebene Form. 
+\begin{equation}
+\label{eq:refsig}
+U = U_\text{ref} \cdot sin(\omega \cdot t)
+\end{equation}
+Gibt es keine Phasendifferenz zwischen zu messendem Signal und Referenzsignal, dann ist die Formel \eqref{eq:eingangssig} für das zu messende Signal analog.
+\begin{equation}
+\label{eq:eingangssig}
+U = U_\text{sig} \cdot sin(\omega \cdot t)
+\end{equation}
+Also ergibt die Multiplikation der beiden Signale folgendes:
+\begin{center}
+\begin{equation}
+U_\text{sig} \cdot U_\text{ref} \cdot sin^2(\omega \cdot t) = U_\text{sig} \cdot U_\text{ref} \cdot (1- cos^2(\omega \cdot t)) = U_\text{sig} \cdot U_\text{ref} \cdot (1 - \frac{1}{2} \cdot (1 + cos(2 \cdot \omega \cdot t))) = \frac{1}{2} U_\text{sig} U_\text{ref} \cdot(1 - cos(2 \omega t)) \nonumber
+\end{equation}
+\end{center}
+Der darauffolgende Tiefpass lässt nur niedrige Frequenzen durch, sodass sich die Formel \eqref{eq:gleichspannung} für die Form des Ausgangssignals ergibt, nachdem das Signal durch den Mischer und den Tiefpass bearbeitet wurde.
+\begin{equation}
+\label{eq:gleichspannung}
+U_ \text{out} = \frac{1}{2} U_\text{sig} U_\text{ref}
+\end{equation}
+Das endgültige Signal ist also eine Gleichspannung.
