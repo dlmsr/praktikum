@@ -60,7 +60,7 @@
 % Deutsche Guillemets mit \enquote{}
 \usepackage[german=guillemets]{csquotes}
 
-\usepackage[style=authortitle, backend=biber]{biblatex}
+\usepackage[style=numeric-comp, backend=biber]{biblatex}
 \bibliography{../literatur.bib}
 
 % Nachnamen in Kapitälchen
@@ -132,9 +132,6 @@
 \usepackage[
 % Stellt den Fehler separat dar: Siehe SIUnitX-Manual
   separate-uncertainty = true,
-% Bruchstriche nutzen
-  quotient-mode = fraction,
-  per-mode = fraction,
 ]{siunitx}
 
 % Babel stellt SIUnitX auf deutsch ein, wenn german gewählt wird

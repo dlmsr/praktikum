@@ -30,6 +30,7 @@ Aufhängung ergibt sich:
 Hier können nun die Größen $A_g = F/(48EI)$ und $A_f = F/(2EI)$ bestimmt
 werden. Umstellen von der beiden Größen nach $E$ liefert:
 \begin{align}
+  \label{eq:e-modul}
   E &= \frac{F}{2A_fI} & E =& \frac{F}{48A_gI}
 \end{align}
 Da diese fehlerbehaftet sind, wird eine \name{Gauß}-Fehlerfortpflanzung
@@ -47,6 +48,14 @@ durchgeführt:
   \Delta E = \sqrt{\left(\frac{\partial E}{\partial A_g}\cdot\Delta
       A_g\right)^2}
   = \frac{F\cdot\Delta A_g}{48A^2_gI}
+\end{equation}
+
+Zur Bestimmung des Fehlers, der beim Messen des Durchmessers gemacht
+wird, wird die Formel für die Standardabweichung benutzt:
+
+\begin{equation}
+  \label{eq:durchmesser-fehler}
+  \sqrt{\frac{1}{n-1} \sum_{i=1}^n (d_i - \bar{d})^2}
 \end{equation}
 
 Die Flächenträgheitsmomente werden wie folgt berechnet. Für den
@@ -83,22 +92,37 @@ verwendet. Gemäß Formel~\eqref{eq:echte_durchbiegung} errechnet sich die
 effektive Durchbiegung~$D(x)$, die Grundlage für weitere Berechnungen
 ist.
 
-Die Werte zur Bestimmung des Durchmessers $d$ findet man in
-Tabelle~\ref{tab:stahl-durchmesser}. Er wurde zu folgendem Wert
-bestimmt:
+Die Stichprobe zur Bestimmung des Durchmessers $d$ findet man in
+Tabelle~\ref{tab:stahl-durchmesser}. Nach der Bestimmung des
+arithmetischen Mittels und der Standardabweichung
+(Formel~\eqref{eq:durchmesser-fehler}) ergibt sich für den Durchmesser:
 %
 \begin{equation}
   d = \SI{9.985(3)}{\milli\meter}
 \end{equation}
 %
-Abbildung~\ref{fig:stahl} zeigt einen Darstellung der Meßwerte und der
+Abbildung~\ref{fig:stahl} zeigt eine Darstellung der Meßwerte und der
 Regressionsgerade. Die roten Punkte wurden für die Regression
-herangezogen. Es ergibt sich nach Regression und Fehlerrechnung
-folgender Wert für $E$:
+herangezogen. Daraus erhält man diese Gleichung:
+%
+\begin{equation}
+  D(x) = \SI{0.016}{\per\cubic\metre} 
+  \left(Lx^2 - \frac{x^3}{3}\right)  - \SI{0.001}{\metre}
+\end{equation}
+%
+Der Fehler für die Steigung ergibt sich aus der Regression zu:
+%
+\begin{equation}
+  \Delta A_f = \SI{0.0008}{\per\cubic\metre}
+\end{equation}
+%
+Mithilfe der Steigung $A_f$ und Formel~\eqref{eq:e-modul} und nach der
+\name{Gauss}-Fehlerfortpflanzung in Formel~\eqref{eq:gaussfehler-f} erhält man
+folgenden Wert für $E$:
 %
 \begin{equation}
   \label{eq:wert-stahl-emodul}
-  E = \SI{1078(53)}{\kilo\newton\per\milli\metre}
+  E = \SI{1078(53)}{\kilo\newton\per\milli\metre\squared}
 \end{equation}
 %
 
@@ -167,14 +191,29 @@ Die gemessenen Durchbiegungen für den Aluminiumstab ist in
 Tabelle~\ref{tab:aluminium} zu finden. Die Werte zum Durchmesser in
 Tabelle~\ref{tab:aluminium-durchmesser}. Die eingespannte Länge beträgt
 $L=\SI{49.6}{\centi\metre}$ und als Gewicht haben wir die Masse
-$m=\SI{5416}{\gram}$ verwendet. Für diesen ergibt sich:
+$m=\SI{5416}{\gram}$ verwendet. Der Mittelwert des Durchmessers und
+seine Standardabweichung~(Formel~\eqref{eq:durchmesser-fehler}) betragen:
 %
 \begin{equation}
-  d = \SI{9.985(3)}{\kilo\newton\per\milli\metre}
+  d = \SI{9.985(3)}{\milli\metre}
 \end{equation}
 %
 Nach der Regression, die in Abbildung~\ref{fig:aluminium} zu sehen ist,
-und der Fehlerrechnung läßt sich ein Wert für den E-Modul angeben:
+erhält man folgende Gleichung:
+%
+\begin{equation}
+  D(x) = \SI{0.044}{\per\cubic\metre} \left(Lx^2 - \frac{x^3}{3}\right)
+\end{equation}
+%
+Der Fehler für die Steigung ergibt sich aus der Regression zu:
+%
+\begin{equation}
+  \Delta A_f = \SI{0.0004}{\per\cubic\metre}
+\end{equation}
+%
+Wie bereits beim Stahl bestimmt man hieraus mit der Steigung~$A_f$ und
+Formel~\eqref{eq:e-modul} den E-Modul und mithilfe der Fehlerrechnung
+aus Formel~\eqref{eq:gaussfehler-f} läßt sich folgender Wert angeben:
 %
 \begin{equation}
   E = \SI{73.0(7)}{\kilo\newton\per\milli\metre\squared}  
@@ -245,15 +284,35 @@ und der Fehlerrechnung läßt sich ein Wert für den E-Modul angeben:
 Der Messingstab ist beidseitig auf die Länge $L =
 \SI{55.1}{\centi\metre}$ eingespannt. Als Gewicht verwenden wir die
 Masse $m = \SI{4.1}{\kilogram}$. Die Bestimmung des Durchmessers liefert
-die Tabelle~\ref{tab:messing-durchmesser} und den Wert:
+die Tabelle~\ref{tab:messing-durchmesser}. Mittelwert und
+Standartabweichung~(Formel~\eqref{eq:durchmesser-fehler}) ergeben sich so:
 %
 \begin{equation}
   d = \SI{9.983(9)}{\milli\meter}
 \end{equation}
 %
 In Abbildung~\ref{fig:messing} sind die Regressionen
-dargestellt. Tabelle~\ref{tab:messing} enthält die Meßwerte dazu. Als
-Ergebnis erhält man zwei Werte für $E$:
+dargestellt. Die beiden Gleichungen lauten folgendermaßen:
+%
+\begin{align}
+  D(x) &= \SI{0.0070}{\per\cubic\metre} 
+  ( 3L^2x-4x^3 ) - \SI{0.0002}{\cubic\metre} 
+  & 0 \le x \le \frac{L}{2}\\
+  D(x) &= \SI{0.0063}{\per\cubic\metre}
+  (4x^3 - 12Lx^2 + 9L^2x - L^3) + \SI{0.0001}{\cubic\metre} 
+  & \frac{L}{2} \le x \le L
+\end{align}
+%
+Die Fehler für die Steigungen ergeben sich aus der Regression zu:
+%
+\begin{align}
+  \Delta A_f &= \SI{0.0004}{\per\cubic\metre}\\
+  \Delta A_g &= \SI{0.0003}{\per\cubic\metre}
+\end{align}
+%
+In Tabelle~\ref{tab:messing} finden sich die Meßwerte dazu. Als
+Ergebnis erhält man aus Formel~\eqref{eq:e-modul}, in die man die beiden
+Steigungen $A_f$ und $A_g$ einsetzt, zwei Werte für $E$:
 \begin{align}
  E&=\SI{143.8(88)}{\kilo\newton\per\milli\metre\squared} &
  E&=\SI{159.4(54)}{\kilo\newton\per\milli\metre\squared}

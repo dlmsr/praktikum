@@ -41,9 +41,12 @@ def auswertung_einseitig(titel, datei, x, D, d, L, m, I, entf_x):
     plt.title(titel)
     plt.xlabel(r"$(Lx^2 - \frac{x^3}{3})/\mathrm{m}^3$")
     plt.ylabel(r"$D/\mathrm{m}$")
-    plt.plot(u.take(entf_x), D.take(entf_x), "+")
+    if len(u.take(entf_x)) != 0:
+        plt.plot(u.take(entf_x), D.take(entf_x), "+", 
+                 label="ausgeschlossene Werte")
     plt.plot(entf_u, entf_D, "r+")
     plt.plot(entf_u, A*entf_u+B)
+    plt.legend()
     plt.savefig(datei)
     plt.clf()
 
@@ -53,6 +56,7 @@ def auswertung_einseitig(titel, datei, x, D, d, L, m, I, entf_x):
         .format(d.mean()*1e3, d.std(ddof=1)*1e3)
     print u"Elastizitätsmodul E = ({0:.3f} ± {1:.3f}) kN/mm^2"\
         .format(E*1e-9, dE*1e-9)
+    print u"Steigung: A={0:.3f}±{1:.4f}".format(A, dA)
     print 76*'-'
 
 def auswertung_beidseitig(titel, datei, x, D, d, L, m, I):
@@ -65,10 +69,29 @@ def auswertung_beidseitig(titel, datei, x, D, d, L, m, I):
     (A1, B1), (dA1, dB1) = linregress.linear_fit(u1, D1)
     (A2, B2), (dA2, dB2) = linregress.linear_fit(u2, D2)
 
-    E1  = (m*g)/(2*A1*I)
-    E2  = (m*g)/(2*A2*I)
-    dE1 = (m*g*dA1)/(2*A1**2*I)
-    dE2 = (m*g*dA2)/(2*A2**2*I)
+    E1  = (m*g)/(48*A1*I)
+    E2  = (m*g)/(48*A2*I)
+    dE1 = (m*g*dA1)/(48*A1**2*I)
+    dE2 = (m*g*dA2)/(48*A2**2*I)
+
+    plt.title(titel)
+    plt.subplot(211)
+    plt.grid()
+    plt.xlabel(r"$(3L^2x - 4x^3)/\mathrm{m}^3$")
+    plt.ylabel(r"$D/\mathrm{m}$")
+    plt.plot(u1, D1, "+")
+    plt.plot(u1, A1*u1+B1)
+    plt.subplot(212)
+    plt.grid()
+    plt.xlabel(r"$(4x^3 - 12Lx^2 + 9L^2x - L^3)/\mathrm{m}^3$")
+    plt.ylabel(r"$D/\mathrm{m}$")
+    plt.plot(u2, D2, "+")
+    plt.plot(u2, A2*u2+B2)
+
+    plt.savefig(datei)
+    plt.clf()
+
+    E = (E1+E2)/2
 
     print titel
     print 76*'-'
@@ -78,6 +101,11 @@ def auswertung_beidseitig(titel, datei, x, D, d, L, m, I):
         .format(E1*1e-9, dE1*1e-9)
     print u"Elastizitätsmodul E2 = ({0:.3f} ± {1:.3f}) kN/mm^2"\
         .format(E2*1e-9, dE2*1e-9)
+    print u"Steigungen: A_f={0:.4f}±{1:.4f}, A_g={2:.4f}±{3:.4f}"\
+        .format(A1, dA1, A2, dA2)
+    print u"intersection: B_f={0:.4f}, B_g={1:.4f}"\
+        .format(B1, B2)
+    print E
     print 76*'-'
 
 ############################################################################
@@ -137,5 +165,5 @@ D = (D_n - D_v)*1e-6
 I = d.mean()**4/12
 
 auswertung_beidseitig(u"Messing beidseitig eingespannt, quadratischer "\
-                          "Querschnitt", "messing-beidseitig-quadratisch.txt",\
-                          x, D, d, L=55.1, m=4.1, I=I)
+                          "Querschnitt", "messing-beidseitig-quadratisch.pdf",\
+                          x, D, d, L=0.551, m=4.1, I=I)
