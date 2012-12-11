@@ -3,3 +3,72 @@
 % license, visit http://creativecommons.org/licenses/by-nc/3.0/.
 
 \section{Auswertung}
+
+\subsection{Ohne Rauschen}
+
+Gemessen wird die Ausgangsgleichspannung $U_\text{out}$ in Abhängigkeit
+der Phase $\phi$. Die erhaltenen Werte finden sich in
+Tabelle~\ref{tab:messwerte}. Diese werden nun in eine nichtlineare
+Regression der Form
+%
+\begin{equation}
+  \label{eq:cos-regress}
+  U_\text{out}(\phi) = A\cos(\phi+\phi_0)
+\end{equation}
+%
+gegeben und mit dem theoretischen Ergebnis nach
+Formel~\eqref{eq:gleichspannung} verglichen. Für die nichtlineare
+Regression wird die
+\texttt{scipy}-Bibliothek\footnote{\url{http://www.scipy.org/}} in der
+Version 0.11.0 verwendet. Das Ergebnis ist in
+Abbildung~\ref{fig:ohne-rauschen} und hier zu sehen:
+%
+\begin{equation}
+  \label{eq:cos-regress-result}
+  U_\text{out}(\phi) = \SI{-85.13(384)}{\milli\volt} \cdot
+  \cos(\phi + \num{0.20})
+\end{equation}
+
+\subsection{Mit Rauschen}
+
+Nun wird das mit Rauschen überlagerte Signal untersucht. Die Meßwerte
+können ebenfalls in Tabelle~\ref{tab:messwerte} gefunden werden. Für die
+nichtlineare Regression mit Formel~\eqref{eq:cos-regress} wird wieder
+die \texttt{scipy}-Bibliothek verwendet. In
+Abbildung~\ref{fig:mit-rauschen} kann man die Regression sehen. Die
+Gleichung dazu lautet:
+%
+\begin{equation}
+  \label{eq:cos-regress-result-noise}
+  U_\text{out}(\phi) = \SI{2443(76)}{\milli\volt} \cdot 
+  \cos(\phi + \num{1.29})
+\end{equation}
+
+\begin{table}
+  \centering
+  \begin{tabular}{SSSS}
+    \toprule
+    \multicolumn{2}{c}{Mit Rauschen} &
+    \multicolumn{2}{c}{Ohne Rauschen} \\
+    \midrule
+    {\(\phi [\si{\degree}]\)} & 
+    {\(U_\text{out} [\si{\milli\volt}]\)} &
+    {\(\phi [\si{\degree}]\)} & 
+    {\(U_\text{out} [\si{\milli\volt}]\)} \\
+    \midrule
+    0   &   504  &   0 & -80.0 \\
+    15  &   280  &  15 & -78.0 \\
+    30  &  -424  &  30 & -72.0 \\
+    75  & -2240  &  45 & -52.8 \\
+    45  & -1080  &  60 & -18.4 \\
+    60  & -1840  &  75 &   5.6 \\
+    90  & -2360  &  90 &  17.6 \\
+    105 & -2400  & 105 &  26.8 \\
+    180 &  -536  & 180 &  84.0 \\
+    270 &  2320  & 270 & -17.6 \\
+    \bottomrule
+  \end{tabular}
+  \caption{Meßwerte der Gleichspannung $U_\text{out}$ in Abhängigkeit der
+    Phase $\phi$ des Referenzsignals}
+  \label{tab:messwerte}
+\end{table}
