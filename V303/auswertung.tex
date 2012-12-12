@@ -4,7 +4,8 @@
 
 \section{Auswertung}
 
-Aus den Abbildungen \texttt{TODO} liest man folgende Werte für die
+Aus den Abbildungen~\ref{fig:anfangssignal_ohne_rausch} und
+\ref{fig:referenzsignal_ohne_rausch} liest man folgende Werte für die
 Amplitude der Referenzspannung und des Signals ab:
 %
 \begin{align}
@@ -53,6 +54,14 @@ Formel~\eqref{eq:u_out-value} bestimmt werden:
   k = \SI{2.66}{\per\milli\volt}
 \end{equation}
 
+\begin{figure}
+  \centering
+  \includegraphics[width=0.8\textwidth]{mit-rauschen}
+  \caption{Graphische Darstellung der Meßwerte zur Gleichspannung mit
+    Rauschen und ihrer Regressionskurve}
+  \label{fig:mit-rauschen}
+\end{figure}
+
 \subsection{Mit Rauschen}
 
 Nun wird das mit Rauschen überlagerte Signal untersucht. Die Meßwerte
@@ -76,32 +85,96 @@ Formel~\eqref{eq:u_out-value} zu:
   k = \SI{76.34}{\per\milli\volt}
 \end{equation}
 
+% Tabelle mit den Meßwerten
+\input{tab_messwerte}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.8\textwidth]{ohne-rauschen}
+  \caption{Graphische Darstellung der Meßwerte zur Gleichspannung ohne
+    Rauschen und ihrer Regressionskurve}
+  \label{fig:ohne-rauschen}
+\end{figure}
+
+\subsection{Abstandsverhalten der Lichtintensität}
+
+Für die Untersuchung des Abstandsverhaltens der Lichtintensität setzt
+man eine Funktion der Form
+%
+\begin{equation}
+  \label{eq:regressionsfunktion}
+  f(x) = Ax^{-2} + B
+\end{equation}
+%
+an. Da wir aber während der Messung der Intensität den \emph{Gain} des
+Verstärkers erhöhen mußten, um überhaupt noch etwas zu messen, müssen
+die ermittelten Spannungen zunächst noch durch den \emph{Gain} geteilt
+werden. Die entsprechenden Werte findet man in
+Tabelle~\ref{tab:licht-messung}. 
+
+Die Regression wird wieder mit der \texttt{scipy}-Bibliothek
+durchgeführt. Die Ergebnisse für die Parameter $A$ und $B$ sind hier
+dargestellt:
+%
+\begin{align}
+  A &= \SI{0.20(01)}{\milli\volt\metre} & 
+  B &= \SI{-2(6)}{\milli\volt}
+\end{align}
+%
+Es ergibt sich also die folgende Gleichung für $U$:
+%
+\begin{equation}
+  U = \SI{0.20(01)}{\milli\volt\metre} \cdot r^{-2} +
+  \SI{-2(6)}{\milli\volt}
+\end{equation}
+%
+Einen Plot der Meßwerte mit der ermittelten Regressionskurve findet man
+in Abbildung~\ref{fig:licht-messung}.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.8\textwidth]{licht-messung}
+  \caption{Graphische Darstellung der Meßwerte zum Abstandsverhalten der
+    Lichtintensität mit ihrer Regressionskurve}
+  \label{fig:licht-messung}
+\end{figure}
+
 \begin{table}
   \centering
-  \begin{tabular}{SSSS}
+  \begin{tabular}{SSS}
     \toprule
-    \multicolumn{2}{c}{Mit Rauschen} &
-    \multicolumn{2}{c}{Ohne Rauschen} \\
+    {Abstand [\si{\centi\metre}]} &
+    {Spannung [\si{\milli\volt}]} &
+    {Gain} \\
     \midrule
-    {\(\phi [\si{\degree}]\)} & 
-    {\(U_\text{out} [\si{\milli\volt}]\)} &
-    {\(\phi [\si{\degree}]\)} & 
-    {\(U_\text{out} [\si{\milli\volt}]\)} \\
-    \midrule
-    0   &   504  &   0 & -80.0 \\
-    15  &   280  &  15 & -78.0 \\
-    30  &  -424  &  30 & -72.0 \\
-    75  & -2240  &  45 & -52.8 \\
-    45  & -1080  &  60 & -18.4 \\
-    60  & -1840  &  75 &   5.6 \\
-    90  & -2360  &  90 &  17.6 \\
-    105 & -2400  & 105 &  26.8 \\
-    180 &  -536  & 180 &  84.0 \\
-    270 &  2320  & 270 & -17.6 \\
+    6 & 62.4 &   1 \\
+    8 & 23.2 &   1 \\
+    10 & 14.0 &   1 \\
+    12 &  8.4 &   1 \\
+    14 &  6.4 &   1 \\
+    16 &  5.0 &   1 \\
+    18 &  5.8 &   2 \\
+    20 &  4.8 &   2 \\
+    22 &  8.2 &   5 \\
+    24 &  7.8 &   5 \\
+    27 &  5.4 &   5 \\
+    30 &  8.6 &  10 \\
+    33 &  7.4 &  10 \\
+    36 &  5.8 &  10 \\
+    39 & 10.2 &  20 \\
+    42 &  9.2 &  20 \\
+    45 &  8.4 &  20 \\
+    48 &  7.0 &  20 \\
+    51 &  5.8 &  20 \\
+    54 & 22.8 & 100 \\
+    64 & 16.8 & 100 \\
+    74 & 11.8 & 100 \\
+    84 & 20.4 & 200 \\
+    94 & 17.6 & 200 \\
+    104 & 35.2 & 500 \\
     \bottomrule
   \end{tabular}
-  \caption{Meßwerte der Gleichspannung $U_\text{out}$ in Abhängigkeit der
-    Phase $\phi$ des Referenzsignals}
-  \label{tab:messwerte}
+  \caption{Meßwerte zur Bestimmung des Abstandsverhalten 
+    der Lichtintensität}
+  \label{tab:licht-messung}
 \end{table}
-
