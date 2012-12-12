@@ -4,9 +4,8 @@
 
 \section{Theorie}
 Mit dem Lock-In-Verstärker ist es möglich, stark verrauschte Signale zu
-messen.  Dazu wird das verrauschte Signal in mehreren Schritten so
-bearbeitet. Als erstes wird das verrauschte Signal im Preamplifier
-verstärkt. Anschließend wird das Signal im Bandpassfilter durch einen
+messen.  Dazu wird das verrauschte Signal in mehreren Schritten bearbeitet. Als erstes wird das verrauschte Signal im Preamplifier
+verstärkt, d.h. es wird der Spannungswert zu jedem Zeitpunkt mit einem Faktor multipliziert. Anschließend wird das Signal im Bandpassfilter durch einen
 Tief- und Hochpass von Frequenzen befreit, die stark von einer
 einstellbaren Frequenz $\omega_0$ abweichen.  Im nächsten
 Bearbeitungsschritt wird das Signal in einem Mischer mit einem
@@ -48,13 +47,18 @@ Also ergibt die Multiplikation der beiden Signale folgendes:
 \end{equation*}
 %
 Der darauffolgende Tiefpass lässt nur niedrige Frequenzen durch, sodass
-sich die Formel \eqref{eq:gleichspannung} für die Form des
+sich die Formel \eqref{eq:mischer} für die Form des
 Ausgangssignals ergibt, nachdem das Signal durch den Mischer und den
 Tiefpass bearbeitet wurde.
 %
 \begin{equation}
-  \label{eq:gleichspannung}
+  \label{eq:mischer}
   U_\text{out} = \frac{1}{2} \widehat{U}_\text{sig} \widehat{U}_\text{ref}
 \end{equation}
 %
 Das endgültige Signal ist also eine Gleichspannung.
+Gibt es einen Phasenunterschied zwischen zu messendem Signal und Referenzsignal, so muss dieser berücksichtigt werden. Bei vorhandenem Phasenunterschied $\phi$ hat das Ausgangssignal die in Formel \eqref{eq:mischer_phase} wiedergegebene Form.
+\begin{equation}
+  \label{eq:mischer_phase}
+   U_\text{out} = \frac{1}{2} \widehat{U}_\text{sig} \widehat{U}_\text{ref} \cdot cos(\phi)
+\end{equation}
