@@ -53,5 +53,6 @@ plt.ylabel("Spannung in Volt")
 plt.plot(a, U, "+")
 
 (A, B), cov = opt.curve_fit(lambda x, A, B: A/x**2 + B, a, U)
-plt.plot(a, A/a**2 + B)
+plt.plot(a, A/a**2 + B, label=r"$\propto 1/r^2$")
+plt.legend()
 plt.show()
