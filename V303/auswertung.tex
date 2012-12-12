@@ -4,6 +4,22 @@
 
 \section{Auswertung}
 
+Aus den Abbildungen \texttt{TODO} liest man folgende Werte für die
+Amplitude der Referenzspannung und des Signals ab:
+%
+\begin{align}
+  \widehat{U}_\text{ref} &= \SI{3200}{\milli\volt} &
+  \widehat{U}_\text{sig} &= \SI{20}{\milli\volt}
+\end{align}
+%
+Die Frequenz der beiden Signale ist auf den Wert \SI{1.000}{\kilo\hertz}
+eingestellt. Für den Wert der Ausgangsspannung $U_\text{out}$, der nach
+Formel~\eqref{eq:gleichspannung} berechnet wird, ergibt sich:
+\begin{equation}
+  \label{eq:u_out-value}
+  U_\text{out} = k \cdot \SI{32}{\milli\volt\squared}
+\end{equation}
+
 \subsection{Ohne Rauschen}
 
 Gemessen wird die Ausgangsgleichspannung $U_\text{out}$ in Abhängigkeit
@@ -28,6 +44,14 @@ Abbildung~\ref{fig:ohne-rauschen} und hier zu sehen:
   U_\text{out}(\phi) = \SI{-85.13(384)}{\milli\volt} \cdot
   \cos(\phi + \num{0.20})
 \end{equation}
+%
+Der Proportionalitätsfaktor kann nun mithilfe von
+Formel~\eqref{eq:u_out-value} bestimmt werden:
+%
+\begin{equation}
+  \label{eq:propt-value}
+  k = \SI{2.66}{\per\milli\volt}
+\end{equation}
 
 \subsection{Mit Rauschen}
 
@@ -42,6 +66,14 @@ Gleichung dazu lautet:
   \label{eq:cos-regress-result-noise}
   U_\text{out}(\phi) = \SI{2443(76)}{\milli\volt} \cdot 
   \cos(\phi + \num{1.29})
+\end{equation}
+%
+Hier ergibt sich der Proportionalitätsfaktor mithilfe von
+Formel~\eqref{eq:u_out-value} zu:
+%
+\begin{equation}
+  \label{eq:propt-value}
+  k = \SI{76.34}{\per\milli\volt}
 \end{equation}
 
 \begin{table}
@@ -72,3 +104,4 @@ Gleichung dazu lautet:
     Phase $\phi$ des Referenzsignals}
   \label{tab:messwerte}
 \end{table}
+
