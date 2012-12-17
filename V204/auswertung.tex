@@ -8,8 +8,8 @@
 In Abb. \ref{fig:t1undt4} ist ein Plot der gemessenen Temperaturen der
 Thermoelemente T1 und T4 gegen die Zeit zu finden. In
 Abb. \ref{fig:t5undt8} ist selbiges für die gemessenen Temperaturen der
-Thermoelemente T5 und T8 abgebildet.  Aus der Betrachtung dieser Plots
-stellt man fest, dass Die Temperaturen bei T1 und T4 zunächst ungefähr
+Thermoelemente T5 und T8 abgebildet.  Bei der Betrachtung dieser Plots
+ist festzustellen, dass Die Temperaturen bei T1 und T4 zunächst ungefähr
 gleich ansteigen, die Temperatur bei T1 allerdings immer etwas höher ist
 als bei T4. Im späteren Verlauf scheinen die Kurven parallel zu
 verlaufen.  Die Temperaturverläufe bei T5 und T8 hingegen unterscheiden
@@ -56,7 +56,7 @@ verwendeten Metallen die größte Wärmeleitfähigkeit besitzt.
 \end{table}
 
 In Tabelle \ref{tab:waermestrom} sind für alle verwendeten Metallstäbe
-die Wärmeströme $\frac{\Delta Q}{\Delta t}$ in \si{\joule\per\second}
+die Wärmeströme $\frac{\Delta Q}{\Delta t}$ in \si{\watt}
 nach jeweils \SI{200}{\second} angegeben, welche mit Formel
 \eqref{eq:waermestrom} berechnet sind. Dabei wird für jedes Metall der
 im folgenden Unterkapitel berechnete Wert für die Wärmeleitfähigkeit
@@ -83,7 +83,7 @@ $\kappa$ verwendet.
 
 Im Diagramm \ref{fig:t7-t8} ist die Differenz der Temperaturen der
 Thermoelemente T7 und T8 zu sehen.  Die Kurve steigt zunächst stark an,
-bis zu einem Wert von ca. \SI{8.3}{\degreeCelsius}. Dannach fällt die
+bis zu einem Wert von ca. \SI{8.3}{\degreeCelsius}. Ab diesem Wert fällt die
 Kurve leicht und scheint sich bei einem Wert von
 ca. \SI{7.8}{\degreeCelsius} nicht mehr deutlich zu verändern. Das heißt
 also, dass die Temperatur bei T7 zunächst ansteigt. Bei T8 setzt diese
@@ -132,22 +132,175 @@ man in Tabelle~\ref{tab:materialkonst}.
     \toprule
      & {Messing} & {Aluminium} & {Edelstahl} \\
     \midrule
-    $\rho\left[\si{\kilogram\per\cubic\metre}\right]$ & 8520 & 2800 &
+    $\rho / \si{\kilogram\per\cubic\metre}$ & 8520 & 2800 &
     8000
     \\\addlinespace[1pt]
-    $c\left[\si{\joule\per\kilogram\per\kelvin}\right]$ & 385 & 830 &
+    $c / \si{\joule\per\kilogram\per\kelvin}$ & 385 & 830 &
     400 \\\addlinespace[1pt]
-    $\kappa\left[\si{\watt\per\metre\per\kelvin}\right]$ &
-    118(14) & 313(28) & 15(1) \\\addlinespace[1pt]
-    $A\left[\si{\milli\metre\squared}\right]$ (breit) & 48 & 48 & 48 
+    $\kappa / \si{\watt\per\metre\per\kelvin}$ &
+    118(4) & 313(9) & 15(1) \\\addlinespace[1pt]
+    $A / \si{\milli\metre\squared}$ (breit) & 48 & 48 & 48 
     \\\addlinespace[1pt]
-    $A\left[\si{\milli\metre\squared}\right]$ (schmal)& 28 \\
+    $A / \si{\milli\metre\squared}$ (schmal)& 28 \\
     \bottomrule
   \end{tabular}
   \caption{Materialkonstanten der verwendeten Metalle}
   \label{tab:materialkonst}
 \end{table}
 
+\begin{table}
+  \centering
+  \begin{tabular}{c|c|c|c|c}
+    \toprule
+    Nr. &\multicolumn{2}{c}{Maxima} & \multicolumn{2}{c}{Minima}\\
+         &Zeit/s & Wert/\SI{}{\degreeCelsius} & Zeit/s & Wert/\SI{}{\degreeCelsius}\\
+    \midrule
+    1 & 58 & 32.92&12   &28.35\\
+    2 & 146& 36.69&96  &30.79\\
+    3 & 230 & 40.86&180&35.02\\
+    4 & 312 & 44.90&264&39.21\\
+    5 & 398 & 48.40&350&42.89\\
+    6 & 480 & 51.74&432&46.51\\
+    7 & 562 & 54.47&516&49.61\\
+    8 & 642 & 56.78&598&52.24\\
+    9 & 724 & 58.84&682&54.34\\
+    10& 808& 60.66&762&56.28\\
+   11 &        &       &832&59.00\\
+    \bottomrule
+  \end{tabular}
+  \caption{Daten der Maxima und Minima im Temperaturverlauf an T1}
+  \label{tab:daten_t1}
+\end{table}
+
+\begin{table}
+  \centering
+  \begin{tabular}{c|c|c|c|c}
+    \toprule
+    Nr. &\multicolumn{2}{c}{Maxima} & \multicolumn{2}{c}{Minima}\\
+         &Zeit/s & Wert/\SI{}{\degreeCelsius} & Zeit/s & Wert/\SI{}{\degreeCelsius}\\
+    \midrule
+    1 & 46 & 38.82&10   &28.70\\
+    2 & 132& 43.84&88  &28.89\\
+    3 & 214 & 48.51&172&34.20\\
+    4 & 298 & 52.90&256&38.90\\
+    5 & 384 & 56.58&342&42.63\\
+    6 & 466 & 59.99&424&46.58\\
+    7 & 548 & 62.71&508&49.76\\
+    8 & 630 & 65.02&590&52.43\\
+    9 & 712 & 67.11&672&54.55\\
+    10& 796& 68.95&754&56.44\\
+   11 &        &       &832&58.82\\
+    \bottomrule
+  \end{tabular}
+  \caption{Daten der Maxima und Minima im Temperaturverlauf an T2}
+  \label{tab:daten_t2}
+\end{table}
+
+\begin{table}
+  \centering
+  \begin{tabular}{c|c|c|c|c}
+    \toprule
+    Nr. &\multicolumn{2}{c}{Maxima} & \multicolumn{2}{c}{Minima}\\
+         &Zeit/s & Wert/\SI{}{\degreeCelsius} & Zeit/s & Wert/\SI{}{\degreeCelsius}\\
+    \midrule
+    1 & 52 & 36.25&10   &28.39\\
+    2 & 138& 41.07&92  &31.11\\
+    3 & 222 & 45.90&176&36.48\\
+    4 & 304 & 50.26&260&41.22\\
+    5 & 390 & 53.78&346&44.90\\
+    6 & 472 & 57.18&428&48.77\\
+    7 & 554 & 59.87&512&51.90\\
+    8 & 636 & 62.09&594&54.50\\
+    9 & 718 & 64.10&676&56.49\\
+    10& 802& 65.88&758&58.42\\
+   11 &        &       &832&61.33\\
+    \bottomrule
+  \end{tabular}
+  \caption{Daten der Maxima und Minima im Temperaturverlauf an T5}
+  \label{tab:daten_t5}
+\end{table}
+
+\begin{table}
+  \centering
+  \begin{tabular}{c|c|c|c|c}
+    \toprule
+    Nr. &\multicolumn{2}{c}{Maxima} & \multicolumn{2}{c}{Minima}\\
+         &Zeit/s & Wert/\SI{}{\degreeCelsius} & Zeit/s & Wert/\SI{}{\degreeCelsius}\\
+    \midrule
+    1 & 44 & 39.40&6   &28.00\\
+    2 & 130& 44.59&88  &29.11\\
+    3 & 214 & 49.49&172&34.52\\
+    4 & 296 & 53.75&256&39.39\\
+    5 & 382 & 57.30&340&42.98\\
+    6 & 466 & 60.65&424&46.76\\
+    7 & 548 & 63.29&506&49.87\\
+    8 & 630 & 65.42&588&52.43\\
+    9 & 712 & 67.44&670&54.39\\
+    10& 794& 69.17&754&56.36\\
+   11 &        &       &832&58.50\\
+    \bottomrule
+  \end{tabular}
+  \caption{Daten der Maxima und Minima im Temperaturverlauf an T6}
+  \label{tab:daten_t6}
+\end{table}
+
+\begin{table}
+  \centering
+  \begin{tabular}{c|c|c|c|c}
+    \toprule
+    Nr. &\multicolumn{2}{c}{Maxima} & \multicolumn{2}{c}{Minima}\\
+         &Zeit/s & Wert/\SI{}{\degreeCelsius} & Zeit/s & Wert/\SI{}{\degreeCelsius}\\
+    \midrule
+    1 & 172 & 32.21&22   &28.83\\
+    2 & 384& 35.96&240 &31.55\\
+    3 & 586 & 40.08&440&35.65\\
+    4 & 780 & 43.68&644&39.64\\
+    5 &      &         &832&43.19\\
+    \bottomrule
+  \end{tabular}
+  \caption{Daten der Maxima und Minima im Temperaturverlauf an T7}
+  \label{tab:daten_t7}
+\end{table}
+
+\begin{table}
+  \centering
+  \begin{tabular}{c|c|c|c|c}
+    \toprule
+    Nr. &\multicolumn{2}{c}{Maxima} & \multicolumn{2}{c}{Minima}\\
+         &Zeit/s & Wert/\SI{}{\degreeCelsius} & Zeit/s & Wert/\SI{}{\degreeCelsius}\\
+    \midrule
+    1 & 110 & 43.03&4   &29.06\\
+    2 & 314& 50.74&210 &31.16\\
+    3 & 516 & 56.72&412&38.57\\
+    4 & 718 & 61.24&616&43.88\\
+    5 &      &         &818&47.83\\
+    \bottomrule
+  \end{tabular}
+  \caption{Daten der Maxima und Minima im Temperaturverlauf an T8}
+  \label{tab:daten_t8}
+\end{table}
+
+\begin{table}
+  \centering
+  \begin{tabular}{c|c|c|c}
+    \toprule
+	   &\multicolumn{3}{c}{$\kappa$/ \si{\watt\per\metre\per\kelvin}} \\
+    Nr. & Messing& Aluminium& Edelstahl\\
+    \midrule
+    1 & 154.73 & 351.58&16.37\\
+    2 & 133.40& 296.45&13.80\\
+    3 & 102.94 &282.21&14.59\\
+    4 & 117.10 & 282.47&\\
+    5 &  113.50& 273.57&\\
+    6 &111.98& 347.39&\\
+    7 & 107.58& 334.51&\\
+    8 & 120.60& 324.37&\\
+    9 & 119.84& 323.18&\\
+    \bottomrule
+  \end{tabular}
+  \caption{Errechnete Werte für die Wärmeleitfähigkeit}
+  \label{tab:kappa}
+\end{table}
 Um die Phasendifferenzen zu bestimmen, wird immer die zeitliche
 Verschiebung zweier aufeinanderfolgender Maxima bestimmt. Der Wert einer
 Amplitude wird bestimmt, indem eine Gerade durch die beiden Minima
@@ -155,10 +308,11 @@ gelegt wird, die links und rechts von einem Maximum liegen. Anschließend
 wird der Abstand zwischen der Gerade und dem Maximum
 ausgerechnet. Dieses Vorgehen ist erforderlich, da der
 \enquote{Nulldurchgang} der Schwingungen in der Zeit weder konstant noch
-linear ist. Die Auswertung der Messwerte liefert die in
-Tabelle~\ref{tab:materialkonst} dargestellten Ergebnisse für die
-Wärmeleitfähigkeit $\kappa$.
-
+linear ist. Die Daten der Maxima und Minima der Temperaturverläufe an den Theormoelementen T1, T2, T5, T6, T7 und T8 sind in den Tabellen \vrefrange{tab:daten_t1}{tab:daten_t8} zu finden. In Tabelle \ref{tab:kappa} befinden sich die errechneten Werte für die Wärmeleitfähigkeit $\kappa$. Die Mittelwerte der Wärmeleitfähigkeiten der verschiedenen Metalle sind in Tabelle \ref{tab:materialkonst} zu finden. Der angegebene Fehler ist die Standardabweichung $\sigma$ des Mittelwerts und errechnet sich mithilfe von Formel \eqref{eq:std}.
+\begin{equation}
+\label{eq:std}
+\sigma = \sqrt{\frac{\sum\limits_{i=1}^{n}(\bar{x} - x_i)^2}{n(n-1)}} 
+\end{equation}
 \begin{figure}
   \centering
   \includegraphics{dyn_Messing}

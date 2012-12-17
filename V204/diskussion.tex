@@ -4,10 +4,11 @@
 
 \section{Diskussion}
 
+In Tabelle \ref{tab:endergebnis} werden die ermittelten Werte für die Wärmekapazität mit den gefundenen Literaturwerten verglichen.
 Die gemessenen Werte sind im Vergleich mit den Literaturwerten nicht
 gut. Einzig für Messing ergibt sich eine geringe Abweichung von
-\SI{2.4}{\percent}. Beim Aluminium ergeben sich \SI{32.6}{\percent} und
-beim Edelstahl \SI{25.5}{\percent}. Die Literaturwerte für Aluminium und
+\SI{1.7}{\percent}. Beim Aluminium ergeben sich \SI{32.6}{\percent} und
+beim Edelstahl \SI{25}{\percent}. Die Literaturwerte für Aluminium und
 Messing sind aus der \textcite{wikipedia:waermeleitfaehigkeit}
 entnommen. Der Wert für Edelstahl kommt von
 \textcite{schweizer-fn:waermeleitfaehigkeiten}.
@@ -20,3 +21,16 @@ Material war. Die Abweichung für das Edelstahl könnte also daher kommen.
 
 Aluminium besitzt eine höhere Wärmeleitfähigkeit als Messing. Dies
 konnte in den Messungen bestätigt werden.
+\begin{table}
+  \centering
+  \begin{tabular}{c|c|c|c}
+   &Messing& Aluminium& Edelstahl\\
+    \midrule
+Ermitteltes $\kappa$/\SI{}{\watt\per\metre\per\kelvin}	 &118 & 313 & 15\\
+Literaturwert $\kappa$/\SI{}{\watt\per\metre\per\kelvin} &120 & 236 & 20\\
+Abweichung in \si{\percent} & 1.7 & 32.6 & 25\\
+    \bottomrule
+  \end{tabular}
+  \caption{Vergleich zwischen errechneten Werten und Literaturwerten für die genannten Metalle}
+  \label{tab:endergebnis}
+\end{table}
