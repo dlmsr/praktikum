@@ -3,3 +3,66 @@
 % license, visit http://creativecommons.org/licenses/by-nc/3.0/.
 
 \section{Theorie}
+
+Den Vorgang, der sich abspielt, wenn man ein System aus seinem
+Ausgangszustand auslenkt, nennt man, sofern er sich ohne Oszillationen
+vollzieht, Relaxation.
+
+\subsection{Auf- und Entladevorgang am Kondensator}
+Zunächst wird der Entladevorgang betrachtet. Aus der
+Abbildung~\ref{fig:rc-glied} kann man mithilfe der \name{Kirchhoff}schen
+Regeln diese Differentialgleichung ableiten:
+%
+\begin{equation}
+  \label{eq:rc-dgl}
+  RC\cdot Q'(t) + Q(t) = 0 \text{.}
+\end{equation}
+%
+Die Lösung zum Anfangswertproblem $Q(0) = Q_0$ ist gegeben mit
+%
+\begin{equation}
+  \label{eq:sol-rc-dgl}
+  Q(t) = Q_0 \exp(-t/RC) \text{.}
+\end{equation}
+%
+Hier kann man nun das Relaxationsverhalten beim Entladen erkennen,
+nämlich daß der Kondensator nach unendlich langer Zeit wieder entladen
+ist: $\lim_{t\to\infty} Q(t) = 0$.
+
+Zum Aufladen wird eine Spannungsquelle benötigt, so daß sich die
+Abbildung~\ref{fig:rcu-glied} ergibt. Die zugehörige
+Differentialgleichung lautet:
+%
+\begin{equation}
+  \label{eq:rcu-dgl}
+  RC\cdot Q'(t) + Q(t) = U \text{.}
+\end{equation}
+%
+Die Lösung zum Anfangswertproblem $Q(0) = 0$ führt auf die Funktion $Q$
+mit:
+%
+\begin{equation}
+  \label{eq:sol-rcu-dgl}
+  Q(t) = UC \Big(1-\exp(-t/RC)\Big) \text{.}
+\end{equation}
+%
+Auch bei dieser Lösung wird nach unendlich langer Zeit der gewünschte
+Endzustand erreicht: $\lim_{t\to\infty} Q(t) = UC$. 
+
+Die Zahl $RC$ heißt Zeitkonstante und gibt an, wie schnell die Funktion
+gegen ihren entsprechenden Grenzwert, d.\,h. gegen ihren Endzustand
+konvergiert.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.3\textwidth]{rc-glied}
+  \caption{Schaltung eines RC-Gliedes ohne äußere Spannungsquelle}
+  \label{fig:rc-glied}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.3\textwidth]{rcu-glied}
+  \caption{Schaltung eines RC-Gliedes mit äußerer Spannungsquelle}
+  \label{fig:rcu-glied}
+\end{figure}
