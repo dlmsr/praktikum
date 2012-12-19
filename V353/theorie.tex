@@ -66,3 +66,54 @@ konvergiert.
   \caption{Schaltung eines RC-Gliedes mit äußerer Spannungsquelle}
   \label{fig:rcu-glied}
 \end{figure}
+
+\subsection{Relaxationsverhalten bei äußerer Anregung}
+
+Die Spannungsquelle in Abbildung~\ref{fig:rcu-glied} ist bisher konstant
+gewesen. Dies soll sich nun ändern. Statt dessen wird ein
+Wechselspannung der Kreisfrequenz $\omega$ angelegt:
+%
+\begin{equation}
+  \label{eq:u-ac}
+  U(t) = U_0\cos(\omega t) \text{.}
+\end{equation}
+%
+Dies sorgt nun dafür, daß das RC-Glied zumindest bei niedrigen
+Frequenzen dem aufgeprägten Signal folgt, daß also die Spannung $U_c$ am
+Kondensator zu jedem Zeitzunkt ungefähr gleich der Spannung $U(t)$ der
+Spannungsquelle ist. Werden aber die Frequenzen erhöht, so hinkt der
+Kondensator mit seiner Auf- und Entladung der Spannungsquelle immer
+deutlicher hinterher. Dies führt zu einer Phasenverschiebung $\varphi$
+zwischen beiden Spannungen.
+
+Es wird nun die Abhängigkeit der Phase und Amplitude der
+Kondensatorspannung von der Frequenz untersucht. Dabei ergeben sich die
+folgenden Formeln:
+%
+\begin{equation}
+  \label{eq:phase-frequenz}
+  \varphi(\omega) = \arctan(-\omega RC)
+\end{equation}
+%
+\begin{equation}
+  \label{eq:amplitude-frequenz}
+  A(\omega) = \frac{U_0}{\sqrt{1+(\omega RC)^2}}
+\end{equation}
+
+
+\subsection{Funktion des RC-Gliedes als Integrator}
+
+Unter der Voraussetzung, daß $\omega\ll 1/RC$ ist, funktioniert das
+RC-Glied als Integrator. Dies ergibt sich aus dem Zusammenhang:
+%
+\begin{equation}
+  \label{eq:dgl-umformung}
+  U(t) = U_R(t) + U_C(t) = R I(t) + U_c(t) = RC U_C'(t) + U_C(t)
+\end{equation}
+%
+Mit der Voraussetzung folgt, daß $|U_C| \ll |U_R|$ und $|U_C| \ll |U|$
+und daraus kann \eqref{eq:dgl-umformung} so geschrieben werden:
+%
+\begin{equation}
+  U(t) = RC U_C'(t) \implies U_C(t) = \frac{1}{RC}\int_0^t U(x) \d x
+\end{equation}

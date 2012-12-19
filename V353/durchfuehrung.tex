@@ -6,12 +6,51 @@
 
 \subsection{Bestimmung der Zeitkonstanten des RC-Gliedes}
 Durch die Beobachtung des Auf- oder Entladevorgangs am Kondensator kann
-die Zeitkonstante $RC$ bestimmt werden. 
+die Zeitkonstante $RC$ bestimmt werden. Dazu wird ein Oszilloskop
+verwendet, auf dem die Kondensatorspannung $U(t)$ gegen die Zeit
+betrachtet wird. Es wird eine niedrige Frequenz eingestellt, so daß der
+Kondensator genügend Zeit hat, sich vollständig zu laden und wieder zu
+entladen. Hier kann nun an der Asymptotik der Kurve die Nullinie
+abgelesen werden, die markiert wird.
+
+Jetzt muß die Frequenz höher eingestellt werden, um Ausschnitte aus der
+unendlich langen Entladekurve des Kondensators zu erhalten. Davon wird
+ein Ausdruck angefertigt, aus dem dann Daten zur Bestimmung der
+Zeitkonstanten entnommen werden können.
 
 \subsection{Bestimmung der Amplitude der Kondensatorspannung in
   Abhängigkeit der Frequenz}
 
+Zur Bestimmung der Abhängigkeit der Amplitude von der Frequenz wird ein
+Millivoltmeter verwendet, daß die Spannung am Kondensator mißt. Über
+ein geeignetes Spannungsgerät kann die Frequenz eingestellt und auch
+abgelesen werden. Jetzt wird einfach eine Meßreihe Amplitude gegen
+Frequenz durchgeführt.
+
 \subsection{Bestimmung der Phasenverschiebung zwischen Generator- und
   Kondensatorspannung}
 
+Um die Phasendifferenz $\varphi$ in Abhängigkeit der Frequenz $\omega$
+zu erhalten, werden beide Signale am Oszilloskop betrachtet und mit dem
+Cursor die zeitlichen Abstände $\Delta t$ zweier Nulldurchgänge der
+beiden Schwingungen vermessen. Aus diesen zeitlichen Abständen erhält
+man mit der Formel
+%
+\begin{equation}
+  \label{eq:phase-zeitabstand}
+  \varphi = 2\pi\frac{\Delta t}{T} \text{,}
+\end{equation}
+%
+wobei $T$ die Periodendauer der Schwingung bezeichnet. Hierbei muß
+darauf geachtet werden, daß beide Sinuskurven symmetrisch zur $x$-Achse
+liegen.
+
 \subsection{Untersuchung der Integrierfähigkeiten eines RC-Gliedes}
+
+Wird die Frequenz der Spannungsquelle weiter hochgeregelt, kann
+beobachtet werden, daß das RC-Glied als Integrator funktioniert. Es
+werden hier mit dem Oszilloskop die Spannungen über dem Kondensator und
+der Spannungsquelle betrachtet. Jetzt werden verschiedene Spannungen
+eingestellt unter anderem Rechteckspannungen, Dreieckspannungen,
+Sinusspannungen. Von diesen Signalen und ihren integrierten Signalen am
+Kondensator werden Aufnahmen gemacht.
