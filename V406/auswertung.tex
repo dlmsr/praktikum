@@ -1,0 +1,38 @@
+\section{Auswertung}
+
+\begin{figure}
+  \centering
+  \includegraphics{geometrie}
+  \caption{Geometrie der Apparatur}
+  \label{fig:apparatur-geometrie}
+\end{figure}
+
+\section{Einzelspalt}
+Bei der Messung am Einzelspalt, kommt ein Einzelspalt mit einer Weite
+von ca. \SI{0.08}{\milli\metre} zum Einsatz. Die gewonnenen Meßwerte
+werden nun in eine nichtlineare Regression gegeben\footnote{hierzu wird
+  die Funktion \texttt{scipy.optimize.curve\_fit} aus der
+  \texttt{scipy}-Bibliothek in der Version 0.11 verwendet}. Aus
+Formel~\eqref{eq:intensität_einzelspalt}, die die Intensität beschreibt,
+und der Abbildung~\ref{fig:apparatur-geometrie} ergibt sich dieser
+Zusammenhang zwischen der gemessenen Stromstärke $I$ und der Strecke $x$
+%
+\begin{equation}
+  \label{eq:strom-einzelspalt}
+  I(x) \propto A_0\frac{L\lambda}{\pi(x-c)} \sin\left(\frac{\pi b}{\lambda
+        L} (x-c)\right)
+\end{equation}
+%
+Die Werte für die Parameter führen auf folgenden Funktionsterm:
+%
+\begin{equation}
+  \label{eq:einzelspalt_fit}
+  I(x) = \SI[exponent-to-prefix = true]{8.828e-5}{\ampere\per\metre}
+\end{equation}
+%
+In Abbildung~\ref{fig:einzelspalt} sind die Meßwerte und der Graph der
+erhaltenen Funktion dargestell.
+
+\section{Variabler Spalt}
+
+\section{Doppelspalt}
