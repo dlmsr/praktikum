@@ -83,7 +83,7 @@ def werte_doppelspalt_aus():
     I -= 0.8e-9 # Dunkelstrom abziehen
     b = 0.08e-3
     s = 0.33e-3
-    c = 27e-3
+    c = 26e-3
 
     # zu fittende Funktion Einzelspalt
     f = lambda x, A: A * (2*l*L / (pi*b * (x-c)) 
