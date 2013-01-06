@@ -1,3 +1,7 @@
+% This work is licensed under the Creative Commons
+% Attribution-NonCommercial 3.0 Unported License. To view a copy of this
+% license, visit http://creativecommons.org/licenses/by-nc/3.0/.
+
 \section{Auswertung}
 
 \begin{figure}
@@ -8,11 +12,13 @@
 \end{figure}
 
 \section{Einzelspalt}
+
 Bei der Messung am Einzelspalt, kommt ein Einzelspalt mit einer Weite
 von ca. \SI{0.08}{\milli\metre} zum Einsatz. Die gewonnenen Meßwerte
-werden nun in eine nichtlineare Regression gegeben\footnote{hierzu wird
-  die Funktion \texttt{scipy.optimize.curve\_fit} aus der
-  \texttt{scipy}-Bibliothek in der Version 0.11 verwendet}. Aus
+(diese sind angehängt) werden nun in eine nichtlineare Regression
+gegeben\footnote{hierzu wird die Funktion
+  \texttt{scipy.optimize.curve\_fit} aus der \texttt{scipy}-Bibliothek
+  in der Version 0.11 verwendet}. Aus
 Formel~\eqref{eq:intensität_einzelspalt}, die die Intensität beschreibt,
 und der Abbildung~\ref{fig:apparatur-geometrie} ergibt sich dieser
 Zusammenhang zwischen der gemessenen Stromstärke $I$ und der Strecke $x$
@@ -23,16 +29,92 @@ Zusammenhang zwischen der gemessenen Stromstärke $I$ und der Strecke $x$
         L} (x-c)\right)
 \end{equation}
 %
-Die Werte für die Parameter führen auf folgenden Funktionsterm:
+Die nichtlineare Regression führt auf den Funktionsterm
 %
 \begin{equation}
   \label{eq:einzelspalt_fit}
-  I(x) = \SI[exponent-to-prefix = true]{8.828e-5}{\ampere\per\metre}
+  \sisetup { exponent-to-prefix = true }
+  I(x) = \SI{8.828}{\ampere\per\metre}
+  \frac{\lambda L}{\pi(x-\SI{27.2e-3}{\metre})}
+  \sin\left(\frac{\pi\cdot\SI{0.0778e-3}{\metre}}{\lambda L} 
+    (x-\SI{27.2e-3}{\metre})\right)
 \end{equation}
 %
-In Abbildung~\ref{fig:einzelspalt} sind die Meßwerte und der Graph der
-erhaltenen Funktion dargestell.
+mit den Werten $\lambda = \SI{633}{\nano\metre}$ und $L =
+\SI{1}{\metre}$.  In Abbildung~\ref{fig:single-slit} sind die Meßwerte
+und der Graph der erhaltenen Funktion dargestellt.
+
+\begin{figure}
+  \centering
+  \includegraphics[width = 0.8\textwidth]{single-slit}
+  \caption{Meßwerte und Graph des Fits beim Einzelspalt}
+  \label{fig:single-slit}
+\end{figure}
 
 \section{Variabler Spalt}
 
+Für den variablen Spalt wird die gleiche Funktion aus
+Formel~\eqref{eq:strom-einzelspalt} mit den erhaltenen Meßwerten
+(ebenfalls im Anhang) in eine nichtlineare Regression gegeben. Es
+wird Funktionsterm
+%
+\begin{equation}
+  \label{eq:variable-slit-fit}
+  \sisetup { exponent-to-prefix = true }
+  I(x) = \SI{4.189}{\ampere\per\metre}
+  \frac{\lambda L}{\pi(x-\SI{26.2e-3}{\metre})}
+  \sin\left(\frac{\pi\cdot\SI{0.0503e-3}{\metre}}{\lambda L} 
+    (x-\SI{26.2e-3}{\metre})\right)
+\end{equation}
+%
+mit den Werten $\lambda = \SI{633}{\nano\metre}$ und $L =
+\SI{1}{\metre}$ erhalten. Die Strecke $L$ ist durch Messung bekannt. Die
+Wellenlänge des He-Ne-Lasers ist in \textcite[36]{v406} angegeben. In
+Abbildung~\ref{fig:variable-slit} sind die Meßwerte mit dem Graphen der
+erhaltenen Funktion dargestellt.
+
+\begin{figure}
+  \centering
+  \includegraphics[width = 0.8\textwidth]{variable-slit}
+  \caption{Meßwerte und Graph des Fits beim variablen Spalt}
+  \label{fig:variable-slit}
+\end{figure}
+
 \section{Doppelspalt}
+
+Die Geometrie beim Doppelspalt ist die gleiche wie beim Einzelspalt in
+Abbildung~\ref{fig:apparatur-geometrie}. Aus dieser kann man auch hier
+erkennen, daß 
+%
+\begin{equation}
+  \label{eq:x-phi}
+  \sin\phi = \frac{x}{L}\text{.}
+\end{equation}
+%
+Aus Formel~\eqref{eq:intensität_doppelspalt} und \eqref{eq:x-phi} ergibt
+sich dann folgender Zusammenhang zwischen der gemessenen Strecke $x$ und
+der Stromstärke $I(x)$:
+%
+\begin{equation}
+  \label{eq:double-slit-current}
+  I(x) \propto \left( \frac{2\lambda L}{\pi b(x-c)}
+    \cos\left(\frac{\pi s}{\lambda L} (x-c)\right)
+    \sin\left(\frac{\pi b}{\lambda L} (x-c)\right) \right)^2
+\end{equation}
+Beim Doppelspalt ergibt sich nach mehreren Versuchen mit verschiedenen
+Startwerten kein geeigneter Fit der Kurve aus
+Formel~\eqref{eq:double-slit-current}. Statt dessen werden die Werte, die
+auf den verwendeten Spalten stehen, heran gezogen und in
+Abbildung~\ref{fig:double-slit} die Meßwerte mit der theoretischen
+Verteilung verglichen. Dazu setzen wir $s = \SI{0.33}{\milli\metre}$, $L
+= \SI{1}{\metre}$, $\lambda = \SI{633}{\nano\metre}$ und $b =
+\SI{0.08}{\milli\metre}$ in Formel~\eqref{eq:double-slit-current}
+ein. Als Proportionalitätsfaktor wird \SI{0.2e-6}{\ampere\per\watt}
+verwendet.
+
+\begin{figure}
+  \centering
+  \includegraphics[width = 0.8\textwidth]{double-slit}
+  \caption{Meßwerte und Graph der theoretischen Beugungsfigur beim Doppelspalt}
+  \label{fig:double-slit}
+\end{figure}
