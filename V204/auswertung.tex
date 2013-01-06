@@ -131,11 +131,11 @@ man in Tabelle~\ref{tab:materialkonst}.
     \toprule
     & {Messing} & {Aluminium} & {Edelstahl} \\
     \midrule
-    $\rho / \si{\kilogram\per\cubic\metre}$ & 8520 & 2800 & 8000 \\
-    $c / \si{\joule\per\kilogram\per\kelvin}$ & 385 & 830 & 400 \\
-    $\kappa / \si{\watt\per\metre\per\kelvin}$ & 118(4) & 313(9) & 15(1) \\
-    $A / \si{\milli\metre\squared}$ (breit) & 48 & 48 & 48 \\
-    $A / \si{\milli\metre\squared}$ (schmal)& 28 \\
+    $\rho / (\si{\kilogram\per\cubic\metre})$ & 8520 & 2800 & 8000 \\
+    $c / (\si{\joule\per\kilogram\per\kelvin})$ & 385 & 830 & 400 \\
+    $\kappa / (\si{\watt\per\metre\per\kelvin})$ & 118(4) & 313(9) & 15(1) \\
+    $A / (\si{\milli\metre\squared})$ (breit) & 48 & 48 & 48 \\
+    $A / (\si{\milli\metre\squared})$ (schmal)& 28 \\
     \bottomrule
   \end{tabular}
   \caption{Materialkonstanten der verwendeten Metalle}
@@ -194,7 +194,7 @@ man in Tabelle~\ref{tab:materialkonst}.
 
 \begin{table}
   \centering
-  \begin{tabular}{c|c|c|c|c}
+  \begin{tabular}{cSSSS}
     \toprule
     Nr. &\multicolumn{2}{c}{Maxima} & \multicolumn{2}{c}{Minima}\\
          &Zeit/s & Wert/\SI{}{\degreeCelsius} & Zeit/s & Wert/\SI{}{\degreeCelsius}\\
@@ -218,7 +218,7 @@ man in Tabelle~\ref{tab:materialkonst}.
 
 \begin{table}
   \centering
-  \begin{tabular}{c|c|c|c|c}
+  \begin{tabular}{cSSSS}
     \toprule
     Nr. &\multicolumn{2}{c}{Maxima} & \multicolumn{2}{c}{Minima}\\
          &Zeit/s & Wert/\SI{}{\degreeCelsius} & Zeit/s & Wert/\SI{}{\degreeCelsius}\\
@@ -242,7 +242,7 @@ man in Tabelle~\ref{tab:materialkonst}.
 
 \begin{table}
   \centering
-  \begin{tabular}{c|c|c|c|c}
+  \begin{tabular}{cSSSS}
     \toprule
     Nr. &\multicolumn{2}{c}{Maxima} & \multicolumn{2}{c}{Minima}\\
          &Zeit/s & Wert/\SI{}{\degreeCelsius} & Zeit/s & Wert/\SI{}{\degreeCelsius}\\
@@ -260,7 +260,7 @@ man in Tabelle~\ref{tab:materialkonst}.
 
 \begin{table}
   \centering
-  \begin{tabular}{c|c|c|c|c}
+  \begin{tabular}{cSSSS}
     \toprule
     Nr. &\multicolumn{2}{c}{Maxima} & \multicolumn{2}{c}{Minima}\\
          &Zeit/s & Wert/\SI{}{\degreeCelsius} & Zeit/s & Wert/\SI{}{\degreeCelsius}\\
@@ -278,7 +278,7 @@ man in Tabelle~\ref{tab:materialkonst}.
 
 \begin{table}
   \centering
-  \begin{tabular}{c|c|c|c}
+  \begin{tabular}{cSSS}
     \toprule
 	   &\multicolumn{3}{c}{$\kappa$/ \si{\watt\per\metre\per\kelvin}} \\
     Nr. & Messing& Aluminium& Edelstahl\\
@@ -304,7 +304,7 @@ gelegt wird, die links und rechts von einem Maximum liegen. Anschließend
 wird der Abstand zwischen der Gerade und dem Maximum
 ausgerechnet. Dieses Vorgehen ist erforderlich, da der
 \enquote{Nulldurchgang} der Schwingungen in der Zeit weder konstant noch
-linear ist. Die Daten der Maxima und Minima der Temperaturverläufe an den Theormoelementen T1, T2, T5, T6, T7 und T8 sind in den Tabellen \vrefrange{tab:daten_t1}{tab:daten_t8} zu finden. In Tabelle \ref{tab:kappa} befinden sich die errechneten Werte für die Wärmeleitfähigkeit $\kappa$. Die Mittelwerte der Wärmeleitfähigkeiten der verschiedenen Metalle sind in Tabelle \ref{tab:materialkonst} zu finden. Der angegebene Fehler ist die Standardabweichung $\sigma$ des Mittelwerts und errechnet sich mithilfe von Formel \eqref{eq:std}.
+linear ist. Die Daten der Maxima und Minima der Temperaturverläufe an den Theormoelementen T1, T2, T5, T6, T7 und T8 sind in den Tabellen \vrefrange{tab:daten_t1}{tab:daten_t8} zu finden. In Tabelle \ref{tab:kappa} befinden sich die errechneten Werte für die Wärmeleitfähigkeit $\kappa$. Die Mittelwerte der Wärmeleitfähigkeiten der verschiedenen Metalle sind in Tabelle \ref{tab:materialkonst} zu finden. Der angegebene Fehler ist die Standardabweichung $\sigma$ des Mittelwerts und errechnet sich mithilfe von Formel~\eqref{eq:std}.
 \begin{equation}
 \label{eq:std}
 \sigma = \sqrt{\frac{\sum\limits_{i=1}^{n}(\bar{x} - x_i)^2}{n(n-1)}} 
