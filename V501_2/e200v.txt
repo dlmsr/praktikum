@@ -1,0 +1,14 @@
+# This work is licensed under the Creative Commons
+# Attribution-NonCommercial 3.0 Unported License. To view a copy of this
+# license, visit http://creativecommons.org/licenses/by-nc/3.0/.
+
+#  U/V   y/6.35mm
+   6.59    0  
+   2.76    1  
+  -2.04    2  
+  -6.21    3  
+  10.13    4  
+  10.21   -1  
+  14.14   -2  
+  17.60   -3  
+   21.2   -4
