@@ -1,0 +1,12 @@
+# This work is licensed under the Creative Commons
+# Attribution-NonCommercial 3.0 Unported License. To view a copy of this
+# license, visit http://creativecommons.org/licenses/by-nc/3.0/.
+
+# U_B = 500 V
+# nu_sin approx. 80 Hz
+
+#  n    nu/Hz   A_pp/6.35mm
+  0.5    39.9     5  
+    1    79.5     5  
+    2   159.5   4.6  
+    3   239.2   4.6  
