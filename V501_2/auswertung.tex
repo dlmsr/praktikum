@@ -2,3 +2,125 @@
 % Attribution-NonCommercial 3.0 Unported License. To view a copy of this
 % license, visit http://creativecommons.org/licenses/by-nc/3.0/.
 
+\section{Auswertung}
+%
+\subsection{Elektronenstrahl im E-Feld}
+%
+Die Elektronen werden in diesem Versuch in die y-Achse der Kathodenstrahlröhre mithilfe von Ablenkplatten beschleunigt, weswegen die Abmessungen dieser verwendet werden. Der Abstand L zwischen den Ablenkplatten und dem Schirm beträgt \SI{0.143}{\metre}, die Plattenlänge p = \SI{0.019}{\metre} und der Plattenabstand d ist zu \SI{0.0038}{\metre} bemessen.
+%
+\subsubsection{Empfindlichkeit der Kathodenstrahlröhre}
+%
+Die Empfindlichkeit E einer Kathodenstrahlröhre bezeichnet den Quotienten $\frac{D}{U_d}$, also die Ablenkung pro angelegter Ablenkspannung. In Abb. \ref{fig:empfindlichkeit} ist ein Plot der aufgenommenen Ablenkungen des Elektronenstrahls gegen die angelegte Ablenkspannung für die Beschleunigungsspannungen $U_B$ = \SI{200}{\volt}, \SI{260}{\volt}, \SI{320}{\volt}, \SI{440}{\volt} und \SI{500}{\volt} abgebildet. Im selben Plot sind auch die jeweiligen Ausgleichsgeraden zu finden.
+%Hier Formel für Fehler der Ausgleichsgeraden einfügen
+%
+\begin{figure}
+\centering
+\includegraphics{empfindlichkeit.pdf}
+\caption{Ablenkung D gegen Ablenkspannung $U_d$}
+\label{fig:empfindlichkeit}
+\end{figure}
+%
+In Tabelle \ref{tab:empfindlichkeiten} sind die errechneten Empfindlichkeiten E, sowie deren Fehler, zu den verschiedenen Beschleunigungsspannungen $U_B$ zu finden.
+%
+\begin{table}
+  \centering
+  \begin{tabular}{S S S}
+    \toprule
+    $U_B${ in V}& {|E| in \si{\milli\metre\per\volt}} & $\Delta ${E in \si{\milli\metre\per\volt}}\\
+    \midrule
+     200 & 1.61& 0.03 \\
+     260 & 1.19& 0.02 \\
+     320 & 1.03& 0.02 \\
+     440 & 0.76& 0.02 \\
+     500 & 0.65& 0.01 \\
+ \bottomrule
+  \end{tabular}
+  \caption{Ermittelte Empfindlichkeiten der Kathodenstrahlröhre}
+  \label{tab:empfindlichkeiten}
+\end{table}
+%
+Ein Plot dieser ermittelten Werte, sowie eine Ausgleichsgerade durch diese ist in Abb. \ref{fig:a} zu finden.
+%
+\begin{figure}
+\centering
+\includegraphics{a.pdf}
+\caption{Ermittelte Empfindlichkeiten E gegen $U_B^{-1}$}
+\label{fig:a}
+\end{figure}
+%
+Die Steigung a der Ausgleichsgeraden in Abb. \ref{fig:a} beträgt \SI{-0.3109}{\metre} $\pm$ \SI{0.0116}{\metre}.Steckt man die Anschlüsse des Multimeters um, so ergibt sich ein positiver Wert für a. Aufgrund von theoretischen Überlegungen sollte dieser Wert mit der Größe $\frac{pL}{2d}$ übereinstimmen. Es ergibt sich, dass  $\frac{pL}{2d}$ = \SI{0.3575}{\metre} ist.
+%
+\subsubsection{Kathodenstrahl-Oszillograph}
+%
+Nahezu unbewegte Bilder auf dem Leuchtschirm erhält man bei den in Tabelle \ref{tab:freq} angegebenen Werten und die dazugehörigen Amplituden. Als Frequenz $\nu$ des Sinusgenerators errechnet sich als Mittelwert mit Standardabweichung 
+\begin{equation*}
+\nu  = \SI{79.7}{\hertz} \pm \SI{0.1}{\hertz}.
+\end{equation*}
+Bei der Verwendung des im vorherigen Abschnitts Wertes für a, ergibt sich als Scheitelwert $\hat{U}$ des Sinusgenerators zu 
+\begin{equation*}
+\hat{U} = \SI{3.86}{\volt} \pm\SI{0.22}{\volt}.
+\end{equation*}
+ Der Fehler hierbei wird mithilfe der in Formel \eqref{eq:gauss_e} Gau\ss schen Fehlerforpflanzung berechnet.
+%
+\begin{table}
+  \centering
+  \begin{tabular}{S S S}
+    \toprule
+    {Frequenzverhältnis n}& $\nu${ in \si{\hertz}} & $A_{FPP}${ in \si{\milli\metre}}\\
+    \midrule
+     0.5 &39.9& 31.75 \\
+     1 & 79.5&31.75 \\
+     2 & 159.5& 29.21 \\
+     3 & 239.2& 29.21 \\
+ \bottomrule
+  \end{tabular}
+  \caption{Gemessene Werte bei stehendem Bild}
+  \label{tab:freq}
+\end{table}
+%
+\begin{equation}
+\label{eq:gauss_e}
+\Delta \hat{U} = \sqrt{\left(\frac{-\bar{D} \cdot U_B}{\bar{a}^2} \cdot \Delta a\right)^2 + \left(\frac{U_B}{\bar{a}}  \cdot \Delta D\right)^2}
+\end{equation}
+%
+\subsection{Elektronenstrahl im B-Feld}
+%
+Die in diesem Versuch verwendete Kathodenstrahlröhre gleicht in ihrem Aufbau und Abmessungen der Röhre, die im vorherigen Versuch verwendet wurde.
+%
+\subsubsection{Spezifische Ladung des Elektrons}
+%
+In Abb. \ref{fig:b} sind der Quotient $\frac{D}{L^2 + D^2}$ gegen die verwendeten Magnetfeldstärken B bei zwei verschiedenen Beschleunigungsspannungen, sowie eine Ausgleichsgerade durch die Messwerte aufgetragen. Aus dem Proportionalitätsfaktor A ergibt sich nach Formel [FORMEL 5] die spezifische Ladung $\frac{e_0}{m_0}$ durch die in Gleichung \eqref{eq:spez_Ladung} wiedergegebene Rechenvorschrift.
+\begin{equation}
+\label{eq:spez_Ladung}
+\frac{e_0}{m_0} = 8 \cdot U_B \cdot A^2
+\end{equation}
+%
+\begin{figure}
+\centering
+\includegraphics{b.pdf}
+\caption{Zur spezifischen Ladung: Quotient $\frac{D}{L^2 + D^2}$ in 1/m gegen B in T}
+\label{fig:b}
+\end{figure}
+%
+Als Steigung dieser Geraden errechnen sich die in Tabelle \ref{tab:steigungen} wiedergegebenen Werte. Ebenfalls in dieser Tabelle zu finden sind die daraus resultierenden Werte für die spezifische Ladung des Elektrons, sowie die Fehler der einzelnen Ergebnisse. Der Fehler der spezifischen Ladung wird mithilfe einer Gau\ss schen Fehlerfortpflanzung von \eqref{eq:spez_Ladung}. Dabei ist A, also die Steigung der Geraden in Abb. \ref{fig:b} die Fehlerbehaftete Größe.
+%
+\begin{table}
+  \centering
+  \begin{tabular}{S S S S}
+    \toprule
+    $U_B${ in V} & {A in \si{\metre\per\volt\second}} & $\frac{e_0}{m_0}${ in \si{\coulomb\per\kilo\gram}} & $\Delta \frac{e_0}{m_0}${ in \si{\coulomb\per\kilo\gram} }\\
+    \midrule
+     250 &-13030.4& 3.4 $\cdot 10^{11}$ & 6 $\cdot 10^{7}$ \\
+     450 & -9872.4& 3.5 $\cdot 10^{11}$& 3 $\cdot 10^{7}$ \\
+ \bottomrule
+  \end{tabular}
+  \caption{Proportionalitätsfaktoren und spez. Ladung}
+  \label{tab:steigungen}
+\end{table}
+%
+Somit ergibt sich in diesem Versuch der Wert der spezifischen Ladung zu
+\begin{equation*}
+\frac{e_0}{m_0} = \SI{3.45e11}{\coulomb\per\kilo\gram}
+\end{equation*}
+Es wird kein Fehler beim Endgültig bestimmten Wert angegeben, da dieser kleiner ist, als die niedrigste betrachtete Nachkommastelle.
+\subsubsection{Lokale Erdmagnetfeldstärke}
