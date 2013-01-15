@@ -2,3 +2,170 @@
 % Attribution-NonCommercial 3.0 Unported License. To view a copy of this
 % license, visit http://creativecommons.org/licenses/by-nc/3.0/.
 
+\section{Theorie}
+
+\subsection{Ablenkung des Strahls im elektrischen Feld}
+
+Bewegt sich ein Elektron im homogenen elektrischen Feld, das von zwei
+gegenüberliegenden geladenen Platten mit Potentialdifferenz $U_d$, deren
+Ausdehnung im Vergleich zu ihrem Abstand $d$ groß ist, erzeugt wird,
+wirkt die konstante Kraft (der elektrische Teil der
+sog. \name{Lorentz}-Kraft)
+%
+\begin{equation}
+  \label{eq:force}
+  \vec{F} = -e_0 \frac{U_d}{d} \vec{e}_y
+\end{equation}
+%
+auf das Elektron mit der Ladung $e_0$. Die Kraft wirke parallel zur
+$y$-Richtung. Mit \name{Newton}s Bewegungsgleichung
+%
+\begin{equation}
+  \label{eq:newton}
+  m_0 \tdd{\vec{r}}{t} = \vec{F} = -e_0 \frac{U_d}{d} \vec{e}_y
+\end{equation}
+%
+ergibt sich für den Geschwindigkeitsvektor des Elektrons, das zum
+Zeitpunkt $t_1$ in das Feld eindringt und es zum Zeitpunkt $t_2$
+verläßt, der Term
+%
+\begin{equation}
+  \label{eq:velocity}
+  \vec{v} = \td{\vec{r}}{t} = \vec{v}_1 - \frac{e_0}{m_0}\frac{U_d}{d}
+  (t_2-t_1) \vec{e}_y \:.
+\end{equation}
+%
+Hier bezeichnet $\vec{v}_1$ den Geschwindigkeitsvektor des Elektrons zum
+Zeitpunkt $t_1$ und $m_0$ dessen Masse.
+
+Sei die Ausdehnung der Platten in $z$-Richtung nun $p$ und in der
+Entfernung $L$ stehe ein Schirm mit einer Beschichtung, die beim
+Auftreffen des Elektrons leuchtet. So kann die vertikale Ablenkung $D$
+(in $y$-Richtung) des Elektrons beim Auftreffen auf den Schirm wie folgt
+bestimmt werden.
+
+Nach Verlassen des Feldes zum Zeitpunkt $t_2$ wirkt auf das Elektron
+keine Kraft mehr. Es bewegt sich daher gleichförmig und die $y$ und
+$z$-Komponenten des Geschwindigkeitsvektors schließen den
+Winkel~$\theta$ ein. Für kleine Winkel ist der Fehler gering, wenn
+$\tan\theta$ durch $\theta$ ersetzt wird, so daß
+%
+\begin{equation}
+  \label{eq:theta-velocity}
+  \frac{v_y}{v_z} = \theta
+\end{equation}
+%
+eine gute Nährung darstellt. In gleicher Weise ergibt sich  auch
+%
+\begin{equation}
+  \label{eq:distance-deflexion}
+  \frac{D}{L} = \theta \:.
+\end{equation}
+%
+Die Zeitdifferenz~$\Delta t = t_2-t_1$, die das Elektron benötigt, um
+die Platten zu durchqueren kann durch seine Geschwindigkeit in
+$z$-Richtung bestimmt werden. Es gilt
+%
+\begin{equation}
+  \Delta t = \frac{p}{v_z} \:.
+\end{equation}
+%
+Wird diese Beziehung in Formel~\eqref{eq:velocity} eingesetzt und
+$\langle\vec{v}_1,\vec{e}_y\rangle = 0$ angenommen, so
+liest sich die $y$-Komponente jener Gleichung als
+%
+\begin{equation}
+  \label{eq:vel-y-vel-z}
+  v_y = - \frac{e_0}{m_0}\frac{U_d}{d} \frac{p}{v_z} \:.
+\end{equation}
+%
+Mit Gleichung~\eqref{eq:theta-velocity} folgt daraus, daß
+%
+\begin{equation}
+  \label{eq:theta-vel-z}
+  \theta = - \frac{e_0}{m_0}\frac{U_d}{d} \frac{p}{v_z^{\,2}} \:.
+\end{equation}
+%
+Die Verschiebung des Leuchtpunktes durch die Ablenkung des
+Elektronenstrahls kann aus Formel~\eqref{eq:distance-deflexion} und
+\eqref{eq:theta-vel-z} erhalten werden:
+%
+\begin{equation}
+  \label{eq:deflexion}
+  D = L\theta = - \frac{e_0}{m_0}\frac{U_d}{d} \frac{Lp}{v_z^{\,2}} \:.
+\end{equation}
+%
+In Abschnitt~\vref{sec:erzeugung-elektronenstrahl} wird beschrieben wie
+genau die betrachteten Elektronen erzeugt werden und zwischen die
+Platten gelangen, in denen sie dann abgelenkt werden. Mithilfe von
+Formel~\eqref{eq:acc-volt-vel-z} kann dann $v_z$ aus
+\eqref{eq:deflexion} eliminiert werden. Also ist
+%
+\begin{equation}
+  D = - \frac{Lp}{2d} \frac{U_d}{U_B} \:,
+\end{equation}
+%
+wobei $U_B$ die Beschleunigungspannung der Elektronenkanone ist.
+
+\subsection{Ablenkung des Strahls im magnetischen Feld}
+
+Im magnetischen Feld wirken Kräfte nur auf bewegte Ladungen. In diesem
+Fall sind die bewegten Ladungen Elektronen (Ladung $e_0$ mit Masse
+$m_0$), die sich mit Geschwindigkeit $\vec{v}$ bewegen. Im Feld,
+beschrieben durch die magnetische Flußdichte $\vec{B}$, wirkt auf sie
+der magnetische Teil der sog. \name{Lorentz}-Kraft
+%
+\begin{equation}
+  \label{eq:mag-lorentz-force}
+  \vec{F} = e_0 (\vec{v} \times \vec{B}) \:.
+\end{equation}
+%
+Wenn das Magnetfeld homogen, d.\,h. zeitlich und örtlich konstant ist,
+und das Koordinatensystem so gewählt ist, daß die Kraft parallel zur
+$x$-Achse wirkt, ist
+%
+\begin{equation}
+  \label{eq:mag-induction}
+  \vec{B} = \Vert\vec{B}\Vert \,\vec{e}_x \:.
+\end{equation}
+%
+Der Elektronenstrahl trifft nun mit konstanter Geschwindigkeit $\vec{v}
+= v_0 \,\vec{e}_z$ in das homogene Magnetfeld. Es wirkt auf ein einzelnes
+Elektron in diesem Moment nun die Kraft
+%
+\begin{equation}
+  \label{eq:mag-force}
+  \vec{F} = e_0 v_0 \,\Vert\vec{B}\Vert \,\vec{e}_y \:.
+\end{equation}
+%
+Das Elektron bewegt sich also aufgrund der Kraftwirkung auf einer
+gekrümmten Bahn parallel zur $yz$-Ebene. Aus
+Gl.~\eqref{eq:mag-lorentz-force} ist nun ersichtlich, daß in jedem
+Bahnpunkt
+%
+\begin{equation}
+  \langle \vec{F}, \d\vec{s} \,\rangle = 0 \:.
+\end{equation}
+%
+Also steht die Kraft immer senkrecht auf dem Wegelement $\d\vec{s}$ der
+Kurve. Die potentielle Energie des Elektrons ändert sich daher nicht.
+Wegen der Energie-Erhaltung ist die kinetische Energie ebenfalls
+konstant. Da die kin. Energie $T = \frac{1}{2} m_0 \vec{v}^{\,2}$ in
+Funktion der Geschwindigkeit steht, muß die Größe $\Vert\vec{v}\Vert$
+der Geschwindigkeit ebenfalls konstant sein, d.\,h.
+%
+\begin{equation}
+  \Vert\vec{v}\Vert = v_0,
+\end{equation}
+%
+in jedem Bahnpunkt. Der Krümmungsradius der Bahn ergibt sich dann aus dem
+Gleichgewicht von \name{Lorentz}-Kraft und Zentrifugalkraft.
+%
+\begin{equation}
+  e_0 v_0 \Vert\vec{B}\Vert = \frac{m_0 \vec{v}^{\,2}}{r} = \frac{m_0
+    v_0}{r}
+  \iff r = \frac{m_0 v_0}{e_0 \Vert\vec{B}\Vert} \:.
+\end{equation}
+%
+Die rechte Seite der erhaltenen Gleichung ist konstant, also bewegt sich
+das Elektron auf einer Kreisbahn.
