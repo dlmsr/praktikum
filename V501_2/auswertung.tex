@@ -10,13 +10,7 @@ Die Elektronen werden in diesem Versuch in die y-Achse der Kathodenstrahlröhre 
 %
 \subsubsection{Empfindlichkeit der Kathodenstrahlröhre}
 %
-Die Empfindlichkeit E einer Kathodenstrahlröhre bezeichnet den
-Quotienten $\frac{D}{U_d}$, also die Ablenkung pro angelegter
-Ablenkspannung. In Abb.~\ref{fig:empfindlichkeit} ist ein Plot der
-aufgenommenen Ablenkungen des Elektronenstrahls gegen die angelegte
-Ablenkspannung für die Beschleunigungsspannungen $U_B$ =
-\SIlist{200;260;320;440;500}{\volt} abgebildet. Im selben Plot sind
-auch die jeweiligen Ausgleichsgeraden zu finden.
+Die Empfindlichkeit E einer Kathodenstrahlröhre bezeichnet den Quotienten $\frac{D}{U_d}$, also die Ablenkung pro angelegter Ablenkspannung. In Abb. \ref{fig:empfindlichkeit} ist ein Plot der aufgenommenen Ablenkungen des Elektronenstrahls gegen die angelegte Ablenkspannung für die Beschleunigungsspannungen $U_B$ = \SI{200}{\volt}, \SI{260}{\volt}, \SI{320}{\volt}, \SI{440}{\volt} und \SI{500}{\volt} abgebildet. Im selben Plot sind auch die jeweiligen Ausgleichsgeraden zu finden.
 %
 Die Koeffizienten und deren Fehler der Ausgleichsgerade werden durch eine lineare Ausgleichsrechnung bestimmt\footnote{Dazu wurde \texttt{ipython}
  in der Version 0.13  verwendet}.
@@ -97,12 +91,7 @@ Die in diesem Versuch verwendete Kathodenstrahlröhre gleicht in ihrem Aufbau un
 %
 \subsubsection{Spezifische Ladung des Elektrons}
 %
-In Abb. \ref{fig:b} sind der Quotient $\frac{D}{L^2 + D^2}$ gegen die verwendeten Magnetfeldstärken B bei zwei verschiedenen Beschleunigungsspannungen, sowie eine Ausgleichsgerade durch die Messwerte aufgetragen. Die Stärke des Magnetfeldes eines Helmholtzspulenpaares mit N Windungen und dem Radius R erhält man aus der verwendeten Stromstärke I nach Formel \eqref{eq:helmholtz_strom}. Aus dem Proportionalitätsfaktor A ergibt sich nach Formel~\eqref{eq:spec-charge-measurement} die spezifische Ladung $\frac{e_0}{m_0}$ durch die in Gleichung \eqref{eq:spez_Ladung} wiedergegebene Rechenvorschrift.
-%
-\begin{equation}
-\label{eq:helmholtz_strom}
-B = 4\pi \cdot 10^{-7} \cdot \frac{8}{\sqrt{125}} \cdot \frac{NI}{R}
-\end{equation}
+In Abb. \ref{fig:b} sind der Quotient $\frac{D}{L^2 + D^2}$ gegen die verwendeten Magnetfeldstärken B bei zwei verschiedenen Beschleunigungsspannungen, sowie eine Ausgleichsgerade durch die Messwerte aufgetragen. Die Stärke des Magnetfeldes eines Helmholtzspulenpaares mit N Windungen und dem Radius R erhält man aus der verwendeten Stromstärke I nach Formel \eqref{eq:mag-force-helmholtz}. Aus dem Proportionalitätsfaktor A ergibt sich nach Formel \eqref{eq:spec-charge-measurement} die spezifische Ladung $\frac{e_0}{m_0}$ durch die in Gleichung \eqref{eq:spez_Ladung} wiedergegebene Rechenvorschrift.
 %
 \begin{equation}
 \label{eq:spez_Ladung}
@@ -139,7 +128,7 @@ Somit ergibt sich in diesem Versuch der Wert der spezifischen Ladung zu
 Es wird kein Fehler beim endgültig bestimmten Wert angegeben, da dieser kleiner ist, als die niedrigste betrachtete Nachkommastelle.
 \subsubsection{Lokale Erdmagnetfeldstärke}
 %
-Nach der Drehung des Kathodenstrahlrohres von Nord-Süd-Richtung in Ost-West-Richtung wird eine Stromstärke von  \SI{0.85}{\ampere} in den verwendeten Helmholtzspulen benötigt, um mit diesen ein Magnetfeld zu erzeugen, welches die durch das Erdmagnetfeld verursachte Ablenkung des Strahls ausgleicht. Nach Formel \eqref{eq:helmholtz_strom} ergibt sich somit für die horizontale Magnetfeldstärke $B_hor$ ein Wert von \SI{50.4}{\micro\tesla}.
+Nach der Drehung des Kathodenstrahlrohres von Nord-Süd-Richtung in Ost-West-Richtung wird eine Stromstärke von  \SI{0.85}{\ampere} in den verwendeten Helmholtzspulen benötigt, um mit diesen ein Magnetfeld zu erzeugen, welches die durch das Erdmagnetfeld verursachte Ablenkung des Strahls ausgleicht. Nach Formel \eqref{eq:mag-force-helmholtz} ergibt sich somit für die horizontale Magnetfeldstärke $B_hor$ ein Wert von \SI{50.4}{\micro\tesla}.
 
 Um nun die Gesamtfeldstärke zu berechnen wird der Inklinationswinkel $\phi$ des Magnetfeldes in Versuchsnähe benötigt. In Tabelle \ref{tab:winkel} sind die in einer Messreihe bestimmten Inklinationswinkel angegeben. Als Mittelwert ergibt sich $\phi$ $\approx$ \SI{70.5}{\degree} $\pm$ \SI{9.4}{\degree}. Daraus lässt sich leicht mithilfe von Trigonometrie die gesamte lokale Erdmagnetfeldstärke B bestimmen. Es ergibt sich, dass 
 \begin{equation*}
