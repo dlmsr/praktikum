@@ -1,0 +1,48 @@
+# This work is licensed under the Creative Commons
+# Attribution-NonCommercial 3.0 Unported License. To view a copy of this
+# license, visit http://creativecommons.org/licenses/by-nc/3.0/.
+
+# Kristallwinkel	Rate bei 35kV mit Rubidium
+# theta/°	R(35kV)/Imp/s
+
+10.0	64.0
+10.1	66.0
+10.2	70.0
+10.3	67.0
+10.4	68.0
+10.5	66.0
+10.6	66.0
+10.7	65.0
+10.8	66.0
+10.9	62.0
+11.0	65.0
+11.1	65.0
+11.2	65.0
+11.3	62.0
+11.4	62.0
+11.5	65.0
+11.6	64.0
+11.7	62.0
+11.8	58.0
+11.9	61.0
+12.0	66.0
+12.1	71.0
+12.2	84.0
+12.3	105.0
+12.4	116.0
+12.5	126.0
+12.6	128.0
+12.7	135.0
+12.8	132.0
+12.9	128.0
+13.0	127.0
+13.1	125.0
+13.2	128.0
+13.3	122.0
+13.4	120.0
+13.5	122.0
+13.6	118.0
+13.7	110.0
+13.8	106.0
+13.9	97.0
+14.0	94.0
