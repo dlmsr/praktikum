@@ -1,4 +1,4 @@
-Zeit t in 1/240 s # Anz. Impulse
+# Zeit t in 1/240 s / Anz. Impulse
 1	2865
 2	2501
 3	2394

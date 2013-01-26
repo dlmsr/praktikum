@@ -1,4 +1,4 @@
-Zeit t in 1/20 s # Anz. Impulse
+#Zeit t in 1/20 s / Anz. Impulse
 1	924
 2	448
 3	369
