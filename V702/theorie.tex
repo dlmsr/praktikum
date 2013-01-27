@@ -1,0 +1,53 @@
+% This work is licensed under the Creative Commons
+% Attribution-NonCommercial 3.0 Unported License. To view a copy of this
+% license, visit http://creativecommons.org/licenses/by-nc/3.0/.
+
+\section{Theorie}
+%
+\subsection{Erzeugung radioaktiver Isotope}
+%
+Die in diesem Versuch zu untersuchenden radioaktiven Isotope von Rhodium und Indium besitzen eine Halbwertszeit von einigen Sekunden bis Stunden. Die Halbwertszeit T bezeichnet die Zeit, nach der von einer Anfangsmenge von Kernen gerade die Hälfte zerfallen ist. Aus diesem Grund müssen diese Isotope direkt vor Beginn der Messung erzeugt werden.
+Ein Kern wird instabil, sobald das Verhältnis zwischen der Anzahl der Neutronen zur Anzahl der Protonen im Kern einen bestimmten Wert überschreitet. Um dies zu erreichen, werden in diesem Versuch die zu untersuchenden Elemente mit langsamen Neutronen beschossen, welche aus einer Neutronenquelle stammen.
+Das Neutronen, welche sich zu schnell fortbewegen, selten mit Atomkernen wechselwirken liegt daran, dass diese dann nicht lange genug im Wirkungsbereich des Kerns bleiben. 
+Die aus der Neutronenquelle stammenden Neutronen besitzen eine zu hohe Geschwindigkeit. Mithilfe von Paraffin lässt sich diese jedoch verringern. Dies ist möglich, da Paraffin größtenteils aus Wasserstoff besteht. Die Neutronen führen elastische Stöße mit den Wasserstoffatomen aus und übertragen aufgrund des geringen Massenunterschieden zwischen Wasserstoffatom und Neutron einen Großteil ihrer kinetischen Energie auf die Wasserstoffatome.
+%
+\subsection{Radioaktiver Zerfall der Isotope}
+%
+Nach Aufnahme eines Neutrons durch einen Kern bildet sich ein sogenannter ,,Zwischenkern", dessen Energie um die kinetische und die Bindungsenergie des aufgenommenen Neutrons größer ist als die des ursprünglichen Kerns. Diese Energie verteilt sich zunächst auf alle Nukleonen im Kern und wird nach etwa \SI{10e-16}{\second} in Form eines $\gamma$-Quants abgestrahlt. Der nun entstandene, instabile, Kern emittiert nach kurzer Zeit ein Elektron, welches durch Umwandlung eines Neutrons in ein Proton und dem emittierten Elektron entstanden ist. Dieses emittierte Elektron bezeichnet man als $\beta^{-}$-Strahlung. Die überschüssige Energie wird in kinetische Energie des emittierten Elektrons und in ein Antineutrino $\bar{\nu_{e}}$ umgewandelt. In Formel \eqref{eq:zerfall} ist gesamte Reaktionskette zu finden.
+%
+\begin{align}\label{eq:zerfall}
+\begin{split}
+{}^{m}_{z}\mathrm{A} + {}^{1}_{0}\mathrm{n} \longrightarrow {}^{m+1}_{z}\mathrm{A*} \longrightarrow {}^{m+1}_{z}\mathrm{A}\\
+{}^{m+1}_{z}\mathrm{A} \longrightarrow {}^{m+1}_{z+1}\mathrm{C} + \beta^{-} + E_{\text{kin}} + \bar{\nu_\text{e}}
+\end{split}
+\end{align} 
+%
+Bei einer großen Anzahl von radioaktiven Kernen ergibt sich das in Formel \eqref{eq:expo} wiedergegebene Verhalten für die Anzahl der Kerne nach einer Zeit t, wobei zum Zeitpunkt t=0 $N_0$ Kerne existieren. Die Zerfallskonstante $\lambda$ ist dabei eine materialspezifische Konstante.
+%
+\begin{equation}
+N(t) = N_0 \cdot e^{- \lambda T}
+\label{eq:expo}
+\end{equation}
+Bei Betrachtung der halben Anzahl der Startkerne, ergibt sich für die Halbwertszeit T folgender Zusammenhang zwischen Zerfallskonstante und Halbwertszeit:
+\begin{equation}
+T = \log(2)/\lambda
+\label{eq:halbwertszeit}
+\end{equation}
+%
+Da sich die Anzahl der noch nicht zerfallenen Kerne kaum messen lässt, ist eine Betrachtung der statt gefundenen Zerfälle $N_{\Delta t}$(t) notwendig. $\Delta$t bezeichnet das Zeitintervall, in dem Zerfälle betrachtet werden. Es ergibt sich ein Zusammenhang zwischen Zerfallskonstante und Anzahl Zerfälle in $\Delta$t, der durch Formel \eqref{eq:a} beschrieben wird.
+%
+\begin{equation}
+N_{\Delta t}(t) = N_0 \cdot (1- e^{-\lambda \Delta t}) \cdot e^{-\lambda t}
+\label{eq:a}
+\end{equation}
+%
+Nun soll noch auf die Eigenheiten von Rhodium bei der Aktivierung eingegangen werden.
+Wird Rhodium durch Beschuss mit langsamen Neutronen aktiviert, so wird ein Anteil von ca. \SI{90}{\percent} der Atome direkt zum radioaktiven Isotop ${}^{104}$Rh. Die restlichen \SI{10}{\percent} werden zunächst noch zum energiereicheren Isotop ${}^{104i}$Rh, welches durch Emission eines $\gamma$-Quants in  ${}^{104}$Rh übergeht. Die hierbei abgestrahlten $\gamma$-Quanten beeinflussen die Messung.
+%
+\begin{figure}[h]
+\centering
+\includegraphics{neutronenquelle.pdf}
+\caption{Schematischer Aufbau der verwendeten Neutronenquelle. Quelle: \textcite{v702}}
+\label{fig:neutronenquelle}
+\end{figure}
+%
