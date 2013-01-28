@@ -6,7 +6,7 @@
 
 \subsection{Überprüfung der \name{Bragg}-Bedingung}
 
-Aus Tabelle~\ref{tab:bragg-bed} kann entnehmen werden, daß das Maximum
+Aus Tabelle~\ref{tab:bragg-bed} kann entnommen werden, daß das Maximum
 der Zählrate unter dem Zählrohr-Winkel \SI{27.9}{\degree} erreicht
 ist. Das liefert für den Glanzwinkel
 %
@@ -15,16 +15,32 @@ ist. Das liefert für den Glanzwinkel
 \end{equation}
 %
 Der Winkel weicht also nur um \SI{0.05}{\degree} vom erwarteten Winkel
-von \SI{14}{\degree} ab. Damit ist die \name{Bragg}-Bedingung bestätigt.
-
+von \SI{14}{\degree} ab. Damit ist die \name{Bragg}-Bedingung
+bestätigt. Eine graphische Darstellung der Meßwerte aus
+Tabelle~\ref{tab:bragg-bed} kann in Abbildung~\ref{fig:bragg-bedingung}
+gefunden werden. Das Maximum ist hier deutlich im Bereich um
+\SI{28}{\degree} ausgeprägt.
 
 \begin{table}
-  \centering
-  \begin{tabular}{SS}
+  \centering\footnotesize
+  \begin{tabular}{SSSSSSSS}
     \toprule
+    {$\theta/\si{\degree}$} & {Zählrate} &
+    {$\theta/\si{\degree}$} & {Zählrate} &
+    {$\theta/\si{\degree}$} & {Zählrate} &
     {$\theta/\si{\degree}$} & {Zählrate} \\
     \midrule
-%    \input{bragg-bedingung}
+26.0 & 58.0 & 27.1 & 163.0 & 28.2 & 191.0 & 29.3 & 64.0 \\
+26.1 & 62.0 & 27.2 & 167.0 & 28.3 & 180.0 & 29.4 & 57.0 \\
+26.2 & 74.0 & 27.3 & 173.0 & 28.4 & 166.0 & 29.5 & 49.0 \\
+26.3 & 83.0 & 27.4 & 173.0 & 28.5 & 154.0 & 29.6 & 43.0 \\
+26.4 & 94.0 & 27.5 & 183.0 & 28.6 & 150.0 & 29.7 & 38.0 \\
+26.5 & 102.0 & 27.6 & 198.0 & 28.7 & 145.0 & 29.8 & 38.0 \\
+26.6 & 120.0 & 27.7 & 197.0 & 28.8 & 125.0 & 29.9 & 38.0 \\
+26.7 & 125.0 & 27.8 & 189.0 & 28.9 & 108.0 & 30.0 & 45.0 \\
+26.8 & 135.0 & 27.9 & 201.0 & 29.0 & 101.0 &  &  \\
+26.9 & 139.0 & 28.0 & 199.0 & 29.1 & 87.0 &  &  \\
+27.0 & 154.0 & 28.1 & 199.0 & 29.2 & 79.0 &  & \\
     \bottomrule
   \end{tabular}
   \caption{Die Meßwerte zur Überprüfung der \name{Bragg}-Bedingung. Der
@@ -33,9 +49,184 @@ von \SI{14}{\degree} ab. Damit ist die \name{Bragg}-Bedingung bestätigt.
   \label{tab:bragg-bed}
 \end{table}
 
+\begin{figure}
+  \centering
+  \includegraphics[width=0.7\textwidth]{bragg-bedingung}
+  \caption{Plot der Meßwerte zur Untersuchung der \name{Bragg}-Bedingung}
+  \label{fig:bragg-bedingung}
+\end{figure}
+
 \subsection{Emissionspektrum der Kupferanode}
 
+Das Emissionsspektrum der verwendeten \name{Röntgen}-Röhre ist in
+Abbildung~\ref{fig:cu-emission} dargestellt. Man erkennt deutlich die
+beiden K-Linien. Davor befindet sich der sogenannte Bremsberg, die
+flache Erhebung im Bereich von \SIrange{5}{20}{\degree}.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.7\textwidth]{cu-emission}
+  \caption{Emissionsspektrum der Kupferanode. Erkennbar sind Bremsberg
+    (kleine Erhebung) und die beiden scharfen Linien (rechts)}
+  \label{fig:cu-emission}
+\end{figure}
+
+Zur Bestimmung der Halbwertsbreiten der beiden K-Linien werden die
+Meßpunkte in einer Umgebung $U$ um die jeweilige Linie herum mithilfe
+von kubischen Splines interpoliert. Mit der Interpolation $P\colon
+U\to\R$ werden nun jeweils die Winkel $\theta\in U$ aus der Umgebung um
+das Maximum bestimmt, an denen der Funktionswert auf die Hälfte des
+Maximums gefallen ist.
+
+Dazu wird die Funktion $H(\theta) := P(\theta) - \frac{1}{2}
+\max\{P(\theta):\theta\in U\}$ definiert, die genau an den gesuchten
+Winkeln Nullstellen hat. Es werden also einfach die Nullstellen von $H$
+bestimmt. Der Abstand der beiden Nullstellen liefert die beiden
+Halbwertsbreiten.\footnote{Zur Interpolation und Nullstellenbestimmung
+  wurde die \texttt{scipy}-Bibliothek in der Version 0.11 verwendet.}
+
+Das Ergebnis der Interpolationen und Halbwertsbreitenbestimmung ist in
+Abbildung~\ref{fig:halbwertsbreite} zu sehen. Hier sind die Graphen der
+interpolierenden Funktion $P$ in grün dargestellt. Die blauen vertikalen
+Geraden schneiden die Graphen auf der Hälfte der Höhe des Maximums. Als
+Ergebnis ergibt sich für die Halbwertsbreite der $K_\alpha$-Linie
+%
+\begin{equation}
+  h = \SI{0.496}{\degree}.
+\end{equation}
+%
+Die Halbwertsbreite der $K_\beta$-Linie beträgt
+%
+\begin{equation}
+  h = \SI{0.44}{\degree}
+\end{equation}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.7\textwidth]{halbwertsbreiten}
+  \caption{Die Interpolation $P$ der Linien und Bestimmung der
+    Halbwertsbreite. Für die $\mathrm{K}_\alpha$-Linie wurde
+    $U=[\SI{20.4}{\degree}, \SI{21.2}{\degree}]$ gewählt, für die
+    $\mathrm{K}_\beta$-Linie $U = [\SI{22.8}{\degree}, \SI{23.4}{\degree}]$.}
+  \label{fig:halbwertsbreite}
+\end{figure}
 
 
-\subsection{Absorptionsspektren verschiedener Materialien}
+\subsection{Absorptionsspektren der verwendeten Materialien}
 
+Aus den Abbildungen~\ref{fig:au-absorption}--\ref{fig:zr-absorption}
+werden die Winkel $\theta$ der Absorptionskanten abgelesen. Mithilfe der
+\name{Bragg}-Bedingung~\eqref{eq:bragg-bed} bestimmt man nun die
+zugehörigen Wellenlängen, aus denen dann wiederum mithilfe von
+Formel~\eqref{eq:e=hf} die zugehörige Absorptionsenergie bestimmt
+wird. Für alle verwendeten Elemente außer Gold kann dann aus
+Formel~\eqref{eq:sigma_k} die sogenannte Abschirmzahl
+$\sigma_\mathrm{K}$ errechnet werden. In Tabelle~\ref{tab:absorption}
+sind die berechneten Werte zu finden.
+
+\begin{table}
+  \centering\footnotesize
+  \begin{tabular}{lSSSSS}
+    \toprule
+    & $Z$ & {$\theta/\si{\degree}$} &
+    {$\lambda/\si{\pico\metre}$}&
+    {$E_\mathrm{K}/\si{\kilo\electronvolt}$}&
+    {$\sigma_\mathrm{K}$}\\
+    \midrule
+    Ge (Germanium) & 32 & 16.4 & 113.73 & 10.9 & 3.94\\
+    Nb (Niob) & 41 & 10 & 69.95 & 17.72 & 5.43 \\
+    Rb (Rubidium) & 37 & 12.3 & 85.81 & 14.45 & 4.79\\
+    Zn (Zink) & 30 & 19.3 & 133.13 & 9.31 & 4.04 \\
+    Zr (Zirkonium) & 40 & 10.5 & 73.40 & 16.89 & 5.25\\
+    \bottomrule    
+  \end{tabular}
+  \caption{Abgelesene Winkel, Wellenlängen und Energien der Absorptionsspektren}
+  \label{tab:absorption}
+\end{table}
+
+Für Gold ergeben sich zwei Kanten, für die dann eine andere
+Abschirmzahl~$\sigma_\mathrm{L}$ bestimmt werden kann. Dazu wird die
+Differenz der Energien, die man aus den Wellenlängen der Kanten mithilfe
+von Formel~\eqref{eq:e=hf} erhält, in Formel~\eqref{eq:sigma_l}
+eingesetzt. Die Ergebnisse dazu finden sich in
+Tabelle~\ref{tab:gold-absorption}.
+
+\begin{table}
+  \centering
+  \begin{tabular}{lSS}
+    \toprule
+    $\theta/\si{\degree}$ &13.5 & 15.5 \\
+    $\lambda/\si{\pico\metre}$ & 94 & 107.6\\
+    $E/\si{\kilo\electronvolt}$ & 13.19 & 11.52\\
+    \midrule
+    $\sigma_L$ & \multicolumn{2}{c}{3,5} \\
+    \bottomrule
+  \end{tabular}
+  \caption{Winkel der L-Kanten von Gold und die zugehörigen
+    Wellenlängen sowie Energien. Die Abschirmzahl wird aus der
+    Energiedifferenz und der Kernladungszahl bestimmt.}
+  \label{tab:gold-absorption}
+\end{table}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.7\textwidth]{au-absorption}
+  \caption{Absorptionsspektrum Gold}
+  \label{fig:au-absorption}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.7\textwidth]{ge-absorption}
+  \caption{Absorptionsspektrum Germanium}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.7\textwidth]{nb-absorption}
+  \caption{Absorptionsspektrum Niob}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.7\textwidth]{rb-absorption}
+  \caption{Absorptionsspektrum Rubidium}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.7\textwidth]{zn-absorption}
+  \caption{Absorptionsspektrum Zink}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.7\textwidth]{zr-absorption}
+  \caption{Absorptionsspektrum Zirkonium}
+  \label{fig:zr-absorption}
+\end{figure}
+
+\subsection{\name{Moseley}sches Gesetz}
+
+Die in Tabelle~\ref{tab:absorption} aufgelisteten Kernladungszahlen mit
+den zugehörigen Energien können in ein
+$\sqrt{E_\mathrm{K}}$-$Z$-Diagramm aufgetragen werden und mit einer
+linearen Ausgleichsrechnnung\footnote{Die lineare Regression wird mit
+  der Funktion \texttt{scipy.stats.linregress} aus der
+  \texttt{scipy}-Bibliothek in der Version 0.11 durchgeführt.} wird eine
+Gerade durch die Meßpunkte gezogen. Das Ergebnis der Regression kann in
+Abbildung~\ref{fig:moseley} betrachtet werden. Die ermittelte
+Geradengleichung lautet:
+%
+\begin{equation}
+  \label{eq:moseley-gerade}
+  \sqrt{E_\mathrm{K}} = \SI{3.29}{\electronvolt^{1/2}} \cdot Z
+  - \SI{1.54}{\electronvolt^{1/2}}
+\end{equation}
+
+\begin{figure}
+  \centering
+  \includegraphics{moseley-law}
+  \caption{Diagramm zum Moseleyschen Gesetz}
+  \label{fig:moseley}
+\end{figure}
