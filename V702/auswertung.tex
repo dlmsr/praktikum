@@ -1,0 +1,172 @@
+% This work is licensed under the Creative Commons
+% Attribution-NonCommercial 3.0 Unported License. To view a copy of this
+% license, visit http://creativecommons.org/licenses/by-nc/3.0/.
+
+\section{Auswertung}
+%
+\subsection{Zerfall des aktivierten Indiums}
+%
+Die Nullmessung zu dieser Messreihe ergibt einen Wert von $\frac{156}{600}$ Impulse pro Sekunde.
+In Tabelle \ref{tab:messwerte_indium} sind die registrieren Impulse des Geiger-Müller-Zählrohrs innerhalb der Zeitintervalle $\Delta$t = \SI{240}{\second} zu finden. Ein halblogarithmischer Plot der Impulse minus die Hintergrundstrahlung gegen die Zeit ist Abb. \ref{fig:plot_indium} zu entnehmen. Dort befindet sich ebenfalls ein Plot der Ausgleichsgeraden durch die eingezeichneten Messwerte. Die Parameter der Ausgleichsgeraden werden mithilfe einer linearen Ausgleichsrechnung bestimmt \footnote{Dazu wurde \texttt{ipython} in der Version 0.13  verwendet}. Als Funktion der Ausgleichsgerade ergibt sich der nachfolgende Ausdruck.
+%
+\begin{equation*}
+f_{\text{indium}}(x) = \SI{-0.213}{\per\milli\second} \cdot x + \SI{7.914}{} 
+\end{equation*}
+%
+Nach logarithmisieren der Gleichung in \eqref{eq:a} ergibt sich der in Formel \eqref{eq:steigung_konstante} wiedergegebene Zusammenhang zwischen Steigung m der Ausgleichsgeraden und Zerfallskonstante $\lambda$.
+%
+\begin{equation}
+\lambda = -m
+\label{eq:steigung_konstante} 
+\end{equation}
+%
+Zwischen y-Achsen-Abschnitt b der Geradengleichung und dem Ausdruck $\log{N_0 \cdot (1- e^{-\lambda \Delta t})}$ besteht Gleichheit.  
+%
+\begin{table}
+  \centering
+  \begin{tabular}{S S}
+    \toprule
+{Zeit t in s}& {Anzahl Impulse} \\
+    \midrule
+240&	2865\\
+480 &	2501\\
+720 & 2394\\
+960& 2292\\
+1200&2091\\
+1440&2067\\
+1680&1957\\
+1920&1853\\
+2160&1726\\
+2400&1682\\
+2640&1668\\
+2880&1540\\
+3120&1527\\
+3360&1417\\
+3600&1335\\
+ \bottomrule
+  \end{tabular}
+  \caption{Messwerte zum radioaktiven Zerfall von aktiviertem Indium}
+  \label{tab:messwerte_indium}
+\end{table}
+%
+\begin{figure}
+\centering
+\includegraphics{plot_indium.pdf}
+\caption{Halblogarithmischer Plot der aufgenommenen Messwerte zu Indium}
+\label{fig:plot_indium}
+\end{figure}
+%
+Also ergibt sich als Zerfallskonstante für  ${}^{116}$In in diesem Versuch:
+%
+\begin{equation*}
+\lambda = \SI{0.213}{\per\milli\second}.
+\end{equation*}
+%
+Daraus errechnet sich nach Formel \eqref{eq:halbwertszeit} der Wert für die Halbwertszeit zu 
+%
+\begin{equation*}
+T \approx \SI{3261}{\second} = \SI{54.35}{\minute}.
+\end{equation*}
+%
+Außerdem erhält man aus dem y-Achsen-Abschnitt b der Ausgleichsgeraden,
+
+\begin{centering}
+dass $\log{N_0 \cdot (1- e^{-\lambda \Delta t})}$ = \SI{7.914}{}.
+\end{centering}
+
+
+Als Fehler $\Delta$m und $\Delta$b ergeben sich durch die lineare Ausgleichsrechnung die nachfolgend genannten Werte.
+%
+\begin{equation*}
+\Delta m = \SI{0.00764}{\per\milli\second}
+\end{equation*}
+%
+\begin{equation*}
+\Delta b = \SI{0.017}{}
+\end{equation*}
+%
+Durch eine (hier triviale) Gau\ss sche Fehlerfortpflanzung von Formel \eqref{eq:steigung_konstante}, ergibt sich als endgültiges Ergebnis dieses Versuchs für die Zerfallskonstante von ${}^{116}$In :
+%
+\begin{equation*}
+\lambda = \SI{0.213}{\per\milli\second} \pm \SI{0.00764}{\per\milli\second}.
+\end{equation*}
+%
+Somit ergibt sich für die Halbwertszeit in diesem Versuch durch eine Gau\ss sche Fehlerforpflanzung von Formel \eqref{eq:halbwertszeit} : 
+%
+\begin{equation*}
+\text{T} = \SI{3261}{\second} \pm \SI{0.02}{\second}.
+\end{equation*}
+%
+\subsection{Zerfall des aktivierten Rhodiums}
+%
+Aus der Nullmessung zu dieser Messreihe ergibt sich ein Wert von $\frac{125}{600}$ Impulse pro Sekunde.
+Tabelle \ref{tab:messwerte_rhodium} enthält die Impulse des Geiger-Müller-Zählrohrs, welche innerhalb der Zeitintervalle $\Delta$t = \SI{240}{\second}registriert wurden. Ein halblogarithmischer Plot dieser Impulse minus die Hintergrundtrahlung gegen die Zeit ist in Abb. \ref{fig:plot_rhodium} zu finden. Dort befinden sich der Plot zweier Ausgleichsgeraden, welche mit Ausgleichsgerade 1 und Ausgleichsgerade 2 bezeichnet sind. Ausgleichsgerade 1 berücksichtigt nur die letzten 13 Messwerte. Ausgleichsgerade 2 beachtet nur die ersten 16 Werte, die sich ergeben, nachdem man die Impulse, welche vom langlebigem Isotop erzeugt werden, von den Messwerten abzieht. Die Parameter der Ausgleichsgeraden werden wie bei der Untersuchung von Indium mit einer linearen Ausgleichsrechnung bestimmt. Als Funktion der Ausgleichsgerade 1 ergibt sich der nachfolgende Ausdruck.
+%
+\begin{figure}[h]
+\centering
+\includegraphics{plot_rhodium.pdf}
+\caption{Halblogarithmischer Plot der aufgenommenen Messwerte zu Rhodium}
+\label{fig:plot_rhodium}
+\end{figure}
+%
+\begin{equation*}
+f_{\text{rhodium1}}(x) = \SI{-0.773}{\per\milli\second} \cdot x + \SI{3.326}{} ; x \ge \SI{480}{\second}
+\end{equation*}
+%
+%
+\begin{table}
+  \centering
+  \begin{tabular}{S S|S S}
+    \toprule
+{Zeit t in s}& {Anzahl Impulse} & {Zeit t in s}& {Anzahl Impulse}\\
+    \midrule
+20&	924 & 380 & 38 \\
+40&	448 & 400 & 32\\
+60&	369 & 420 & 29\\
+80&	259 & 440 & 38\\
+100&	208 & 460 & 32\\
+120&	174 & 480 & 29\\
+140&	157 & 500 & 21\\
+160&	128 & 520 & 19\\
+180&	111 & 540 & 25\\
+200&	83 & 560 & 19\\
+220&	67 & 580 & 28\\
+240&	68 & 600 & 21\\
+260&	50 & 620 & 25\\
+280&	47 & 640 & 15\\
+300&	40 & 660 & 19\\
+320&	32 & 680 & 19\\
+340&	32 & 700 & 26\\
+360&	32 & 720 & 21\\
+ \bottomrule
+  \end{tabular}
+  \caption{Messwerte zum radioaktiven Zerfall von aktiviertem Rhodium}
+  \label{tab:messwerte_rhodium}
+\end{table}
+%
+Mit analoger Rechnung zum ${}^{116}$In-Zerfall ergeben sich somit für das langlebigere Rhodiumisotop die nachstehenden Ergebnisse.
+%
+\begin{equation*}
+\lambda_1 = \SI{0.773}{\per\milli\second} \pm   \SI{0.885}{\per\milli\second}
+\end{equation*}
+% 
+\begin{equation*}
+T_1 = \SI{896}{\second} \pm   \SI{1026}{\second}
+\end{equation*}
+%
+Zieht man nun von den gemessenen Impulsen minus Hintergrundstrahlung die Impulse ab, die durch das langlebige Isotop entstehen, kann man auf gleicher Weise das kurzlebigere Rhodiumisotop untersuchen.
+Aus Gründen der statistischen Schwankung werden von dieser neu entstehenden Impulsanzahl nur die ersten 16 Werte betrachtet.
+Als Geradengleichung für die Ausgleichsgerade 2 ergibt sich somit :
+\begin{equation*}
+f_{\text{rhodium2}}(x) = \SI{-13.965}{\per\milli\second} \cdot x + \SI{6.751}{} ; x \le \SI{320}{\second}
+\end{equation*}
+Zum kurzlebigem Rhodiumisotop-Zerfall ergeben sich somit die unten genannten Ergebnisse.
+%
+\begin{equation*}
+\lambda_2 = \SI{13.965}{\per\milli\second} \pm   \SI{0.563}{\per\milli\second}
+\end{equation*}
+% 
+\begin{equation*}
+T_1 = \SI{49.64}{\second} \pm   \SI{2.00}{\second}
+\end{equation*}
+%
