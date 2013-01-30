@@ -11,11 +11,26 @@ from scipy import stats
 mpl.rcParams['text.usetex']=True
 mpl.rcParams['text.latex.unicode']=True
 
+# Planck
+h = 4.135667516e-15 # eV second
+# vacuum velo of light
+c = 299792458 # metre per second
+# diffraction distance
+d = 201.4e-12 # metre
+
+
 def halbwertsbreite(x, y):
     spline = UnivariateSpline(x, y-np.max(y)/2, s=0)
     r1, r2 = spline.roots() # find the roots
 
-    print "Halbwertsbreite: {0:.5e}".format(np.abs(r1-r2))
+    lambda1 = 2*d*np.sin(np.deg2rad(r1))
+    lambda2 = 2*d*np.sin(np.deg2rad(r2))
+    E1 = h*c/lambda1
+    E2 = h*c/lambda2
+    DE = E1 - E2
+    print 'Halbwertswinkel: {0:.5e} deg, {1:.5e} deg'.format(r1, r2)
+    print 'Halbwertsbreite: {0:.5e}'.format(np.abs(r1-r2))
+    print u'Energieaufloesung: {0:.5e} eV'.format(DE)
 
     xnew = np.linspace(min(x), max(x))
     ynew = spline(xnew)

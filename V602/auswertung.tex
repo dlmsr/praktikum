@@ -85,21 +85,42 @@ bestimmt. Der Abstand der beiden Nullstellen liefert die beiden
 Halbwertsbreiten.\footnote{Zur Interpolation und Nullstellenbestimmung
   wurde die \texttt{scipy}-Bibliothek in der Version 0.11 verwendet.}
 
+Die Nullstellen sind von der Software zu $\theta_1 =
+\SI{2.047}{\degree}$ und $\theta_2 = \SI{2.097}{\degree}$ ermittelt
+worden.
+
 Das Ergebnis der Interpolationen und Halbwertsbreitenbestimmung ist in
 Abbildung~\ref{fig:halbwertsbreite} zu sehen. Hier sind die Graphen der
 interpolierenden Funktion $P$ in grün dargestellt. Die blauen vertikalen
 Geraden schneiden die Graphen auf der Hälfte der Höhe des Maximums. Als
-Ergebnis ergibt sich für die Halbwertsbreite der $K_\alpha$-Linie
+Ergebnis ergibt sich für die Halbwertsbreite der $\mathrm{K}_\alpha$-Linie
 %
 \begin{equation}
   h = \SI{0.496}{\degree}.
 \end{equation}
 %
-Die Halbwertsbreite der $K_\beta$-Linie beträgt
+Die Halbwertsbreite der $\mathrm{K}_\beta$-Linie beträgt
 %
 \begin{equation}
   h = \SI{0.44}{\degree}
 \end{equation}
+
+Aus den beiden Winkeln $\theta_1,\theta_2$ können durch
+Gleichung~\ref{eq:photonenenergie} zugehörige Energien berechnet
+werden. Diese Energiedifferenz $\Delta E$ ist ein Maß für das
+Auflösungsvermögen der verwendeten Apparatur. Sie berechnet sich zu
+%
+\begin{equation}
+  \Delta E = \SI{199}{\electronvolt}
+\end{equation}
+%
+für die $\mathrm{K}_\alpha$-Linie und
+%
+\begin{equation}
+  \Delta E = \SI{142}{\electronvolt}
+\end{equation}
+%
+für die $\mathrm{K}_\beta$-Linie.
 
 \begin{figure}
   \centering
@@ -157,9 +178,9 @@ Tabelle~\ref{tab:gold-absorption}.
     \toprule
     $\theta/\si{\degree}$ &13.5 & 15.5 \\
     $\lambda/\si{\pico\metre}$ & 94 & 107.6\\
-    $E/\si{\kilo\electronvolt}$ & 33.85 & 29.57\\
+    $E/\si{\kilo\electronvolt}$ & 13.19 & 11.52\\
     \midrule
-    $\sigma_L$ & \multicolumn{2}{c}{11.7} \\
+    $\sigma_L$ & \multicolumn{2}{S}{4.99} \\
     \bottomrule
   \end{tabular}
   \caption{Winkel der L-Kanten von Gold und die zugehörigen
@@ -235,7 +256,7 @@ Die Rydberg-Energie berechnet sich aus dem Quadrat der Steigung der
 Geradengleichung dann zu
 %
 \begin{equation}
-  R_\infty = \SI{10.82}{\electronvolt}
+  h c R_\infty = \SI{10.82}{\electronvolt}
 \end{equation}
 %
 ab.

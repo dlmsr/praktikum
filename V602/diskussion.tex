@@ -11,12 +11,12 @@ nachgewiesen werden können. Eine absolute Abweichung von
 Die Bestimmung der Abschirmzahlen gelingt gut. In
 Tabelle~\ref{tab:abschirm-vergleich} können die ermittelten
 Abschirmzahlen mit den vorher aus den
-Literaturwerten\footcite{esrf-abschirm} berechneten Abschirmzahlen
-verglichen werden. Wie zu erkennen ist, weichen die Abschirmzahlen bis
-auf Germanium, dessen Abschirmzahl mit einem relativ geringen Fehler von
-nur \SI{7}{\percent} ermittelt worden ist, stark von den aus den
-Literaturwerten berechneten ab. Während der Messungen ist schon ein
-systematischer Fehler von \SIrange{1}{2}{\degree}
+Literaturwerten\footcitetext[entnommen aus][]{esrf-abschirm} berechneten
+Abschirmzahlen verglichen werden. Wie zu erkennen ist, weichen die
+Abschirmzahlen bis auf Germanium, dessen Abschirmzahl mit einem relativ
+geringen Fehler von nur \SI{7}{\percent} ermittelt worden ist, stark von
+den aus den Literaturwerten berechneten ab. Während der Messungen ist
+schon ein systematischer Fehler von \SIrange{1}{2}{\degree}
 aufgefallen. Möglicherweise liegt es daran.
 
 \begin{table}
@@ -39,5 +39,25 @@ aufgefallen. Möglicherweise liegt es daran.
   \label{tab:abschirm-vergleich}
 \end{table}
 
-Auch bei Gold liegt die Abschirmzahl um Längen nicht im erwarteten
-Bereich. Wir vermuten, daß die Energien nicht korrekt bestimmt worden sind.
+Die relative Abweichung der Abschirmzahl von Gold (erwarteter Wert
+$\sigma_\mathrm{L} = \num{3.5}$) beträgt \SI{42.6}{\percent}. Dieser
+Fehler ist wohlmöglich durch den obengenannten systematischen Fehler
+(ca. \SI{0.8}{\degree}) der ermittelten Winkel zu erklären. Subtrahiert
+man diesen Fehler von den beiden Winkeln und errechnet dann die
+Abschirmzahl erhält man $\sigma_\mathrm{L} = \num{3.07}$, womit sich
+eine relative Abweichung von nur \SI{12.3}{\percent} ergibt. Ähnliche
+Verbesserungen würden vermutlich auf bei den Abschirmzahlen der anderen
+Absorber beobachtet werden, subtrahierte man die \SI{0.8}{\degree}.
+
+Der Literaturwert für die Rydberg-Energie ist aus
+\textcite{codata:rydhcev} entnommen und lautet
+%
+\begin{equation}
+  h c R_\infty = \SI{13.6}{\electronvolt}.
+\end{equation}
+%
+Damit beträgt die relative Abweichung des gemessenen vom erwarteten Wert
+\SI{20.5}{\percent}. Auch hier läßt sich die Abweichung mit dem
+systematischen Fehler erklären, mit denen die Winkel der anderen
+Absorber behaftet sind.
+
