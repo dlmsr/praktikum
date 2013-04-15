@@ -1,5 +1,45 @@
 \section{Theorie}
 
-Körper, die sich in einer Flüssigkeit bewegen, erfahren eine
-Reibungskraft, die von der Form des Körpers und seiner Geschwindigkeit
-abhänging ist. 
+Eine Kugel, die durch eine Flüssigkeit fällt, erfährt Reibung. Die Größe
+der Reibung hängt von der Querschnittsfläche der Kugel und ihrer
+Geschwindigkeit, aber auch von der dynamischen Viskosität der
+Flüssigkeit ab. Ist die Bewegung der Kugel so gegeben, daß sich keine
+Wirbel in der Flüssigkeit ausbilden, die Strömung also laminar ist, kann
+man die Reibungskraft nach dem \name{Stokes}schen Gesetz angeben:
+\begin{equation}
+  \label{eq:stokes}
+  \vec{F} = -6 \pi \eta r \vec{v}.
+\end{equation}
+Hierbei ist $v$ die Fallgeschwindigkeit der Kugel und $\eta$ bezeichnet
+die dynamische Viskosität der Flüssigkeit.
+
+Während des Falls wirken drei verschiedene Kräfte auf die Kugel:
+Reibung, Auftrieb und Schwerkraft. Die beiden ersten sind der
+Schwerkraft entgegengerichtet. Nach hinreichend langer Zeit stellt sich
+ein Gleichgewicht ein und die Kugel bewegt sich mit konstanter
+Geschwindigkeit.
+
+Bei der Bestimmung der dynamischen Viskosität nach der Methode von Herrn
+\name{Höppler} läßt man eine Kugel in einem Rohr, dessen Durchmesser nur
+wenig größer als derjenige der Kugel ist, in einer Flüssigkeit
+hinabgleiten. Um Verwirbelungen zu vermeiden, ist das Rohr leicht
+geneigt, so daß die Kugel nicht zwischen den Wänden hin und her stößt.
+Aus der Dichte von Kugel $\rho_\text{K}$ und Flüssigkeit
+$\rho_\text{Fl}$ und der Fallzeit $t$ läßt sich nun mithilfe einer
+empirisch gewonnenen Formel die Viskosität $\eta$ berechnen.
+\begin{equation}
+  \label{eq:empirie}
+  \eta = K(\rho_\text{K} - \rho_\text{Fl})t
+\end{equation}
+Die Konstante $K$ wird auch als Apparaturkonstante bezeichnet und hängt
+von der Fallhöhe und der Kugelgeometrie ab.
+
+Die eben bestimmte dynamische Viskosität ist bei vielen Flüssigkeiten
+temperaturabhängig. In vielen Fällen läßt sich das Verhalten durch die
+sogenannte \name{Andrade}sche Gleichung beschreiben:
+\begin{equation}
+  \label{eq:andrade}
+  \eta(T) = A \exp \left( \frac{B}{T} \right).
+\end{equation}
+Hier sind $A$ und $B$ Konstanten, die bestimmt werden müssen, und $T$
+bezeichnet die Temperatur.
