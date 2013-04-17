@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from numpy import *
 from matplotlib.pyplot import *
 import linregress
@@ -53,7 +54,7 @@ def n(x):
     return mean(visko[x])
 
 
-plot(1/T, log(eta_T),'*', label = "Messwerte")
+plot(1/T, log(eta_T),'x', label = "Messwerte")
 
 
 
@@ -67,7 +68,9 @@ plot(1/T, f(1/T), label = "Ausgleichsgerade")
 xlabel("1/T in 1/s")
 ylabel("log($\eta$) in log(mPa s)")
 legend(loc = 'lower right')
-show()
+grid()
+savefig("viskoseplot.pdf")
+close()
 
 
 #Reynoldszahl
