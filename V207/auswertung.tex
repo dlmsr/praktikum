@@ -1,15 +1,51 @@
+% This work is licensed under the Creative Commons
+% Attribution-NonCommercial 3.0 Unported License. To view a copy of this
+% license, visit http://creativecommons.org/licenses/by-nc/3.0/.
+
 \section{Auswertung}
 
 \subsection{Bestimmung des Emissionsvermögens}
 
-Aus den gemessenen Werten wird mithilfe einer linearen
-Regressionsrechnung das jeweilige Emissionsvermögen bestimmt. Die schwarz
-lackierte Oberfläche wird dabei als ein Schwarzer Strahler bestrachet,
-d.\,h. es wird ein Emissionsvermögen $\epsilon = 1$ angenommen. Für die
-anderen Oberflächen gilt
+Aus der gemessenen Thermospannung und Temperatur wird mithilfe einer
+linearen Regressionsrechnung das jeweilige Emissionsvermögen bestimmt.
+
+Da sowohl vor und nach der Strahlungsmessung keine Offsetspannung
+gemessen worden ist, werden die Paare $(T^4, U)$ der Meßdaten aus
+Tabelle~\ref{tab:strahlung} in eine lineare Ausgleichsrechnung
+gegeben. Hierzu wird die \texttt{numpy}-Bibliothek in der Version
+\texttt{0.12} verwendet. Die Ergebnisse sind in
+Tabelle~\ref{tab:lin-regress} zu finden.
+
+Die gemessene Thermospannung ist proportional zur abgegebenen
+Leisung.
 \begin{equation}
-  P(T) = f(T^4) = \epsilon \sigma T^4
+  \label{eq:proport}
+  U = k P = k \epsilon \sigma T^4 = m T^4,
+\end{equation}
+wobei $m$ die Steigung der Ausgleichsgeraden bezeichnet. Die schwarz
+lackierte Oberfläche wird dabei als ein Schwarzer Strahler betrachtet,
+d.\,h. es wird ein Emissionsvermögen $\epsilon = 1$ angenommen. Aus
+Formel~\ref{eq:proport} ergibt sich damit für den
+Proportionalitätsfaktor $k = m_0/\sigma$, wenn die Steigung der
+Ausgleichgerade zur schwarzen Oberfläche mit $m_0$ bezeichnet
+wird. Daraus kann das Emissionsvermögen der einzelnen Oberflächen
+errechnet werden:
+\begin{equation}
+  \epsilon = \frac{m}{k \sigma} = \frac{m}{m_0}
+\end{equation}
+wobei mit $m$ die Steigung der jeweiligen Regressionsgeraden gemeint
+ist. Aufgrund der Tatsache, daß die Steigungen fehlerbehaftete Größen
+sind, wird eine \name{Gauß}sche Fehlerfortpflanzung für $\epsilon$
+durchgeführt.
+\begin{equation}
+  \label{eq:gauss-epsilon}
+  \Delta\epsilon = \sqrt{ \left(\frac{\Delta m}{m_0}\right)^2 +
+    \left(\frac{m \Delta m_0}{m_0^2}\right)^2}
 \end{equation}
 
-Aus der Steigung der berechneten Geradengleichungen kann also das
-Emissionsvermögen bestimmt werden.
+\subsection{Auswertung des Abstandsverhaltens}
+
+Bei der Untersuchung des Abstandsverhaltens ergeben sich die in
+Tabelle~\ref{tab:abstand} dargestellten Werte. In
+Abbildung~\ref{fig:abstand} ist ein Plot zu sehen, der die aufgenommenen
+Meßwerte mit einer nichtlinearen Regression zeigt.
