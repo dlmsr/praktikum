@@ -3,3 +3,34 @@
 % license, visit http://creativecommons.org/licenses/by-nc/3.0/.
 
 \section{Theorie}
+Ein Körper, dessen Temperatur über dem absoluten Nullpunkt liegt, strahlt Energie in Form von elektromagnetischen Wellen, der Wärmestrahlung, ab.
+
+Das Emissionsvermögen $\epsilon$ eines Körpers gibt an,  wie viel Strahlung dieser Körper im Vergleich zu einem perfekten Strahler, einem sogenannten schwarzen Körper, aussendet. Ein schwarzer Körper besitzt ein Emissionsvermögen von $\epsilon$ = 1 und existiert in der Realität nicht. Ein Körper mit $\epsilon <$1 wird als grauer Körper bezeichnet.
+
+Treffen elektromagnetische Wellen auf einen Körper, so kann dieser die Leistung der Wellen zum Teil absorbieren und zum Teil reflektieren. Wie viel Wärmestrahlung ein Körper im Vergleich zu einem schwarzen Körper absorbiert, ist durch das Absorptionsvermögen A gegeben.
+
+Zwischen Emissions-, Absorptions-, und Reflektionsvermögen besteht der in Formel \eqref{eq:kirchhoff} wiedergegebene Zusammenhang, welcher als \name{Kirchhoff}'sches Strahlungsgesetz bekannt ist.
+%
+\begin{equation}
+\label{eq:kirchhoff}
+\epsilon(\lambda, T) = A(\lambda, T) = 1- R(\lambda,T)
+\end{equation}
+%
+
+Ein Körper emittiert Wärmeleistung in Abhängigkeit von seiner Temperatur T. Diese Wärmestrahlung wird mit verschiedenen Wellenlängen $\lambda$ abgestrahlt. Die abgestrahlte Leistung eines schwarzen Körpers bei einer gegebenen Temperatur für eine Wellenlänge wird durch das \name{Planck}'sche Strahlungsgesetz, welches in Formel \eqref{eq:planck} zu finden ist, vollständig korrekt beschrieben. Dabei bezeichnet c die Lichtgeschwindigkeit, h das \name{Planck}'sche Wirkungsquantum, $\Omega_0$ den betrachteten Raumwinkel und $k_\text{B}$ die \name{Boltzmann}-Konstante.
+%
+\begin{equation}
+\label{eq:planck}
+P(\lambda,T) = \frac{2 \pi c^2 h}{\Omega_0 \lambda^5} \cdot {\left(\exp{\left(\frac{ch}{k_\text{B} \lambda T}\right)} -1\right)}^{-1}
+\end{equation}
+%
+
+Um nun die gesamte abgestrahlte Leistung eines grauen Körpers zu gegebener Temperatur T zu erhalten, wird das \name{Planck}'sche Strahlungsgesetz über alle Wellenlängen von Null bis Unendlich integriert. Anschließend wird noch mit dem Emissionsvermögen $\epsilon$ des betrachteten Körpers multipliziert.
+ Das Ergebnis dieser Rechnung ist das \name{Stefan}-\name{Boltzmann} Gesetz, welches in Formel \eqref{eq:stefan-boltzmann} angegeben ist.
+Dieses Gesetz besagt, dass die abgestrahlte Gesamtleistung proportional zur vierten Potenz der Temperatur ist. Die Proportionalitätskonstante wird mit $\sigma$ bezeichnet.
+%
+\begin{equation}
+\label{eq:stefan-boltzmann}
+P(T) = \epsilon \sigma T^4
+\end{equation}
+%
