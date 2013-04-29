@@ -1,0 +1,28 @@
+
+\section{Theorie}
+
+\subsection{Die allgemeine Brückenschaltung}
+
+Eine Brückenschaltung hat im allgemeinen den in
+Abbildung~\ref{fig:allg-bruecke} dargestellten Aufbau.  Die Spannung
+zwischen den Punkten $A$ und $B$ ergibt sich mithilfe der Maschen- und
+Knotenregeln von \name{Kirchhoff}. Die Knotenregel besagt
+\begin{gather}
+  I_1 = I_2\\
+  I_3 = I_4.
+\end{gather}
+Die Maschenregel ergibt
+\begin{gather}
+  U = -R_1 I_1 + R_3 I_3\\
+ -U = -R_2 I_2 + R_4 I_4.
+\end{gather}
+Wenn $U_\text{S}$ die Speisespannung bezeichnet, erhält man daraus:
+\begin{equation}
+  U = \frac{R_2 R_3 - R_1 R_4}{(R_3 + R_4)(R_1 + R_2)} U_\text{S}.
+\end{equation}
+Man kann also durch Variation dreier Widerstände die Brückenspannung auf
+Null regeln und dann gilt
+\begin{equation}
+  R_2 R_3 = R_1 R_4.
+\end{equation}
+
