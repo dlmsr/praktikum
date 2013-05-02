@@ -10,25 +10,27 @@ zwischen den Punkten $A$ und $B$ ergibt sich mithilfe der Maschen- und
 Knotenregeln von \name{Kirchhoff}. Die Knotenregel besagt
 \begin{gather}
   I_1 = I_2\\
+  \intertext{und}
   I_3 = I_4.
 \end{gather}
 Die Maschenregel ergibt
 \begin{gather}
   U = -R_1 I_1 + R_3 I_3\\
+  \intertext{und}
  -U = -R_2 I_2 + R_4 I_4.
 \end{gather}
 Wenn $U_\text{S}$ die Speisespannung bezeichnet, erhält man daraus
 \begin{equation}
   U = \frac{R_2 R_3 - R_1 R_4}{(R_3 + R_4)(R_1 + R_2)} U_\text{S}.
 \end{equation}
-Die Brückenspannung verschwindet bei beliebiger Brückenspannung, falls
+Die Brückenspannung verschwindet daher bei beliebiger Brückenspannung, falls
 \begin{equation}
   \label{eq:abgleich}
   R_2 R_3 = R_1 R_4.
 \end{equation}
 
 Sind in der Brückenschaltung auch Kapazitäten und Induktivitäten
-verbaut, so kann man die obigen Widerstände also komplexe Zahlen $Z =
+verbaut, so kann man die obigen Widerstände als komplexe Zahlen $Z =
 X + iY$ auffassen und erhält genauso
 \begin{equation}
   \label{eq:abgleich-komplex}
@@ -37,7 +39,8 @@ X + iY$ auffassen und erhält genauso
 Weil komplexe Zahlen Paare $(a, b)\in\mathbb{R}^2$ reeller Zahlen
 sind, müssen für die Gleichheit also die zwei Bedingungen
 \begin{gather}
-  X_1 X_4 - Y_1 Y_4 = X_2 X_3 - Y_2 Y_3,
+  X_1 X_4 - Y_1 Y_4 = X_2 X_3 - Y_2 Y_3\\
+  \intertext{und} 
   X_1 Y_4 + X_4 Y_1 = X_2 Y_3 + X_3 Y_2
 \end{gather}
 erfüllt sein.  Daher werden bei einer Wechselstrombrücke zwei
@@ -72,11 +75,12 @@ Veränderliche, um den zusätzlichen Freiheitsgrad zu
 berücksichtigen. Dazu wird der Widerstand $R_2$ in
 Abbildung~\ref{fig:kap-brücke} veränderlich sein. Die
 Abgleichbedingung~\eqref{eq:abgleich-komplex} liefern dann
-\begin{equation}
+\begin{gather}
   \label{eq:abgleich-kap}
   R_x = R_2 \frac{R_3}{R_4}\\
+  \intertext{und}
   C_x = C_2 \frac{R_4}{R_3}.
-\end{equation}
+\end{gather}
 
 \subsection{Induktivitätsmeßbrücke}
 Wie ein realer Kondensator durch eine ideale Kapazität und einen
