@@ -8,7 +8,7 @@
 Die erste Messreihe wird mit dem unbekannten Widerstand Wert 11 aufgenommen. Anschließend wird eine weiter Messreihe gestartet, diesmal mit dem unbekannten Widerstand Wert 12. 
 
 Die Ergebnisse dieser Messreihen sind in Tabelle \ref{tab:wheatstone} zu finden.
-Ebenfalls in dieser Tabelle sind die errechneten Werte für die unbekannten Widerstände zu finden. Diese werden mit Formel \eqref{eq:wheatwiderstäänd}
+Ebenfalls in dieser Tabelle sind die errechneten Werte für die unbekannten Widerstände zu finden. Diese werden mit Formel \eqref{eq:abgleich-ohmsch}
 %
 \begin{table}[]
   \centering
@@ -70,7 +70,7 @@ In Tabelle \ref{tab:kapazitaet} sind die gemessenen Werte zu finden.
 \end{table}
 %
 
-Mit Formel \eqref{eq:kapaformel!!} errechnen sich die unbekannten Kapazitäten und Widerstände zu
+Mit Formel \eqref{eq:abgleich-komplex} errechnen sich die unbekannten Kapazitäten und Widerstände zu
 %
 \begin{equation*}
 C_{x1} = \SI{663}{\nano\farad} \pm \SI{1}{\nano\farad} \text{ für Wert 1},
@@ -108,7 +108,7 @@ Die Messwerte, welche sich beim Untersuchen von Wert 18 mithilfe einer \name{Max
 \end{table}
 %
 
-Für die Induktivitätsmessbrücke werden die unbekannten Werte des \name{Ohm}schen Widerstandes und der Induktivität von Wert 18 mithilfe von Formel \eqref{eq:ind.brücke!!!} errechnet und ergeben mit den aufgenommenen Messwerten, dass
+Für die Induktivitätsmessbrücke werden die unbekannten Werte des \name{Ohm}schen Widerstandes und der Induktivität von Wert 18 mithilfe von Formel \eqref{eq:abgleich-ind-bruecke} errechnet und ergeben mit den aufgenommenen Messwerten, dass
 %
 \begin{equation*}
 R_{x18} = \SI{360}{\ohm} \pm \SI{4}{\ohm}
@@ -118,7 +118,7 @@ R_{x18} = \SI{360}{\ohm} \pm \SI{4}{\ohm}
 L_{x18} = \SI{49.6}{\milli\henry} \pm \SI{0.1}{\milli\henry}
 \end{equation*}
 %
-Für die selbe Induktivität ergibt die Rechnung mit Formel \eqref{eq:ind.max!!!} für Wert 18, dass
+Für die selbe Induktivität ergibt die Rechnung mit Formel \eqref{eq:abgleich-ind-maxwell} für Wert 18, dass
 %
 \begin{equation*}
 R_{x18} = \SI{349}{\ohm} \pm \SI{3}{\ohm}
@@ -135,7 +135,7 @@ Die gemessene Brückenspannung $U_\text{Br}$ in Abhängigkeit von der Frequenz $
 
 Ein halblogarithmitischer Plot des Quotienten aus Brücken- und Eingangsspannung $\frac{U_\text{Br}}{U_\text{S}}$ gegen den Quotienten aus Kreisfrequenz gegen Filterkreisqrequenz $\frac{\omega}{\omega_0}$  ist in Abb. \ref{fig:wien_robinson_plot} zu sehen. Dabei bezeichnet die Filterkreisfrequenz $\omega_0$ die Kreisfrequenz, bei der die Brückenspannung minimal wird.
 
-Im selben Plot ist ebenfalls die von der Theorie vorhergesagt Kurve zu finden.
+Im selben Plot ist ebenfalls die von der Theorie durch Formel \eqref{eq:wien_robinson_theo} vorhergesagten Kurve zu finden.
 
 Bei der \name{Wien}-\name{Robinson}-Brücke wird ein Widerstand von R=\SI{1}{\kilo\ohm} und eine Kapazität von C=\SI{294.75}{\nano\farad} verwendet, wodurch sich eine Filterfrequenz von $\nu_0$ = \SI{540}{\hertz} ergibt.
 %
