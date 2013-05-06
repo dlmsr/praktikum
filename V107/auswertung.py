@@ -81,7 +81,8 @@ xlabel("1/T in 1/s")
 ylabel("ln($\eta$)")
 legend(loc = 'lower right')
 grid()
-show()
+savefig("viskoseplot.pdf")
+close()
 
 
 #Reynoldszahl (ZIMMERTEMP)
