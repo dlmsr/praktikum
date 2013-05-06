@@ -26,22 +26,29 @@ in Tabelle \ref{tab:durchmesser_kugel_kl} zu finden.
 4&15.22 & 9 & 15.12\\
 5&15.24 & 10 & 15.22\\
     \bottomrule
+{Mittelwert}& \multicolumn{3}{S}{\SI{15.20}{\milli\metre}} \\
+{Standardabweichung}&\multicolumn{3}{S}{\SI{0.19}{\milli\metre}}\\
+\bottomrule
   \end{tabular}
   \caption{Messwerte für den Durchmesser der kleinen Kugel}
   \label{tab:durchmesser_kugel_kl}
 \end{table}
 %
-Als Durchmesser der kleinen Kugel ergibt sich ein Wert von  $D_{kl}$ = \SI{15.20}{\milli\metre} $\pm$ \SI{0.19}{\milli\metre}.
-Aus den gemessenen Größen lässt sich die Dichte der Kugeln dadurch bestimmen, dass das Gewicht der Kugeln durch deren Volumen geteilt wird. In Tabelle \ref{tab:dichten} sind die Ergebnisse der Dichtebestimmung der beiden Kugeln zu finden. Bei der kleinen Kugel kann aufgrund der durchgeführten Messreihe der absolute Fehler durch eine \name{Gauss}sche Fehlerfortpflanzung angegeben werden.
+Aus den gemessenen Größen lässt sich die Dichte $\rho$ der Kugeln mit Formel \eqref{eq:dichte} berechnen. Dabei bezeichnet m die Masse der Kugeln.
+\begin{equation}
+\label{eq:dichte}
+\rho = \frac{6m}{ \pi D^3}
+\end{equation}
+ In Tabelle \ref{tab:dichten} sind die Ergebnisse der Dichtebestimmung der beiden Kugeln zu finden. Bei der kleinen Kugel kann aufgrund der durchgeführten Messreihe der absolute Fehler durch eine Gausssche Fehlerfortpflanzung von Formel \eqref{eq:dichte} angegeben werden, wobei der Durchmesser mit einem statistischen Fehler behaftet ist.
 %
-\begin{table}[b]
+\begin{table}[h]
   \centering
   \begin{tabular}{SSS}
     \toprule
-   {Kugel} & $\rho${ in }\si{\gram\per\centi\metre^3}  &  {abs. Fehler in }\si{\gram\per\centi\metre^3}\\
+   {Kugel} & $\rho${ /(}\si{\gram\per\centi\metre^3}{)} &$\Delta\rho${ /(}\si{\gram\per\centi\metre^3}{)}\\
     \midrule
-{klein}& 2.42& 3e-5  \\
-{groß}&2.40 &  {-}  \\
+{klein}&2.42&3e-5  \\
+{groß}&2.40&{-}  \\
     \bottomrule
   \end{tabular}
   \caption{Ermittelte Dichten der beiden Kugeln}
@@ -55,14 +62,20 @@ bestimmen zu können, wird zunächst die Viskosität des destillierten
 Wassers bei Zimmertemperatur (\SI{20}{\celsius}) bestimmt. In Tabelle
 \ref{tab:zeiten_const} sind die gemessenen Fallzeiten der kleinen und
 großen Kugel einzusehen. Die Apparaturkonstante der kleinen Kugel
-besitzt laut \textcite{v107} einen Wert von $K_{kl}$ =
-\SI{0.07640}{\milli\pascal\centi\metre^3\per\gram}. Der Wert für die
-Dichte des destillierten Wassers beträgt laut
-\textcite{wissenschaft-technik-ethik} $\rho_w$ =
-\SI{0.99820}{\gram\per\centi\metre^3} bei einer Temperatur von
-\SI{20}{\celsius}.
+besitzt laut \textcite{v107} einen Wert von 
 %
-\begin{table}[]
+\begin{equation*}
+K_{kl} =\SI{0.07640}{\milli\pascal\centi\metre^3\per\gram}. 
+\end{equation*}
+%
+Der Wert für die Dichte des destillierten Wassers beträgt laut
+\textcite{wissenschaft-technik-ethik}
+%
+\begin{equation*}
+ \rho_w = \SI{0.99820}{\gram\per\centi\metre^3} \text{ (bei einer Temperatur von \SI{20}{\celsius})}.
+\end{equation*} 
+%
+\begin{table}[h]
   \centering
   \begin{tabular}{S|S|S|S}
     \toprule
@@ -86,112 +99,96 @@ Dichte des destillierten Wassers beträgt laut
   \label{tab:zeiten_const}
 \end{table}
 %
+
 Durch Verwenden von Formel \eqref{eq:empirie} kann mithilfe der
 Messwerte für die Fallzeiten der kleinen Kugel die Viskosität des
-destillierten Wassers bei Zimmertemperatur bestimmt werden.  Als
-Ergebnis erhält man, dass $\eta$(\SI{20}{\celsius}) =
-\SI{1.31}{\milli\pascal\second} $\pm$ \SI{0.003}{\milli\pascal\second}.
-Der Fehler wird mithilfe einer \name{Gauss}schen Fehlerforpflanzung der
+destillierten Wassers bei Zimmertemperatur bestimmt werden. Als Ergebnis erhält man, dass 
+\begin{equation*}
+\eta(\SI{20}{\celsius}) = \SI{1.310(3)}{\milli\pascal\second}.
+\end{equation*}
+Der Fehler wird mithilfe einer Gaussschen Fehlerforpflanzung der
 verwendeten Formel errechnet. Die gemessenen Zeiten sind hierbei durch
 einen statistischen Fehler behaftet.
 %
+
 Aus den gewonnenen Daten wird nun die Apparaturkonstante $K_{gr}$ für
 die große Kugel bestimmt.  Dazu wird ebenfalls Formel \eqref{eq:empirie}
 verwendet. Für die Viskosität wird der zuvor bestimmte Wert für die
 Viskosität des Wassers bei Zimmertemperatur verwendet.  Die Rechnung
 ergibt einen Wert von
-\begin{equation*}
-K_{gr} = \SI{0.011}{\milli\pascal\centi\metre^3\per\gram} \pm \SI{0.004}{\milli\pascal\centi\metre^3\per\gram}.
-\end{equation*}
+\begin{equation}
+\label{eq:apparatur}
+K_{gr} = \SI{0,011(4)}{\milli\pascal\centi\metre^3\per\gram}.
+\end{equation}
 Bei der Fehlerfortpflanzung sind diesmal sowohl die Fallzeit, als auch die Viskosität mit einem Fehler behaftet.
 %
 \subsection{Temperaturabhängigkeit der dynamischen Viskosität}
 %
 Die gemessenen Fallzeiten der großen Kugel bei 10 verschiedenen Temperaturen ist in Tabelle \ref{tab:zeiten_var} angegeben.
-%
-\begin{table}[]
-  \centering
-  \begin{tabular}{SSSSS}
-    \toprule
-{Temperatur T /}\si{\celsius}&{Zeit t/s}&{Zeit t/s}&{Zeit t/s}&{Zeit t/s}\\
-\midrule
-25	&71.66&71.01&71.27&71.18\\
-32	&65.12&63.00&64.45&64.47\\
-35	&58.75&58.10&58.70&58.80\\
-40	&54.04&54.13&54.33&52.61\\
-45	&49.72&49.58&49.83&49.83\\
-50	&46.00&45.55&45.69&45.78\\
-55	&42.15&42.03&41.96&42.49\\
-60	&39.55&39.69&39.52&39.38\\
-65	&37.66&38.33&37.18&37.60\\
-70	&36.10&36.24&35.44&35.94\\
-    \bottomrule
-  \end{tabular}
-  \caption{Gemessene Fallzeiten der Kugeln bei verschiedenen Temperaturen}
-  \label{tab:zeiten_var}
-\end{table}
-%
+
 Mit Formel \eqref{eq:empirie} wird die Viskosität des Wassers bei den
 verschiedenen Temperaturen bestimmt. Es wird in der Formel die oben
-bestimmte Apparaturkonstante für die große Kugel verwendet, sodass bei
-der Fehlerfortpflanzung sowohl die Apparaturkonstante, als auch die
+bestimmte Apparaturkonstante, welche unter \eqref{eq:apparatur} zu finden ist, für die große Kugel verwendet, sodass bei der Fehlerfortpflanzung sowohl die Apparaturkonstante, als auch die
 Fallzeit fehlerbehaftet ist. Pro Temperatur wird der statistische Fehler
 der Fallzeit aus den vier Messwerten bei dieser Temperatur bestimmt.
 
-In Tabelle \ref{tab:viskose} sind die so errechneten Viskositäten des verwendeten Wassers und die Fehler nachzulesen.
+Die Ergebnisse dieser Rechnung sind in Tabelle \ref{tab:zeiten_var} nachzulesen. Die dort angegebenen Dichten von Wasser $\rho_\text{fl}$ bei den betrachteten Temperaturen sind aus \textcite{wissenschaft-technik-ethik} entnommen.
+%
+\begin{table}[h]
+  \centering
+  \begin{tabular}{S|SSSS|S|S|S}
+    \toprule
+{T /}\si{\celsius}&\multicolumn{4}{S|}{{t/s}}&$\rho_\text{fl}${ /(}\si{\gram\per\centi\metre^3}{)}&$\eta${ /}\si{\milli\pascal\second}&{Re}\\
+\midrule
+25	&71.66&71.01&71.27&71.18&0.99704&1.190&18.6\\
+32	&65.12&63.00&64.45&64.47&0.99502&1.075&22.8\\
+35	&58.75&58.10&58.70&58.80&0.99403&0.980&27.4\\
+40	&54.04&54.13&54.33&52.61&0.99221&0.901&32.5\\
+45	&49.72&49.58&49.83&49.83&0.99021&0.835&37.9\\
+50	&46.00&45.55&45.69&45.78&0.98803&0.769&44.7\\
+55	&42.15&42.03&41.96&42.49&0.98569&0.710&52.6\\
+60	&39.55&39.69&39.52&39.38&0.98319&0.667&59.6\\
+65	&37.66&38.33&37.18&37.60&0.98055&0.637&65.4\\
+70	&36.10&36.24&35.44&35.94&0.97776&0.608&71.9\\
+    \bottomrule
+  \end{tabular}
+  \caption{Gemessene Fallzeiten der großen Kugel und errechnete Werte}
+  \label{tab:zeiten_var}
+\end{table}
+%
+
 Ein graphischer Plot der Ergebnisse ist in Abb. \ref{fig:viskoseplot} zu
 sehen. Dabei wird $\log{(\eta)}$ gegen $\frac{1}{T}$ aufgetragen. Im
 selben Plot ist ebenfalls die Ausgleichsgerade durch die Messwerte zu
 finden.
-
-Mit einer nicht-linearen Ausgleichsrechnung\footnote{Dazu wurde \texttt{ipython} in der Version 0.13  verwendet} werden die Koeffizienten in der \name{Andrade}schen Gleichung \eqref{eq:andrade} bestimmt. Die Ausgleichsrechnung ergibt, dass
+%
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.8\textwidth]{viskoseplot}
+\caption{Plot der errechneten Regressionsgerade durch die aufgenommenen Messwerte}
+\label{fig:viskoseplot}
+\end{figure}
+%
+Mit einer linearen Ausgleichsrechnung\footnote{Dazu wurde \texttt{ipython} in der Version 0.13  verwendet} werden die Koeffizienten in der Andradeschen Gleichung \eqref{eq:andrade} bestimmt. Die Ausgleichsrechnung ergibt,
 \begin{equation*}
-A = \SI{0.42}{\milli\pascal\second} \pm \SI{0.01}{\milli\pascal\second}
+A = \SI{0.43(1)}{\milli\pascal\second}
 \end{equation*}
 \begin{equation*}
-B = \SI{28.03}{\celsius} \pm \SI{1.00}{\celsius},
+B = \SI{27.5(10)}{\celsius},
 \end{equation*}
-sodass sich die gefundene Temperaturabhängigkeit der Viskosität des untersuchten Wassers beschreiben lässt durch
+sodass sich die gefundene Temperaturabhängigkeit der Viskosität (in \SI{}{\celsius}) des untersuchten Wassers beschreiben lässt durch
 \begin{equation*}
-\eta(T) = 0.42 \cdot \exp{\left(\frac{28.03}{T}\right)} \text{ }\si{\milli\pascal\second}.
+\eta(T) = 0,43 \cdot \exp{\left(\frac{\SI{27.5}{\celsius}}{T}\right)} \text{ }\si{\milli\pascal\second}.
 \end{equation*}
 %
-Zuletzt wird noch die \name{Reynold}sche Zahl berechnet. Diese ist festgelegt als
+Zuletzt wird noch die Reynoldsche Zahl Re des analysierten Wassers für verschiedene Temperaturen berechnet. Diese ist festgelegt als
 \begin{equation*}
 Re = \frac{v_m \cdot D \cdot \rho_{w}}{\eta},
 \end{equation*}
 mit $v_m$ $\hat{=}$ mittlere Geschwindigkeit der Kugel, D $\hat{=}$
 Durchmesser der Kugel und $\rho_{w}$ $\hat{=}$ Dichte der durchströmten
-Flüssigkeit.  Bei Zimmertemperatur ergibt sich als Reynoldszahl für die
+Flüssigkeit. Bei Zimmertemperatur ergibt sich als Reynoldszahl für die
 kleine Kugel ein Wert von $\text{Re}_{kl}$ = \SI{96} und für die große
 Kugel ergibt sich, dass $\text{Re}_{gr}$ = \SI{29}.
-%
-\begin{table}[]
-  \centering
-  \begin{tabular}{SSS}
-    \toprule
-{Temperatur T /}\si{\celsius}&{Viskosität /}\si{\milli\pascal\second}&{abs. Fehler /}\si{\milli\pascal\second}\\
-\midrule
-25	&1.189&0.002\\
-32	&1.072&0.006\\
-35	&0.978&0.003\\
-40	&0.897&0.006\\
-45	&0.830&0.001\\
-50	&0.763&0.002\\
-55	&0.703&0.002\\
-60	&0.660&0.001\\
-65	&0.629&0.004\\
-70	&0.600&0.003\\
-    \bottomrule
-  \end{tabular}
-  \caption{Errechnete Viskositäten für die jeweiligen Temperaturen}
-  \label{tab:viskose}
-\end{table}
-%
-\begin{figure}
-\centering
-\includegraphics[width=0.8\textwidth]{viskoseplot}
-\caption{Plot der Messergebnisse $\log{(\eta)}$ gegen $\frac{1}{T}$}
-\label{fig:viskoseplot}
-\end{figure}
+Die berechnete Reynoldszahl für die große Kugel bei den in diesem Versuch verwendeten Temperaturen des Wassers ist in Tabelle \ref{tab:zeiten_var} eingetragen.
 %

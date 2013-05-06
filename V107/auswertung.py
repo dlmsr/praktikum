@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from numpy import *
 from matplotlib.pyplot import *
 import linregress
@@ -45,7 +44,20 @@ K_2 = mean(K_2array)
 
 (T,t) = loadtxt("Temp_var_K2.txt",unpack = True)
 
-eta_T = K_2*(r_K2 - r_w)*t
+r_wT = (997.04,997.04,997.04,997.04,
+        995.02,995.02,995.02,995.02,
+        994.03,994.03,994.03,994.03,
+        992.21,992.21,992.21,992.21,
+        990.21,990.21,990.21,990.21,
+        988.03,988.03,988.03,988.03,
+        985.69,985.69,985.69,985.69,
+        983.19,983.19,983.19,983.19,
+        980.55,980.55,980.55,980.55,
+        977.76,977.76,977.76,977.76) # aus Literatur
+r_wT = array(r_wT)
+r_wT = r_wT/1000 #in g/cm^3
+
+eta_T = K_2*(r_K2 - r_wT)*t
 n1,n2,n3,n4,n5,n6,n7,n8,n9,n10 = array_split(eta_T,10)
 
 visko = [n1,n2,n3,n4,n5,n6,n7,n8,n9,n10]
@@ -54,7 +66,7 @@ def n(x):
     return mean(visko[x])
 
 
-plot(1/T, log(eta_T),'x', label = "Messwerte")
+plot(1/T, log(eta_T),'*', label = "Messwerte")
 
 
 
@@ -66,14 +78,14 @@ def f(x):
 
 plot(1/T, f(1/T), label = "Ausgleichsgerade")
 xlabel("1/T in 1/s")
-ylabel("log($\eta$) in log(mPa s)")
+ylabel("ln($\eta$)")
 legend(loc = 'lower right')
 grid()
 savefig("viskoseplot.pdf")
 close()
 
 
-#Reynoldszahl
+#Reynoldszahl (ZIMMERTEMP)
 v_m1_array = 10/t_1 # cm / s
 v_m1 = mean(v_m1_array)
 Re_1 = v_m1 * D_1 * r_w / eta
@@ -83,8 +95,18 @@ v_m2_array = 19/t_2 # cm/s
 v_m2 = mean(v_m2_array)
 Re_2 = v_m2 * D_2 * r_w / eta
 
+#Reynoldszahl(Alle Temp: Nur Kugel 2!!)
 
+v_m3_array = 10/t
+v1,v2,v3,v4,v5,v6,v7,v8,v9,v10 = array_split(v_m3_array,10)
 
+v_m3 = [v1,v2,v3,v4,v5,v6,v7,v8,v9,v10]
+
+def v(x):
+    return mean(v_m3[x])
+
+def rey(x):
+    return v(x) * D_2 * r_wT[x] * 100 / n(x)
 
 #Fehlerrechnung bei temp.abh. Viskosität (1 Fehler pro Temp.)
 t1,t2,t3,t4,t5,t6,t7,t8,t9,t10 = array_split(t,10)
@@ -92,4 +114,4 @@ t1,t2,t3,t4,t5,t6,t7,t8,t9,t10 = array_split(t,10)
 temp = [t1,t2,t3,t4,t5,t6,t7,t8,t9,t10]
 #temo[0]= 25 Grad, temp[1] = 32 Grad, temp[2] = 35 Grad usw...
 def dn(x):
-    return sqrt((K_2 * (r_K2 - r_w)* std(temp[x])/2)**2 + ((r_K2 - r_w)* mean(temp[x]) * std(K_2array)/sqrt(20))**2)
+    return sqrt((K_2 * (r_K2 - r_wT[x])* std(temp[x])/2)**2 + ((r_K2 - r_wT[x])* mean(temp[x]) * std(K_2array)/sqrt(20))**2)
