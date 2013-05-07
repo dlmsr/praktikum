@@ -51,12 +51,13 @@ for i in range(4):
     plt.plot(x, U_therm[i], "+")
     plt.plot(x, m[i]*x + b[i])
 
+plt.tight_layout()
 plt.savefig("stefan-boltzmann.pdf")
 plt.close()
 
 data = np.loadtxt("abstandsmessung.txt", unpack=True)
 
-x = data[0] * 1e-2 # m
+x = (data[0] + 20) * 1e-2 # m
 U = data[1:] * 1e-6 # volts
 
 
@@ -64,7 +65,7 @@ def f(x, a, b):
     return a/x**2 + b
 
 for i in range(2):
-    (a, b), cov = so.curve_fit(f, x[5:], U[i][5:])
+    (a, b), cov = so.curve_fit(f, x, U[i])
 
     print("a = {0:0.4e}".format(a))
     print("b = {0:0.4e}".format(b))
@@ -73,16 +74,17 @@ for i in range(2):
     print("Db = {0:0.4e}".format(np.sqrt(cov[1][1])))
 
     plt.subplot(211+i)
-    plt.plot(x[:5], U[i][:5], "b+")
-    plt.plot(x[5:], U[i][5:], "r+")
+    plt.plot(x, U[i], '+')
 
-    y = np.linspace(0.1, 0.6)
+    y = np.linspace(0.1, 0.8)
     plt.plot(y, f(y, a, b))
 
+    plt.xlim(0.1, 0.8)
     plt.grid()
     plt.ticklabel_format(style='sci', scilimits=(-3,4), axis='both')
     plt.xlabel("$x/\mathrm{m}$")
     plt.ylabel("$U/\mathrm{V}$")
 
+plt.tight_layout()
 plt.savefig("abstandsmessung.pdf")
 plt.close()

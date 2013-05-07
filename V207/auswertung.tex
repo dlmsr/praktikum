@@ -89,7 +89,7 @@ Abbildung~\ref{fig:plot-emission} zu finden.
     table-figures-uncertainty = 3
   }
   \begin{tabular}{lSSS}
-    \toprule
+  \toprule
     & {$m/(\SI{e-8}{\micro\volt\per\kelvin^4})$}
     & {b/(\SI{e-2}{\milli\volt})} 
     & {$\epsilon$} \\
@@ -116,9 +116,8 @@ Abstandsverhaltens wird eine nichtlineare Regression mit der Kurve
 \begin{equation}
   y = \frac{a}{x^2} + b
 \end{equation}
-durchgeführt (auch hierfür ist \texttt{scipy} verwendet worden). Dabei
-werden nur die rot markierten Meßpunkte bei der Regression beachtet. Die
-Ergebnisse für die Parameter sind in Tabelle~\ref{tab:param} zu sehen.
+durchgeführt (auch hierfür ist \texttt{scipy} verwendet worden).  Die Ergebnisse 
+für die Parameter sind in Tabelle~\ref{tab:param} zu sehen.
 Abbildung~\ref{fig:abstand} zeigt einen Plot dieser Regression.
 
 \begin{table}
@@ -129,15 +128,15 @@ Abbildung~\ref{fig:abstand} zeigt einen Plot dieser Regression.
     {$U/\si{\micro\volt}$ bei $T = \SI{323.16}{\kelvin}$} &
     {$U/\si{\micro\volt}$ bei $T = \SI{366.16}{\kelvin}$} \\
     \midrule
-    10 & 153 & 522\\
-    15 & 146 & 513\\
-    20 & 141 & 505\\
-    25 & 129 & 472\\
-    30 & 113 & 418\\
-    35 & 99 & 365\\
-    40 & 85 & 316\\
-    45 & 72 & 276\\
-    50 & 63 & 235\\
+    30 & 153 & 522\\
+    35 & 146 & 513\\
+    40 & 141 & 505\\
+    45 & 129 & 472\\
+    50 & 113 & 418\\
+    55 & 99 & 365\\
+    60 & 85 & 316\\
+    65 & 72 & 276\\
+    70 & 63 & 235\\
     \bottomrule
   \end{tabular}
   \caption{Meßwerte aus der Abstandsmessung}
@@ -165,8 +164,8 @@ Abbildung~\ref{fig:abstand} zeigt einen Plot dieser Regression.
     & {$a/(\si{\milli\metre\squared\per\volt})$} &
     {$b/\si{\micro\volt}$} \\
     \midrule
-    $T = \SI{323.16}{\kelvin}$ & 8.673(470) & 29.12(283)\\
-    $T = \SI{366.16}{\kelvin}$ & 30.60(251) & 119.4(151)\\
+    $T = \SI{323.16}{\kelvin}$ & 10(2) & 6(1)\\
+    $T = \SI{366.16}{\kelvin}$ & 31(7) & 250(40)\\
     \bottomrule
   \end{tabular}
   \caption{Ergebnisse der nichtlinearen Ausgleichsrechnung für die Parameter.}
