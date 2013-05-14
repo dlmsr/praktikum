@@ -1,5 +1,9 @@
 # Hier erstmal nur die Werte unserer verwendeten Schaltung:
-# Ger‰t 2: L = 10,14 +- 0,03 mH
+# Ger√§t 2: L = 10,14 +- 0,03 mH
 #          C = 2,088 +- 0,006 mF
 #          R_1 = 54,7 +- 0,1 Ohm
 # Zu Aufgabenteil b: R_ap = 3410 Ohm
+
+# L/mH   C/mF  R_1/Ohm   R_ap/Ohm
+ 10.14  2.088     54.7       3410
+
