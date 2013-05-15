@@ -1,0 +1,78 @@
+% This work is licensed under the Creative Commons
+% Attribution-NonCommercial 3.0 Unported License. To view a copy of this
+% license, visit http://creativecommons.org/licenses/by-nc/3.0/.
+
+\section{Theorie}
+\subsection{Gedämpfte Schwingungen}
+Eine elektrische Schaltung, die einen \name{ohm}schen Widerstand R, eine Induktivität L und eine Kapazität C enthält, welche eine Masche bilden, wird als RLC-Kreis bezeichnet. 
+In Abb. \ref{fig:rlc-kreis} ist der schematische Aufbau eines RLC-Kreises zu sehen.
+%
+\begin{figure}[h!!]
+\centering
+\includegraphics[width=0.4\textwidth]{rlc_kreis}
+\caption{Schaltbild eines RLC-Kreises}
+\label{fig:rlc-kreis}
+\end{figure}
+%
+
+Ein RLC-Kreis kann durch abwechselnde Speicherung von Energie im magnetischen Feld der Induktivität und im elektrischen Feld der Kapazität periodische Schwingungen der Stromstärke bzw. der Spannung durchführen.
+
+Um diese Schwingungen mathematisch zu beschreiben, werden die \name{Kirchhoff}schen Regeln verwendet, welche sich aus den \name{Maxwell}gleichungen ergeben.
+Da es sich bei den Bauelemente des RLC-Kreises um konzentrierte Bauelemente handelt, sind diese Regeln hier anwendbar.
+Die erste \name{Kirchhoff}sche Regel, die Knotenregel, besagt, dass die Summe aller gerichteten Ströme in einem Knoten gleich Null ist.
+Die zweite \name{Kirchhoff}sche Regel, welche Maschenregel genannt wird, legt dar, dass die Summe aller Spannungen einer Masche verschwindet.
+
+Diese Regeln werden auf die elektrische Schaltung in Abb.  \ref{fig:rlc-kreis} angewendet. Die Differentialgleichung für die zeitabhängige Stromstärke I(t) ergibt sich zu
+\begin{equation*}
+\frac{\text{d}^2 I}{\text{d}t^2} + \frac{R}{L}\frac{\text{d}I}{\text{d}t} + \frac{I}{LC} = 0.
+\end{equation*}
+
+Ein Exponentialansatz löst diese Differentialgleichung. Für die zeitabhängige Stromstärke ergibt sich der Audruck
+\begin{equation}
+\label{eq:loesung}
+I(t) = a \exp({i \omega_1 t}) + b \exp({i \omega_2 t})
+\end{equation}
+mit
+\begin{equation*}
+\omega_{1,2} = i \frac{R}{2 L} \pm \sqrt{\frac{1}{LC} - \frac{R^2}{4L^2}}.
+\end{equation*}
+
+Wird die Wurzel von $\omega_{1,2}$ reell, so ergibt sich für die Stromstärke \eqref{eq:loesung} eine gedämpfte Schwingung. Die Lösung kann dann umgeformt werden zu
+\begin{equation}
+\label{eq:loesung_ged}
+I(t) = A_0 \exp\left({-\frac{R}{2L}t}\right) \cdot \cos({\omega t + \phi_0})
+\end{equation}
+Hierbei wird der Exponent $\frac{R}{2L}$ als effektiver Dämpfungswiderstand bezeichnet, $\phi_0$ ist eine konstante Phase und $A_0$ die Anfangsstromstärke, welche durch Anfangsbedingungen festgelegt werden.
+
+Wird $\omega_{1,2}$ aus \eqref{eq:loesung} imaginär, so werden alle Exponenten in Gleichung \eqref{eq:loesung} reell und negativ, weswegen der RLC-Kreis in diesem Fall keine Schwingung, sondern einen exponentiellen Abfall der Stromstärke ausführt.
+Nach einigen Umformungen ergibt sich die Stromstärke zu
+\begin{equation}
+\label{eq:loesung_ged}
+I(t) = A_0 \exp\left({-\frac{R}{2L}t}\right).
+\end{equation}
+Die Stromstärke geht am schnellsten gegen Null, wenn für den \name{ohm}schen Widerstand in der Schaltung gilt:
+\begin{equation}
+\label{eq:rap}
+R_{\text{ap}} = \sqrt{\frac{4L}{C}}.
+\end{equation}
+Dieser Fall wird als aperiodischer Grenzfall bezeichnet.
+
+\subsection{Erzwungene Schwingungen}
+Wird von außen an den RLC-Kreis in Abb. \ref{fig:rlc-kreis} eine Wechselspannung angelegt, so führt das System erzwungene Schwingungen aus.
+Mithilfe der \name{Kirchhoff}schen Regeln wird eine Differentialgleichung für die zeitabhängige Spannung am Kondensator aufgestellt. Diese ist in Formel \eqref{eq:dgl_ged} wiedergegeben.
+\begin{equation}
+\label{eq:dgl_ged}
+LC \frac{\text{d}^2 U_\text{C}}{\text{d}t^2} + RC \frac{\text{d}U_\text{C}}{\text{d}t} + U_\text{C} = U_0 \exp({i\omega t})
+\end{equation}
+Diese Differentialgleichung wird ebenfalls durch einen Exponentialansatz gelöst. Als kreisfrequenzabhängige Amplitudenspannung $U_\text{C}(\omega)$ ergibt sich
+\begin{equation}
+\label{eq:amplitude_freq}
+U_\text{C}(\omega) = \frac{U_0}{ \sqrt{ (1 - LC \omega^2)^2 + \omega^2 R^2 C^2  }}.
+\end{equation}
+$U_0$ ist hierbei die Amplitudenspannung der Spannungsquelle.
+
+Die Phase $\phi$ zwischen der Erreger- und Kondensatorspannung ist ebenfalls frequenzabhängig. Diese errechnet sich mit der aus \eqref{eq:dgl_ged} erhaltenen komplexen Lösung U wie folgt:
+\begin{equation}
+\label{eq:phase_freq}
+\phi(\omega) = \arctan{\left(\frac{-\omega R C}{1 - LC \omega^2}\right)}
+\end{equation}
