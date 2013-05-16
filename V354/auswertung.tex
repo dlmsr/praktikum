@@ -4,17 +4,179 @@
 
 \section{Auswertung}
 
-\subsection{Bestimmung des  effektiven Dämpfungswiderstands} Zur
-Bestimmung des effektiven Dämpfungswiderstands werden aus
-Abbildung~\fig{fig:thermodruck} die Minima und Maxima abgelesen. In
-Tabelle~\fig{fig:minmax-thermo} finden sich diese Werte. Zur Bestimmung
-des Exponenten in Gleichung~\eqref{eq:loesung} werden die Maxima und
-Minima getrennt in eine Ausgleichsrechnung gegeben. Dies wird deshalb
-gemacht, da in der Abbildung~\fig{fig:minmax-plot} zu erkennen ist, daß
-die Punkte zu zwei verschiedenen Geraden gehören. Daher werden die
-Minima und Maxima wie angekündigt getrennt durch eine Gerade
-ausgeglichen und der Mittelwert der Steigungen bestimmt.
+\subsection{Bestimmung des  effektiven Dämpfungswiderstands}
+Zur Bestimmung des effektiven Dämpfungswiderstands werden aus
+Abbildung~\ref{fig:thermodruck} die Minima und Maxima abgelesen. In
+Tabelle~\ref{tab:minmax-thermo} finden sich diese Werte. Zur Bestimmung
+des Exponenten $m := R/(2L)$ in Gleichung~\eqref{eq:loesung} werden die
+Maxima und Minima einzeln behandelt. Aus diesem Exponent kann dann
+mithilfe von
+\begin{equation}
+	R = 2mL
+	\label{eq:exp-widerstand}
+\end{equation}
+der effektive Dämpfungswiderstand bestimmt werden.
+
+Zwei Ausgleichsrechnungen werden durchgeführt, da in der
+Abbildung~\ref{fig:minmax-plot} zu erkennen ist, daß die Punkte zu zwei
+verschiedenen Geraden gehören. Daher werden die Minima und Maxima
+getrennt durch eine Gerade
+\begin{equation}
+	y = \log U = mt + b
+\end{equation}
+ausgeglichen und der Mittelwert der Steigungen bestimmt. Das Ergebnis
+kann in Tabelle~\ref{tab:daempfung-ergebnis} gefunden werden.
+
+\begin{table}
+\centering\footnotesize
+  \begin{tabular}{lSSS}
+    \toprule & {$m/\si{\per\second}$} & {$R_\text{eff}/\si{\ohm}$} &
+             {$\frac{\Delta R_\text{eff}}{R}/\si{\percent}$}\\ \midrule
+             Minima & 6538 \\ Maxima & 4989 \\ \midrule Mittel & 5764 &
+             117 & 314 \\ Standardabweichung & 775 \\ \bottomrule
+  \end{tabular}
+  \caption{Die Ergebnisse der Ausgleichsrechnung. Der Exponent wird nach
+    Formel~\eqref{eq:exp-widerstand} in den Dämpfungswiderstand
+    umgerechnet. Die Abweichung wird vom eingebauten Widerstand, dessen
+    Wert sich in Tabelle~\ref{tab:r_ap-daten} befindet, berechnet.}
+  \label{tab:daempfung-ergebnis}
+\end{table}
+
+\begin{table}
+  \centering\footnotesize
+\begin{tabular}{SSSSSSSS}
+\toprule \multicolumn{2}{c}{Maxima} & \multicolumn{2}{c}{Minima} &
+\multicolumn{2}{c}{Maxima} & \multicolumn{2}{c}{Minima} \\ \midrule
+            {$t/\si{\micro\second}$} & {$U_C/\si{\volt}$} &
+            {$t/\si{\micro\second}$} & {$U_C/\si{\volt}$} &
+            {$t/\si{\micro\second}$} & {$U_C/\si{\volt}$} &
+            {$t/\si{\micro\second}$} & {$U_C/\si{\volt}$} \\ \midrule
+            0.0 & 6.4 & 15.0 & 6.4 & 35.0 & 5.2 & 45.0 & 5.2 \\ 60.0 &
+            4.4 & 75.0 & 4.8 & 90.0 & 3.6 & 105.0 & 4.0 \\ 120.0 & 2.8 &
+            135.0 & 3.2 & 150.0 & 2.4 & 165.0 & 2.8 \\ 180.0 & 2.0 &
+            195.0 & 2.4 & 215.0 & 1.6 & 225.0 & 2.4 \\ \bottomrule
+\end{tabular}
+\caption{Hier sind die aus der Abbildung~\ref{fig:thermodruck}
+  entnommenen Punkte der Einhüllenden. Die Punkte sind nach Maxima und
+  Minima getrennt. Die Wertepaare $(t, \log U)$ werde in eine lineare
+  Ausgleichsrechnung gegeben.}
+\label{tab:minmax-thermo}
+\end{table}
+
+\begin{figure}[h]
+  \centering \includegraphics[width=0.7\textwidth]{exp-plot}
+  \caption{Hier sind die aus Abbildung~\ref{fig:thermodruck} abgelesenen
+    Werte halblogarithmisch aufgetragen. Die zwei Geraden sind deutlich
+    zu erkennen. Die obere Ausgleichsgerade verläuft durch die Minima
+    der Amplitude, die untere durch die Maxima. Die beiden Steigungen
+    sind dann gemittelt worden.}
+  \label{fig:minmax-plot}
+\end{figure}  
+
+\begin{figure}[b]
+	\centering \includegraphics{bild}
+	\caption{Diese Graphik wurde mit dem Oszilloskop aufgenommen.
+          Es ist der zeitliche Verlauf der Kondensatorspannung
+          aufgezeichnet. Der exponentielle Abfall der Amplitude ist zu
+          erkennen.}
+	\label{fig:thermodruck}
+\end{figure}
+
+\subsection{Bestimmung des aperiodischen Grenzwerts}
+
+In Tabelle~\ref{tab:r_api-daten} ist der experimentell bestimmte Wert
+des Grenzwiderstandes $R_\text{ap}$ sowie der berechnete Widerstand mit
+den entsprechenden Abweichungen aufgelistet. Darin finden sich auch die
+zur Berechnung verwendeten Daten des Versuchsaufbaus.
+
+\begin{table}
+  \centering\footnotesize
+  \begin{tabular}{SSSSSS}
+    \toprule {$L/\si{\milli\henry}$} & {$C/\si{\micro\farad}$} &
+             {$R/\si{\ohm}$} & {$R_\text{ap, theo}/\si{\ohm}$} &
+             {$R_\text{ap, exp}/\si{\ohm}$} & {$\frac{\Delta
+                 R_\text{ap}}{R_\text{ap, theo}}/\si{\percent}$}
+             \\ \midrule 10.14 & 2.088 & 54.7 & 139.4 & 3410 & 235
+             \\ \bottomrule
+  \end{tabular}
+  \caption{Für den Versuch ist Gerät~2 verwendet worden. Hier sind die
+    entsprechenden Daten und der berechnete Wert für den Widerstand des
+    aperiodischen Grenzfalls, sowie der experimentell bestimmte Wert mit
+    einer prozentualen Abweichung vom berechneten Wert angegeben.}
+  \label{tab:r_ap-daten}
+\end{table}
 
 
-\subsection{Amplitudenverhältnisse bei Resonanzfrequenz}
+\subsection{Bestimmung der Resonanzüberhöhung}
 
+Die Meßwerte, die in diesem Teil des Versuches aufgenommen worden sind,
+finden sich in Tabelle~\ref{tab:resonanz}. In
+Abbildung~\ref{fig:resonanz} ist im oberen Plot das Verhältnis $U_C/U_0$
+gegen die Frequenz $\nu$ halblogarithmisch aufgetragen und im unteren
+Plot ist $U_C/U_0$ im Bereich um die Resonanzfrequenz herum linear gegen
+$\nu$ aufgetragen. Dabei wurden alle Meßwerte beachtet, für die die
+Kondensatorspannung $U_C > \SI{60}{\volt}$ ist. In der
+Tabelle~\ref{tab:resonanz-ergebnis} sind die Ergebnisse für die Güte und
+die Breite der Resonanzspitze abzulesen.
+
+\begin{table}
+  \centering\footnotesize
+  \begin{tabular}{SSSSSSSS}
+    \toprule
+    {$\nu / \si{\kilo\hertz}$} & {$ U_C/\si{\volt}$} &
+    {$\nu / \si{\kilo\hertz}$} & {$ U_C/\si{\volt}$} &
+    {$\nu / \si{\kilo\hertz}$} & {$ U_C/\si{\volt}$}\\
+    \midrule
+    10.0 & 16.0  &  11.0 & 46.0  &  12.0 & 20.5  &  13.0 & 11.5  \\
+    14.0 & 10.0  &  15.0 & 10.0  &  16.0 & 10.5  &  17.0 & 11.5  \\
+    18.0 & 12.0  &  19.0 & 12.5  &  20.0 & 13.5  &  21.0 & 14.5  \\
+    22.0 & 15.5  &  23.0 & 16.5  &  24.0 & 18.0  &  25.0 & 19.5  \\
+    26.0 & 22.0  &  27.0 & 25.0  &  28.0 & 29.0  &  29.0 & 34.0  \\
+    30.0 & 42.0  &  30.5 & 49.0  &  31.0 & 57.0  &  31.5 & 68.0  \\
+    32.0 & 84.0  &  32.5 & 110.0 &  33.0 & 140.0 &  33.5 & 155.0 \\
+    34.0 & 140.0 &  34.5 & 110.0 &  35.0 & 86.0  &  35.5 & 79.0  \\
+    36.0 & 56.0  &  36.5 & 48.0  &  37.0 & 41.0  &  37.5 & 36.0  \\
+    38.0 & 31.0  &  38.5 & 28.5  &  39.0 & 26.0  &  39.5 & 23.5  \\
+    40.0 & 21.5  &  41.0 & 18.5  &  42.0 & 16.0  &  43.0 & 14.0  \\
+    44.0 & 12.5  &  45.0 & 11.5  &  46.0 & 10.0  &  47.0 & 9.0   \\
+    48.0 & 8.5   &  49.0 & 8.0   &  50.0 & 7.5 \\
+    \bottomrule
+  \end{tabular}
+  \caption{Hier finden sich die Werte der Kondensatorspannung in
+    Abhängigkeit von der Frequenz gemessen.}
+  \label{tab:resonanz}
+\end{table}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.7\textwidth]{resonanz}
+  \caption{Das Verhältnis $U_C/U_0$ ist gegen $\nu$ einmal
+    halblogarithmisch und einmal linear aufgetragen. Beim linearen Plot
+    ist nur der Bereich um die Resonanzspitze beachtet worden.}
+  \label{fig:resonanz}
+\end{figure}
+
+\begin{table}
+  \centering\footnotesize
+  \begin{tabular}{lSS}
+    \toprule
+    & {$q$} & {$(\nu_+-\nu_-)/\si{\kilo\hertz}$} \\
+    \midrule
+    Berechnet  & 1.274 &  5395 \\
+    Experiment & 14.09 & 25133 \\
+    Abweichung (in \%) & 1006 & 314\\
+    \bottomrule
+  \end{tabular}
+  \caption{Hier die Ergebnisse der Resonanzmessung}
+  \label{tab:resonanz-ergebnis}
+\end{table}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.7\textwidth]{phasen-plot}
+  \caption{Hier ist der Phasenunterschied $\phi$ gegen die Frequenz
+    $\nu$ aufgetragen. Im oberen Plot sind alle Meßwerte
+    halblogarithmisch und im unteren Plot ist der Bereich um
+    \SI{90}{\degree} linear dargestellt.}
+  \label{fig:phasen-plot}
+\end{figure}
