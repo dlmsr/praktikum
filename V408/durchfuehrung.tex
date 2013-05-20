@@ -1,6 +1,100 @@
-% This work is licensed under the Creative Commons
-% Attribution-NonCommercial 3.0 Unported License. To view a copy of this
+% This work is licensed under the Creative Commons 
+% Attribution-NonCommercial 3.0 Unported License. To view a copy of this 
 % license, visit http://creativecommons.org/licenses/by-nc/3.0/.
 
 \section{Durchführung}
 
+Die Durchführung des Versuchs besteht aus vier Teilen. Zunächst wird die
+Linsengleichung~\eqref{eq:linsengleichung} an einer Sammellinse
+verifiziert, danach die Brennweite einer unbekannten Sammellinse
+bestimmt, als drittes die Brennweite für rotes, blaues und weißes Licht
+nach der Methode von \name{Bessel}\footnote{\name{Bessel}, Friedrich
+Wilhem (*1784, $\dagger$1846), deutscher Astronom, Mathematiker und
+Geodät. Zitiert nach \textcite{wikipedia:friedrich-bessel}} bestimmt und
+schließlich wird die Brennweite eines Linsensystems nach der Methode von
+Herrn \name{Abbe}\footnote{\name{Abbe}, Ernst Karl, (*1480,
+$\dagger$1905), deutscher Physiker, Statistiker, Optiker, Unternehmer
+und Quelle. Sozialreformer. Zitiert nach
+\textcite{wikipedia:ernst-abbe}} bestimmt.
+
+\subsection{Verifikation der Linsengleichung}
+
+Zur Verikation der Linsengleichung~\eqref{eq:linsengleichung} wird eine
+Sammellinse auf die Bank zwischen Perl-L und Schirm gestellt. Jetzt wird
+eine Gegenstandsweite~$g$ eingestellt, indem die Linse verschoben wird,
+und dazu der Schirm so angepaßt, daß das Bild scharf ist, d.\,h. die
+Bildweite~$b$ bestimmt. Es werden dabei zehn Messungen durchgeführt.
+
+\subsection{Bestimmung der Brennweite einer unbekannten Linse}
+
+Um die Brennweite einer unbekannten Sammellinse zu bestimmen, wird so
+vorgegangen wie im Falle der Verifiktation der Linsengleichung. Es wird
+eine Sammellinse, deren Brennweite nicht bekannt ist (in unserem Fall
+ist dies durch eine Kunststoff—Linse gegeben, die mit Wasser gefüllt ist
+und deren Wölbung sich durch die Menge an Wasser innerhalb varieren
+läßt), auf die Bank gestellt und für verschiedene Gegenstandsweiten, die
+Bildweiten bestimmt.
+
+\subsection{Die Methode nach \name{Bessel}}
+
+Bei dieser Methode wird der Abstand zwischen Gegenstand und Schirm
+konstant gehalten und durch Verschieben der Linse zwei Positionen
+gesucht, so daß das Bild scharf auf dem Schirm abgebildet ist. Es ergibt
+sich dadurch eine symmetrische Linsenstellung, bei der Gegenstands- und
+Bildweite jeweils vertauschen. Wenn dabei die Bildweite~$b$ größer als
+die Gegenstandsweite~$g$ ist, wird das Bild vergrößert. Umgekehrt wird
+es verkleinert. Die jeweiligen Gegenstands- und Bildweiten werden
+notiert.
+
+Wird der Abstand von Schirm und Gegenstand mit $e$ bezeichnet, d.\,h.
+%
+\begin{equation}
+  e = g + b
+\end{equation} 
+%
+und der Abstand der beiden Linsenpositionen, an denen der Gegenstand
+scharf auf den Schirm abgebildet wird, mit $d$ bezeichnet, also
+%
+\begin{equation}
+  d = |g - b|,
+\end{equation}
+%
+dann ergibt sich aus der Linsengleichung~\eqref{eq:linsengleichung} die
+Formel
+%
+\begin{equation} f = \frac{e^2 - d^2}{4e}
+  \label{eq:f-bessel}
+\end{equation}
+%
+für die Brennweite der Linse. Insgesamt werden für zehn verschiedene
+Abstände $e$ jeweils die Gegenstands- und Bildweiten für die
+symmetrischen Linsenpositionen bestimmt.
+
+\subsection{Bestimmung der Brennweite eines Linsensystems nach
+\name{Abbe}}
+
+Die Methode von Abbe erlaubt es, die Brennweite und die Lage der
+Hauptebenen eines Linsensystems durch Messung des Abbildungsmaßstabs~$V$
+und einer Art Gegenstands- und Bildweite $g'$ bzw. $b'$ zu bestimmen. Es
+wird in diesem Versuch ein System aus Sammel- und Zerstreuungslinse
+verwendet, die nahe hintereinander stehen. Weil die Gegenstands- und
+Bildweite bezüglich der Hauptebenen gemessen wird, deren Lage aber nicht
+bekannt ist, mißt man statt dessen den Abstand des Gegenstands~$g'$
+bzw. Bildes~$b'$ gegen einen festen Referenzpunkt. Die Abstände der
+Hauptebenen von diesem Referenzpunkt werden mit $h$ und $h'$
+bezeichnet. Es ist hier die äußerst rechte Kante des Reiters, auf dem
+die Linsen befestigt sind, als ein solcher Referenzpunkt gewählt
+worden. Mit Formel~\eqref{eq:abbildungsmassstab}
+und~\eqref{eq:linsengleichung} stellt man folgende Beziehung zwischen
+Brennweite und Abbildungsmaßstab und den gemessenen Längen her:
+%
+\begin{align}
+  \label{eq:abbe-gegenstand}
+  g' &= g + h  = f \left(1 + \frac{1}{V}\right) + h\\
+  \label{eq:abbe-bild}
+  b' &= b + h' = f (1 + V) + h'
+\end{align}
+
+Schirm und Linsensystem werden nun zehnmal so verschoben, daß das Bild
+scharf auf dem Schirm erscheint, wobei jedes Mal Abbildungsmaßstab und
+die Abstände~$g', b'$ gemessen werden.
