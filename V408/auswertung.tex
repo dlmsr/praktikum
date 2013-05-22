@@ -4,145 +4,197 @@
 
 \section{Auswertung}
 \subsection{Brennweitenbestimmung über Gegenstands- und Bildweite}
-Die Messreihen zur Bestimmung der Brennweiten einer Linse mit bekannter Brennweite (Linse 1) und einer Linse mit unbekannter Brennweite (Linse 2) liefern die in Tabelle \ref{tab:linsen1} eingetragenen Messwerte. Hierbei bezeichnet g die Gegenstandsweite und b die Bildweite.
 
-Aus den erhaltenen Messwerten werden die jeweiligen Brennweiten mit der Linsengleichung, welche in Formel \eqref{eq:linsengleichung} notiert ist, bestimmt.
-Es ergibt sich, dass 
+Die Messreihen zur Bestimmung der Brennweiten einer Linse mit bekannter
+Brennweite (Linse~1) und einer Linse mit unbekannter Brennweite
+(Linse~2) liefern die in Tabelle \ref{tab:linsen1} eingetragenen
+Messwerte. Hierbei bezeichnet $g$ die Gegenstandsweite und $b$ die
+Bildweite.
+
+Aus den erhaltenen Messwerten werden die jeweiligen Brennweiten mit der
+Linsengleichung, welche in Formel \eqref{eq:linsengleichung} notiert
+ist, bestimmt.  Es ergibt sich, dass
+%
 \begin{equation}
 f_1 = \SI{48.4(1)}{\milli\metre}
 \label{eq:f1}
 \end{equation}
+%
 die Brennweite der ersten Linse ist, und dass
+%
 \begin{equation}
 f_2 = \SI{102.3(1)}{\milli\metre}
 \label{eq:f2}
 \end{equation}
-die Brennweite der zweiten Linse ist. 
-
-Die Angegebenen Fehler sind die statistischen Fehler der Mittelwerte der Messwerte.
 %
-\begin{table}[h]
-  \centering
-  \begin{tabular}{SSSS|SSSS}
-     \toprule
-\multicolumn{4}{c|}{Linse 1} & \multicolumn{4}{c}{Linse 2}\\
-{g/}\si{\centi\metre}&{b/}\si{\centi\metre}&{g/}\si{\centi\metre}&{b/}\si{\centi\metre}&{g/}\si{\centi\metre}&{b/}\si{\centi\metre}&{g/}\si{\centi\metre}&{b/}\si{\centi\metre}\\
-\toprule
-15.1&7.1&16.6&6.9&13.0&44.4&25.7&17.3\\
-22.0&6.3&13.0&8.0&15.1&30.5&28.4&15.9\\
-8.2&13.1&22.4&6.1&18.0&23.2&31.1&15.5\\
-18.7&6.5&30.7&5.9&19.8&20.6&35.0&14.7\\
-13.3&7.3&37.9&5.1&22.2&19.1&38.1&14.4\\
-\bottomrule
-\end{tabular}
-\caption{Gemessene Gegenstands- und Bildweiten der beiden verwendeten Linsen}
-\label{tab:linsen1}
+die Brennweite der zweiten Linse ist. Die angegebenen Fehler sind die
+statistischen Fehler der Mittelwerte der Messwerte.
+%
+\begin{table}
+  \centering\footnotesize
+  \begin{tabular}{SSSSSSSS}
+    \toprule
+    \multicolumn{4}{c}{Linse 1} & \multicolumn{4}{c}{Linse 2}\\
+    {$g/\si{\centi\metre}$} & {$b/\si{\centi\metre}$} &
+    {$g/\si{\centi\metre}$} & {$b/\si{\centi\metre}$} &
+    {$g/\si{\centi\metre}$} & {$b/\si{\centi\metre}$} &
+    {$g/\si{\centi\metre}$} & {$b/\si{\centi\metre}$}\\
+    \cmidrule(r){1-4}\cmidrule(l){5-8}
+    15.1&7.1&16.6&6.9&13.0&44.4&25.7&17.3\\
+    22.0&6.3&13.0&8.0&15.1&30.5&28.4&15.9\\
+    8.2&13.1&22.4&6.1&18.0&23.2&31.1&15.5\\
+    18.7&6.5&30.7&5.9&19.8&20.6&35.0&14.7\\
+    13.3&7.3&37.9&5.1&22.2&19.1&38.1&14.4\\
+    \bottomrule
+  \end{tabular}
+  \caption{Gemessene Gegenstands- und Bildweiten der beiden verwendeten
+    Linsen. Die Linse mit bekannter Brennweite $f =
+    \SI{5}{\centi\metre}$ (links) und unbekannter Brennweite (rechts).}
+  \label{tab:linsen1}
 \end{table}
 %
-Um die Messgenauigkeit neben der angabe des statistischen Fehlers noch weiter zu untersuchen, werden die gemessenen Gegenstandsweiten auf die x-Achse und die Bildweiten auf die y-Achse eines kartesischen Koordinatensystems aufgetragen und die zugehörigen Messwerte ($g_i$/$b_i$) mit einer Geraden verbunden. Je genauer die Messung, desto mehr konzentrieren sich alle Schnittpunkte der eingezeichneten Geraden in einem Punkt.
-
-In Abb. \ref{fig:linsen1und2} ist das Ergebnis dieses Vorgehens zu sehen. Die grünen Punkte markieren die aus \eqref{eq:f1} und \eqref{eq:f2} errechneten Brennweiten.
+Um die Messgenauigkeit neben der Angabe des statistischen Fehlers noch
+weiter zu untersuchen, werden die Paare $(g_i,0)$ mit den gemessenen
+Gegenstandsweiten und $(0, b_i)$ mit den gemessenen Bildweiten in ein
+kartesisches Koordinatensystem eingezeichnet und mit einer Geraden
+verbunden. Je genauer die Messung, desto mehr konzentrieren sich alle
+Schnittpunkte der eingezeichneten Geraden in einem Punkt. In
+Abb.~\vref{fig:linsen1und2} ist das Ergebnis der beschriebenen Auswertung
+zu sehen. Die grünen Punkte markieren die aus \eqref{eq:f1} und
+\eqref{eq:f2} errechneten Brennweiten.
 %
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.8\textwidth]{linsen1und2}
-\caption{Zur Überprüfung der Messgenauigkeit}
-\label{fig:linsen1und2}
+\begin{figure}
+  \centering
+  \includegraphics[width=0.8\textwidth]{linsen1und2}
+  \caption{Zur Überprüfung der Messgenauigkeit sind die Bildweiten auf
+    der $y$-Achse und die Gegenstandsweiten auf der $x$-Achse
+    eingetragen und durch Geraden verbunden. Die grünen Punkte markieren
+    die nach der Linsengleichung~\eqref{eq:linsengleichung} ermittelten
+    Brennweiten. Je genauer die Messung stattgefunden hat, desto mehr
+    liegen die Schnittpunkte der einzelnen Geraden beieinander.}
+  \label{fig:linsen1und2}
 \end{figure}
 %
 \subsection{Brennweitenbestimmung nach \name{Bessel}}
-Das Messverfahren zur Bestimmung der Brennweite einer Linse nach \name{Bessel} ergibt für weißes, rotes und blaues Licht die in Tabelle \ref{tab:bessel} aufgeführten Messwerte. Mit e wird der Abstand zwischen dem Gegenstand und dem Bild bezeichnet. $g_1$ und $b_1$ geben die Gegenstands- und Bildweite an, bei der sich die Linse näher am Gegenstand befindet. $g_2$ und $b_2$ bezeichnen entsprechend den Fall, in dem sich die Linse näher am Schirm befindet.
+
+Das Messverfahren zur Bestimmung der Brennweite einer Linse nach
+\name{Bessel} ergibt für weißes, rotes und blaues Licht die in
+Tabelle~\vref{tab:bessel} aufgeführten Messwerte. Mit $e$ wird der
+Abstand zwischen dem Gegenstand und dem Bild bezeichnet. $g_1$ und $b_1$
+geben die Gegenstands- und Bildweite an, bei der sich die Linse näher am
+Gegenstand befindet. $g_2$ und $b_2$ bezeichnen entsprechend den Fall,
+in dem sich die Linse näher am Schirm befindet.
 %
-\begin{table}[h!]
-  \centering
-  \begin{tabular}{SSSSS|SSSSS}
-     \toprule
-\multicolumn{10}{c}{weißes Licht}\\
-{e/}\si{\centi\metre}&{$g_1$/}\si{\centi\metre}&{$b_1$/}\si{\centi\metre}&{$g_2$/}\si{\centi\metre}&{$b_2$/}\si{\centi\metre}&
-{e/}\si{\centi\metre}&{$g_1$/}\si{\centi\metre}&{$b_1$/}\si{\centi\metre}&{$g_2$/}\si{\centi\metre}&{$b_2$/}\si{\centi\metre}\\
-\toprule
-70.0&26.2&43.8&44.2&25.8&85.0&22.1&62.9&63.1&21.9\\
-73.0&24.6&48.4&48.6&24.4&88.0&21.9&66.1&65.2&22.8\\
-76.0&23.8&52.2&52.2&23.8&91.0&23.5&69.5&70.0&21.0\\
-79.0&23.2&55.8&56.1&22.9&94.0&21.3&72.7&73.1&20.9\\
-82.0&22.6&59.4&59.6&22.4&97.0&21.1&75.9&76.3&20.7\\
-\midrule
-\multicolumn{5}{c}{rotes Licht}&\multicolumn{5}{c}{blaues Licht}\\
-{e/}\si{\centi\metre}&{$g_1$/}\si{\centi\metre}&{$b_1$/}\si{\centi\metre}&{$g_2$/}\si{\centi\metre}&{$b_2$/}\si{\centi\metre}&
-{e/}\si{\centi\metre}&{$g_1$/}\si{\centi\metre}&{$b_1$/}\si{\centi\metre}&{$g_2$/}\si{\centi\metre}&{$b_2$/}\si{\centi\metre}\\
-\toprule
-70.0&26.1&43.9&43.6&26.4&70.0&25.8&44.2&44.4&25.6\\
-73.0&25.1&47.9&48.6&24.4&73.0&24.8&48.2&48.5&24.5\\
-76.0&24.1&51.9&52.1&23.9&76.0&24.0&52.0&52.5&23.5\\
-79.0&23.5&55.5&55.7&23.3&79.0&23.2&55.8&56.2&22.8\\
-82.0&22.7&59.3&59.6&22.4&82.0&23.0&59.0&59.6&22.4\\
-\bottomrule
-\end{tabular}
-\caption{Gemessene Gegenstands- und Bildweiten einer Linse für verschiedene Farben mit der Methode nach \name{Bessel}}
-\label{tab:bessel}
+\begin{table}
+  \centering\footnotesize
+  \begin{tabular}{SSSSSSSSSS}
+    \toprule
+    \multicolumn{10}{c}{weißes Licht} \\
+    {$e$/\si{\centi\metre}} & {$g_1$/\si{\centi\metre}} &
+    {$b_1$/\si{\centi\metre}} & {$g_2$/}\si{\centi\metre} &
+    {$b_2$/\si{\centi\metre}} & {e/}\si{\centi\metre} &
+    {$g_1$/\si{\centi\metre}} & {$b_1$/}\si{\centi\metre} &
+    {$g_2$/\si{\centi\metre}} & {$b_2$/}\si{\centi\metre} \\
+    \cmidrule(r){1-5}\cmidrule(l){6-10}
+    70.0&26.2&43.8&44.2&25.8&85.0&22.1&62.9&63.1&21.9\\
+    73.0&24.6&48.4&48.6&24.4&88.0&21.9&66.1&65.2&22.8\\
+    76.0&23.8&52.2&52.2&23.8&91.0&23.5&69.5&70.0&21.0\\
+    79.0&23.2&55.8&56.1&22.9&94.0&21.3&72.7&73.1&20.9\\
+    82.0&22.6&59.4&59.6&22.4&97.0&21.1&75.9&76.3&20.7\\
+    \midrule
+    \multicolumn{5}{c}{rotes Licht} & \multicolumn{5}{c}{blaues Licht}\\
+    {e/}\si{\centi\metre}&{$g_1$/}\si{\centi\metre}&
+    {$b_1$/}\si{\centi\metre}&{$g_2$/}\si{\centi\metre}&
+    {$b_2$/}\si{\centi\metre}&{e/}\si{\centi\metre}&
+    {$g_1$/}\si{\centi\metre}&{$b_1$/}\si{\centi\metre}&
+    {$g_2$/}\si{\centi\metre}&{$b_2$/}\si{\centi\metre}\\
+    \cmidrule(r){1-5}\cmidrule(l){6-10}
+    70.0&26.1&43.9&43.6&26.4&70.0&25.8&44.2&44.4&25.6\\
+    73.0&25.1&47.9&48.6&24.4&73.0&24.8&48.2&48.5&24.5\\
+    76.0&24.1&51.9&52.1&23.9&76.0&24.0&52.0&52.5&23.5\\
+    79.0&23.5&55.5&55.7&23.3&79.0&23.2&55.8&56.2&22.8\\
+    82.0&22.7&59.3&59.6&22.4&82.0&23.0&59.0&59.6&22.4\\
+    \bottomrule
+  \end{tabular}
+  \caption{Gemessene Gegenstands- und Bildweiten einer Linse für
+    verschiedene Farben mit der Methode nach \name{Bessel}}
+  \label{tab:bessel}
 \end{table}
 %
-
-Aus der Linsengleichung \eqref{eq:linsengleichung} ergibt sich durch Einsetzen der Abstände e = $g_1 + b_1 = g_2 + b_2$ und d = $|g_1 - b_1| = g_2 - b_2$ der in Formel \eqref{eq:bessel} widergegebene Zusammenhang zwischen Brennweite f der Linse und den Abständen e und d.
+Mit Formel \eqref{eq:f-bessel} werden nun die Brennweiten $f_w$ für
+weißes, $f_r$ für rotes und $f_b$ für blaues Licht errechnet.  Es ergibt
+sich, dass
 %
-\begin{equation}
-f = \frac{e^2 - d^2}{4e}
-\label{eq:bessel}
-\end{equation}
+\begin{align*}
+f _w &= \SI{16.5(1)}{\centi\metre}, \\
+f _r &= \SI{16.4(1)}{\centi\metre}, \\
+f _b &= \SI{16.4(1)}{\centi\metre}.
+\end{align*}
 %
-Mit Formel \eqref{eq:bessel} werden nun die Brennweiten $f_w$ für weißes, $f_r$ für rotes und $f_b$ für blaues Licht errechnet.
-Es ergibt sich, dass
-%
-\begin{equation*}
-f _w = \SI{16.5(1)}{\centi\metre} \text{ ; } f _r = \SI{16.4(1)}{\centi\metre} \text{ ; } f _b = \SI{16.4(1)}{\centi\metre}.
-\end{equation*}
-%
-Die angebenenen Fehler sind wieder die statistischen Fehler der Mittelwerte.
+Die angebenenen Fehler sind die statistischen Fehler der Mittelwerte.
 %
 \subsection{Brennweitenbestimmung nach \name{Abbe}}
-Die Messreihe zur Bestimmung der Brennweite und Lage der Hauptebenen des Linsensystems, welches aus einer Zerstreuungslinse mit f = \SI{-100}{\centi\metre} und einer Sammellinse mit f = \SI{100}{\centi\metre} besteht, ergibt die in Tabelle \ref{tab:abbe} aufgeführten Messwerte. Außerdem ist in dieser Tabelle das Abbildungsverhältnis V angegeben.
-g' und b' sind hierbei die Gegenstands- und Bildweiten bezüglich des gewählten Referenzpunktes A. B gibt die gemessene Bildgröße an. Die Gegenstandsgröße bemisst sich zu G = \SI{3.8}{\centi\metre}.
+
+Die Messreihe zur Bestimmung der Brennweite und Lage der Hauptebenen des
+Linsensystems, welches aus einer Zerstreuungslinse mit $f =
+\SI{-100}{\centi\metre}$ und einer Sammellinse mit $f =
+\SI{100}{\centi\metre}$ besteht, ergibt die in Tabelle~\vref{tab:abbe}
+aufgeführten Messwerte. Außerdem ist in dieser Tabelle das
+Abbildungsverhältnis $V$ angegeben. Es bezeichnen $g'$ und $b'$ hierbei
+die Gegenstands- und Bildweiten bezüglich des gewählten
+Referenzpunktes~$A$. Durch $B$ ist die gemessene Bildgröße
+angegeben. Die Gegenstandsgröße bemisst sich zu $G =
+\SI{3.8}{\centi\metre}$.
 %
-\begin{table}[h]
-  \centering
-  \begin{tabular}{SSSS|SSSS}
-     \toprule
-{g'/}\si{\centi\metre}&{b'/}\si{\centi\metre}&{B/}\si{\centi\metre}&{V}&{g'/}\si{\centi\metre}&{b'/}\si{\centi\metre}&{B/}\si{\centi\metre}&{V}\\
-\toprule
-54.5&55.9&3&0.79&61.3&50.0&2.0&0.53\\
-50.8&57.4&2.8&0.74&47.4&61.5&3.1&0.82\\
-43.7&65.4&3.7&0.97&62.5&49.5&1.9&0.5\\
-50.8&55.7&2.7&0.71&57.5&52.3&2.2&0.58\\
-52.7&59.0&2.2&0.58&54.4&55.5&2.5&0.66\\
-\bottomrule
-\end{tabular}
-\caption{Gemessene Gegenstands- und Bildweiten bezüglich des gewählten Referenzpunktes A}
-\label{tab:abbe}
+\begin{table}
+  \centering\footnotesize
+  \begin{tabular}{SSSSSSSS}
+    \toprule
+    {$g'$/\si{\centi\metre}} & {$b'$/\si{\centi\metre}} &
+    {$B$/}\si{\centi\metre} & {$V$} &
+    {$g'$/}\si{\centi\metre}& {$b'$/}\si{\centi\metre}&
+    {$B$/}\si{\centi\metre} & {$V$}\\
+    \cmidrule(r){1-4}\cmidrule(l){5-8}
+    54.5&55.9&3&0.79&61.3&50.0&2.0&0.53\\
+    50.8&57.4&2.8&0.74&47.4&61.5&3.1&0.82\\
+    43.7&65.4&3.7&0.97&62.5&49.5&1.9&0.5\\
+    50.8&55.7&2.7&0.71&57.5&52.3&2.2&0.58\\
+    52.7&59.0&2.2&0.58&54.4&55.5&2.5&0.66\\
+    \bottomrule
+  \end{tabular}
+  \caption{Gemessene Gegenstands- und Bildweiten bezüglich des gewählten
+    Referenzpunktes~$A$}
+  \label{tab:abbe}
 \end{table}
-%
 
-Hierbei gelten die Formeln \eqref{eq:gs} und \eqref{eq:bs}. Mit h wird der Abstand zwischen Referenzpunkt A und gegenstandsseitiger Hauptebene H bezeichnet, mit h' entsprechend der Abstand zwischen dem Referenzpunkt und der bildseitigen Hauptebene H'.
-\begin{equation}
-g' = g+h = f \cdot \left(1 + \frac{1}{V}\right) + h
-\label{eq:gs}
-\end{equation}
-\begin{equation}
-b' = b+h' = f \cdot \left(1 +V\right) + h'
-\label{eq:bs}
-\end{equation}
-Es werden die Gegenstandsweiten g' gegen $\left(1 + \frac{1}{V}\right)$, sowie die Bildweiten b' gegen $1+ V$ aufgetragen. Eine lineare Ausgleichsrechnung\footnote{Dazu wird \texttt{ipython} in der Version 0.13 verwendet} ergibt somit die Brennweite des Linsensystems, sowie die Lage der Hauptebenen. 
-In Abb. \ref{fig:abbe} ist ein Plot der Messwerte gegen die entsprechenden Werte zu finden. Ebenfalls in diesem Plot sind die beiden Ausgleichsgeraden zu sehen.
-%
-\begin{figure}[h!!]
-\centering
-\includegraphics[width=0.8\textwidth]{abbe}
-\caption{Zur Überprüfung der Messgenauigkeit}
-\label{fig:abbe}
+Aus den Formeln~\eqref{eq:abbe-gegenstand} und \eqref{eq:abbe-bild} ist
+ersichtlich, daß man eine lineare Ausgleichsrechnung durchführen
+kann. Es werden die Gegenstandsweiten $g'$ gegen $1 + 1/V$, sowie die
+Bildweiten $b'$ gegen $1 + V$ aufgetragen. Die lineare
+Ausgleichsrechnung\footnote{Dazu wird \texttt{ipython} in der Version
+  0.13 verwendet} ergibt somit die Brennweite des Linsensystems, sowie
+die Lage der Hauptebenen.  In Abb.~\vref{fig:abbe} ist ein Plot der
+Messwerte gegen die entsprechenden Werte zu finden. Ebenfalls in diesem
+Plot sind die beiden Ausgleichsgeraden zu sehen.  Als Ergebnis der
+linearen Ausgleichsrechnung ergeben sich zwei verschiedene Brennweiten
+$f_g$ und $f_b$; eine aus der Messung der Gegenstandsweite und eine aus
+der Messung der Bildweite.  Die gesuchten Werte mit den entsprechenden
+Fehlern werden bestimmt zu
+\begin{align*}
+f_g &= \SI{16.9(27)}{\centi\metre}, \\
+f_b &= \SI{29.0(59)}{\centi\metre}, \\
+h   &= \SI{11.1(70)}{\centi\metre}, \\
+h'  &= \SI{7.3(100)}{\centi\metre}.
+\end{align*}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.8\textwidth]{abbe}
+  \caption{Ergebnisse der linearen Ausgleichsrechnung. Die rote Gerade
+    zeigt $1 + V$ gegen die Gegenstandsweite, die blaue zeigt $1 + V$
+    gegen die Bildweite. Die entsprechenden Meßwerte sind dazu
+    geplottet. Es sind bei beiden Geraden zwei große Ausreißer zu
+    bemerken, die sich aber herausmitteln, weswegen sie bei der
+    Regression dennoch berücksicktigt worden sind.}
+  \label{fig:abbe}
 \end{figure}
-%
-
-Als Ergebnis der linearen Ausgleichsrechnung ergeben sich zwei verschiedene Brennweiten $f_g$ und $f_b$; eine aus der Messung der Gegenstandsweite und eine aus der Messung der Bildweite. 
-Die gesuchten Werte mit den entsprechenden Fehlern werden bestimmt zu
-\begin{equation*}
-f_g = \SI{16.9(27)}{\centi\metre} \text{ ; } f_b = \SI{29.0(59)}{\centi\metre} \text{ ; } h = \SI{11.1(70)}{\centi\metre} \text{ ; } h' = \SI{7.3(100)}{\centi\metre}.
-\end{equation*}
