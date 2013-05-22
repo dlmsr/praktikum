@@ -1,3 +1,4 @@
+# encoding: utf-8
 from numpy import *
 from matplotlib.pyplot import *
 import linregress
