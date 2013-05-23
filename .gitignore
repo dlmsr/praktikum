@@ -7,4 +7,6 @@
 *.blg
 *.out
 *.aux
-protokoll.run.xml
+*.run.xml
+__pycache__
+
