@@ -14,17 +14,17 @@ v0 = 1/(1000*294.75*10**(-9))
 
 omega = v/v0
 
-plot(omega,log(U),'*',label ="Messwerte")
+plot(log(omega),U,'*',label ="Messwerte")
 
 def theo(om):
     return sqrt((om**2 -1)**2 /(9*( (1-om**2)**2 + 9*om**2)))
 
 x = linspace(0,55,10000)
-plot(x,log(theo(x)), label ="Theorie")
+plot(log(x),theo(x), label ="Theorie")
 #Bem.: Messwerte erreichen nie 0, da Oberwellen auftreten!
 
-xlabel("$\omega$/$\omega_0$")
-ylabel("$\log(U_{Br}/U_S)$")
+xlabel("$\log(\omega$/$\omega_0)$")
+ylabel("$U_{Br}/U_S$")
 legend(loc = "lower right")
 grid()
 savefig("wien_robinson_plot.pdf")
