@@ -44,4 +44,4 @@ def linear_fit(x, y):
     B_error = sigma_y * sqrt(sum(x**2) / Delta)
 
     # f(x) = A * x + B
-    return array([A, B]), array([A_error, B_error])
+    return array([A, A_error, B, B_error])
