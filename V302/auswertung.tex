@@ -10,38 +10,10 @@ aufgenommen. Anschließend wird eine weiter Messreihe gestartet, diesmal
 mit dem unbekannten Widerstand Wert 12.
 
 Die Ergebnisse dieser Messreihen sind in Tabelle~\ref{tab:wheatstone}
-zufinden.
-Ebenfalls in dieser Tabelle sind die errechneten Werte für die
+zufinden. Ebenfalls in dieser Tabelle sind die errechneten Werte für die
 unbekannten Widerstände zu finden. Diese werden mit
-Formel~\eqref{eq:abgleich-ohmsch} berechnet.
-%
-\begin{table}[]
-  \centering
-  \begin{tabular}{SSS|SSS}
-     \toprule
-     \multicolumn{3}{c|}{Wert 11} & \multicolumn{3}{c}{Wert 12}\\
-     \midrule
-     {$R_2$/}\si{\ohm}&{$R_3$/}\si{\ohm}&{Wert
-       11/}\si{\ohm}&{$R_2$/}\si{\ohm}&{$R_3$/}\si{\ohm}&{Wert 12/}\si{\ohm}\\
-     \midrule
-     50	&912&518&50&888&396\\
-     150&768&497&150&721&388\\
-     250&665&496&250&612&394\\
-     350&586&495&350&531&396\\
-     450&524&495&450&468&396\\
-     550&474&496&550&418&395\\
-     650&432&494&650&378&395\\
-     750&397&494&750&345&395\\
-     850&362&482&850&312&385\\
-     950&342&494&950&293&394\\
-    \bottomrule
-  \end{tabular}
-  \caption{Gemessene und errechnete Widerstände mit der
-    \name{Wheatstone}schen Brücke}
-  \label{tab:wheatstone}
-\end{table}
-%
-Als Ergebnis der beiden Messreihen ergibt sich, dass
+Formel~\eqref{eq:abgleich-ohmsch} berechnet.  Als Ergebnis der beiden
+Messreihen ergibt sich, dass
 %
 \begin{align*}
 R_\text{x11} &= \SI{496(3)}{\ohm},\\
@@ -49,8 +21,39 @@ R_\text{x12} &= \SI{393(1)}{\ohm}.
 \end{align*}
 %
 Die Fehler sind die Standardabweichungen der Mittelwerte, welche aus
-denWerten der Messreihe errechnet sind.
-%
+den Werten der Messreihe errechnet sind.
+
+\begin{table}
+  \centering\footnotesize
+  \sisetup{
+    table-number-alignment = center,
+    table-figures-decimal  = 0
+  }
+  \begin{tabular}{SSSSSS}
+    \toprule
+    \multicolumn{3}{c}{Wert 11} & \multicolumn{3}{c}{Wert 12}\\
+    {$R_2$/}\si{\ohm} & {$R_3$/}\si{\ohm} & {Wert 11/}\si{\ohm} &
+    {$R_2$/}\si{\ohm} & {$R_3$/}\si{\ohm} & {Wert 12/}\si{\ohm}\\
+    \cmidrule(r){1-3} \cmidrule(l){4-6}
+    50	&912&518&50&888&396\\
+    150&768&497&150&721&388\\
+    250&665&496&250&612&394\\
+    350&586&495&350&531&396\\
+    450&524&495&450&468&396\\
+    550&474&496&550&418&395\\
+    650&432&494&650&378&395\\
+    750&397&494&750&345&395\\
+    850&362&482&850&312&385\\
+    950&342&494&950&293&394\\
+    \bottomrule
+  \end{tabular}
+  \caption{Hier sind die gemessenen und errechneten Widerstände, die
+    bei der Untersuchung der \name{Wheatstone}schen Brücke verwendet
+    worden sind, gelistet. Dabei sind jeweils die mit Wert 11 und Wert
+    12 markierten Widerstände benutzt worden.}
+  \label{tab:wheatstone}
+\end{table}
+
 \subsection{Kapazitätsmessbrücke}
 %
 Es werden zwei annähernd ideale Kapazitäten Wert 1 und Wert 3, sowie
@@ -58,28 +61,6 @@ eine reale Kapazität Wert 8 mit zu berücksichtigendem \name{Ohm}schen
 Widerstand mithilfe einer Kapazitätsmessbrücke untersucht.
 
 In Tabelle~\ref{tab:kapazitaet} sind die gemessenen Werte zu finden.
-%
-\begin{table}[]
-  \centering
-  \begin{tabular}{SS|SS|SSS}
-     \toprule
-\multicolumn{2}{c|}{Wert 1} & \multicolumn{2}{c|}{Wert
-3}&\multicolumn{3}{c}{Wert 8}\\
-    \midrule
-{$C_2$/}\si{\nano\farad}&{$R_3$/}\si{\ohm}&{$C_2$/}\si{\nano\farad}&
-{$R_3$/}\si{\ohm}&{$C_2$/}\si{\nano\farad}&{$R_2$/}\si{\ohm}&
-{$R_3$/}\si{\ohm}\\
-\midrule
-450	&404&992&701&450&373&604\\
-597	&475&597&588&597&280&670\\
-992	&599&450&516&992&170&770\\
-    \bottomrule
-  \end{tabular}
-  \caption{Gemessene Werte mit der Kapazitätsmessbrücke}
-  \label{tab:kapazitaet}
-\end{table}
-%
-
 Mit Formel~\eqref{eq:abgleich-komplex} errechnen sich die unbekannten
 Kapazitäten und Widerstände zu
 %
@@ -93,6 +74,28 @@ R_\text{x8} &= \SI{569.0(2)}{\ohm} \text{ für Wert 8}.
 Die Fehler ergeben sich wieder als statistischer Fehler aus den
 gemessenen Werten.
 %
+\begin{table}
+  \centering\footnotesize
+  \sisetup{
+    table-number-alignment = center,
+    table-figures-decimal  = 0
+  }
+  \begin{tabular}{SSSSSSS}
+     \toprule
+     \multicolumn{2}{c}{Wert 1} & \multicolumn{2}{c}{Wert 3} &
+     \multicolumn{3}{c}{Wert 8}\\
+     {$C_2$/}\si{\nano\farad}&{$R_3$/}\si{\ohm}&{$C_2$/}\si{\nano\farad}&
+     {$R_3$/}\si{\ohm}&{$C_2$/}\si{\nano\farad}&{$R_2$/}\si{\ohm}&
+     {$R_3$/}\si{\ohm}\\
+     \cmidrule(r){1-2} \cmidrule(lr){3-4} \cmidrule(l){5-7}
+     450&404&992&701&450&373&604\\
+     597&475&597&588&597&280&670\\
+     992&599&450&516&992&170&770\\
+    \bottomrule
+  \end{tabular}
+  \caption{Gemessene Werte mit der Kapazitätsmessbrücke}
+  \label{tab:kapazitaet}
+\end{table}
 
 \subsection{Induktivitätsmessbrücke und \name{Maxwell}-Brücke}
 
@@ -102,53 +105,52 @@ werden, sind in Tabelle~\ref{tab:induktivitaet} aufgelistet.
 
 Die Messwerte, welche sich beim Untersuchen von Wert 18 mithilfe einer
 \name{Maxwell}-Brücke ergeben, sind ebenfalls in dieser Tabelle zu
-finden.
-%
-\begin{table}[]
-  \centering
-  \begin{tabular}{SSS|SSSS}
-     \toprule
-\multicolumn{3}{c|}{Induktivitätsbrücke} &
-\multicolumn{4}{c}{\name{Maxwell}-Brücke}\\
-    \midrule
-{$L_2$/}\si{\milli\henry}&{$R_2$/}\si{\ohm}&{$R_3$/}\si{\ohm}&
-{$R_2$/}\si{\ohm}&{$R_4$/}\si{\ohm}&{$R_3$/}\si{\ohm}&
-{$C_4$/}\si{\nano\farad}\\
-\midrule
-14.6&108&772&1000&311&110&450\\
-20.1&143&712&322&141&151&992\\
-    \bottomrule
-  \end{tabular}
-\caption{Aufgenommene Werte mit der Induktivitäts- und der
-\name{Maxwell}-Brücke}
-  \label{tab:induktivitaet}
-\end{table}
-%
-
-Für die Induktivitätsmessbrücke werden die unbekannten Werte des
-\name{Ohm}schen Widerstandes und der Induktivität von Wert 18 mithilfe
-von Formel~\eqref{eq:abgleich-ind-bruecke} errechnet und ergeben mit
-denaufgenommenen Messwerten, dass
+finden.  Für die Induktivitätsmessbrücke werden die unbekannten Werte
+des \name{Ohm}schen Widerstandes und der Induktivität von Wert 18
+mithilfe von Formel~\eqref{eq:abgleich-ind-bruecke} errechnet und
+ergeben mit den aufgenommenen Messwerten, dass
 %
 \begin{align*}
-R_\text{x18} &= \SI{360(4)}{\ohm}\\
-L_\text{x18} &= \SI{49.6(1)}{\milli\henry}
+R_\text{x18} &= \SI{360(4)}{\ohm},\\
+L_\text{x18} &= \SI{49.6(1)}{\milli\henry}.
 \end{align*}
 %
 Für die selbe Induktivität ergibt die Rechnung mit
 Formel~\eqref{eq:abgleich-ind-maxwell} für Wert 18, dass
 %
-\begin{equation*}
-R_{x18} = \SI{349}{\ohm} \pm \SI{3}{\ohm}
-\end{equation*}
-%
-\begin{equation*}
-L_{x18} = \SI{48.9}{\milli\henry} \pm \SI{0.4}{\milli\henry}
-\end{equation*}
+\begin{align*}
+R_{x18} &= \SI{349}{\ohm} \pm \SI{3}{\ohm},\\
+L_{x18} &= \SI{48.9}{\milli\henry} \pm \SI{0.4}{\milli\henry}.
+\end{align*}
 %
 Die bei diesen Werten angebenen Fehler sind wieder die statistischen
 Fehler der Messreihe.
 %
+
+\begin{table}
+  \centering\footnotesize
+  \sisetup{
+    table-number-alignment = center,
+    table-figures-decimal  = 1,
+    table-figures-integer  = 4
+    }
+  \begin{tabular}{SSSSSSS}
+     \toprule
+     \multicolumn{3}{c}{Induktivitätsbrücke} &
+     \multicolumn{4}{c}{\name{Maxwell}-Brücke}\\
+     {$L_2$/}\si{\milli\henry}&{$R_2$/}\si{\ohm}&{$R_3$/}\si{\ohm}&
+     {$R_2$/}\si{\ohm}&{$R_4$/}\si{\ohm}&{$R_3$/}\si{\ohm}&
+     {$C_4$/}\si{\nano\farad}\\
+     \cmidrule(r){1-3} \cmidrule(l){4-7}
+     14.6&108&772&1000&311&110&450\\
+     20.1&143&712&322&141&151&992\\
+    \bottomrule
+  \end{tabular}
+  \caption{Aufgenommene Werte mit der Induktivitäts- und der
+    \name{Maxwell}-Brücke}
+  \label{tab:induktivitaet}
+\end{table}
+
 \subsection{\name{Wien}-\name{Robinson}-Brücke}
 Die gemessene Brückenspannung $U_\text{Br}$ in Abhängigkeit von der
 Frequenz $\nu$ der Sinusspannung der Spannungsquelle ist in
@@ -159,67 +161,72 @@ Eingangsspannung $\frac{U_\text{Br}}{U_\text{S}}$ gegen den Quotienten
 aus Kreisfrequenz gegen Filterkreisqrequenz $\frac{\omega}{\omega_0}$
 ist in Abb.~\ref{fig:wien_robinson_plot} zu sehen. Dabei bezeichnet die
 Filterkreisfrequenz $\omega_0$ die Kreisfrequenz, bei der die
-Brückenspannung minimal wird.
-
-Im selben Plot ist ebenfalls die von der Theorie durch
-Formel~\eqref{eq:wien_robinson_theo} vorhergesagten Kurve zu finden.
+Brückenspannung minimal wird. Im selben Plot ist ebenfalls die von der
+Theorie durch Formel~\eqref{eq:wien_robinson_theo} vorhergesagten Kurve
+zu finden.
 
 Bei der \name{Wien}-\name{Robinson}-Brücke wird ein Widerstand von
 $R=\SI{1}{\kilo\ohm}$ und eine Kapazität von
 $C=\SI{294.75}{\nano\farad}$
 verwendet, wodurch sich eine Filterfrequenz von $\nu_0$ =
 \SI{540}{\hertz} ergibt.
-%
-\begin{table}[]
-  \centering
-  \begin{tabular}{SS|SS|SS}
-     \toprule
-{$\nu$/}\si{\hertz}&{$U_\text{Br}$/}\si{\milli\volt}&{$\nu$/}\si{\hertz}&
-{$U_\text{Br}$/}\si{\milli\volt}&{$\nu$/}\si{\hertz}&
-{$U_\text{Br}$/}\si{\milli\volt}\\
-\midrule
-2&681.3&502&33.12&602&48.12\\
-52&675&512&22.5&652&84.38\\
-102	&600&522	&14.37&702&118.8\\
-152&512.5&532&6.25&802&176.6\\
-202&418&542&2.5&1002&271.9\\
-252&337&552&9.688&2002&506.3\\
-282&300&562&17.5&3002&575\\
-302&262&572&25.94&10002&625\\
-402	&132.8&582&32.19&20000&593.8\\
-452&79.69&592&40.62&30000&556.3\\
-    \bottomrule
-  \end{tabular}
-\caption{Gemessene Brückenspannungen der
-\name{Wien}-\name{Robinson}-Brücke}
-  \label{tab:wien_robinson}
-\end{table}
-%
-\begin{figure}
-\centering
-\includegraphics[width=0.8\textwidth]{wien_robinson_plot.pdf}
-\caption{Plot der gemessenen und umgerechneten Werte der
-Brückenspannunggegen die Frequenz}
-\label{fig:wien_robinson_plot}
-\end{figure}
-%
+
 Als letztes wird der Klirrfaktor k des verwendeten Funktionsgenerators
-bestimmt.
-Eine Messung bei der oben genannten Filterfrequenz $\nu_0$ ergibt eine
-restliche Amplitudenspannung von $U_{Br}$ = \SI{1.4}{\milli\volt}. Es
-wird angenommen, dass sich diese restliche Spannung nur aus der
-Spannungder ersten Oberschwingung des eingestellten Sinussignals
-zusammensetzt.
-Die Brückenschaltung teilt die Spannung dieser Schwingung, sodass sich
-der tatsächliche Wert der Amplitudenspannung der ersten Oberschwingung
-zu $U_2$=\SI{9.4}{\milli\volt} ergibt.
-Der Klirrfaktor k ist in diesem Versuch der Quotient aus $U_2$ und der
-Amplitudenspannung $U_1$ der Grundschwingung, welche sich zu $U_1$ =
-\SI{1.99}{\volt} errechnet.
+bestimmt.  Eine Messung bei der oben genannten Filterfrequenz $\nu_0$
+ergibt eine restliche Amplitudenspannung von $U_{Br}$ =
+\SI{1.4}{\milli\volt}. Es wird angenommen, dass sich diese restliche
+Spannung nur aus der Spannungder ersten Oberschwingung des eingestellten
+Sinussignals zusammensetzt.  Die Brückenschaltung teilt die Spannung
+dieser Schwingung, sodass sich der tatsächliche Wert der
+Amplitudenspannung der ersten Oberschwingung zu
+$U_2$=\SI{9.4}{\milli\volt} ergibt.  Der Klirrfaktor k ist in diesem
+Versuch der Quotient aus $U_2$ und der Amplitudenspannung $U_1$ der
+Grundschwingung, welche sich zu $U_1$ = \SI{1.99}{\volt} errechnet.
 Daraus wird der Klirrfaktor bestimmt. Die Rechnung ergibt, dass
 %
 \begin{equation*}
-k = \SI{4.7e-3}{} = \SI{0.47}{\percent}
+k = \num{4.7e-3} = \SI{0.47}{\percent}.
 \end{equation*}
 %
+
+\begin{table}
+  \centering\footnotesize
+  \sisetup{
+    table-number-alignment = center,
+    table-figures-decimal  = 3,
+    table-figures-integer  = 5
+  }
+  \begin{tabular}{SSSSSS}
+    \toprule
+    {$\nu$/}\si{\hertz} & {$U_\text{Br}$/}\si{\milli\volt}&
+    {$\nu$/}\si{\hertz} & {$U_\text{Br}$/}\si{\milli\volt}&
+    {$\nu$/}\si{\hertz} & {$U_\text{Br}$/}\si{\milli\volt}\\
+    \cmidrule(r){1-2} \cmidrule(rl){3-4} \cmidrule(l){5-6}
+    2&681.3&502&33.12&602&48.12\\
+    52&675&512&22.5&652&84.38\\
+    102	&600&522	&14.37&702&118.8\\
+    152&512.5&532&6.25&802&176.6\\
+    202&418&542&2.5&1002&271.9\\
+    252&337&552&9.688&2002&506.3\\
+    282&300&562&17.5&3002&575\\
+    302&262&572&25.94&10002&625\\
+    402	&132.8&582&32.19&20000&593.8\\
+    452&79.69&592&40.62&30000&556.3\\
+    \bottomrule
+  \end{tabular}
+  \caption{Gemessene Brückenspannungen der
+    \name{Wien}-\name{Robinson}-Brücke}
+  \label{tab:wien_robinson}
+\end{table}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.75\textwidth]{wien_robinson_plot.pdf}
+  \caption{Plot der gemessenen und umgerechneten Werte der
+    Brückenspannunggegen die Frequenz. Die $x$-Achse ist logarithmisch
+    skaliert. Der Zusammenbruch der Brückenspannung, wenn
+    $\omega\to\omega_0$ geht, ist deutlich zu erkennen.}
+  \label{fig:wien_robinson_plot}
+\end{figure}
+
 \FloatBarrier
