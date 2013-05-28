@@ -13,31 +13,22 @@ Abbildung~\ref{fig:allg-bruecke} dargestellten Aufbau.  Die Spannung
 zwischen den Punkten $A$ und $B$ ergibt sich, wenn die magnetische
 Flußänderung außerhalb der Bauteile als Null angenommen wird, mithilfe
 der Maschen- und Knotenregeln von \name{Kirchhoff}. Sie ergeben sich aus
-den \name{Maxwell}-Gleichungen und lauten: \enquote{Die Summe aller
-Ströme in einem Knoten verschwindet} und \enquote{Die Summe aller
-Spannungen in einer Masche verschwindet}:
+den \name{Maxwell}-Gleichungen und lauten:
 %
-\begin{gather}
-  \sum^n_{k = 1} I_k = 0
-  \intertext{und}
-  \sum^n_{k = 1} U_k = 0
-\end{gather}
+\begin{align*}
+  \sum^n_{k = 1} I_k &= 0 \qquad \text{(Knotenregel)}\\
+  \sum^n_{k = 1} U_k &= 0 \qquad \text{(Maschenregel)}
+\end{align*}
 %
-Aus der Knotenregel ergeben sich dann die Gleichungen
+Aus den Knoten- und Maschenregeln ergeben sich für die allgemeine
+Brückenschaltung dann die Gleichungen
 %
-\begin{gather}
-  I_1 = I_2\\
-  \intertext{und}
-  I_3 = I_4.
-\end{gather}
-%
-Die Maschenregel liefert die beiden Gleichungen
-%
-\begin{gather} 
-  U = -R_1 I_1 + R_3 I_3\\
-  \intertext{und}
-  -U = -R_2 I_2 + R_4 I_4.
-\end{gather}
+\begin{align}
+  I_1 &= I_2, &
+  I_3 &= I_4,\\
+  U &= -R_1 I_1 + R_3 I_3, &
+  -U &= -R_2 I_2 + R_4 I_4.
+\end{align}
 %
 Wenn $U_\text{S}$ die Speisespannung bezeichnet, ist die
 Brückenspannung~$U$ gegeben durch
@@ -76,6 +67,16 @@ Gleichheit also die zwei Bedingungen
 erfüllt sein.  Daher werden bei einer Wechselstrombrücke zwei
 voneinander unabhängige Veränderliche eingebaut sein.
 
+\begin{figure}
+  \centering
+  \includegraphics[width=6cm]{allg-bruecke}
+  \caption{Das Schaltbild der allgemeinen Brückenschaltung. Die
+    sogenannte Brückenspannung wird zwischen den Punkten $A$ und $B$
+    abgegriffen. Das Schaltbild stammt aus der Anleitung zum
+    \textcite{v302}.}
+  \label{fig:allg-bruecke}
+\end{figure}
+
 \subsection{\name{Wheatstone}-Messbrücke}
 
 In der \name{Wheatstone}schen Brückenschaltung sind nur \name{Ohm}sche
@@ -87,7 +88,7 @@ aus der Abgleichbedingung~\eqref{eq:abgleich}
 %
 \begin{equation}
   \label{eq:abgleich-ohmsch}
-  R_1 = R_2 \frac{R_3}{R_4}.
+  R_1 = R_2 \frac{R_3}{R_4}
 \end{equation}
 %
 erhalten.  Da es bei den Widerständen $R_3$ und $R_4$ nur auf das
@@ -116,13 +117,22 @@ Abgleichbedingung~\eqref{eq:abgleich-komplex} liefert dann
   C_\text{x} = C_2 \frac{R_4}{R_3}.
 \end{gather}
 
+\begin{figure}
+  \centering
+  \includegraphics[width=6cm]{kap-bruecke}
+  \caption{Das Schaltbild der Kapazitätsmessbrücke entnommen aus
+    \textcite{v302}. Der Widerstand $R_2$ ist notwendig, weil die Brücke
+    durch die Kapazität einen zusätzlichen Freiheitsgrad hat.}
+  \label{fig:kap-bruecke}
+\end{figure}
+
 \subsection{Induktivitätsmessbrücke} 
 
 Wie ein realer Kondensator durch eine ideale Kapazität und einen
 \name{Ohm}schen Widerstand modelliert wird, kann eine Spule durch eine
 ideale Induktivität und einen \name{Ohm}schen Widerstand dargestellt
-werden (siehe Abbildung~\ref{fig:ind-bruecke}), da auch sie einen Teil
-der magnetischen Energie in Wärme umwandelt. Also ist
+werden (siehe Abbildung~\ref{fig:ind-maxwell-bruecke}), da auch sie
+einen Teil der magnetischen Energie in Wärme umwandelt. Also ist
 %
 \begin{equation}
   Z = R + \iu \omega L
@@ -136,9 +146,24 @@ Kapazitätsmeßbrücke ergeben sich die Abgleichbedingungen
 L_\text{x} = L_2 \frac{R_3}{R_4}
 \end{gather}
 
+\begin{figure}
+  \centering
+  \includegraphics[height=5cm]{ind-bruecke} \qquad
+  \includegraphics[height=5cm]{maxwell-bruecke}
+  \caption{Die Schaltbilder der Induktivitätsmessbrücke (links) und der
+    \name{Maxwell}-Brücke (rechts) entnommen aus \textcite{v302}. Der
+    Widerstand $R_2$ in der Induktivitätsmessbrücke ist aus den gleichen
+    Gründen wie bei der Kapazitätsbrücke variabel, um den zusätzlichen
+    Freiheitsgrad durch die Induktivität zu kompensieren.  In der
+    \name{Maxwell}-Brücke sind die Widerstände $R_3$ und $R_4$
+    variabel. Mit diesen beiden Brücken können daher Induktivitäten
+    bestimmt werden.}
+  \label{fig:ind-maxwell-bruecke}
+\end{figure}
+
 \subsection{\name{Maxwell}-Brücke} 
 
-Abbildung~\ref{fig:maxwell-bruecke} zeigt die sogenannte
+Abbildung~\ref{fig:ind-maxwell-bruecke} zeigt die sogenannte
 \name{Maxwell}-Brücke. Die Widerstände $R_3$ und $R_4$ sind regelbar.
 Die komplexen Wechselstromwiderstände sind also
 %
@@ -187,3 +212,14 @@ umgeschrieben werden, nämlich zu
 %
 und man erkennt, dass die \name{Wien}-\name{Robinson}-Brücke aus einem
 kontinuierlichen Frequenzspektrum die Frequenz~$\omega_0$ herausfiltert.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=6cm]{wien-robinson-bruecke}
+  \caption{Das Schaltbild der \name{Wien}-\name{Robinson}-Brücke
+    entnommen aus \textcite{v302}. Die Brückenspannung ist
+    frequenzabhängig, d.\,h. die Brücke kann als Frequenzfilter dienen.}
+  \label{fig:wien-robinson-bruecke}
+\end{figure}
+
+\FloatBarrier
