@@ -1,3 +1,7 @@
+% This work is licensed under the Creative Commons
+% Attribution-NonCommercial 3.0 Unported License. To view a copy of this
+% license, visit http://creativecommons.org/licenses/by-nc/3.0/.
+
 \section{Theorie}
 \label{sec:theorie}
 
@@ -6,140 +10,216 @@
 
 Eine Brückenschaltung hat im allgemeinen den in
 Abbildung~\ref{fig:allg-bruecke} dargestellten Aufbau.  Die Spannung
-zwischen den Punkten $A$ und $B$ ergibt sich mithilfe der Maschen- und
-Knotenregeln von \name{Kirchhoff}. Die Knotenregel besagt
-\begin{gather}
-  I_1 = I_2\\
-  \intertext{und}
-  I_3 = I_4.
-\end{gather}
-Die Maschenregel ergibt
-\begin{gather}
-  U = -R_1 I_1 + R_3 I_3\\
-  \intertext{und}
- -U = -R_2 I_2 + R_4 I_4.
-\end{gather}
-Wenn $U_\text{S}$ die Speisespannung bezeichnet, erhält man daraus
+zwischen den Punkten $A$ und $B$ ergibt sich, wenn die magnetische
+Flußänderung außerhalb der Bauteile als Null angenommen wird, mithilfe
+der Maschen- und Knotenregeln von \name{Kirchhoff}. Sie ergeben sich aus
+den \name{Maxwell}-Gleichungen und lauten:
+%
+\begin{align*}
+  \sum^n_{k = 1} I_k &= 0 \qquad \text{(Knotenregel)}\\
+  \sum^n_{k = 1} U_k &= 0 \qquad \text{(Maschenregel)}
+\end{align*}
+%
+Aus den Knoten- und Maschenregeln ergeben sich für die allgemeine
+Brückenschaltung dann die Gleichungen
+%
+\begin{align}
+  I_1 &= I_2, &
+  I_3 &= I_4,\\
+  U &= -R_1 I_1 + R_3 I_3, &
+  -U &= -R_2 I_2 + R_4 I_4.
+\end{align}
+%
+Wenn $U_\text{S}$ die Speisespannung bezeichnet, ist die
+Brückenspannung~$U$ gegeben durch
+%
 \begin{equation}
   U = \frac{R_2 R_3 - R_1 R_4}{(R_3 + R_4)(R_1 + R_2)} U_\text{S}.
 \end{equation}
-Die Brückenspannung verschwindet daher bei beliebiger Brückenspannung, falls
+%
+Die Brückenspannung verschwindet daher bei beliebiger Speisespannung,
+falls
+%
 \begin{equation}
   \label{eq:abgleich}
   R_2 R_3 = R_1 R_4.
 \end{equation}
 
 Sind in der Brückenschaltung auch Kapazitäten und Induktivitäten
-verbaut, so kann man die obigen Widerstände als komplexe Zahlen $Z =
-X + iY$ auffassen und erhält genauso
+verbaut, so können die obigen Widerstände als komplexe Zahlen $Z = X +
+\iu Y$ aufgefasst werden und mit der komplexen Wechselstromrechnung
+ergibt sich
+%
 \begin{equation}
   \label{eq:abgleich-komplex}
   Z_2 Z_3 = Z_1 Z_4.
 \end{equation}
-Weil komplexe Zahlen Paare $(a, b)\in\mathbb{R}^2$ reeller Zahlen
-sind, müssen für die Gleichheit also die zwei Bedingungen
+%
+Weil komplexe Zahlen Paare reeller Zahlen sind, müssen für die
+Gleichheit also die zwei Bedingungen
+%
 \begin{gather}
   X_1 X_4 - Y_1 Y_4 = X_2 X_3 - Y_2 Y_3\\
-  \intertext{und} 
+  \intertext{und}
   X_1 Y_4 + X_4 Y_1 = X_2 Y_3 + X_3 Y_2
 \end{gather}
+%
 erfüllt sein.  Daher werden bei einer Wechselstrombrücke zwei
 voneinander unabhängige Veränderliche eingebaut sein.
 
-\subsection{\name{Wheatstone}-Widerstandsmeßbrücke}
+\begin{figure}
+  \centering
+  \includegraphics[height=5cm]{allg-bruecke}
+  \caption{Das Schaltbild der allgemeinen Brückenschaltung. Die
+    sogenannte Brückenspannung wird zwischen den Punkten $A$ und $B$
+    abgegriffen. Das Schaltbild stammt aus der Anleitung zum
+    \textcite{v302}.}
+  \label{fig:allg-bruecke}
+\end{figure}
+
+\subsection{\name{Wheatstone}-Messbrücke}
+
 In der \name{Wheatstone}schen Brückenschaltung sind nur \name{Ohm}sche
-Widerstände verbaut, weswegen die Schaltung sowohl mit Gleich- als
-auch mit Wechselstrom betrieben werden kann. Dieser Brücke kann zur
+Widerstände verbaut, weswegen die Schaltung sowohl mit Gleich- als auch
+mit Wechselstrom betrieben werden kann. Dieser Brücke kann zur
 Bestimmung eines unbekannten Widerstandes verwendet werden. Wenn zum
-Beispiel $R_1$ in Abbildung~\ref{fig:allg-bruecke} unbekannt ist,
-erhält man aus der Abgleichbedingung~\eqref{eq:abgleich}
+Beispiel $R_1$ in Abbildung~\ref{fig:allg-bruecke} unbekannt ist, wird
+aus der Abgleichbedingung~\eqref{eq:abgleich}
+%
 \begin{equation}
   \label{eq:abgleich-ohmsch}
-  R_1 = R_2 \frac{R_3}{R_4}.
+  R_1 = R_2 \frac{R_3}{R_4}
 \end{equation}
-Da es bei den Widerständen $R_3$ und $R_4$ nur auf das Verhältnis
-ankommt, können diese beiden als Potentiometer eingebaut werden.
+%
+erhalten.  Da es bei den Widerständen $R_3$ und $R_4$ nur auf das
+Verhältnis ankommt, können diese beiden als Potentiometer eingebaut
+werden.
 
-\subsection{Kapazitätsmeßbrücke}
+\subsection{Kapazitätsmessbrücke} 
+
 Ein realer Kondensator wird durch eine ideale Kapazität und einen
 \name{Ohm}schen Widerstand in Reihe modelliert, da es immer zu
 sogenannten dielektrischen Verlusten kommt, bei denen ein Teil der
 gespeicherten elektrischen Energie in Wärme umgewandelt wird. Für den
 komplexen Wechselstromwiderstand folgt daher
-\begin{equation}
-  Z = R - \frac{i}{\omega C}.
-\end{equation}
-Wie im Abschnitt~\ref{sec:allg-bruecke} über Wechselstromwiderstände
-gesagt worden ist, benötigt man in der Schaltung eine weitere
-Veränderliche, um den zusätzlichen Freiheitsgrad zu
+\begin{equation} Z = R - \frac{\iu}{\omega C}.
+\end{equation} Wie im Abschnitt~\ref{sec:allg-bruecke} über
+Wechselstromwiderstände gesagt worden ist, wird in der Schaltung eine
+weitere Veränderliche benötigt, um den zusätzlichen Freiheitsgrad zu
 berücksichtigen. Dazu wird der Widerstand $R_2$ in
-Abbildung~\ref{fig:kap-brücke} veränderlich sein. Die
-Abgleichbedingung~\eqref{eq:abgleich-komplex} liefern dann
+Abbildung~\ref{fig:kap-bruecke} veränderlich sein. Die
+Abgleichbedingung~\eqref{eq:abgleich-komplex} liefert dann
+%
 \begin{gather}
   \label{eq:abgleich-kap}
-  R_x = R_2 \frac{R_3}{R_4}\\
-  \intertext{und}
-  C_x = C_2 \frac{R_4}{R_3}.
+  R_\text{x} = R_2 \frac{R_3}{R_4}\\
+  \intertext{und} 
+  C_\text{x} = C_2 \frac{R_4}{R_3}.
 \end{gather}
 
-\subsection{Induktivitätsmeßbrücke}
+\begin{figure}
+  \centering
+  \includegraphics[height=5cm]{kap-bruecke}
+  \caption{Das Schaltbild der Kapazitätsmessbrücke entnommen aus
+    \textcite{v302}. Der Widerstand $R_2$ ist notwendig, weil die Brücke
+    durch die Kapazität einen zusätzlichen Freiheitsgrad hat.}
+  \label{fig:kap-bruecke}
+\end{figure}
+
+\subsection{Induktivitätsmessbrücke} 
+
 Wie ein realer Kondensator durch eine ideale Kapazität und einen
 \name{Ohm}schen Widerstand modelliert wird, kann eine Spule durch eine
 ideale Induktivität und einen \name{Ohm}schen Widerstand dargestellt
-werden (siehe Abbildung~\ref{fig:ind-bruecke}, da auch sie einen Teil
-der magnetischen Energie in Wärme umwandelt. Also ist
+werden (siehe Abbildung~\ref{fig:ind-maxwell-bruecke}), da auch sie
+einen Teil der magnetischen Energie in Wärme umwandelt. Also ist
+%
 \begin{equation}
-  Z = R + i \omega L
+  Z = R + \iu \omega L
 \end{equation}
+%
 der zugehörige komplexe Wechselstromwiderstand. Ähnlich wie bei der
 Kapazitätsmeßbrücke ergeben sich die Abgleichbedingungen
+%
 \begin{gather}
-\label{eq:abgleich-ind-bruecke}
-R_x = R_2 \frac{R_3}{R_4},\\
-L_x = L_2 \frac{R_3}{R_4}
+  \label{eq:abgleich-ind-bruecke} R_\text{x} = R_2 \frac{R_3}{R_4},\\
+L_\text{x} = L_2 \frac{R_3}{R_4}
 \end{gather}
 
-\subsection{\name{Maxwell}-Brücke}
-Abbildung~\ref{fig:maxwell-bruecke} zeigt die sogenannte
+\begin{figure}
+  \centering
+  \includegraphics[height=5cm]{ind-bruecke} \qquad
+  \includegraphics[height=5cm]{maxwell-bruecke}
+  \caption{Die Schaltbilder der Induktivitätsmessbrücke (links) und der
+    \name{Maxwell}-Brücke (rechts) entnommen aus \textcite{v302}. Der
+    Widerstand $R_2$ in der Induktivitätsmessbrücke ist aus den gleichen
+    Gründen wie bei der Kapazitätsbrücke variabel, um den zusätzlichen
+    Freiheitsgrad durch die Induktivität zu kompensieren.  In der
+    \name{Maxwell}-Brücke sind die Widerstände $R_3$ und $R_4$
+    variabel. Mit diesen beiden Brücken können daher Induktivitäten
+    bestimmt werden.}
+  \label{fig:ind-maxwell-bruecke}
+\end{figure}
+
+\subsection{\name{Maxwell}-Brücke} 
+
+Abbildung~\ref{fig:ind-maxwell-bruecke} zeigt die sogenannte
 \name{Maxwell}-Brücke. Die Widerstände $R_3$ und $R_4$ sind regelbar.
 Die komplexen Wechselstromwiderstände sind also
-\begin{gather}
-Z_1 = R_x + i \omega L_x\\
-\frac{1}{Z_4} = \frac{1}{R_4} + i \omega C_4.
+%
+\begin{gather} Z_1 = R_\text{x} + \iu \omega L_\text{x}\\ \frac{1}{Z_4}
+= \frac{1}{R_4} + \iu \omega C_4.
 \end{gather}
+%
 Mit der Abgleichbedingung~\eqref{eq:abgleich-komplex} kann dann
+%
 \begin{gather}
-\label{eq:abgleich-ind-maxwell}
-R_x = R_2 \frac{R_3}{R_4},\\
-L_x = R_2 R_3 C_4
+  \label{eq:abgleich-ind-maxwell} R_\text{x} = R_2 \frac{R_3}{R_4},\\
+L_\text{x} = R_2 R_3 C_4
 \end{gather}
+%
 gefunden werden.
 
 \subsection{\name{Wien}-\name{Robinson}-Brücke}
 
 Bis jetzt sind die beschriebenen Brücken zumindest der Theorie nach
-frequenzunabhängig. Die \name{Wien}-\name{Robinson}-Brücke hingegen
-ist eine frequenzabhängige Brücke. Die Schaltung ist in
-Abbildung~\ref{fig:wien-robinson-bruecke} zu sehen. Das entscheidende
-an dieser Brücke erkennt man, wenn das Verhältnis von Brücken- und
-Speisespannung betrachtet wird.
-\begin{equation}
-\left|\frac{U_\text{Br}}{U_\text{S}}\right|^2 = \frac{(1 - (\omega R
-  C)^2)^2}{9(1 - (\omega R C)^2)^2 + 81 (\omega R C)^2}.
+frequenzunabhängig. Die \name{Wien}-\name{Robinson}-Brücke hingegen ist
+eine frequenzabhängige Brücke. Die Schaltung ist in
+Abbildung~\ref{fig:wien-robinson-bruecke} zu sehen. Das entscheidende an
+dieser Brücke wird deutlich, wenn das Verhältnis von Brücken- und
+Speisespannung betrachtet wird:
+%
+\begin{equation} 
+  \left|\frac{U_\text{Br}}{U_\text{S}}\right|^2 =
+  \frac{(1 - (\omega R C)^2)^2}{9(1 - (\omega R C)^2)^2 + 81 (\omega R
+    C)^2}.
 \end{equation}
-Hieran kann gesehen werden, daß die Brückenspannung verschwindet,
-falls 
-\begin{equation}
-\omega = \omega_0 := \frac{1}{RC}, 
-\end{equation}
+%
+Hieran kann gesehen werden, dass die Brückenspannung verschwindet, falls
+%
+\begin{equation} 
+  \omega = \omega_0 := \frac{1}{RC},
+\end{equation} 
+%
 Mit $\Omega := \omega/\omega_0$ kann das Spannungsverhältnis
-umgeschrieben werden, nämlich
+umgeschrieben werden, nämlich zu
+%
 \begin{equation}
-\label{eq:wien_robinson_theo}
-\left|\frac{U_\text{Br}}{U_\text{S}}\right|^2 = \frac{1}{9} \frac{(1 -
-  \Omega^2)^2}{(1 - \Omega^2)^2 + 9 \Omega^2},
+  \label{eq:wien_robinson_theo}
+  \left|\frac{U_\text{Br}}{U_\text{S}}\right|^2 = \frac{1}{9} \frac{(1 -
+    \Omega^2)^2}{(1 - \Omega^2)^2 + 9 \Omega^2},
 \end{equation}
-und man erkennt, daß die \name{Wien}-\name{Robinson}-Brücke aus einem
-kontinuierlichen Frequenzspektrum die Frequenz~$\omega_0$
-herausfiltert.
+%
+und man erkennt, dass die \name{Wien}-\name{Robinson}-Brücke aus einem
+kontinuierlichen Frequenzspektrum die Frequenz~$\omega_0$ herausfiltert.
 
+\begin{figure}
+  \centering
+  \includegraphics[height=5cm]{wien-robinson-bruecke}
+  \caption{Das Schaltbild der \name{Wien}-\name{Robinson}-Brücke
+    entnommen aus \textcite{v302}. Die Brückenspannung ist
+    frequenzabhängig, d.\,h. die Brücke kann als Frequenzfilter dienen.}
+  \label{fig:wien-robinson-bruecke}
+\end{figure}
+
+\FloatBarrier

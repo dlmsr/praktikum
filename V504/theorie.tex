@@ -1,0 +1,122 @@
+% This work is licensed under the Creative Commons
+% Attribution-NonCommercial 3.0 Unported License. To view a copy of this
+% license, visit http://creativecommons.org/licenses/by-nc/3.0/.
+
+\section{Theorie}
+%
+\subsection{Leitungselektronen im Metall}
+%
+Metalle bestehen aus Atomen, von denen fast alle ionisert sind, und 
+welche ein Kristallgitter bilden. Die von den Atomen freigegebenen 
+Elektronen bewegen sich zwischen den Ionenrümpfen.
+Das Gitterpotential, welches durch diese Ionenrümpfe erzeugt wird, kann
+in einer schlichten Näherung als konstant angesehen werden, sodass sich
+das Modell des Potentialtopfes für das Atomgitter ergibt. Die
+Elektronen müssen in diesem Modell eine Energie besitzen, die größer ist als die
+Tiefe des Potentialtopfes multipliziert mit der Elementarladung.
+
+Die Quantenmechanik liefert Aussagen über die Energie der
+Leitungselektronen.
+Elektronen sind Fermionen, besitzen also einen halbzahligen Spin. Daher
+greift für Elektronen das \name{Pauli}-Prinzip, welches besagt, dass es
+keine zwei Elektronen im Metallverband gibt, die sich im selben Zustand
+befinden. Da es zwei mögliche Spins, $\frac{1}{2}$ und $-\frac{1}{2}$,
+für Elektronen gibt bedeutet dies, dass es pro Energie nur zwei
+Elektronen gibt, die diese Energie besitzen.
+
+Des weiteren folgt aus der Quantenmechanik bei der Betrachtung von
+Elektronen im Potentialtopf, dass diese Elektronen nur diskrete
+Energien besitzen können.
+
+Die größtmögliche Energie, die ein Elektron im Metall am absoluten
+Nullpunkt haben kann, wird als \name{Fermi}sche Grenzenergie $\zeta$
+bezeichnet.
+
+Die Wahrscheinlichkeit, ein Elektron mit der Energie $E$ im Metall mit
+der Temperatur $T$ im thermischen GLeichgewicht zu finden, wird durch
+die \name{Fermi}-\name{Dirac}-Verteilung beschrieben, welche in
+Formel~\eqref{eq:fermi_dirac} wiedergegeben ist.
+\begin{equation}
+f(E) = \frac{1}{\exp{\left(\frac{E - \zeta}{kT}\right)}+1}
+\label{eq:fermi_dirac}
+\end{equation}
+%
+\subsection{Kennlinie einer Hochvakuum-Diode}
+%
+In diesem Versuch wird eine Hochvakuum-Diode verwendet, um die
+Austrittsarbeit von Wolfram zu bestimmen. In Abb.~\ref{fig:diode} ist
+ein Schaltbild zu sehen, in welcher der grundsätzliche Aufbau dieses Versuchs skizziert ist.
+Das zu untersuchende Metall dient als Kathode und wird
+erhitzt. Die aus dem Metall gelösten Elektronen werden durch eine
+Beschleunigungsspannung zur Anode hin beschleunigt. Der fließende Strom
+wird gemessen. Die Beschleunigungsspannung aufgetragen gegen die
+Stromsärke wird als Kennlinie der Hochvakuumdiode bezeichnet.
+In Abb.~\ref{fig:theorie_kennlinie} ist eine solche Kennlinie zu sehen.
+Das Zustandekommen der verschiedenen Gebiete wird in den nachfolgenden
+Sektionen erklärt.
+%
+\begin{figure}[]
+\centering
+\includegraphics[width=0.8\textwidth]{diode}
+\caption{Schaltbild einer Hochvakuumdiode}
+\label{fig:diode}
+\end{figure}
+%
+\begin{figure}[]
+\centering
+\includegraphics[width=0.8\textwidth]{kennlinie}
+\caption{Theoretischer Verlauf der Kennlinie einer Hochvakuumdiode}
+\label{fig:kennlinie}
+\end{figure}
+%
+\subsubsection{Das Anlaufstromgebiet}
+%
+Das Anlaufstromgebiet befindet sich bei der Kennlinie bei negativer
+Beschleunigungsspannung. Dies bedeutet also, dass auch bei einer
+angelegten Gegenspannung Elektronen bis zur Anode gelangen.
+
+Dies ist damit zu erklären, dass es nach der
+\name{Fermi}-\name{Dirac}-Verteilung in~\eqref{eq:fermi_dirac}
+Elektronen im Metall gibt, die bei einer Temperatur $T > 0$ eine Energiebesitzen, mit der sie das Metall verlassen können und noch eine
+kinetische Energie außerhalb der Metalls besitzen, mit welcher die
+Elektronen gegen die Gegenspannung anlaufen können. Daher rührt auch der Name des Anlaufgebietes.
+
+Außerdem besitzt das Anodenmaterial eine größere Austrittsarbeit, sodass sich durch die elektrische Verbindung der Kathode mit der Anode
+außerhalb der Diode bereits ein Gegenfeld bei nicht eingestellter
+Spannung bildet.
+
+Für große Energien verhält sich die Verteilung~\eqref{eq:fermi_dirac}
+exponentiel fallend, sodass sich die Kennlinie im Bereich des
+Anlaufstromgebietes exponentiell steigend verhalten muss.
+
+Die Stromdichte im Anlaufstromgebiet ergibt sich zu dem in
+Formel~\eqref{eq:anlaufstromdichte} wiedergegeben Ausdruck.
+\begin{equation}
+\text{const}\exp{\left(-\frac{e_0V}{kT}\right)}
+\label{eq:anlaufstromdichte}
+\end{equation}
+%
+\subsubsection{Das Raumladungsgebiet}
+%
+Da die Elektronen im elektrischen Feld der Diode gleichmäßig beschleunigt werden und innerhalb der Diode nicht abgebremst werden, gilt hierbei nicht das \name{Ohm}sche Gesetz, sodass sich auch kein linearer Zusammenhang zwischen Spannung und Stromstärke einstellt.
+
+Um den Verlauf der Kennlinie im Raumladungsgebiet, also für positive Spannungen, welche noch nicht in den Sättigungsbereich gehen, zu erhalten, werden die Kontinuitätsgleichung und die Poissongleichung verwendet.
+
+Das Ergebnis dieser Rechnung wird als \name{Langmuir}-\name{Schottky}sche Raumladungsgleichung bezeichnet und ist in Formel~\eqref{eq:raumladung} wiedergegeben. Dabei bezeichnet $j$ die Stromdichte, $V$ die angelegte Spannung und $a$ den Abstand zwischen Kathode und Anode.
+\begin{equation}
+j = \frac{4}{9} \epsilon_0 \sqrt{2e_0/m_0} \frac{V^{\frac{3}{2}}}{a^2}
+\label{eq:raumladung}
+\end{equation}
+%
+\subsubsection{Das Sättigungsstromgebiet}
+%
+Das Sättigungsstromgebiet beginnt ab der Spannung, ab der ein Wendepunkt in der Kennlinie auftritt. Dieses Gebiet kommt dadurch zustande, dass bei einer festen Temperatur $T$ der Kathode pro Zeit und Fläche eine endliche Menge an Elektronen aus der Metalloberfläche austreten. Folglich kann also pro Zeit und Fläche nur maximal diese Anzahl von Elektronen an der Anode ankommen.
+
+Um eine Formel für die Anzahl der austretenden Elektronen pro Zeit und Fläche aus der Kathode, also derSättigungsstromdichte $j_S$, zu erhalten, wird die \name{Fermi}-\name{Dirac}-Verteilung~\eqref{eq:fermi_dirac} für große Energien der Elektronen betrachten.
+Anschließend werden alle Elektronen pro Zeit und Fläche gezählt, die eine eine Geschwindigkeitskomponente senkrecht zur Metalloberfläche besitzen, welche ausreicht, um das Metall zu verlassen. Multipliziert man die erhaltene Anzahl mit der Elementarladung $e_0$, ergibt sich die gesuchte Formel, welche \name{Richardson}-Gleichung genannt wird und in Formel~\eqref{eq:richard} angegeben ist. $T$ ist die Temperatur, $k$ die \name{Boltzmann}-Konstante und $\phi$ das Austrittspotential.
+%
+\begin{equation}
+j_S(T) = 4\pi\frac{e_0m_0k^2}{h^3}T^3\exp{\left(\frac{-e_0\phi}{kT}\right)}
+\label{eq:richard}
+\end{equation}
+%
