@@ -1,0 +1,215 @@
+% This work is licensed under the Creative Commons
+% Attribution-NonCommercial 3.0 Unported License. To view a copy of this
+% license, visit http://creativecommons.org/licenses/by-nc/3.0/.
+
+\section{Auswertung}
+
+\subsection{Bestimmung der mittleren Reichweite und des Energieverlustes}
+\label{sec:mittlere-reichweite}
+
+Die Messungen werden für die Abstände \SI{3}{\centi\metre} und
+\SI{1.5}{\centi\metre} der Strahlenquelle zum Detektor durchgeführt.
+Die aufgenommenen Werte finden sich in den
+Tabellen~\ref{tab:impulse-3cm} und \ref{tab:impulse-1.5cm}. Eine
+graphische Darstellung der Anzahl der Impulse in Funktion der effektiven
+Weglänge ist in den Abbildungen~\ref{fig:impulse-3cm} und
+\ref{fig:impulse-1.5cm} zu finden.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.8\textwidth]{abstand-3cm.pdf}
+  \caption{Die Anzahl der Impulse in Funktion der effektiven Weglänge
+    für den Abstand \SI{3}{\centi\metre}}
+  \label{fig:impulse-3cm}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.8\textwidth]{abstand-1_5cm.pdf}
+  \caption{Die Anzahl der Impulse in Funktion der effektiven Weglänge
+    für den Abstand \SI{1.5}{\centi\metre}}
+  \label{fig:impulse-1.5cm}
+\end{figure}
+
+Aus der Messung im Abstand \SI{3}{\centi\metre} ergibt sich eine
+mittlere Reichweite
+%
+\begin{equation}
+  \label{eq:mittlere-reichw-3cm}
+  R_m = \SI{23.7}{\milli\metre}\text{.}
+\end{equation}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.8\textwidth]{abstand-3cm-energ.pdf}
+  \caption{Energie in Funktion der effektiven Weglänge für den Abstand
+    \SI{3}{\centi\metre}}
+  \label{fig:energie-3cm}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.8\textwidth]{abstand-1_5cm-energ.pdf}
+  \caption{Energie in Funktion der effektiven Weglänge für den Abstand
+    \SI{1.5}{\centi\metre}}
+  \label{fig:energie-1.5cm}
+\end{figure}
+
+In Abbildung~\ref{fig:energie-3cm} findet sich die Energie der
+Alpha-Teilchen in Funktion der effektiven Weglänge aufgetragen. Die rot
+markierten Meßpunkte werden in eine lineare Regression\footnote{Für die
+ lineare Regression wurde Scipy Version 0.11 verwendet.}  gegeben, da
+sie auf einer Gerade zu liegen scheinen. Dieses Ergebnis ist ebenfalls
+in der Abbildung zu sehen. Als Energieverlust der Alpha-Teilchen
+berechnet sich damit zu:
+%
+\begin{equation}
+  \label{eq:energieverlust}
+  -\frac{\mathrm{d}E_\alpha}{\mathrm{d}x} = 
+  \SI{0.124(5)}{\mega\electronvolt\per\milli\metre}
+\end{equation}
+
+Nachdem der Abstand auf \SI{1.5}{\centi\metre} verringert worden ist,
+ergibt sich ein anderes Ergebnis. Bei \SI{0}{\milli\bar} liegt die
+Anzahl der Impulse bei 154939. Bei Atmosphärendruck liegt die gemessene
+Anzahl noch bei 136110, fällt also nicht auf die Hälfte der
+Anfangsimpulse zurück. Wir kommen also nie in den Bereich, an dem
+nurnoch die Hälfte alles $\alpha$-Teilchen vorhanden sind, können also
+bei dieser Messreihe auch keinen Wert der mittleren Reichweite von
+$\alpha$-Strahlung bestimmen.  Allerdings kann man mit Bestimmtheit
+sagen, dass die mittlere Reichweite der $\alpha$-Strahlung in Luft
+größer als \SI{1.5}{\centi\metre} ist.
+
+Im Diagramm \ref{fig:energie-1.5cm} ist die Energie des Energiemaximums
+gegen die effektive Länge aufgetragen. Die Energie lässt sich berechnen,
+indem man von einer linearen Einteilung der Kanäle bezüglich der
+gemessenen Stromimpulse ausgeht. Die Messwerte im Diagramm scheinen auf
+einer Geraden zu liegen. Aus diesem Grund wird eine Regressionsgerade
+durch alle Messpunkte gelegt. Die Steigung dieser Geraden entspricht
+dem gesuchten Energieverlust $\mathrm{d}E_\alpha/\mathrm{d}x$ der
+$\alpha$-Teilchen. Es ergibt sich ein Wert von
+%
+\begin{equation}
+  \label{eq:wert-energie-verlust-1.5cm}
+  -\frac{\mathrm{d}E_\alpha}{\mathrm{d}x} = 
+  \SI{0.120(2)}{\mega\electronvolt\per\milli\metre}
+\end{equation}
+
+\begin{table}
+  \centering\small
+  \begin{tabular}{SSSSSS}
+    \toprule
+    {$p/\si{\milli\bar}$} & {Anz. d. Impulse} & {Kanal-Nr.} &
+    {$p/\si{\milli\bar}$} & {Anz. d. Impulse} & {Kanal-Nr.} \\
+    \midrule
+    0 &  154939 & 2375 & 550 & 147817 & 1735\\
+    50 &  154434 & 2272 & 600 & 146195 & 1687\\
+    100 &  153985 & 2214 & 650 & 146318 & 1664\\
+    150 &  152464 & 2215 & 700 & 144573 & 1536\\
+    200 &  152032 & 2112 & 750 & 143582 & 1536\\
+    250 &  151135 & 2055 & 800 & 143281 & 1455\\
+    300 &  151902 & 2007 & 850 & 141832 & 1463\\
+    350 &  151823 & 1979 & 900 & 140356 & 1366\\
+    400 &  150482 & 1863 & 950 & 139431 & 1327\\
+    450 &  150141 & 1867 & 1000 & 136110 & 1216\\
+    500 &  148368 & 1792\\
+    \bottomrule
+  \end{tabular}
+  \caption{Messwerte für den  Abstand \SI{1.5}{\centi\metre}}
+  \label{tab:impulse-1.5cm}
+\end{table}
+
+\begin{table}
+  \centering\small
+  \begin{tabular}{SSSSSS}
+    \toprule
+    {$p/\si{\milli\bar}$} & {Anz. d. Impulse} & {Kanal-Nr.} &
+    {$p/\si{\milli\bar}$} & {Anz. d. Impulse} & {Kanal-Nr.} \\
+    \midrule
+    0 & 56470 & 2387 &  550 & 51193 & 1295 \\
+    50 & 56043 & 2351 &  600 & 50007 & 1135 \\
+    100 & 55866 & 2215 &  650 & 49086 &  935 \\
+    150 & 55289 & 1991 &  700 & 46759 &  847 \\
+    200 & 55408 & 1943 &  750 & 39518 &  543 \\
+    250 & 54734 & 1910 &  800 & 24424 &  323 \\
+    300 & 54163 & 1792 &  850 &  7054 &  311 \\
+    350 & 54241 & 1704 &  900 &   323 &  304 \\
+    400 & 53700 & 1587 &  950 &    59 &  306 \\
+    450 & 52655 & 1536 & 1000 &    29 &  312 \\
+    500 & 52026 & 1455 &      &       &      \\
+    \bottomrule
+  \end{tabular}
+
+  \caption{Messwerte für den Abstand \SI{3}{\centi\metre}}
+  \label{tab:impulse-3cm}
+\end{table}
+
+\subsection{Statistische Auswertung des Alpha-Zerfalls}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.8\textwidth]{statistik.pdf}
+  \caption{Statistische Messung zum Alpha-Zerfall}
+  \label{fig:statistik}
+\end{figure}
+
+Abbildung~\ref{fig:statistik} stellt ein Histogramm mit den 100 erfaßten
+Meßwerten dar. Diese Meßwerte finden sich auch in der
+Tabelle~\ref{tab:statistik} wieder. Es soll nun bestimmt werden, ob
+dieses Ergebnis sich besser durch eine \name{Poisson}- oder eine
+\name{Gauss}-Verteilung beschreiben läßt.
+
+Dazu schaut man sich den Mittelwert und die Standardabweichung unserer
+Stichprobe an. $I$ bezeichnet hier die Anzahl der Impulse, die in
+\SI{10}{\second} gemessen wurde.
+%
+\begin{align}
+  \label{eq:statistik}
+  \langle I\rangle &= \num{4556} & \sigma_I &= \num{157}
+\end{align}
+%
+Nun kann man zu diesen errechneten Werten z.\,B. eine Normalverteilung
+berechnen und mit den erhaltenen Daten vergleichen. Dabei verwendet man
+den Mittelwert $\langle I\rangle$ als Schätzung für den Erwartungswert
+und $\sigma_I$ also Schätzung für die Varianz. Mit
+Formel~\eqref{eq:gauss}, die aus \textcite[823]{bronstein} entnommen
+ist, ergibt sich dann die Kurve in Abbildung~\ref{fig:statistik}. Man
+kann hier erkennen, daß eine Normalverteilung eine gute Beschreibung des
+statistischen Vorgangs liefert.
+%
+\begin{equation}
+  \label{eq:gauss}
+  f(t) = \frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{(t-\mu)^2}{2\sigma^2}}
+\end{equation}
+%
+
+Im Gegensatz dazu sieht man, daß die
+\name{Poisson}-Verteilung\footnote{Die Verteilung wurde mit Numpy
+  Version 1.6.2 generiert.} deutlich weniger streut. Die
+\name{Gauß}-Verteilung liefert hier eine bessere Approximation unserer
+Stichprobe.
+
+\begin{table}
+  \centering\small
+  \begin{tabular}{SSSSSSSSS}
+    \toprule
+    4643 & 4361 & 4682 & 4669 & 4394 & 4610 & 4422 \\
+    4788 & 4658 & 4593 & 4438 & 4307 & 4523 & 4588 \\
+    4491 & 4466 & 4715 & 4455 & 4648 & 4584 & 4823 \\
+    4717 & 4582 & 4652 & 4304 & 4707 & 4377 & 4409 \\
+    4721 & 4153 & 4467 & 4503 & 4449 & 4542 & 4783 \\
+    4580 & 4635 & 4401 & 4479 & 4488 & 4549 & 4762 \\
+    4653 & 4809 & 4372 & 4817 & 4732 & 4690 & 4466 \\
+    4796 & 4830 & 4634 & 4374 & 4631 & 4781 & 4587 \\
+    4707 & 4449 & 4405 & 4795 & 4520 & 4461 & 4288 \\
+    4486 & 4830 & 4551 & 4340 & 4431 & 4534 & 4658 \\
+    4607 & 4376 & 4587 & 4278 & 4536 & 4706 & 4530 \\
+    4292 & 4719 & 4415 & 4498 & 4479 & 4595 & 4252 \\
+    4647 & 4660 & 4657 & 4437 & 4490 & 4847 & 4557 \\
+    4847 & 4557 & 4641 & 4500 & 4473 & 4628 & 4474 \\
+    4294 & 4496 & 4266 & 4640 \\
+    \bottomrule
+  \end{tabular}
+  \caption{Meßwerte zur Statistik des Alpha-Zerfalls}
+  \label{tab:statistik}
+\end{table}
