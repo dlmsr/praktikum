@@ -1,0 +1,72 @@
+% This work is licensed under the Creative Commons
+% Attribution-NonCommercial 3.0 Unported License. To view a copy of this
+% license, visit http://creativecommons.org/licenses/by-nc/3.0/.
+
+\section{Theorie}
+
+\subsection{Entstehung der $\alpha$-Strahlen}
+
+In diesem Versuch wird ein Americium-Präparat als Strahlungsquelle
+verwendet. Americium ist ein radioaktives Metall. Bei Am beträgt die
+Halbwertszeit $T_{1/2}$ = 458 a. Der Zerfall von Americium geschieht
+nach dem in Formel \eqref{eq:zerfall} wiedergegebenen Vorgang.
+\begin{equation}
+  \label{eq:zerfall}
+  {}^{241}_{95}\mathrm{Am} \longrightarrow {}^{237}_{93}\mathrm{Np} +
+  {}^{4}_{2}\mathrm{He}^{++}
+\end{equation}
+Ein Americium-Atom zerfällt also in ein Neptunium-Atom und in ein
+zweifach positiv geladenes Helium-Atom, was einem Heliumkern
+entspricht. Diese emittierten Heliumkerne sind die in diesem Versuch
+verwendeten $\alpha$-Teilchen.
+
+\subsection{Reichweite der Strahlung bei hohen Energien}
+
+Durchläuft ein $\alpha$-Teilchen ein Medium, so kann es zu elastischen
+Stößen mit den dort befindlichen Teilchen kommen, wobei das
+$\alpha$-Teilchen Energie verliert. Diese Energieabnahme ist allerdings
+vernachlässigbar klein. Hauptursache für das Abnehmen der Energie der
+$\alpha$-Teilchen ist die Anregung oder Dissoziation von Molekülen. bei
+hoher Energie der $\alpha$-Strahlung kann man den Energieverlust
+mithilfe der Bethe-Bloch-Gleichung \eqref{eq:bethe-bloch} beschreiben.
+\begin{equation}
+  \label{eq:bethe-bloch}
+  -\frac{d E_\alpha}{dx} = \frac{z^2 e^4}{4 \pi \epsilon_0 m_e} \cdot 
+  \frac{n Z}{v^2} \cdot \ln \left(\frac{2 m_e v^2}{I}\right)
+\end{equation}
+\begin{align*}
+  z\colon &\text{Ladung der Strahlung}\\
+  v\colon &\text{Geschwindigkeit der Strahlung}\\
+  Z\colon &\text{Ordnungszahl}\\ 
+  n\colon &\text{Teilchendichte des Mediums}\\
+  I\colon &\text{Ionisierungsenergie des Mediums}
+\end{align*}
+Die Reichweite der Teilchen erhält man hierbei durch Integration von Null bis zur Energie der Teilchen über den Kehrwert des Energieverlusts.
+
+\subsection{Reichweite der Strahlung bei geringen Energien}
+
+Die in diesem Versuch untersuchte $\alpha$-Strahlung besitzt eine zu
+geringe Energie, um den Energieverlust mithilfe der
+Bethe-Bloch-Gleichung zu bestimmen. Im niedrigen Energiebereich kommt es
+nämlich vermehrt zu Ladungsaustauschprozessen, weswegen in diesem
+Protokoll die mittlere Reichweite  $R_m$ in Luft mithilfe der empirisch
+gewonnenen Formel \eqref{eq:reichweite} bestimmt wird, welche man bei
+$\alpha$-Strahlung mit Energien $E_{\alpha}$ $\le$
+\SI{2.5}{\mega\electronvolt} verwenden kann (Die Reichweite ist hier in
+\si{\milli\metre} angegeben, die Energie in \si{\mega\electronvolt}).
+\begin{equation}
+\label{eq:reichweite}
+R_m = 3.1 \cdot {E_\alpha} ^{\frac{3}{2}}
+\end{equation}
+
+\subsection{Funktionsweise eines Halbleiter-Sperrschichtzählers}
+
+In diesem Versuch wird ein Halbleiter-Sperrschichtzähler verwendet, um
+die Anzahl der $\alpha$-Teilchen und deren Energie zu messen. Der
+Halbleiter-Sperrschichtzähler wird in Sperrichtung betrieben. Trifft nun
+ein $\alpha$-Teilchen auf den Detektor, so entstehen Elektronen-Loch
+Paare, da die $\alpha$-Teilchen zweifach positiv geladen sind. Dadurch
+kommt es also kurzzeitig zu einem Stromfluss, welcher als Impuls
+registriert werden kann. Die Stärke des Impulses ist dabei proportional
+zur Energie des $\alpha$-Teilchen, welches auf den Sperrschichtzähler
+trifft.
