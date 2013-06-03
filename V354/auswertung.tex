@@ -101,14 +101,16 @@ Tabelle~\ref{tab:geraetedaten} zu finden ist, beträgt
 In Tabelle~\ref{tab:geraetedaten} finden sich die Daten der verwendeten
 Bauteile für den Versuch. Gemäß Formel~\eqref{eq:rap} ergibt sich für
 den erwarteten Widerstand~$R_\text{ap}$ und den experimentell
-ermittelten Widerstand~$R'_\text{ap}$ im aperiodischen Grenzfall
+ermittelten Widerstand~$R^\text{(exp)}_\text{ap}$ im aperiodischen
+Grenzfall
 \begin{align*}
   R_\text{ap} &= \SI{4407}{\ohm}, & 
-  R'_\text{ap} &= \SI{3410}{\ohm}.
+  R^\text{(exp)}_\text{ap} &= \SI{3410}{\ohm}.
 \end{align*}
 Hieraus ergibt sich der relativer Fehler 
 \begin{equation*}
-  \frac{|R'_\text{ap}-R_\text{ap}|}{R_\text{ap}} = \SI{22.6}{\percent}.
+  \frac{|R^\text{(exp)}_\text{ap} - R_\text{ap}|}{R_\text{ap}} =
+  \SI{22.6}{\percent}. 
 \end{equation*}
 
 \begin{table}
@@ -123,10 +125,9 @@ Hieraus ergibt sich der relativer Fehler
     10.14 & 2.088 & 54.7\\
     \bottomrule
   \end{tabular}
-  \caption{Für den Versuch ist Gerät~2 verwendet worden. Hier sind die
-    entsprechenden Daten und der berechnete Wert für den Widerstand des
-    aperiodischen Grenzfalls, sowie der experimentell bestimmte Wert mit
-    einer prozentualen Abweichung vom berechneten Wert angegeben.}
+  \caption{Für den Versuch ist Gerät~2 verwendet worden. Die
+    entsprechenden Werte für die Kapazität, Induktivität und
+    Dämpfungswiderstand können hier abgelesen werden.}
   \label{tab:geraetedaten}
 \end{table}
 
@@ -139,9 +140,31 @@ Abbildung~\ref{fig:resonanz} ist im oberen Plot das Verhältnis $U_C/U_0$
 gegen die Frequenz $\nu$ halblogarithmisch aufgetragen und im unteren
 Plot ist $U_C/U_0$ im Bereich um die Resonanzfrequenz herum linear gegen
 $\nu$ aufgetragen. Dabei wurden alle Meßwerte beachtet, für die die
-Kondensatorspannung $U_C > \SI{60}{\volt}$ ist. In der
-Tabelle~\ref{tab:resonanz-ergebnis} sind die Ergebnisse für die Güte und
-die Breite der Resonanzspitze abzulesen.
+Kondensatorspannung $U_C > \SI{60}{\volt}$ ist. Die nach
+Formel~\eqref{eq:} berechnete Resonanzüberhöhung beträgt
+%
+\begin{equation*}
+  q = \num{40.29}.
+\end{equation*}
+%
+Aus dem maximalen Wert von $U_C/U_0$ wird der experimentell bestimmte
+Wert der Resonanzüberhöhung zu
+%
+\begin{equation*}
+  q^\text{(exp)} = \num{14.1}
+\end{equation*}
+%
+ermittelt. Die relative Abweichung beträgt
+%
+\begin{equation*}
+  \frac{|q^\text{(exp)} - q|}{q} = \SI{65}{\percent}.
+\end{equation*}
+Mit Formel~\eqref{eq:} kann die Breite der Resonanzspitze aus den
+Geräte-Daten berechnet werden. Es ergibt sich:
+%
+\begin{equation*}
+  \nu_+ - \nu_- = 
+\end{equation*}
 
 \begin{table}
   \centering\footnotesize
@@ -179,21 +202,6 @@ die Breite der Resonanzspitze abzulesen.
     ist nur der Bereich um die Resonanzspitze beachtet worden.}
   \label{fig:resonanz}
 \end{figure}
-
-\begin{table}
-  \centering\footnotesize
-  \begin{tabular}{lSS}
-    \toprule
-    & {$q$} & {$(\nu_+-\nu_-)/\si{\kilo\hertz}$} \\
-    \midrule
-    Berechnet  & 1.274 &  5395 \\
-    Experiment & 14.09 & 25133 \\
-    Abweichung (in \%) & 1006 & 314\\
-    \bottomrule
-  \end{tabular}
-  \caption{Hier die Ergebnisse der Resonanzmessung}
-  \label{tab:resonanz-ergebnis}
-\end{table}
 
 \begin{figure}[h]
   \centering
