@@ -1,9 +1,8 @@
 # Hier erstmal nur die Werte unserer verwendeten Schaltung:
 # Gerät 2: L = 10,14 +- 0,03 mH
-#          C = 2,088 +- 0,006 microF
+#          C = 2,088 +- 0,006 nF
 #          R_1 = 54,7 +- 0,1 Ohm
 # Zu Aufgabenteil b: R_ap = 3410 Ohm
 
 #   L/H      C/F      R_1/Ohm  R_ap/Ohm
- 10.14e-3  2.088e-6     54.7     3410
-
+ 10.14e-3  2.088e-9     54.7     3410

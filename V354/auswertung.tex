@@ -6,64 +6,87 @@
 
 \subsection{Bestimmung des  effektiven Dämpfungswiderstands}
 Zur Bestimmung des effektiven Dämpfungswiderstands werden aus
-Abbildung~\ref{fig:thermodruck} die Minima und Maxima abgelesen. In
-Tabelle~\ref{tab:minmax-thermo} finden sich diese Werte. Zur Bestimmung
-des Exponenten $m := R/(2L)$ in Gleichung~\eqref{eq:loesung} werden die
+Abbildung~\ref{fig:thermodruck} die Minima und Maxima abgelesen, die
+sich in Tabelle~\ref{tab:minmax-thermo} finden. Zur Bestimmung des
+Exponenten $m := -R/(2L)$ in Gleichung~\eqref{eq:loesung} werden die
 Maxima und Minima einzeln behandelt. Aus diesem Exponent kann dann
 mithilfe von
 \begin{equation}
-	R = 2mL
-	\label{eq:exp-widerstand}
+  R = -2mL
+  \label{eq:exp-widerstand}
 \end{equation}
 der effektive Dämpfungswiderstand bestimmt werden.
-
-Zwei Ausgleichsrechnungen werden durchgeführt, da in der
-Abbildung~\ref{fig:minmax-plot} zu erkennen ist, daß die Punkte zu zwei
-verschiedenen Geraden gehören. Daher werden die Minima und Maxima
-getrennt durch eine Gerade
+Die Meßpunkt werden in ein Koordinatensystem eingetragen, dessen
+Ordinate logarithmisch skaliert ist. Die Ausgleichsgerade
+%
 \begin{equation}
 	y = \log U = mt + b
 \end{equation}
-ausgeglichen und der Mittelwert der Steigungen bestimmt. Das Ergebnis
-kann in Tabelle~\ref{tab:daempfung-ergebnis} gefunden werden.
-
-\begin{table}
-\centering\footnotesize
-  \begin{tabular}{lSSS}
-    \toprule & {$m/\si{\per\second}$} & {$R_\text{eff}/\si{\ohm}$} &
-             {$\frac{\Delta R_\text{eff}}{R}/\si{\percent}$}\\ \midrule
-             Minima & 6538 \\ Maxima & 4989 \\ \midrule Mittel & 5764 &
-             117 & 314 \\ Standardabweichung & 775 \\ \bottomrule
-  \end{tabular}
-  \caption{Die Ergebnisse der Ausgleichsrechnung. Der Exponent wird nach
-    Formel~\eqref{eq:exp-widerstand} in den Dämpfungswiderstand
-    umgerechnet. Die Abweichung wird vom eingebauten Widerstand, dessen
-    Wert sich in Tabelle~\ref{tab:r_ap-daten} befindet, berechnet.}
-  \label{tab:daempfung-ergebnis}
-\end{table}
+wird mithilfe der Formeln
+\begin{align*}
+  m &= \frac{N \sum_i x_i y_i - \sum_i\sum_j x_i y_i} {N \sum_i x_i^2 -
+    \sum_{i, j} x_i x_j} & b &= \frac{ \sum_{i,j} x_i y_j - \sum_{i, j}
+    x_i x_j y_j} {N \sum_i x_i^2 - \sum_{i, j} x_i x_j}
+\end{align*}
+für $i,j, k\in\{1,\dotsc,n\}$ bestimmt. Die Ergebnisse für die beiden
+Geraden sind:
+\begin{align*}
+  m_1 &= \SI{-4960}{\per\second} & m_2 &= \SI{-6454}{\per\second}\\
+  b_1 &= \num{329}& b_2 &= \num{139}
+\end{align*}
+%
+Der Mittelwert der Steigung errechnet sich zu
+%
+\begin{equation*}
+  \overline{m} = \SI{-5707}{\per\second}.
+\end{equation*}
+Daraus wird der effektive Dämpfungswiderstand gemäß
+Formel~\eqref{eq:exp-widerstand} berechnet. Es ergibt sich
+\begin{equation*}
+  R_\text{eff} = \SI{116}{\ohm}.
+\end{equation*}
+Die relative Abweichung vom erwarteten Wert~$R$, der in
+Tabelle~\ref{tab:geraetedaten} zu finden ist, beträgt
+\begin{equation*}
+  \frac{|R - R_\text{eff}|}{R} = \SI{112}{\percent}
+\end{equation*}
 
 \begin{table}
   \centering\footnotesize
-\begin{tabular}{SSSSSSSS}
-\toprule \multicolumn{2}{c}{Maxima} & \multicolumn{2}{c}{Minima} &
-\multicolumn{2}{c}{Maxima} & \multicolumn{2}{c}{Minima} \\ \midrule
-            {$t/\si{\micro\second}$} & {$U_C/\si{\volt}$} &
-            {$t/\si{\micro\second}$} & {$U_C/\si{\volt}$} &
-            {$t/\si{\micro\second}$} & {$U_C/\si{\volt}$} &
-            {$t/\si{\micro\second}$} & {$U_C/\si{\volt}$} \\ \midrule
-            0.0 & 6.4 & 15.0 & 6.4 & 35.0 & 5.2 & 45.0 & 5.2 \\ 60.0 &
-            4.4 & 75.0 & 4.8 & 90.0 & 3.6 & 105.0 & 4.0 \\ 120.0 & 2.8 &
-            135.0 & 3.2 & 150.0 & 2.4 & 165.0 & 2.8 \\ 180.0 & 2.0 &
-            195.0 & 2.4 & 215.0 & 1.6 & 225.0 & 2.4 \\ \bottomrule
-\end{tabular}
-\caption{Hier sind die aus der Abbildung~\ref{fig:thermodruck}
-  entnommenen Punkte der Einhüllenden. Die Punkte sind nach Maxima und
-  Minima getrennt. Die Wertepaare $(t, \log U)$ werde in eine lineare
-  Ausgleichsrechnung gegeben.}
-\label{tab:minmax-thermo}
+  \begin{tabular}{SSSSSSSS}
+    \toprule 
+    \multicolumn{2}{c}{Maxima} & \multicolumn{2}{c}{Minima} &
+    \multicolumn{2}{c}{Maxima} & \multicolumn{2}{c}{Minima} \\
+    {$t/\si{\micro\second}$} & {$U_C/\si{\volt}$} &
+    {$t/\si{\micro\second}$} & {$U_C/\si{\volt}$} &
+    {$t/\si{\micro\second}$} & {$U_C/\si{\volt}$} &
+    {$t/\si{\micro\second}$} & {$U_C/\si{\volt}$} \\
+    \cmidrule(r){1-2} \cmidrule(rl){3-4}
+    \cmidrule(rl){5-6} \cmidrule(l){7-8}
+      0.0 & 6.4 &  15.0 & 6.4 &  35.0 & 5.2 &  45.0 & 5.2 \\ 
+     60.0 & 4.4 &  75.0 & 4.8 &  90.0 & 3.6 & 105.0 & 4.0 \\ 
+    120.0 & 2.8 & 135.0 & 3.2 & 150.0 & 2.4 & 165.0 & 2.8 \\ 
+    180.0 & 2.0 & 195.0 & 2.4 & 215.0 & 1.6 & 225.0 & 2.4 \\ 
+    \bottomrule
+  \end{tabular}
+  \caption{Hier sind die aus der Abbildung~\ref{fig:thermodruck}
+    entnommenen Punkte der Einhüllenden. Die Punkte sind nach Maxima und
+    Minima getrennt. Die Wertepaare $(t, \log U)$ werde in eine lineare
+    Ausgleichsrechnung gegeben. In Abbildung~\ref{fig:minmax-plot} sind
+    die Meßwerte in ein Koordinatensystem eingetragen, das auf der
+    Ordinate logarithmisch skaliert ist.}
+  \label{tab:minmax-thermo}
 \end{table}
 
-\begin{figure}[h]
+\begin{figure}
+  \centering \includegraphics{bild}
+  \caption{Diese Graphik wurde mit dem Oszilloskop aufgenommen.  Es ist
+    der zeitliche Verlauf der Kondensatorspannung aufgezeichnet. Der
+    exponentielle Abfall der Amplitude ist zu erkennen.}
+  \label{fig:thermodruck}
+\end{figure}
+
+\begin{figure}
   \centering \includegraphics[width=0.7\textwidth]{exp-plot}
   \caption{Hier sind die aus Abbildung~\ref{fig:thermodruck} abgelesenen
     Werte halblogarithmisch aufgetragen. Die zwei Geraden sind deutlich
@@ -73,37 +96,38 @@ kann in Tabelle~\ref{tab:daempfung-ergebnis} gefunden werden.
   \label{fig:minmax-plot}
 \end{figure}  
 
-\begin{figure}[b]
-	\centering \includegraphics{bild}
-	\caption{Diese Graphik wurde mit dem Oszilloskop aufgenommen.
-          Es ist der zeitliche Verlauf der Kondensatorspannung
-          aufgezeichnet. Der exponentielle Abfall der Amplitude ist zu
-          erkennen.}
-	\label{fig:thermodruck}
-\end{figure}
-
 \subsection{Bestimmung des aperiodischen Grenzwerts}
 
-In Tabelle~\ref{tab:r_api-daten} ist der experimentell bestimmte Wert
-des Grenzwiderstandes $R_\text{ap}$ sowie der berechnete Widerstand mit
-den entsprechenden Abweichungen aufgelistet. Darin finden sich auch die
-zur Berechnung verwendeten Daten des Versuchsaufbaus.
+In Tabelle~\ref{tab:geraetedaten} finden sich die Daten der verwendeten
+Bauteile für den Versuch. Gemäß Formel~\eqref{eq:rap} ergibt sich für
+den erwarteten Widerstand~$R_\text{ap}$ und den experimentell
+ermittelten Widerstand~$R'_\text{ap}$ im aperiodischen Grenzfall
+\begin{align*}
+  R_\text{ap} &= \SI{4407}{\ohm}, & 
+  R'_\text{ap} &= \SI{3410}{\ohm}.
+\end{align*}
+Hieraus ergibt sich der relativer Fehler 
+\begin{equation*}
+  \frac{|R'_\text{ap}-R_\text{ap}|}{R_\text{ap}} = \SI{22.6}{\percent}.
+\end{equation*}
 
 \begin{table}
-  \centering\footnotesize
-  \begin{tabular}{SSSSSS}
-    \toprule {$L/\si{\milli\henry}$} & {$C/\si{\micro\farad}$} &
-             {$R/\si{\ohm}$} & {$R_\text{ap, theo}/\si{\ohm}$} &
-             {$R_\text{ap, exp}/\si{\ohm}$} & {$\frac{\Delta
-                 R_\text{ap}}{R_\text{ap, theo}}/\si{\percent}$}
-             \\ \midrule 10.14 & 2.088 & 54.7 & 139.4 & 3410 & 235
-             \\ \bottomrule
+  \centering
+  \begin{tabular}{SSS}
+    \toprule 
+    \multicolumn{3}{c}{Gerätedaten}\\
+    \midrule
+    {$L/\si{\milli\henry}$} & 
+    {$C/\si{\micro\farad}$} & 
+    {$R/\si{\ohm}$}\\
+    10.14 & 2.088 & 54.7\\
+    \bottomrule
   \end{tabular}
   \caption{Für den Versuch ist Gerät~2 verwendet worden. Hier sind die
     entsprechenden Daten und der berechnete Wert für den Widerstand des
     aperiodischen Grenzfalls, sowie der experimentell bestimmte Wert mit
     einer prozentualen Abweichung vom berechneten Wert angegeben.}
-  \label{tab:r_ap-daten}
+  \label{tab:geraetedaten}
 \end{table}
 
 

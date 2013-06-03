@@ -4,30 +4,43 @@
 
 \section{Theorie}
 \subsection{Gedämpfte Schwingungen}
-Eine elektrische Schaltung, die einen \name{ohm}schen Widerstand R, eine Induktivität L und eine Kapazität C enthält, welche eine Masche bilden, wird als RLC-Kreis bezeichnet. 
-In Abb. \ref{fig:rlc-kreis} ist der schematische Aufbau eines RLC-Kreises zu sehen.
+Eine elektrische Schaltung, die einen \name{ohm}schen Widerstand R, eine
+Induktivität L und eine Kapazität C enthält, welche eine Masche bilden,
+wird als RLC-Kreis bezeichnet.  In Abb. \ref{fig:rlc-kreis} ist der
+schematische Aufbau eines RLC-Kreises zu sehen.
 %
 \begin{figure}[h!!]
 \centering
-\includegraphics[width=0.4\textwidth]{rlc_kreis}
+\includegraphics[height=3cm]{rlc_kreis}
 \caption{Schaltbild eines RLC-Kreises}
 \label{fig:rlc-kreis}
 \end{figure}
 %
 
-Ein RLC-Kreis kann durch abwechselnde Speicherung von Energie im magnetischen Feld der Induktivität und im elektrischen Feld der Kapazität periodische Schwingungen der Stromstärke bzw. der Spannung durchführen.
+Ein RLC-Kreis kann durch abwechselnde Speicherung von Energie im
+magnetischen Feld der Induktivität und im elektrischen Feld der
+Kapazität periodische Schwingungen der Stromstärke bzw. der Spannung
+durchführen.
 
-Um diese Schwingungen mathematisch zu beschreiben, werden die \name{Kirchhoff}schen Regeln verwendet, welche sich aus den \name{Maxwell}gleichungen ergeben.
-Da es sich bei den Bauelemente des RLC-Kreises um konzentrierte Bauelemente handelt, sind diese Regeln hier anwendbar.
-Die erste \name{Kirchhoff}sche Regel, die Knotenregel, besagt, dass die Summe aller gerichteten Ströme in einem Knoten gleich Null ist.
-Die zweite \name{Kirchhoff}sche Regel, welche Maschenregel genannt wird, legt dar, dass die Summe aller Spannungen einer Masche verschwindet.
+Um diese Schwingungen mathematisch zu beschreiben, werden die
+\name{Kirchhoff}schen Regeln verwendet, welche sich aus den
+\name{Maxwell}gleichungen ergeben.  Da es sich bei den Bauelemente des
+RLC-Kreises um konzentrierte Bauelemente handelt, sind diese Regeln hier
+anwendbar.  Die erste \name{Kirchhoff}sche Regel, die Knotenregel,
+besagt, dass die Summe aller gerichteten Ströme in einem Knoten gleich
+Null ist.  Die zweite \name{Kirchhoff}sche Regel, welche Maschenregel
+genannt wird, legt dar, dass die Summe aller Spannungen einer Masche
+verschwindet.
 
-Diese Regeln werden auf die elektrische Schaltung in Abb.  \ref{fig:rlc-kreis} angewendet. Die Differentialgleichung für die zeitabhängige Stromstärke I(t) ergibt sich zu
+Diese Regeln werden auf die elektrische Schaltung in Abb.
+\ref{fig:rlc-kreis} angewendet. Die Differentialgleichung für die
+zeitabhängige Stromstärke I(t) ergibt sich zu
 \begin{equation*}
-\frac{\text{d}^2 I}{\text{d}t^2} + \frac{R}{L}\frac{\text{d}I}{\text{d}t} + \frac{I}{LC} = 0.
+\tdd{I}{t} + \frac{R}{L} \td{I}{t} + \frac{I}{LC} = 0.
 \end{equation*}
 
-Ein Exponentialansatz löst diese Differentialgleichung. Für die zeitabhängige Stromstärke ergibt sich der Audruck
+Ein Exponentialansatz löst diese Differentialgleichung. Für die
+zeitabhängige Stromstärke ergibt sich der Audruck
 \begin{equation}
 \label{eq:loesung}
 I(t) = a \exp({i \omega_1 t}) + b \exp({i \omega_2 t})
@@ -53,7 +66,7 @@ I(t) = A_0 \exp\left({-\frac{R}{2L}t}\right).
 Die Stromstärke geht am schnellsten gegen Null, wenn für den \name{ohm}schen Widerstand in der Schaltung gilt:
 \begin{equation}
 \label{eq:rap}
-R_{\text{ap}} = \sqrt{\frac{4L}{C}}.
+R_{\text{ap}} = 2\sqrt{\frac{L}{C}}.
 \end{equation}
 Dieser Fall wird als aperiodischer Grenzfall bezeichnet.
 
