@@ -64,15 +64,127 @@ mit den zugehörigen Heizspannungen und -strömen gelistet.
 
 \begin{table}
   \centering
-  \begin{tabular}{rSSS}
+  \begin{tabular}{SSS}
     \toprule
-    & {} & {} & \\
+    {$U$/V} & {$I$/A} & {$I_S$/A} \\
     \midrule
-    \\
+    4.0000e+00 & 2.1000e+00 & 0.171 \\
+    4.5000e+00 & 2.2000e+00 & 0.400 \\
+    5.0000e+00 & 2.3000e+00 & 0.797 \\
+    5.0000e+00 & 2.4000e+00 & 1.537 \\
+    6.0000e+00 & 2.6000e+00 & 3.020 \\
     \bottomrule
   \end{tabular}
   \caption{Aus den \crefrange{fig:kennlinie-2.1A}{fig:kennlinie-2.6A}
     abgelesene Sättigungsstromstärken. Es ist zu erkennen, daß der
     Sättigungsstrom sehr stark mit der Temperatur ansteigt.}
   \label{tab:saettigung}
+\end{table}
+
+\subsection{Der Gültigkeitsbereich des
+  \name{Langmuir}-\name{Schottky}-Raumladungsgesetzes}
+
+Auf \cref{fig:raumladung} ist der Strom-Spannungsverlauf in ein
+Koordinatensystem eingetragen, dessen beide Achsen logarithmiert
+sind. Das Raumladungsgebiet ist nur schwer zu erkennen. Ab dem
+12. Messwert in etwa scheinen die Punkte von einer gedachten Geraden
+abzuweichen, daher wird für die ersten 12 Punkte eine Ausgleichsrechnung
+durchgeführt. Um eine lineare Ausgleichsrechnung durchzuführen, wird eine
+Substitution durchgeführt.
+%
+\begin{equation*}
+  y = \log I = \frac{3}{2} \log U + \log A = m x + b,
+\end{equation*}
+%
+mit einer Konstanten $A$. Durch diese Ausgleichsrechnung kann überprüft
+werden, wie genau der tatsächliche Exponent mit dem erwarteten
+übereinstimmt. Für die Ausgleichsrechnung wird die Funktion
+\texttt{scipy.stats.linregress} aus der \texttt{scipy}-Bibliothek in der
+Version 0.12 verwendet. Die Ergebnisse lauten:
+%
+\begin{align*}
+  m &= \num{1.206(16)} &
+  b &= \num{-5.455(4)}\\
+  \frac{|m - \frac{3}{2}|}{\frac{3}{2}} &= \SI{19.6}{\percent}
+\end{align*}
+
+\subsection{Bestimmung der Kathodentemperatur aus dem Anlaufgebiet}
+
+Bei der maximal möglichen Heizleistung kann durch Messung des
+Anlaufgebiets die Kathodentemperatur bestimmt werden. Dazu trägt man die
+Messpunkte von Strom und Spannung in ein Koordinatensystem ein, dessen
+Ordinate logarithmiert ist (\cref{fig:anlaufgebiet}). Dann führt man
+eine lineare Ausgleichsrechnung durch. Aus der Steigung $m$ erhält man
+nach \cref{eq:anlaufstromdichte} die Temperatur
+%
+\begin{equation*}
+  T = \frac{e}{m k}
+\end{equation*}
+Da die Steigung fehlerbehaftet ist, wird eine \name{Gauß}sche
+Fehlerfortpflanzung durchgeführt:
+%
+\begin{equation*}
+  \Delta T = \frac{e}{m^2k} \Delta m
+\end{equation*}
+%
+Das Ergebnis für die Kathodentemperatur lautet dann:
+%
+\begin{equation*}
+  T = \SI{2630(89)}{\kelvin}.
+\end{equation*}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.7\textwidth]{anlaufgebiet}
+  \caption{Strom gegen Spannung im Anlaufgebiet halblogarithmisch
+    aufgetragen.}
+  \label{fig:anlaufgebiet}
+\end{figure}
+
+\subsection{Kathodentemperatur aus einer Leistungsbilanz der Apparatur}
+
+Über eine Leistungsbilanz der verwendeten Geräte der Apparatur kann die
+Temperatur der Kathode ebenfalls bestimmt werden. Die zugeführte
+Leistung $P_\text{zu} = UI$ wird über Wärmestrahlung und Wärmeleitung
+von der Kathode abgegeben. Die Wärmeleitungsleistung wird auf
+\SI{1}{\watt} geschätzt. Für die Wärmestrahlung gilt nach dem
+\name{Stefan}-\name{Boltzmann}-Gesetz
+%
+\begin{equation*}
+  P_\text{str} = f \eta \sigma T^4, 
+\end{equation*}
+%
+wobei $f = \SI{0.35}{\squared\centi\metre}$ die emittierende
+Kathodenoberfläche, $\eta = \num{0.28}$ der Emissionsgrad der Oberfläche
+und $\sigma = \SI{5.7e-12}%
+{\watt\per\centi\metre\squared\per\kelvin\tothe 4}$ ist die
+\name{Stefan}-\name{Boltzmann}-Konstante. Es ergibt sich also der
+folgende Term für die Kathodentemperatur:
+%
+\begin{equation}
+  \label{eq:leistungsbilanz}
+  T = \sqrt[4]{\frac{UI - \SI{1}{\watt}}{f\eta\sigma}}
+\end{equation}
+%
+In \cref{tab:leistungsbilanz} stehen die Heizspannungen und -ströme der
+fünf aufgenommenen Kennlinien mit ihren ermittelten
+Kathodentemperaturen.
+
+\begin{table}
+  \centering
+  \begin{tabular}{SSS}
+    \toprule
+    {$U$/V} & {$I$/A} & {$T$/K} \\
+    \midrule
+    4.0000e+00 & 2.1000e+00 & 1910 \\
+    4.5000e+00 & 2.2000e+00 & 2000 \\
+    5.0000e+00 & 2.3000e+00 & 2084 \\
+    5.0000e+00 & 2.4000e+00 & 2109 \\
+    6.0000e+00 & 2.6000e+00 & 2264 \\
+    \bottomrule
+  \end{tabular}
+  \caption{Die Heizspannungen und -ströme der Kennlinien mit den
+    zugehörigen nach \cref{eq:leistungsbilanz} bestimmten
+    Kathodentemperaturen.}
+  \label{tab:leistungsbilanz}
 \end{table}
