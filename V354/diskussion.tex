@@ -4,3 +4,25 @@
 
 \section{Diskussion}
 
+Insgesamt sind in der Auswertung relativ hohe Fehler beobachtet
+worden. Die Gründe dafür lassen sich auf zwei Punkte zusammenfassen.
+%
+\begin{itemize}
+\item Der ohmsche Widerstand der Spule ist nicht beachtet worden
+\item Der Fall der schwachen Dämpfung ist nur annähernd gegeben, da
+  \begin{equation*}
+    \frac{R^2}{2 L^2} LC = \num{0.002},
+  \end{equation*}
+  und damit nicht allzu nah am Dämpfungsfall $R^2/(2L^2) \ll 1/(LC)$
+  ist.
+\end{itemize}
+
+Die Abweichung von \SI{112}{\percent} bei der Bestimmung des effektiven
+Dämpfungswiderstands sind auf den ersten Punkt zurückzuführen. Auch bei
+der Bestimmung des aperiodischen Grenzfalls läßt sich der Fehler auf
+diesen Punkt zurückführen, ebenso bei der Bestimmung der
+Resonanzüberhöhung.
+
+Die Auswertung der Breite der Resonanzkurve weißt den höchsten Fehler
+von \SI{133}{\percent} auf. Hier kommt der zweite Punkt zum Tragen. Die
+gemachte Näherung approximiert hier nur schlecht.
