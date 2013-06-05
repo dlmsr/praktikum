@@ -1,9 +1,11 @@
 # encoding: utf-8
-
 import numpy as np
 import matplotlib.pyplot as plt
+import scipy.optimize as sco
+
 from scipy import stats
 from linregress import linear_fit
+from math import sqrt, pi
 
 # Laden der Geräte-Daten
 L, C, R, R_ap = np.loadtxt('daten_und_Rap.txt', unpack=True)
@@ -59,7 +61,7 @@ print(72*'-')
 # Teil b)
 
 # Berechne R_ap aus Gerätedaten
-R_ap_theo = 2*np.sqrt(L/C)
+R_ap_theo = 2 * sqrt(L/C)
 
 print('Berechneter R_ap: \t{:0.4e}'.format(R_ap_theo))
 print('Relative Abweichung: \t{:0.4%}'\
@@ -74,15 +76,30 @@ f, U = np.loadtxt('messwerte_c.txt', unpack=True)
 plt.title('Bestimmung der Resonanzüberhöhung')
 
 plt.subplot(211)
-plt.semilogy(f, U/U_0, '+')
+plt.semilogy(f, U/U_0, 'r+')
 plt.ylabel('$U/U_0$')
 plt.xlabel('$\\nu/\\mathrm{Hz}$')
 plt.grid(True, which='both')
 plt.ticklabel_format(axis='x',style='sci',scilimits=(1,4))
 
-sec = np.where(U/U_0 >= 5)
+# Berechne Resonanzüberhöhung und -breite
+reskurve    = np.where(U > U.max()/sqrt(2))
+breite      = f[reskurve].max() - f[reskurve].min()
+q           = U.max()/U_0
+
+breite_theo = R/(L*2*pi)
+q_theo      = 1/R * sqrt(L/C)
+
+x = f[reskurve]
+y = U[reskurve]/U_0
+
 plt.subplot(212)
-plt.plot(f[sec], U[sec]/U_0, '+')
+plt.plot(x, y, 'r+')
+plt.axvline(x.min(), linestyle='--')
+plt.axvline(x.max(), linestyle='--')
+
+plt.xlim(0.995*x.min(), 1.005*x.max())
+plt.ylim(0.9*y.min(), 1.1*y.max())
 plt.ylabel('$U/U_0$')
 plt.xlabel('$\\nu/\\mathrm{Hz}$')
 plt.grid(True, which='both')
@@ -91,17 +108,12 @@ plt.ticklabel_format(axis='x',style='sci',scilimits=(1,4))
 plt.savefig('resonanz.pdf')
 plt.close()
 
-q_theo = 1/R*np.sqrt(L/C)
-q = U.max()/U_0
-breite_theo = R/L
-breite = (f[sec].max() - f[sec].min())
-
-print('Berechnete Resonanzüberhöhung: {0:0.4e}'.format(q_theo))
-print('Experimentell bestimmte Resonanzüberhöhung: {0:0.4e}'.format(q))
-print('relative Abweichung: {0:0.4%}'.format(abs(q_theo-q)/q_theo))
-print('Berechnete Breite der Resonanzkurve: {0:0.4e}'.format(breite_theo))
-print('Experimentell bestimmte Breite: {0:0.4e}'.format(breite))
-print('relative Abweichung: {0:0.4%}'\
+print('Resonanzüberhöhung: \t{0:0.4e}'.format(q_theo))
+print('Resonanzüberhöhung(exp): \t{0:0.4e}'.format(q))
+print('relative Abweichung: \t{0:0.4%}'.format(abs(q_theo-q)/q_theo))
+print('Resonanzbreite: \t{0:0.4e} Hz'.format(breite_theo))
+print('Resonanzbreite(exp): \t{0:0.4e} Hz'.format(breite))
+print('relative Abweichung: \t{0:0.4%}'\
       .format(abs(breite_theo-breite)/breite_theo))
 print(72*'-')
 

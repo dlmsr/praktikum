@@ -131,7 +131,6 @@ Hieraus ergibt sich der relativer Fehler
   \label{tab:geraetedaten}
 \end{table}
 
-
 \subsection{Bestimmung der Resonanzüberhöhung}
 
 Die Meßwerte, die in diesem Teil des Versuches aufgenommen worden sind,
@@ -140,11 +139,11 @@ Abbildung~\ref{fig:resonanz} ist im oberen Plot das Verhältnis $U_C/U_0$
 gegen die Frequenz $\nu$ halblogarithmisch aufgetragen und im unteren
 Plot ist $U_C/U_0$ im Bereich um die Resonanzfrequenz herum linear gegen
 $\nu$ aufgetragen. Dabei wurden alle Meßwerte beachtet, für die die
-Kondensatorspannung $U_C > \SI{60}{\volt}$ ist. Die nach
-Formel~\eqref{eq:} berechnete Resonanzüberhöhung beträgt
+Kondensatorspannung $U_C$ größer als $U_C^\text{(max)}/\sqrt{2}$
+ist. Die aus den Gerätedaten berechnete Resonanzüberhöhung beträgt
 %
 \begin{equation*}
-  q = \num{40.29}.
+  q = \frac{1}{R} \sqrt{\frac{L}{C}} = \num{40.29}.
 \end{equation*}
 %
 Aus dem maximalen Wert von $U_C/U_0$ wird der experimentell bestimmte
@@ -159,11 +158,26 @@ ermittelt. Die relative Abweichung beträgt
 \begin{equation*}
   \frac{|q^\text{(exp)} - q|}{q} = \SI{65}{\percent}.
 \end{equation*}
-Mit Formel~\eqref{eq:} kann die Breite der Resonanzspitze aus den
-Geräte-Daten berechnet werden. Es ergibt sich:
+Die Resonanzbreite kann für den Fall $R^2/L^2n \ll \omega_0^2$ mit den
+Geräte-Daten durch
 %
 \begin{equation*}
-  \nu_+ - \nu_- = 
+  \Delta\nu = \nu_+ - \nu_- \approx \frac{R}{2\pi L} 
+  = \SI{8.586e2}{\hertz}
+\end{equation*}
+abgeschätzt werden. Experimentell ergibt sich die Breite der
+Resonanzkurve, die aus dem unteren Plot aus \cref{fig:resonanz}
+abgelesen wird, zu
+%
+\begin{equation*}
+  \Delta\nu^\text{(exp)} = \nu_+ - \nu_- = \SI{2e3}{\hertz}.
+\end{equation*}
+Die relative Abweichung der experimentell bestimmten Breite der
+Resonanzkurve vom Schätzwert $\Delta\nu$ beträgt
+%
+\begin{equation*}
+  \frac{|\Delta\nu^\text{(exp)} - \Delta\nu|}{\Delta\nu} 
+  = \SI{133}{\percent}.
 \end{equation*}
 
 \begin{table}
@@ -194,7 +208,7 @@ Geräte-Daten berechnet werden. Es ergibt sich:
   \label{tab:resonanz}
 \end{table}
 
-\begin{figure}[h]
+\begin{figure}
   \centering
   \includegraphics[width=0.7\textwidth]{resonanz}
   \caption{Das Verhältnis $U_C/U_0$ ist gegen $\nu$ einmal
@@ -203,7 +217,7 @@ Geräte-Daten berechnet werden. Es ergibt sich:
   \label{fig:resonanz}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}
   \centering
   \includegraphics[width=0.7\textwidth]{phasen-plot}
   \caption{Hier ist der Phasenunterschied $\phi$ gegen die Frequenz
@@ -212,3 +226,5 @@ Geräte-Daten berechnet werden. Es ergibt sich:
     \SI{90}{\degree} linear dargestellt.}
   \label{fig:phasen-plot}
 \end{figure}
+
+\FloatBarrier
