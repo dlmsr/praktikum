@@ -3,7 +3,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import scipy.stats as scs
-from scipy.constants import k, e, sigma
+from scipy.constants import k, e, sigma, m_e, pi, hbar
 
 ########################################################################
 # Teil a)
@@ -36,7 +36,8 @@ for (U, I) in map(np.transpose, UI):
 I_S  = np.array(I_S)
 U, I = np.vstack(np.split(kennlinien[0,:], 5)).T
 tab  = np.array([U, I, I_S]).T
-np.savetxt('saettig.txt', tab, delimiter=' & ', newline=' \\\\\n', fmt='%.4e')
+np.savetxt('saettig.txt', tab, delimiter=' & ', newline=' \\\\\n',
+           fmt='%.4e')
 
 ########################################################################
 # Teil b)
@@ -111,4 +112,16 @@ U, I = np.vstack(np.split(UI[0,:], 5)).T
 
 T = ((U*I - 1)/(f*eta*sigma))**(1/4)
 
-np.savetxt('temp.txt', np.array([U, I, T]).T, delimiter=' & ', newline=' \\\\\n', fmt='%.4e')
+np.savetxt('temp.txt', np.array([U, I, T]).T, delimiter=' & ',
+           newline=' \\\\\n', fmt='%.4e')
+
+#########################################################################
+# Teil e)
+A = 4*pi*e*m_e*k**2/hbar**3
+austritt = -k*T*np.log(2*I_S/(f*A*T**2))/e
+
+tab = np.array([I_S, T, austritt]).T
+tab = np.append(tab, [tab.mean(axis=0), scs.sem(tab, axis=0)], axis=0)
+
+np.savetxt('austritt.txt', tab, delimiter=' & ', newline=' \\\\\n',
+           fmt='%.4e')
