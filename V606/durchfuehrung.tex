@@ -5,19 +5,49 @@
 \section{Aufbau und Durchführung}
 
 \subsection{Aufbau einer Apparatur zur Bestimmung der Suszeptibilität}
+\label{sec:aufbau-apparatur}
 
 Die Apparatur besteht im wesentlichen aus vier Teilen: Einem
-Signalgeber, einer Brückenschaltung, einem Verstärker und einem
-Meßgerät. Der Signalgeber speist die Brückenschaltung mit einem
-Sinussignal, ein Verstärker leitet das Signal verstärkt an das Meßgerät
-weiter. Ein Schema der Versuchsanordnung ist in \cref{fig:schema-aufbau}
-skizziert. 
-
-Das Prinzip, nach dem die Suszeptibilität bestimmt wird, basiert auf
-einer Induktivitätsmessung einer Spule, in welche die zu messende Probe
-eingeführt wird.
+Funktionengenerator als Signalgeber, einer Brückenschaltung, einem
+Verstärker und einem Meßgerät. Der Signalgeber speist die
+Brückenschaltung mit einem Sinussignal, ein Verstärker leitet das Signal
+verstärkt an das Meßgerät weiter. Ein Schema der Versuchsanordnung ist
+in \cref{fig:schema-aufbau} skizziert. Das Prinzip, nach dem die
+Suszeptibilität bestimmt wird, basiert auf einer Induktivitätsmessung
+einer Spule, in welche die zu messende Probe eingeführt wird. Der
+Verstärker ist notwendig, da die auftretenden Spannungen sehr gering
+sind und von Störspannungen, die in dieser Größenordnung immer
+auftreten, überlagert sind. Aus diesem Grunde ist zusätzlich ein Filter
+in den Verstärker integriert, da das zu messende Signal monofrequent,
+die Störsignale aber ein Frequenz-Spektrum haben können, das viele
+verschiedene Frequenzen enthält.
 
 \subsection{Messung der Güte des Selektivverstärkers}
 
-\subsection{Messung der Induktivität der Proben}
+Zu allererst wird eine Güte-Messung des verwendeten Selektivverstärkers
+durchgeführt. Dazu wird ein Sinussignal vom Funktionengenerator in den
+Eingang des Verstärkers gegeben und am Ausgang von einem Meßgerät wieder
+abgenommen. Jetzt wird die Frequenz des Sinussignals verändert und so
+eine Meßreihe Spannung gegen Frequenz durchgeführt. Ziel ist es,
+herauszufinden, wie gut die Filtereigenschaften des Selektivverstärkers
+sind. Die Meßwerte werden um den Bereich der Resonanzspitze dichter
+gewählt, um eine bessere Auflösung gewährleisten zu können.
 
+\subsection{Messung der Suszeptibilität der Proben}
+
+Wie bereits in \cref{sec:aufbau-apparatur} angerissen, wird die
+Suszeptibilität der Proben über eine Induktivitätsmessung
+realisiert. Die Induktivitäten werden mithilfe einer Brückenschaltung
+und der Nullmethode bestimmt, um eine gute Genauigkeit zu erreichen. Da
+die auftretenden Signale allerdings in der Größenordnung der Störungen
+liegt, ist ein sogenannter Selektivverstärker notwendig, der das Signal
+verstärkt und nur eine Frequenz durchläßt.
+
+Es gibt zwei Möglichkeiten, mit der oben beschriebenen Apparatur die
+Suszeptibilität zu bestimmen. Wird bei ausgeglichener Brücke, d.\,h. die
+Brückenspannung verschwindet, die Probe in die Spule geschoben, so läßt
+sich aus der Änderung der Brückenspannung die Änderung der Induktivität
+berechnen. Die zweite Möglichkeit ist nun, die Brücke mit eingelegter
+Probe auszugleichen und daraus die Änderung der Induktivität abzulesen.
+Hier werden beide Möglichkeiten nacheinander ausgeführt, damit je zwei
+Meßwerte pro Messung erhalten werden.
