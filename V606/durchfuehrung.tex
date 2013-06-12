@@ -22,6 +22,18 @@ in den Verstärker integriert, da das zu messende Signal monofrequent,
 die Störsignale aber ein Frequenz-Spektrum haben können, das viele
 verschiedene Frequenzen enthält.
 
+\begin{figure}[b]
+  \centering
+  \includegraphics[width=\textwidth]{aufbau}
+  \caption{Der Aufbau der Versuchsanordnung.  Der Sinusgenerator liefert
+    die Speisespannung für die Brücke in Form einer monofrequenten
+    Sinuswelle.  Die Brücke dient zum Messen der Induktivität der Spule,
+    in die die Probe eingelegt wird.  Der Selektivverstärker filtert
+    Störungen heraus und verstärkt das Signal, das an der Brücke anliegt
+    und das Meßgerät mißt die Spannung.}
+  \label{fig:schema-aufbau}
+\end{figure}
+
 \subsubsection{Beschreibung der Brückenschaltung}
 
 Die Brücke zur Induktivitätsmessung ist in \cref{fig:bruecke}
@@ -49,6 +61,17 @@ den Abgleichbedingungen der Brücke, daß der Widerstand~$R_3$ sich um
   \label{eq:delta-r}
   \Delta R = \chi \frac{R_3 Q}{2 F}.
 \end{equation}
+
+\begin{figure}
+  \centering
+  \includegraphics[height=5cm]{bruecke}
+  \caption{Schaltskizze der verwendeten Meßbrücke.  Sie dient dazu die
+    Induktivität zu messen.  In die Spule~$L_\text{M}$ wird die Probe
+    eingelegt. Der Widerstände~$R_3$ und $R_4$ sind als
+    Präzisionspotentiometer ausgeführt.  Die Abbildung ist aus
+    \textcite{v606} entnommen.}
+  \label{fig:bruecke}
+\end{figure}
 
 \subsubsection{Unterdrückung von Störspannungen}
 
