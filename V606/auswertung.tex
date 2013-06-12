@@ -1,0 +1,162 @@
+% This work is licensed under the Creative Commons
+% Attribution-NonCommercial 3.0 Unported License. To view a copy of this
+% license, visit http://creativecommons.org/licenses/by-nc/3.0/.
+
+\section{Auswertung}
+%
+\subsection{Gütebestimmung des Selektivverstärkers}
+%
+Die Effektivspannung des Eingangsignals beträgt \SI{70}{\milli\volt},
+ der Verstärkungsfaktor 10. In Tabelle~\ref{tab:guetewerte} sind 
+die um diesen Faktor verstärkten gemessenen Ausgangsspannungen zu 
+verschiedenen Frequenzen des Eingangssignals angegeben.
+ %
+\begin{table}[h]
+  \centering
+  \begin{tabular}{SS|SS|SS}
+    \toprule
+    $U_\text{A}${ / }\si{\volt}& {f / }\si{\kilo\hertz}&
+    $U_\text{A}${ / }\si{\volt}& {f / }\si{\kilo\hertz}& 
+    $U_\text{A}${ / }\si{\volt}& {f / }\si{\kilo\hertz}\\
+    \midrule
+0.65&35.42&0.7&35.38&0.017&42\\
+0.55&35.3&0.54&35.5&0.009&50\\
+0.35&35.15&0.39&35.6&0.69&35.4\\
+0.23&35&0.21&35.85&0.68&35.35\\
+0.15&34.77&0.16&36&0.43&35.2\\
+0.092&34.30&0.11&36.3&0.51&35.25\\
+0.041&33&0.073&36.8&0.63&35.45\\
+0.0175&30&0.049&37.5&0.45&35.55\\
+0.0085&25&0.040&38& & \\
+0.0054&20&0.0235&40& & \\
+\bottomrule
+  \end{tabular}
+  \caption{Die gemessenen Ausgangsspannungen 
+des Selektivverstärkers für verschiedenen Frequenzen 
+des Eigangssignals. Der Verstärkungsfaktor 
+beträgt 10.}
+  \label{tab:guetewerte}
+\end{table}
+%
+
+Ein Plot dieser Messwerte ist in Abb.~\ref{fig:gueteplot} zu sehen.
+Die rot markierten Punkte, welche als Gütepunkte bezeichnet werden, 
+werden verwendet, um die Frequenzen $\nu_-$ und $\nu_+$ zu 
+bestimmen. Die Filterfrequenz ist ebenfalls als vertikaler schwarzer 
+Stirch eingezeichnet.
+%
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.8\textwidth]{gueteplot}
+\caption{Plot zur Guetebestimmung des verwendeten Selektivverstärkers.\\
+Eingestellte Güte: 100.
+Die Gütepunkte wurden verwendet, um die dazu benötigten 
+Frequenzen $\nu_-$ und $\nu_+$ zu errechnen.}
+\label{fig:gueteplot}
+\end{figure}
+%
+
+Die Frequenz der beiden Gütepunkte, welche links von der Filterfrequenz 
+liegen betragen \SI{35.20}{\kilo\hertz} für den unteren und 
+\SI{35.25}{\kilo\hertz} für den oberen Punkt.
+Auf der rechten Seite befinden sich die Gütepunkte mit den Frequenzen 
+\SI{35.5}{\kilo\hertz}, welche dem oberen Punkt zugeordnet ist, und 
+\SI{35.55}{\kilo\hertz} für den unteren rechten Gütepunkt.
+Durch Bildung des Mittelwertes der Frequenzen der Gütepunkte aus der 
+linken Seite wird die Frequenz $\nu_-$ bestimmt. 
+Auf der rechten Seite der Filterfrequenz wird analog vorgangen.
+Als Ergebnisse ergeben sich, dass
+%
+\begin{align*}
+  \nu_- &= \SI{35.225}{\kilo\hertz} &
+  \nu_+ &= \SI{35.525}{\kilo\hertz}.
+\end{align*}
+%
+Mit Formel~\eqref{eq:guete} berechnet sich die Güte des Selektivversärkers zu
+%
+\begin{align*}
+  Q &= \num{118}.
+\end{align*}
+%
+Eine Fehlerangabe ist nicht möglich, da die Fehler der einzelnen 
+Frequenzmessungen unbekannt sind.
+%
+\FloatBarrier
+\subsection{Suszeptibilität der untersuchten Proben}
+%
+Die gemessenen Brückenspannungen $U_\text{Br}$ nach dem Einführen der Probe in 
+die Messpule, die zum erreichen eines Spannungsminimums eingestellten 
+Widerstände $R_3$ und die Widerstandsdifferenz $\Delta R_3$, welche nötig 
+ist, um die Spannung bei probengefüllter Spule wieder auf ein Minimum zu 
+bringen, sind in Tabelle~\ref{tab:suszeptwerte} für die drei untersuchten 
+Materialien eingetragen.
+
+Die Daten der verwendeten Spule lauten:
+\begin{itemize}
+\item Windungszahl n = 250
+\item Querschnittsfläche F = \SI{86.6}{\milli\metre^2}
+\item Länge l = \SI{13.5}{\centi\metre}
+\item Verlustwiderstand R = \SI{0.7}{\ohm}.
+\end{itemize}
+
+Aus den Brückenspannungen $U_\text{Br}$ und den Spulendaten werden mit Hilfe von 
+Formel~\eqref{eq:chi-spannungen} die Suszeptibilitäten $\chi_\text{U}$ bestimmt. Es wird hierbei nicht 
+die Näherungsformel verwendet, welche für $\omega^2 L^2 \ggg R^2$ gilt, 
+da $\frac{\omega^2 L^2}{R^2} \approx 6$ ist.
+
+Die Suszeptibilitäten $\chi_\text{R}$ werden mit Formel~\eqref{eq:delta-r}, und den in 
+Tabelle~\ref{tab:suszeptwerte} angegebenen Widerständen $R_3$ und den 
+Widerstandsdifferenzen $\Delta R_3$ berechnet. Es ist unbedingt zu beachten, 
+dass sich in Reihe mit dem Widerstand $R_3$ ein Vorwiderstand von R = \SI{998}{\ohm} befindet, 
+welcher in der verwendeten Formel zu $R_3$ dazuaddiert werden muss!
+
+Die Ergebnisse dieser Suszeptibilitätsbestimmungen sind ebenfalls 
+in Tabelle~\ref{tab:suszeptwerte} zu finden.
+%
+\begin{table}[h]
+  \centering
+  \begin{tabular}{SSSS|SS}
+    \toprule
+    {Material}& $U_\text{Br}${ / }\si{\milli\volt}&
+    $R_{3}{ / }$\si{\milli\ohm}& $\Delta R_{3}${ / }\si{\milli\ohm}& 
+    $\chi_\text{U}$ & $\chi_\text{R}$\\
+    \midrule
+{Dy2O3}&101&2280&1715&0.0239&0.0188 \\
+ {Masse = }\SI{16.6}{\gram}&98&2250&1685&0.0232&0.0185\\
+  {Dichte = }\SI{7.8}{\gram\per\centi\metre^2}&98&2265&1685&0.0232&0.0185\\
+\midrule
+ {Nd2O3}&14&2300&225&0.0056&0.0042\\
+ {Masse = }\SI{9.0}{\gram} &15.5&2305&230&0.0062&0.0043\\
+{Dichte = }\SI{7.24}{\gram\per\centi\metre^2}&11&2255&175&0.0044&0.0036\\
+\midrule
+ {Gd2O3}&51&2315&915&0.0135&0.0112\\
+{Masse = }\SI{14.08}{\gram}&48&2215&845&0.0127&0.0104\\
+{Dichte = }\SI{7.4}{\gram\per\centi\metre^2}&49&2240&870&0.0130&0.0107\\
+\bottomrule
+  \end{tabular}
+  \caption{Tabelle der gemessenen Brückenspannungen und Widerstände zum Nullabgleich
+               der Brückenschaltung. Die aus den jeweiligen Verfahren bestimmten Werte für die
+                Suszeptibilität ist ebenfalls angegeben.}
+  \label{tab:suszeptwerte}
+\end{table}
+%
+
+Mittelwertbildung und Berechnung des statistischen Fehlers führen zu folgenden Ergebnissen:
+%
+\begin{table}[h]
+  \centering
+  \begin{tabular}{SSS}
+    \toprule
+    {Material}& $\chi_\text{U}$ & $\chi_\text{R}$\\
+    \midrule
+{Dy2O3}&\num{0.0234(1)}&\num{0.0186(1)}\\
+ {Nd2O3}&\num{0.0054(2)}&\num{0.0039(2)}\\
+ {Gd2O3}&\num{0.0130(1)}&\num{0.0108(2)}\\
+\bottomrule
+  \end{tabular}
+  \caption{Ergebnisse dieses Versuches. Angegeben sind die Mittelwerte der Suszeptibilitäten der
+               angegebenen Proben. Der Fehler ist der statistische Fehler.}
+  \label{tab:ergebnisse}
+\end{table}
+%
+\FloatBarrier
