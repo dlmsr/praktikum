@@ -22,6 +22,8 @@ in den Verstärker integriert, da das zu messende Signal monofrequent,
 die Störsignale aber ein Frequenz-Spektrum haben können, das viele
 verschiedene Frequenzen enthält.
 
+\subsubsection{Beschreibung der Brückenschaltung}
+
 Die Brücke zur Induktivitätsmessung ist in \cref{fig:bruecke}
 skizziert.  In das Innere der Spule, die mit $L_\text{M}$ bezeichnet ist,
 kann die zu untersuchende Probe eingeführt werden.  Durch das Einführen
@@ -40,8 +42,30 @@ Brücke.  Es gilt:
   \sqrt{R^2 + \omega^2 \left(\mu_0 \frac{n^2}{l} F\right)^2},
 \end{equation}
 wobei hier $F$ die Querschnittsfläche der Spule und $U_\text{Sp}$ die
-Speisespannung bezeichnet.
+Speisespannung bezeichnet.  Wird nun in die ohne eingelegte Probe
+abgeglichene Brücke die Probe eingeführt, dann ergibt sich ebenfalls aus
+den Abgleichbedingungen der Brücke, daß der Widerstand~$R_3$ sich um
+\begin{equation}
+  \label{eq:delta-r}
+  \Delta R = \chi \frac{R_3 Q}{2 F}.
+\end{equation}
 
+\subsubsection{Unterdrückung von Störspannungen}
+
+Wie bereits erwähnt treten an den Ausgangsklemmen der Brückenschaltung
+Störspannungen auf.  Da die zu messende Brückenspannung vermutlich
+völlig von den Störungen verdeckt wird, muß ein Weg gefunden werden,
+diese herauszufiltern.  Man wählt dazu als Speisespannung ein
+Sinussignal und verwendet einen Selektivverstärker, der nur Spannungen
+im Bereich der Frequenz dieses Signals herum passieren läßt.  Da die
+Störspannungen viele verschiedene Frequenzen enthalten, kann ein
+Großteil der Störungen herausgefiltert werden.  Die Güte
+\begin{equation}
+  \label{eq:guete}
+  Q = \frac{\nu_0}{\nu_+ - \nu_-}
+\end{equation}
+ist ein Maß für die Schärfe des Bereichs, in dem die ungewollten
+Frequenzen abgeschnitten werden.
 
 \subsection{Messung der Güte des Selektivverstärkers}
 
