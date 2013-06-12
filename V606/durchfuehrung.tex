@@ -1,6 +1,6 @@
 % This work is licensed under the Creative Commons
-% Attribution-NonCommercial 3.0 Unported License. To view a copy of this
-% license, visit http://creativecommons.org/licenses/by-nc/3.0/.
+% Attribution-NonCommercial 3.0 Unported License.  To view a copy of
+% this license, visit http://creativecommons.org/licenses/by-nc/3.0/.
 
 \section{Aufbau und Durchführung}
 
@@ -9,45 +9,67 @@
 
 Die Apparatur besteht im wesentlichen aus vier Teilen: Einem
 Funktionengenerator als Signalgeber, einer Brückenschaltung, einem
-Verstärker und einem Meßgerät. Der Signalgeber speist die
+Verstärker und einem Meßgerät.  Der Signalgeber speist die
 Brückenschaltung mit einem Sinussignal, ein Verstärker leitet das Signal
-verstärkt an das Meßgerät weiter. Ein Schema der Versuchsanordnung ist
-in \cref{fig:schema-aufbau} skizziert. Das Prinzip, nach dem die
+verstärkt an das Meßgerät weiter.  Ein Schema der Versuchsanordnung ist
+in \cref{fig:schema-aufbau} skizziert.  Das Prinzip, nach dem die
 Suszeptibilität bestimmt wird, basiert auf einer Induktivitätsmessung
-einer Spule, in welche die zu messende Probe eingeführt wird. Der
+einer Spule, in welche die zu messende Probe eingeführt wird.  Der
 Verstärker ist notwendig, da die auftretenden Spannungen sehr gering
 sind und von Störspannungen, die in dieser Größenordnung immer
-auftreten, überlagert sind. Aus diesem Grunde ist zusätzlich ein Filter
+auftreten, überlagert sind.  Aus diesem Grunde ist zusätzlich ein Filter
 in den Verstärker integriert, da das zu messende Signal monofrequent,
 die Störsignale aber ein Frequenz-Spektrum haben können, das viele
 verschiedene Frequenzen enthält.
 
+Die Brücke zur Induktivitätsmessung ist in \cref{fig:bruecke}
+skizziert.  In das Innere der Spule, die mit $L_\text{M}$ bezeichnet ist,
+kann die zu untersuchende Probe eingeführt werden.  Durch das Einführen
+einer Probe mit Querschnitt~$Q$ und magnetischer Suszeptibilität~$\chi$
+in eine Spule der Länge~$l$ und Windungszahl~$n$ ist der Unterschied
+zwischen der Induktivität~$L_\text{M}$ und $L$ um
+\begin{equation}
+  \Delta L = \mu_0 \chi Q \frac{n^2}{l}.
+\end{equation}
+Der Zusammenhang zwischen Brückenspannung~$U_\text{Br}$ und magnetischer
+Suszeptibilität~$\chi$ ergibt sich aus den Abgleichbedingungen für die
+Brücke.  Es gilt:
+\begin{equation}
+  \label{eq:chi-spannungen}
+  \chi = \frac{U_\text{Br}}{U_\text{Sp}} \frac{4 l}{\omega \mu_0 n^2 Q}
+  \sqrt{R^2 + \omega^2 \left(\mu_0 \frac{n^2}{l} F\right)^2},
+\end{equation}
+wobei hier $F$ die Querschnittsfläche der Spule und $U_\text{Sp}$ die
+Speisespannung bezeichnet.
+
+
 \subsection{Messung der Güte des Selektivverstärkers}
 
 Zu allererst wird eine Güte-Messung des verwendeten Selektivverstärkers
-durchgeführt. Dazu wird ein Sinussignal vom Funktionengenerator in den
+durchgeführt.  Dazu wird ein Sinussignal vom Funktionengenerator in den
 Eingang des Verstärkers gegeben und am Ausgang von einem Meßgerät wieder
-abgenommen. Jetzt wird die Frequenz des Sinussignals verändert und so
-eine Meßreihe Spannung gegen Frequenz durchgeführt. Ziel ist es,
+abgenommen.  Jetzt wird die Frequenz des Sinussignals verändert und so
+eine Meßreihe Spannung gegen Frequenz durchgeführt.  Ziel ist es,
 herauszufinden, wie gut die Filtereigenschaften des Selektivverstärkers
-sind. Die Meßwerte werden um den Bereich der Resonanzspitze dichter
+sind.  Die Meßwerte werden um den Bereich der Resonanzspitze dichter
 gewählt, um eine bessere Auflösung gewährleisten zu können.
 
 \subsection{Messung der Suszeptibilität der Proben}
 
 Wie bereits in \cref{sec:aufbau-apparatur} angerissen, wird die
-Suszeptibilität der Proben über eine Induktivitätsmessung
-realisiert. Die Induktivitäten werden mithilfe einer Brückenschaltung
-und der Nullmethode bestimmt, um eine gute Genauigkeit zu erreichen. Da
-die auftretenden Signale allerdings in der Größenordnung der Störungen
+Suszeptibilität der Proben über eine Induktivitätsmessung realisiert.
+Die Induktivitäten werden mithilfe einer Brückenschaltung und der
+Nullmethode bestimmt, um eine gute Genauigkeit zu erreichen.  Da die
+auftretenden Signale allerdings in der Größenordnung der Störungen
 liegt, ist ein sogenannter Selektivverstärker notwendig, der das Signal
 verstärkt und nur eine Frequenz durchläßt.
 
 Es gibt zwei Möglichkeiten, mit der oben beschriebenen Apparatur die
-Suszeptibilität zu bestimmen. Wird bei ausgeglichener Brücke, d.\,h. die
-Brückenspannung verschwindet, die Probe in die Spule geschoben, so läßt
-sich aus der Änderung der Brückenspannung die Änderung der Induktivität
-berechnen. Die zweite Möglichkeit ist nun, die Brücke mit eingelegter
-Probe auszugleichen und daraus die Änderung der Induktivität abzulesen.
-Hier werden beide Möglichkeiten nacheinander ausgeführt, damit je zwei
-Meßwerte pro Messung erhalten werden.
+Suszeptibilität zu bestimmen.  Wird bei ausgeglichener Brücke,
+d.\,h. die Brückenspannung verschwindet, die Probe in die Spule
+geschoben, so läßt sich aus der Änderung der Brückenspannung die
+Änderung der Induktivität berechnen.  Die zweite Möglichkeit ist nun,
+die Brücke mit eingelegter Probe auszugleichen und daraus die Änderung
+der Induktivität abzulesen.  Hier werden beide Möglichkeiten
+nacheinander ausgeführt, damit je zwei Meßwerte pro Messung erhalten
+werden.
