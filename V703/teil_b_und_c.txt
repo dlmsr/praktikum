@@ -1,0 +1,26 @@
+b) Totzeitmessungen
+
+
+#1. Methode: 2-Quellen-Methode: ( bei 500 V )
+
+1.Quelle: 120286 Impulse in 180s
+2.Quelle: 5164 Impulse in 180s
+1.+2.Quelle: 121980 Impulse in 180s
+
+
+
+#2. Methide: Mitm Oszi: ( 700V )
+
+2.5 Kästchen ; 1 Kästchen = 50 mikrosekunden für die Totzeit
+8 Kästchen; 1 Kästchen = 100 mikrosekunden für die Erholungszeit
+
+Oszi-Ablesefehler: 12.5 mikrosekunden
+
+
+
+c) Nachentladungszeit ( Bei 700 V )
+
+Abstand zwischen Primär- und Nachentladungspeak: 
+4.5 Kästchen; 1 Kästchen = 50 mikrosekunden
+
+Oszi-Ablesefehler: 12.5 mikrosekunden
