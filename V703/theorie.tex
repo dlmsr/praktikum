@@ -3,3 +3,111 @@
 % this license, visit http://creativecommons.org/licenses/by-nc/3.0/.
 
 \section{Theorie}
+\subsection{Funktionsweise eines Geiger-Müller-Zählrohres}
+%
+Das Geiger-Müller-Zählrohr wird zum Messen von Intensitäten ionisiernder Stahlung
+verwendet.
+
+Es besteht aus einem zylinderförmigen Stahlmantel, welcher z.B. mit \SI{100}{\milli\bar} Argon
+und \SI{10}{\milli\bar} Ethylalkohol gefüllt ist, einem Eintrittsfenster und einem Draht, welcher sich 
+mittig im Zählrohr befindet. Das Eintrittsfenster des Zählrohres in diesem Versuch besteht aus
+Mylar-Folie, da diese eine so geringe Dichte besitzt, dass selbst niederreichweitige Strahlung
+durch diese hindurchdringen kann.
+Der Mantel wird als Kathode, und der innere Draht als Anode verwendet, sodass beim Eintritt ionisierender
+Strahlung die entstehenden Ionen zum Mantel und die Elektronen zum Draht aufgrund der wirkenden
+elektrischen Kraft wandern, sodass bei einem geschlossenen Stromkreis ein Impuls messbar ist.
+
+In Abb.~\ref{fig:zaehlrohr_aufbau} ist ein Querschnitt eines Zählrohres zu sehen.
+%
+\begin{figure}
+  \centering
+  \includegraphics[width=0.7\textwidth]{zaehlrohr_aufbau}
+  \caption{Querschnitt durch ein Geiger-Müller-Zählrohr.
+               Die Skizze wurde aus \textcite{v703} entnommen.}
+  \label{fig:zaehlrohr_aufbau}
+\end{figure}
+%
+
+Die Anzahl der entstehenden Elektronen-Ionen-Paare hängt stark von der angelegten Spannung zwischen
+Mantel und Innendraht ab.
+In Abb.~\ref{fig:ionenpaare} ist der Zusammenhang zwischen angelegter Spannung und der Anzahl der
+Paare zu sehen.
+%
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.5\textwidth]{ionenpaare}
+  \caption{Die Anzahl der erzeugten Elektron-Ionenpaare 
+               gegen die angelegte Spannung U zwischen Anodendraht
+               und Kathodenmantel des Zählrohres. Der Geiger-Müller-Bereich 
+                ist der in diesem Versuch interessante Bereich.
+                 Die Skizze wurde aus \textcite{v703} entnommen.}
+  \label{fig:ionenpaare}
+\end{figure}
+\subsection{Charakteristik des Zählrohres}
+%
+
+Als Charakteristik eines Zählrohres wird der Geiger-Müller-Bereich in 
+Abb.~\ref{fig:ionenpaare} bezeichnet. Dort ist die dargestellte Kurve eine
+Gerade, welche als Plateau bezeichnet wird. Je geringer die Steigung dieses
+Plateaus ist, desto hochwertiger ist das Zählrohr. Die nicht verschwindende Steigung
+kommt dadurch Zustande, dass es im Zählrohr zu mehr Nachentladungen kommt,
+je höher die Spannung zwischen Mantel und Innendraht eingestellt ist.
+%
+\subsection{Totzeit und Nachentladungen eines Zählrohres}
+%
+
+Tritt Strahlung in das Geiger-Müller-Zählrohr ein und ionisiert das darin befindliche Gas, 
+wandern die frei gewordenen Elektronen zum Anodendraht, die positiven Ionen zum
+Mantel. Da letztere eine deutlich größere Masse als die Elektronen besitzen, halten sie sich 
+wesentlich länger zwischen Anode und Kathode auf. Dadurch bildet sich ein sogenannter 
+Ionenschlauch, welcher das elektrische Feld abschirmt. Tritt während dieser Zeit weitere Strahlung 
+in das Zählrohr ein und ionisiert die Gasmoleküle, so wird dies nicht registiert, da die Elektronen 
+nicht abgesaugt werden und nach einiger Zeit wieder mit den positiven Ionen rekombinieren.
+
+Diese Zeit, in der einfallende ionisierende Strahlung nicht registiert werden kann, wird Totzeit 
+$T$ genannt.
+
+Nach dieser Totzeit können kann Strahlung wieder registiert werden, allerdings sind die Ladungsimpulse 
+für eine weitere Zeit, die Erholungszeit $T_E$, verursachen registierte Teilchen also geringere Impulse.
+Erst wenn alle positiven Ionen abgebaut wurden, sind das elektrische Feld und die Ladungsimpulse 
+wieder maximal.
+In Abb.~\ref{fig:totzeit} sind die Ladungsimpulshöhe gegen die Zeit aufgetragen. Es sind ebenfalls
+die Tot- und Erholungszeit eingezeichnet.
+%
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.7\textwidth]{totzeit}
+  \caption{Diese Skizze zeigt das Bild, welches in etwa
+               auf dem Oszilloskop angezeigt wird. Die Tot- und
+                Erholungszeit können damit leicht bestimmt werden.
+                Die Skizze wurde aus \textcite{v703} entnommen.}
+  \label{fig:totzeit}
+\end{figure}
+%
+
+Auch wenn während der Erholungszeit keine weiteren Teilchen in das Zählrohr eintreten, kann es zu 
+Ladungsimpulsen kommen. Die auf die Mantelfläche des Zählrohres auftreffenden Ionen können bei 
+ihrer Neutralisation so viel Energie freisetzen, dass weitere Elektronen, sogenannte Sekundärelektronen, 
+freigesetzt werden, welche zum Anodendraht hin beschleunigt werden und somit zu einer weiteren 
+Zündung des Gases führen können, welches als Ladungsimpuls registiert wird, obwohl keine Strahlung 
+in das Zählrohr eingetreten ist.
+
+Um den effekt der Nachentladung zu minimieren, wird Alkoholdampf verwendet. Die Argonionen treffen 
+auf ihrem Weg zum Mantel auf diese und neutralisieren sich an ihnen. Nun werden die Alkoholionen zum 
+Mantel hin beschleunigt. Werden die Alkoholionen am Mantel neutralisiert, können sie die freigewordene 
+Energie in Schwingung umsetzen, sodass es deutlich seltener zu Nachentladungen kommt.
+%
+\subsection{Das Ansprechvermögen}
+%
+Das Ansprechvermögen bezeichnet die Wahrscheinlichkeit dafür, dass in das 
+Zählrohr einfallende ionisierende Strahlung mit dem dortigen Gas wechselwirkt 
+und somit vom Zählrohr registriert werden kann.
+
+$\alpha$- und $\beta$-Teilchen haben aufgrund ihres hohen Ionisationsvermögen ein 
+Ansprechvermögen von ca. \SI{100}{\percent}.
+
+Deswegen werden die Messungen in diesem Versuch nur mit $\alpha$- bzw. $\beta$-Strahlern 
+durchgeführt.
+
+\FloatBarrier
+%
