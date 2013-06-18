@@ -37,6 +37,8 @@ ax2.plot(x, m*x+b, '--g')
 ax2.grid()
 plt.xlim(200, 800)
 
+plt.show()
+
 print('Länge des Plateau-Bereichs: {:.3f}'.format(U[12]-U[3]))
 print('Plateau-Steigung in % pro 100 V: {:.3%}'.format(m*100))
 
