@@ -47,7 +47,7 @@ sind, ist die Steigung nicht aussagekräftig. Der ermittelte Wert beträgt
 \end{figure}
 
 \begin{table}
-  \centering
+  \centering\footnotesize
   \begin{tabular}{SS}
     \toprule
     {Zählrohrspannung $U/\si{\volt}$} & {Impulszahl $Z$ in
@@ -70,8 +70,8 @@ sind, ist die Steigung nicht aussagekräftig. Der ermittelte Wert beträgt
     \bottomrule
   \end{tabular}
   \caption{Hier finden sich die Meßwerte mit den korrigierten
-    Impulszahlen. Der systematische Fehler ist auf 300 Impulse geschätzt
-    worden und ab dem 8. Meßwert subtrahiert worden. In
+    Impulszahlen.  Der systematische Fehler ist auf 300 Impulse geschätzt
+    worden und ab dem 8. Meßwert subtrahiert worden.  In
     \cref{fig:charakteristik} kann ein Eindruck von der Verschiebung
     gewonnen werden. }
   \label{tab:charakteristik}
@@ -80,12 +80,22 @@ sind, ist die Steigung nicht aussagekräftig. Der ermittelte Wert beträgt
 \subsection{Bestimmung der Totzeit des Zählrohrs mit der
   Zwei-Quellen-Methode}
 
-Die Meßwerte, die sich aus der Zwei-Quellen-Methode ergeben haben, sind
-in \cref{tab:zwei-quellen} zu finden. Mit
-\cref{eq:zwei_quellen_naeherung} ergibt sich der Wert der Totzeit zu
+Die Meßwerte, die sich aus der Zwei-Quellen-Methode ergeben haben, lauten:
+%
+\begin{align*}
+  N_1 &= 120286\\
+  N_2 &=  5164\\
+  N_{1+2} &= 121980\\
+\end{align*}
+%
+Die Impulse sind über einen Zeitraum von $\Delta t = \SI{180}{\second}$
+registriert worden.  Mit Formel~\eqref{eq:zwei_quellen_naeherung} ergibt
+sich der Wert der Totzeit zu
 \begin{equation}
   T_\text{Zwei Quellen} = \SI{502.8}{\micro\second}.
 \end{equation}
+
+
 
 \subsection{Bestimmung der Totzeit und Erholungszeit mit dem Oszilloskop}
 
@@ -123,8 +133,8 @@ bestimmt worden.
 In \cref{fig:freigesetzte_ladung} ist die pro Teilchen freigesetzte
 Ladung in Einheiten der Elementarladung gegen die Spannung aufgetragen.
 Die Werte sind aus den gemessenen Zählrohrströmen gemäß
-\cref{eq:ladungsmenge} bestimmt worden. Aus den gemessenen Impulsraten
-und Strömen ergibt sich die freigesetzte Ladung. In
+Formel~\eqref{eq:ladungsmenge} bestimmt worden. Aus den gemessenen
+Impulsraten und Strömen ergibt sich die freigesetzte Ladung. In
 \cref{tab:frei-ladung} sind die Werte noch einmal gegenübergestellt.
 
 \begin{figure}
@@ -136,7 +146,7 @@ und Strömen ergibt sich die freigesetzte Ladung. In
 \end{figure}
 
 \begin{table}
-  \centering
+  \centering\footnotesize
   \begin{tabular}{SSS}
     \toprule
     {Spannung $U/\si{\volt}$} &
@@ -160,9 +170,10 @@ und Strömen ergibt sich die freigesetzte Ladung. In
     \bottomrule
   \end{tabular}
   \caption{Die gemessenen Zählrohrströme zu den Zählrohrspannungen. In
-    der rechten Spalte sind die gemäß \cref{eq:ladungsmenge} bestimmten
-    Ladungen, die pro Teilchen freigesetzt werden, berechnet. Da die
-    Ströme mit einem Ablesefehler von \SI{0.02}{\micro\ampere} behaftet
-    sind, wird eine \name{Gauß}sche Fehlerfortpflanzung durchgeführt.}
+    der rechten Spalte sind die gemäß Formel~\eqref{eq:ladungsmenge}
+    bestimmten  Ladungen, die pro Teilchen freigesetzt werden,
+    berechnet. Da die Ströme mit einem Ablesefehler von
+    \SI{0.02}{\micro\ampere} behaftet sind, wird eine \name{Gauß}sche
+    Fehlerfortpflanzung durchgeführt.}
   \label{tab:frei-ladung}
 \end{table}
