@@ -9,17 +9,160 @@
 Bei der Aufnahme der Charakteristik des \name{Geiger}-\name{Müller}-
 Zählrohrs ist die Probe nach dem achten Meßwert losgeschraubt und damit
 in ihrem Abstand vom Zählrohr verstellt worden. Dies ist in
-\cref{fig:Charakteristik} zu erkennen. Die blaue Kurve zeigt den
+\cref{fig:charakteristik} zu erkennen. Die blaue Kurve zeigt den
 eigentlichen Verlauf der Meßpunkte, die rote Kurve zeigt einen Verlauf,
 der um 300 Impulse nach unten verschoben ist. Mit den sich so ergebenen
 Meßwerten wird eine lineare Ausgleichsrechnung im Bereich des Plateaus
 durchgeführt. Die durch Verschiebung korrigierten Werte sind in
-\cref{tab:charakteristik} gelistet. Die Breite des Plateaus beträgt 
+\cref{tab:charakteristik} gelistet. Die Breite des Plateaus beträgt
+%
+\begin{equation}
+  d_\text{Plateau} = \SI{270}{\volt}.
+\end{equation}
+%
+Innerhalb dieser Umgebung wird mit den rot markierten Meßwerten eine
+lineare Ausgleichsrechnung durchgeführt. Die Steigung des Plateaus ist
+dann ein Maß für die Güte des Zählrohrs. Da in diesem Fall die Meßwerte
+jedoch durch eine Störung des Versuchsaufbaus beeinträchtigt worden
+sind, ist die Steigung nicht aussagekräftig. Der ermittelte Wert beträgt
+%
+\begin{equation}
+  m_\text{Plateau} = \SI{74.5}{\percent\per\volt}.
+\end{equation}
 
+\begin{figure}
+  \centering
+  \includegraphics[width=0.7\textwidth]{charakteristik}
+  \caption{Die Anzahl der Impulse, die in der Zeit $\Delta t =
+    \SI{120}{\second}$ gemessen worden sind, ist gegen die
+    Zählrohrspannung aufgetragen. Die blaue Kurve stellt die tatsächlich
+    gemessenen Werte dar. Es ist ab dem 8. Meßpunkt eine Verschiebung
+    der Anzahl der Impulse nach oben zu erkennen. In der roten Kurve ist
+    versucht worden, diesen systematischen Fehler, der durch das
+    versehentliche Verändert des Abstands Präparat--Zählrohr entstanden
+    ist, herauszurechnen. In dem Diagramm rechts ist im Plateau-Bereich
+    eine lineare Ausgleichsgerade bestimmt worden. Hierfür sind die
+    roten Meßpunkte verwendet worden.}
+  \label{fig:charakteristik}
+\end{figure}
 
+\begin{table}
+  \centering
+  \begin{tabular}{SS}
+    \toprule
+    {Zählrohrspannung $U/\si{\volt}$} & {Impulszahl $Z$ in
+      \SI{120}{\second}}\\
+    \midrule
+    320 & 11045\\
+    350 & 11450\\
+    380 & 11557\\
+    410 & 11630\\
+    440 & 11723\\
+    470 & 11700\\
+    500 & 11765\\
+    530 & 11659\\
+    560 & 11790\\
+    590 & 11719\\
+    620 & 11770\\
+    650 & 11842\\
+    680 & 12001\\
+    700 & 12546\\
+    \bottomrule
+  \end{tabular}
+  \caption{Hier finden sich die Meßwerte mit den korrigierten
+    Impulszahlen. Der systematische Fehler ist auf 300 Impulse geschätzt
+    worden und ab dem 8. Meßwert subtrahiert worden. In
+    \cref{fig:charakteristik} kann ein Eindruck von der Verschiebung
+    gewonnen werden. }
+  \label{tab:charakteristik}
+\end{table}
 
 \subsection{Bestimmung der Totzeit des Zählrohrs mit der
   Zwei-Quellen-Methode}
 
-\subsection{Bestimmung der Totzeit mit dem Oszilloskop}
+Die Meßwerte, die sich aus der Zwei-Quellen-Methode ergeben haben, sind
+in \cref{tab:zwei-quellen} zu finden. Mit \cref{eq:TOTZEIT} ergibt sich
+der Wert der Totzeit zu
+\begin{equation}
+  T_\text{Zwei Quellen} = \SI{502.8}{\micro\second}.
+\end{equation}
 
+\subsection{Bestimmung der Totzeit und Erholungszeit mit dem Oszilloskop}
+
+Mit dem Oszilloskop wird die Totzeit zu
+\begin{equation}
+  T_\text{Oszilloskop} = \SI{125(13)}{\micro\second}
+\end{equation}
+abgelesen. Der angegebene Fehler ist der Ablesefehler von
+\SI{12.5}{\micro\second}. Es kann hier ebenfalls die Summe aus Totzeit
+und Erholungszeit~$E$ des Zählrohrs bestimmt werden. Es gilt:
+\begin{equation}
+  T_\text{Oszilloskop} + E = \SI{800(13)}{\micro\second}.
+\end{equation}
+Nach \name{Gauß}scher Fehlerfortpflanzung der fehlerbehafteten Größen
+\SI{800(13)}{\micro\second} und $T_\text{Oszilloskop}$ ergibt sich
+\begin{equation}
+    E = \SI{675(18)}{\micro\second}.
+\end{equation}
+
+\subsection{Bestimmung des Abstands zwischen Primär- und
+  Nachentladungen}
+
+Der Abstand~$\Delta t$ zwischen Primär- und Nachentladungsimpulsen ist mit dem
+Oszilloskop zu
+%
+\begin{equation}
+  \Delta t = \SI{225(13)}{\micro\second}
+\end{equation}
+%
+bestimmt worden.
+
+\subsection{Freigesetzte Ladung pro Teilchen in Abhängigkeit von der
+  Zählrohrspannung}
+
+In \cref{fig:freigesetzte_ladung} ist die pro Teilchen freigesetzte
+Ladung in Einheiten der Elementarladung gegen die Spannung aufgetragen.
+Die Werte sind aus den gemessenen Zählrohrströmen gemäß
+\cref{eq:ladungsstrom} bestimmt worden. Aus den gemessenen Impulsraten
+und Strömen ergibt sich die freigesetzte Ladung. In
+\cref{tab:frei-ladung} sind die Werte noch einmal gegenübergestellt.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.7\textwidth]{freigesetzte_ladung}
+    \caption{Die pro Teilchen freigesetzte Ladung ist in Einheiten der
+      Elementarladung gegen die Spannung aufgetragen.}
+  \label{fig:freigesetzte_ladung}
+\end{figure}
+
+\begin{table}
+  \centering
+  \begin{tabular}{SSS}
+    \toprule
+    {Spannung $U/\si{\volt}$} &
+    {Strom $I/\si{\nano\ampere}$}&
+    {Ladung $Q/(10^6\mathrm{e})$} \\
+    \midrule
+    320 & 200 & 13562(46) \\
+    350 & 200 & 13082(47) \\
+    380 & 200 & 12961(48) \\
+    410 & 300 & 19320(21) \\
+    440 & 400 & 25555(12) \\
+    470 & 400 & 25606(12) \\
+    500 & 500 & 31830(7)  \\
+    530 & 600 & 38544(5)  \\
+    560 & 600 & 38116(5)  \\
+    590 & 600 & 38347(5)  \\
+    620 & 800 & 50907(3)  \\
+    650 & 800 & 50598(3)  \\
+    680 & 1000 & 62409(2) \\
+    700 & 1000 & 59698(2) \\
+    \bottomrule
+  \end{tabular}
+  \caption{Die gemessenen Zählrohrströme zu den Zählrohrspannungen. In
+    der rechten Spalte sind die gemäß \cref{eq:ladungsstrom} bestimmten
+    Ladungen, die pro Teilchen freigesetzt werden, berechnet. Da die
+    Ströme mit einem Ablesefehler von \SI{0.02}{\micro\ampere} behaftet
+    sind, wird eine \name{Gauß}sche Fehlerfortpflanzung durchgeführt.}
+  \label{tab:frei-ladung}
+\end{table}
