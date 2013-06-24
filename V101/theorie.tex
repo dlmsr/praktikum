@@ -3,3 +3,59 @@
 % this license, visit http://creativecommons.org/licenses/by-nc/3.0/.
 
 \section{Theorie}
+
+Zur Beschreibung der Dynamik von Rotationsbewegungen ist es zweckmäßig
+die Größen Drehmoment $\vec{M}$, Trägheitsmoment $I$ und
+Winkelbeschleunigung $\ddot{\phi}$ einzuführen, welche den Größen
+Kraft $F$, träge Masse $m$ und Beschleunigung $\ddot{x}$ aus der
+Dynamik der Translationsbewegung entsprechen.  Das Trägheitsmoment eines
+Massenpunktes $m$, der sich im Abstand $r$ und eine Rotationsachse
+dreht, ist definiert als
+\begin{equation}
+  I = mr^2.
+\end{equation}
+Auf Grundlage dieser Definition kann man nun Trägheitsmomente für
+ausgedehnte Körper definieren.  Ist der Körper aus $n$ Massenpunkten der
+Masse $m_i$ zusammengesetzt, die sich im Abstand $r_i$ um eine Achse
+drehen, dann gilt für das Gesamtträgheitsmoment
+\begin{equation}
+  I = \sum_{i = 1}^n r_i^2 m_i.
+\end{equation}
+Ein ausgedehnter Körper kann auch durch eine auf einem Gebiet $G$
+gegebene Massendichte $\rho$ beschrieben sein, die jedem Punkt dieses
+Gebiets eine Dichte zuordnet.  In diesem Fall ist das
+Gesamtträgheitsmoment als Integral
+\begin{equation}
+  I = \int\nolimits_G r^2 \rho \d V
+\end{equation}
+gegeben, wobei $r$ den Abstand zur Drehachse kennzeichnet.
+
+Für verschiedene einfache geometrische Körper kann das
+Gesamtträgheitsmoment leicht berechnet werden.  Komplizierte Formen
+lassen durch Aufteilen in einfache Formen berechnen, die dann addiert
+werden müssen.  Gegebenfalls bieten sich auch Vereinfachungen an
+(z.\,B. den Arm eines Menschen als Zylinder zu vereinfachen).  Oft ist
+ein Trägheitsmoment für eine Achse durch den Schwerpunkt bekannt, es
+soll aber das Trägheitsmoment bezüglich einer anderen, zu dieser
+parallelen Achse berechnet werden. Dazu ist der Satz von
+\name{Steiner}\footnote{Jakob \name{Steiner} (1796--1863), schweizer
+  Mathematiker (entnommen aus \textcite{wikipedia:jakob-steiner})}
+geeignet.  Er besagt:
+\begin{equation}
+  \label{eq:steiner}
+  I = I_\text{S} + m a^2,
+\end{equation}
+wobei $I_\text{S}$ das bekannte Trägheitsmoment bezogen auf eine Achse
+durch den Schwerpunkt, $m$ die Gesamtmasse des Körpers und $a$ den
+Abstand der Drehachse von der Schwerpunktsachse bezeichnet.
+
+In diesem Versuch befinden sich die zu untersuchenden Körper in einem
+oszillierendem System, so daß nach einer Auslenkung um den Winkel $\phi$
+sofort ein rücktreibendes Drehmoment, das durch die Kraft $\vec{F}$ mit
+$\vec{M} = \vec{r} \times \vec{F}$ gegeben ist, auf den Körper wirkt.
+Es kommt zu Schwingungen mit der Periodendauer
+\begin{equation}
+  \label{eq:periode}
+  T = 2 \pi \sqrt{\frac{I}{D}}.
+\end{equation}
+
