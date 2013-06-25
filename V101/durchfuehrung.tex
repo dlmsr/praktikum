@@ -14,7 +14,7 @@ gekoppelt ist.  An der Spitze dieser Achse werden die zu untersuchenden
 Körper befestigt.
 
 Mithilfe dieser Apparatur können die eingespannten Körper nun zu
-Schwingungen angeregt werden, über deren Periodendauer sich dann das
+Schwingungen angeregt werden, über deren Schwingungsdauer sich dann das
 Trägheitsmoment derselben berechnen läßt.  Dabei muß beachtet werden,
 daß in Formel~\eqref{eq:periode} das Gesamtträgheitsmoment steht.  Im
 Falle dieser Versuchsanordnung setzt sich dieses aus dem
@@ -27,6 +27,16 @@ bekannt, so kann das Trägheitsmoment~$I_\text{K}$ gemäß
   I_\text{K} = \frac{D T^2}{4 \pi^2} - I_\text{D}
 \end{equation}
 bestimmt werden.
+
+\begin{figure}
+  \centering
+  \includegraphics[height=7cm]{drillachse}
+  \caption{Skizze der verwendeten Versuchsapparatur. Zu sehen ist die
+    Drillachse, die drehbar in der Halterung gelagert ist. An der
+    Halterung ist eine Spiralfeder befestigt, die an die Drillachse
+    gekoppelt ist und die Halterung für die Befestigung der Proben.}
+  \label{fig:drillachse}
+\end{figure}
 
 \subsection{Bestimmung der Winkelrichtgröße}
 
@@ -56,10 +66,10 @@ masselose Stange, mit der zwei Gewichte in gleichem Abstand~$a$ vom
 Schwerpunkt starr verbunden sind, an der Drillachse befestigt wird.  Die
 Trägheitsmomente der Gewichte sowie der Stange sind bekannt.  Das
 beschriebene System wird nun für verschiedene Abstände~$a$ zu
-Schwingungen angeregt und die Periodendauer~$T$ wird bestimmt.  Das
-Gesamtträgheitsmoment in Formel~\eqref{eq:periode} setzt sich nun nach
-Anwendung des \name{Steiner}schen Satzes für die beiden Gewichte so
-zusammen:
+Schwingungen angeregt und die Schwingungsdauer~$T$ wird mit einer
+Stoppuhr bestimmt.  Das Gesamtträgheitsmoment in
+Formel~\eqref{eq:periode} setzt sich nun nach Anwendung des
+\name{Steiner}schen Satzes für die beiden Gewichte so zusammen:
 \begin{equation}
   I = I_\text{D} + I_\text{S} + 2I_\text{G} + 2m_\text{G} a^2
 \end{equation}
@@ -77,8 +87,25 @@ aus Formel~\eqref{eq:periode}:
 wobei $l$ die Länge des verwendeten Stabes ist und $R$ der halbe
 Durchmesser eines Zylinders.  Bei den angegeben Massen handelt es sich
 jeweils um die Massen eines der Gewichte bzw. des Stabes.  Es wird eine
-Meßreihe der Periodendauer für zehn verschiedene Abstände~$a$ des
-Gewichts angefertigt.
+Meßreihe der Schwingungsdauer für zehn verschiedene Abstände~$a$ des
+Gewichts angefertigt.  Hieraus kann durch eine lineare Regression mit
+der Methode der kleinsten Quadrate das Eigenträgheitsmoment aus dem
+Ordinatenabschnitt bestimmt werden.
 
 \subsection{Untersuchung des Trägheitsmoments}
 
+Im zweiten Versuchsteil wird das Trägheitsmoment zweier verschiedener
+Körper sowie dasjenige einer Modellpuppe in zwei verschiedenen Haltungen
+untersucht werden.  Die Messung läuft im Prinzip analog zur Bestimmung
+des Trägheitsmoments der Drillachse: Das zu untersuchende Objekt wird
+mit der Drillachse starr verbunden und dann zur Schwingung gebracht.
+Aus der Bestimmung der Schwingungsdauer durch eine Stoppuhr kann
+mithilfe der zuvor bestimmten Apparaturkonstanten das Trägheitsmoment
+ermittelt werden.  Hier wird jeweils eine Meßreihe mit zehn Werten
+aufgenommen, wobei so verfahren wird, daß beide Versuchsteilnehmer zu
+einer Schwingung mit zwei Stoppuhren die Zeit nehmen.
+
+Am Ende werden die erhaltenen Ergebnisse aus der Bestimmung des
+Trägheitsmoments mit theoretisch ermittelten Werten verglichen.  Diese
+Werte werden durch eine Näherung der Modellpuppe durch Zylinder
+bestimmt.
