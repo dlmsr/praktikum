@@ -2,5 +2,83 @@
 % Attribution-NonCommercial 3.0 Unported License.  To view a copy of
 % this license, visit http://creativecommons.org/licenses/by-nc/3.0/.
 
-\section{Durchführung}
+\section{Aufbau und Durchführung}
+
+\subsection{Aufbau der Apparatur}
+
+Zur Untersuchung der Trägheitsmomente wird in diesem Versuch eine
+sogenannte Drillachse verwendet.  In \cref{fig:drillachse} ist eine
+solche skizziert.  Sie besteht aus einer drehbar gelagerten Achse, die
+über eine Spiralfeder an den Rahmen der Lagerung oszillatorisch
+gekoppelt ist.  An der Spitze dieser Achse werden die zu untersuchenden
+Körper befestigt.
+
+Mithilfe dieser Apparatur können die eingespannten Körper nun zu
+Schwingungen angeregt werden, über deren Periodendauer sich dann das
+Trägheitsmoment derselben berechnen läßt.  Dabei muß beachtet werden,
+daß in Formel~\eqref{eq:periode} das Gesamtträgheitsmoment steht.  Im
+Falle dieser Versuchsanordnung setzt sich dieses aus dem
+Eigenträgheitsmoment~$I_\text{D}$ der Drillachse und dem Trägheitsmoment
+$I_\text{K}$ des zu untersuchenden Körpers zusammen.  Sind also
+Richtgröße~$D$ und Eigenträgheitsmoment~$I_\text{D}$ der Apparatur
+bekannt, so kann das Trägheitsmoment~$I_\text{K}$ gemäß
+\begin{equation}
+  \label{eq:traegheit-winkelricht-drill}
+  I_\text{K} = \frac{D T^2}{4 \pi^2} - I_\text{D}
+\end{equation}
+bestimmt werden.
+
+\subsection{Bestimmung der Winkelrichtgröße}
+
+Zur Bestimmung der Winkelrichtgröße~$D$ wird ein dünner Stab an der
+Drillachse so befestigt, daß die Drehachse durch den Schwerpunkt
+verläuft.  Jetzt wird in einem Abstand~$r$ vom Drehpunkt eine Federwaage
+am Stab eingehängt und um den Winkel~$\phi$ ausgelenkt.  Hierbei sollte
+die Federwaage am besten senkrecht zum Stab und zur Rotationsachse
+gehalten werden, da so der Betrag vom $\vec{M}$ einfach durch
+\begin{equation}
+  | \vec{M} | = | \vec{r} \times \vec{F} | = r F \sin \angle(\vec{r},
+  \vec{F}) = r F
+\end{equation}
+bestimmt werden kann.  Die Winkelrichtgröße kann dann gemäß
+Gleichung~\eqref{eq:drehmoment-winkelricht} so bestimmt werden:
+\begin{equation}
+  \label{eq:winkelricht-kraft-abstand-winkel}
+  D = \frac{r F}{\phi}.
+\end{equation}
+Hierbei wird sowohl der Abstand als auch der Winkel variert, um eine
+Meßreihe mit zehn Meßwerten zu erhalten.
+
+\subsection{Bestimmung des Trägheitsmoments der Drillachse}
+
+Das Trägheitsmoment der Drillachse wird ermittelt, indem eine nahezu
+masselose Stange, mit der zwei Gewichte in gleichem Abstand~$a$ vom
+Schwerpunkt starr verbunden sind, an der Drillachse befestigt wird.  Die
+Trägheitsmomente der Gewichte sowie der Stange sind bekannt.  Das
+beschriebene System wird nun für verschiedene Abstände~$a$ zu
+Schwingungen angeregt und die Periodendauer~$T$ wird bestimmt.  Das
+Gesamtträgheitsmoment in Formel~\eqref{eq:periode} setzt sich nun nach
+Anwendung des \name{Steiner}schen Satzes für die beiden Gewichte so
+zusammen:
+\begin{equation}
+  I = I_\text{D} + I_\text{S} + 2I_\text{G} + 2m_\text{G} a^2
+\end{equation}
+Hier bezeichnet $I_\text{S}$ das Trägheitsmoment der Stange und
+$I_\text{G}$ dasjenige eines Gewichts bezogen auf einer zur Drehachse
+parallen Achse durch den Schwerpunkt.  Da die verwendeten Gewichte
+zylinderförmig sind und der Stab, an dem diese befestigt ist, lang und
+dünn ist, ergibt sich schließlich für das Trägheitsmoment der Drillachse
+aus Formel~\eqref{eq:periode}:
+\begin{equation}
+  \label{eq:traegheit-drillachse}
+  I_\text{D} = \frac{D T^2}{4 \pi^2} - \frac{1}{12} m_\text{S} l^2 -
+  m_\text{G} (R^2 - 2 a^2),
+\end{equation}
+wobei $l$ die Länge des verwendeten Stabes ist und $R$ der halbe
+Durchmesser eines Zylinders.  Bei den angegeben Massen handelt es sich
+jeweils um die Massen eines der Gewichte bzw. des Stabes.  Es wird eine
+Meßreihe der Periodendauer für zehn verschiedene Abstände~$a$ des
+Gewichts angefertigt.
+
+\subsection{Untersuchung des Trägheitsmoments}
 
