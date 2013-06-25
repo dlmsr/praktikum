@@ -3,5 +3,250 @@
 % this license, visit http://creativecommons.org/licenses/by-nc/3.0/.
 
 \section{Auswertung}
+%
+\subsection{Winkelrichtgröße und Eigenträgheitsmoment der Drillachse}
+%
+Die mit der statischen Methode bestimmten Kräfte $F$ im Abstand $r$ zur 
+Drillachse unter Auslenkung um den Winkel $\phi$ sind in 
+Tabelle~\ref{tab:a} aufgeführt. Pro Messwertepaar ergibt sich mit 
+Formel~\eqref{eq:winkelricht-kraft-abstand-winkel} ein Wert für die 
+Winkelrichtgröße $D$ der verwendeten Drillachse. Diese sind 
+ebenfalls in Tabelle~\ref{tab:a} eingetragen.
+%
 
+\begin{table}
+  \centering
+\begin{tabular}{SSSS|SSSS}
+    \toprule
+    {r/}\si{\centi\metre}& {F/}\si{\milli\newton}&
+    {$\phi$/}\si{\degree}&{D/}\si{\newton\centi\metre}&
+	{r/}\si{\centi\metre}&{F/}\si{\milli\newton}&
+	{$\phi$/}\si{\degree}&{D/}\si{\newton\centi\metre}\\
+    \midrule
+	5&20&10&1.1&11&75&40&2.4\\
+	7&60&20&2.4&12&70&50&1.9\\
+	9&83&30&2.9&14&114&60&3.0\\
+	9&90&30&3.1&7&30&10&2.4\\
+	10&42&20&2.4&16&42&35&2.2\\
+    \bottomrule
+  \end{tabular}
+  \caption{Aufgenommene Messwerte zur 
+			Bestimmung der Winkelrichtgröße der verwendeten Drillachse.
+			Ebenfalls eingetragen sind die errecheten Werte für die
+                Winkelrichtgröße.}
+  \label{tab:a}
+\end{table}
+%
 
+Als Mittelwert der in Tabelle~\ref{tab:a} eingetragenen Werte für die
+Winkelrichtgröße der verwendeten Drillachse ergibt sich
+%
+\begin{equation}
+D = \SI{2.4(2)}{\newton\centi\metre}
+\end{equation}
+%
+Der angegebene Fehler ist hierbei die Standardabweichung des Mittelwertes 
+der errechneten Winkelrichtgrößen.
+
+Das Eigenträgheitsmoment der Drillachse wird mithilfe des steinerschen 
+Satzes bestimmt. Dieser ist in Gleichung~\ref{eq:steiner} wiedergegeben.
+Es werden die in Tabelle~\ref{tab:b} eingetragenen Messwerte für 
+die Periodendauer $T$ des gewichtbelasteten Stabes und die jeweiligen 
+Abstände $a$ der Gewichte von der Drehachse verwendet. Hierfür wird 
+$T^2$ gegen $a^2$ aufgetragen. Dieser Plot ist is Abb.~\ref{fig:steiner} 
+zu sehen. 
+%
+\begin{figure}
+  \centering
+  \includegraphics[width=0.7\textwidth]{steiner}
+  \caption{Hier zu sehen ist der Abstand a des Gewichtschwerpunktes
+               zu der Drehachse zum Quadrat aufgetragen gegen die 
+               gemessenen Periodendauern zum Quadrat.}
+  \label{fig:steiner}
+\end{figure}
+%
+
+%
+\begin{table}
+  \centering
+\begin{tabular}{SSS}
+    \toprule
+    {a/}\si{\centi\metre}& {T/}\si{\second}&
+    {T/}\si{\second}\\
+    \midrule
+7.5&2.97&2.98\\
+9.5&3.41&3.39\\
+11.5&3.90&3.91\\
+13.5&4.44&4.39\\
+15.5&4.93&4.75\\
+29.5&8.20&8.16\\
+    \bottomrule
+  \end{tabular}
+  \caption{Periodendauer des gewichtbelasteten Stabes 
+               für verschiedene Abstände a von Gewichtsschwerpunkt
+                und Drehachste.}
+  \label{tab:b}
+\end{table}
+%
+
+Die lineare Ausgleichsrechnung\footnote{Dazu wurde 
+\texttt{ipython} in der Version 0.13  verwendet} durch diese 
+Punkte ergibt die Geradengleichung 
+%
+\begin{equation}
+f(x) = x\cdot\SI{706.26}{\second^2\per\metre^2} + \SI{5.73}{\second^2}
+\end{equation}
+%
+Mit Formel~\eqref{periode} und dem steinerschen Satz~\eqref{eq:steiner}
+kann nun das Eigenträgheitsmoment der verwendeten Drillachse aus dem 
+Y-Achsen-Abschnitt \SI{5.73}{\second^2} der Ausgleichsgeraden bestimmt werden.
+Zum Schluss wird noch das Trägheitsmoment des verwendeten Stabes abgezogen.
+Es ergibt sich für das gesuchte Eigenträgheitsmoment $I_\text{x}$, dass
+%
+\begin{equation}
+I_\text{x} = \frac{D\cdot\SI{5.73}{\second^2}}{4\pi^2} - 2I_\text{Z} - I_\text{S},
+\label{eq:ix}
+\end{equation}
+%
+wobei $D$ die oben bestimmte Winkelrichtgröße, $I_\text{Z}$ das Trägheitsmoment 
+eines der zylinderförmigen Gewichte bezüglich der Drehung durch den Schwerpunkt,
+ und $I_\text{S}$ das Trägheitsmoment des Aufhängestabes ist.
+Für $I_\text{Z}$ ergibt sich bei einer Masse $m$ von \SI{223}{\gram}, einem Radius 
+$R$ von \SI{1.75}{\centi\metre} und einer Höhe $h$ von \SI{3}{\centi\metre} mit 
+Formel~\eqref{eq:trägheitzylinder} ein Wert von 
+%
+\begin{equation}
+I_\text{Z} = \SI{3.4e-5}{\kilo\gram\metre^2}
+\label{eq:iz}
+\end{equation}
+%
+Für das Trägheitsmoment $I_\text{S}$ des verwendeten Stabes wird analog 
+vorgegangen. Die Masse $m$ des Stabes wird zu \SI{96.5}{\gram} und seine 
+Länge $l$ zu \SI{60}{\centi\metre} bemessen. Formel~\eqref{eq:trägheitsstab}
+ergibt, dass
+%
+\begin{equation}
+I_\text{S} = \SI{0.0048}{\kilo\gram\metre^2}
+\label{eq:is}
+\end{equation}
+%
+Somit ergibt sich das Eigenträgheitsmoment der verwendeten Drillachse mit 
+Formel~\eqref{eq:ix} und den Trägheitsmomenten~\eqref{eq:iz} und~\eqref{eq:is} 
+zu
+%
+\begin{equation}
+I_\text{x} = \SI{-0.0014(3)}{\kilo\gram\metre^2}
+\end{equation}
+%
+Der hierbei angegebene Fehler wird durch eine Gaußsche Fehlerfortpflanzung 
+der Formel~\eqref{eq:ix} für das Eigenträgheitsmoment bestimmt. Die 
+fehlerbehafteten Größen sind die Winkelrichtgröße $D$ mit dem statistischen 
+Fehler und der Y-Achsen-Abschnitt der Ausgleichsgerade aus dem 
+Plot~\ref{fig:steiner}\footnote{Dazu wurde ebenfalls \texttt{ipython} 
+in der Version 0.13  verwendet}.
+%
+\FloatBarrier
+\subsection{Trägheitsmoment zweier Körper}
+%
+In Tabelle~\ref{tab:c} sind die gemessenen Periodendauern $T$ der 
+verwendeten Kugel und des Zylinders zu sehen.
+%
+\begin{table}
+  \centering
+\begin{tabular}{SS|SS}
+    \toprule
+\multicolumn{2}{S|}{{Kugel}}&\multicolumn{2}{S}{{Zylinder}}\\
+    \midrule
+    {T/}\si{\second}&{T/}\si{\second}&
+    {T/}\si{\second}&{T/}\si{\second}\\
+    \midrule
+1.71&1.75&1.50&1.5\\
+1.72&1.75&1.52&1.51\\
+1.65&1.73&1.56&1.62\\
+1.73&1.71&1.53&1.51\\
+1.68&1.70&1.60&1.58\\
+    \bottomrule
+  \end{tabular}
+  \caption{Periodendauer der untersuchten Kugel und Zylinder}
+  \label{tab:c}
+\end{table}
+%
+
+Mit Formel~\eqref{eq:periode} werden aus den Messwerten 
+die Trägheitsmomente der Kugel und des Zylinders bestimmt.
+Es ergibt sich das in Tabelle~\ref{tab:zweikoerper} wiedergegebene 
+Ergebnis. Die dort angebenen Fehler sind die statistischen Fehler der 
+Messreihe. Es wird ebenfalls das Verhältnis der Trägheitsmomente sowohl 
+für die theoretisch errechneten, als auch für die experimentell bestimmten
+Werte angegeben.
+%
+\begin{table}
+  \centering
+\begin{tabular}{SSS}
+    \toprule
+    {Objekt}&{Theoriewert}&{Experimentalwert}\\
+    \midrule
+{Kugel}&\SI{0.0015}{\kilo\gram\metre^2}&\SI{0.0018(1)}{\kilo\gram\metre^2}\\
+{Zylinder}&\SI{0.0013}{\kilo\gram\metre^2}&\SI{0.0014(1)}{\kilo\gram\metre^2}\\
+{Verhältnis $\frac{I_\text{K}}{I_\text{Z}}$}&1.18&1.23\\
+    \bottomrule
+  \end{tabular}
+  \caption{Trägheitsmomente zweier Körper}
+  \label{tab:zweikoerper}
+\end{table}
+%
+\FloatBarrier
+\subsection{Trägheitsmoment einer Holzpuppe für zwei verschiedene Stellungen}
+%
+Für die beiden verschiedenen Stellungen der verwendeten Holzpuppe 
+werden die in Tabelle~\ref{tab:holzkopp} aufgeführten Periodendauern 
+für die Schwingung der Holzpuppe um die Drehachse gemessen.
+%
+\begin{table}
+  \centering
+\begin{tabular}{SS|SS}
+    \toprule
+\multicolumn{2}{S|}{{1.Stellung}}&\multicolumn{2}{S}{{2.Stellung}}\\
+    \midrule
+    {T/}\si{\second}&{T/}\si{\second}&
+    {T/}\si{\second}&{T/}\si{\second}\\
+    \midrule
+0.44&0.47&0.64&0.66\\
+0.41&0.45&0.67&0.69\\
+0.43&0.47&0.67&0.68\\
+0.45&0.46&0.64&0.66\\
+0.41&0.45&0.67&0.69\\
+    \bottomrule
+  \end{tabular}
+  \caption{Periodendauer der Holzpuppe für zwei verschiedene 
+			Stellungen.}
+  \label{tab:holzkopp}
+\end{table}
+%
+
+Mit Formel~\eqref{eq:periode} wird über die Periodendauer das 
+Trägheitsmoment der Holzpuppe für beide Stellungen errechnet.
+Durch Näherung des Kopfes, der Arme, der Beine und des Torsos als 
+Zylinder wird über den steinerschen Satz~\eqref{eq:steiner} durch 
+Addition der Einzelträgheitsmomente das Gesamtträgheitsmoment der 
+Modellnäherung der Holzpuppe errechnet.
+In Tabelle~\ref{tab:fritten} sind die so experimentell und theoretisch 
+bestimmten Werte vorzufinden. Auch hier wird das Verhältnis der 
+Trägheitsmomente in den beiden Stellungen jeweils für die Experimental- 
+und Theoriewerte angegeben.
+%
+\begin{table}
+  \centering
+\begin{tabular}{SSS}
+    \toprule
+    {Stellung}&{Theoriewert}&{Experimentalwert}\\
+    \midrule
+{1}&\SI{0.00004}{\kilo\gram\metre^2}&\SI{0.00012(12)}{\kilo\gram\metre^2}\\
+{2}&\SI{0.00033}{\kilo\gram\metre^2}&\SI{0.00027(10)}{\kilo\gram\metre^2}\\
+{Verhältnis $\frac{I_\text{1}}{I_\text{2}}$}&0.112&0.437\\
+    \bottomrule
+  \end{tabular}
+  \caption{Trägheitsmomente der Holzpuppe in den verschiedenen Stellungen}
+  \label{tab:fritten}
+\end{table}
+%
