@@ -19,7 +19,7 @@ Feldstärke~$\vec{H}$, so einzuführen:
 \end{equation}
 Hierbei ist $\vec{M}$ die sogenannte Magnetisierung, die von der Materie
 abhängig ist.  Im wesentlichen ist sie ein Mittelwert der im Material
-vorkommenden magnetischen Momente~$\mu$.  Durch Einführung der
+vorkommenden magnetischen Momente~$\vec{\mu}$.  Durch Einführung der
 Größe~$\vec{H}$ haben die \name{Maxwell}-Gleichungen in Materie wieder
 dieselbe Form wie im Vakuum.  Es gilt:
 \begin{equation}
@@ -28,22 +28,58 @@ dieselbe Form wie im Vakuum.  Es gilt:
 Die Größe~$\chi$ heißt Suszeptibilität und ist keine Konstante, sondern
 von Temperatur~$T$ und magnetischer Feldstärke~$\vec{H}$ abhängig.
 
-Ab einer magnetischen Suszeptibilität~$\chi>0$ spricht man von
-Paramagnetismus.  Dieser tritt nur bei Materie auf, deren Bausteine (wie
-z.\,B. Atome, Moleküle) einen Drehimpuls aufweisen.  Damit ist eine
-Ausrichtung der mit dem Drehimpuls verknüpften magnetischen Momente in
-einem äußeren Magnetfeld verbunden.  Diese Momente sind gegeben durch
+Im Fall $\chi < 0$ wird von Diamagnetismus gesprochen.  Alle Atome
+weisen unabhängig davon, ob sie Bestandteil eines Gases, einer
+Flüssigkeit oder eines Festkörpers sind, diesen Effekt auf.  Er basiert
+im Prinzip auf einer Induktion magnetischer Momente durch äußere
+Magnetfelder.  Ab einer magnetischen Suszeptibilität~$\chi>0$ spricht
+man von Paramagnetismus.  Dieser tritt nur bei Materie auf, deren
+Bausteine (wie z.\,B. Atome, Moleküle) einen Drehimpuls aufweisen.
+Damit ist eine Ausrichtung der mit dem Drehimpuls verknüpften
+magnetischen Momente in einem äußeren Magnetfeld verbunden.  Mithilfe
+der Quantenmechanik ergeben sich diese Momente so:
 \begin{align}
   \vec\mu_L &= -\frac{\mu_B}{\hbar} \vec{L} &
   \vec\mu_S &= -g_S\frac{\mu_B}{\hbar} \vec{S},
 \end{align}
 wobei hier $\mu_B$ das sogenannte \name{Bohr}sche Magneton (das
 magnetische Moment zum Drehimpuls $\hbar$) und $g_S$ das gyromagnetische
-Verhältnis des freien Elektrons bezeichnen.  Die Ausrichtung dieser
-Momente wird durch thermische Bewegungen gestört, so daß der
-Paramagnetismus ein temperaturabhängiger Effekt ist.  Insbesondere für
-hohe Temperaturen ist $\chi$ antiproportional zu $T$.  Dies nennt man
-\name{Curie}sches Gesetz.
+Verhältnis des freien Elektrons bezeichnen.  Der Paramagnetismus ist
+also im wesentlichen durch den Bahndrehimpuls des Atoms und dem Spin der
+Elektronen bestimmt.  Der Einfluß des Kernspins kann hier vernachlässigt
+werden.  Außerdem kann bei einem hinreichend schwachen Magnetfeld davon
+ausgegangen werden, daß sich der Gesamtdrehimpuls~$\vec{J}$ des Atom
+durch eine Addition
+\begin{equation}
+  \vec{J} = \vec{L} + \vec{S}
+\end{equation}
+bestimmen läßt.  Daraus ergibt sich mithilfe der aus der Quantenmechanik
+bekannten Beträge $|\vec{L}| = \sqrt{L(L + 1)}, |\vec{S}| = \sqrt{S(S +
+  1)}$ und $|\vec{J}| = \sqrt{J(J+1)}$ für den Betrag~$|\vec{\mu}_J|$
+des magnetischen Moments:
+\begin{equation}
+  |\vec{\mu}_J| = \mu_B g_J \sqrt{J(J + 1)}
+\end{equation}
+Hier ist
+\begin{equation}
+g_J := \frac{3}{2} \left(1 + \frac{S(S + 1) - L(L+1)}{J(J + 1)}\right)
+\end{equation}
+der sogenannte \name{Landé}-Faktor des Atoms.  Über die Energieniveaus
+der Elektronen des Materials kann die Magnetisierung einer Probe
+bestimmt werden.  Dazu werden die magnetischen Momente aufsummiert, die
+von den Drehimpulsen bestimmt sind.  Durch die
+\name{Boltzmann}-Verteilung ist ein Zusammenhang zwischen der
+Besetzungshäufigkeit und der Temperatur gegeben.  Hieraus ergibt sich
+für hohe Temperaturen
+\begin{equation}
+  \label{eq:curie-gesetz}
+  \chi = \frac{\mu_0 \mu_B^2 g_J^2 N J(J + 1)}{3 k T},
+\end{equation}
+wobei $k$ die \name{Boltzmann}-Konstante bezeichnet.  Die Ausrichtung
+der magnetischen Momente wird also durch thermische Bewegungen gestört,
+so daß der Paramagnetismus ein temperaturabhängiger Effekt ist.
+Insbesondere für hohe Temperaturen ist $\chi$ antiproportional zu $T$.
+Dies nennt man \name{Curie}sches Gesetz des Paramagnetismus.
 
 \subsection{Suszeptibilität der Verbindungen seltener Erden}
 
