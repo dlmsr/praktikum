@@ -61,36 +61,40 @@ Meßreihe mit zehn Meßwerten zu erhalten.
 
 \subsection{Bestimmung des Trägheitsmoments der Drillachse}
 
-Das Trägheitsmoment der Drillachse wird ermittelt, indem eine nahezu
-masselose Stange, mit der zwei Gewichte in gleichem Abstand~$a$ vom
+Das Trägheitsmoment der Drillachse wird ermittelt, indem ein nahezu
+masselose Stab, mit welchem zwei Gewichte in gleichem Abstand~$a$ vom
 Schwerpunkt starr verbunden sind, an der Drillachse befestigt wird.  Die
-Trägheitsmomente der Gewichte sowie der Stange sind bekannt.  Das
+Trägheitsmomente der Gewichte sowie des Stabes sind bekannt.  Das
 beschriebene System wird nun für verschiedene Abstände~$a$ zu
 Schwingungen angeregt und die Schwingungsdauer~$T$ wird mit einer
 Stoppuhr bestimmt.  Das Gesamtträgheitsmoment in
-Formel~\eqref{eq:periode} setzt sich nun nach Anwendung des
-\name{Steiner}schen Satzes für die beiden Gewichte so zusammen:
+Formel~\eqref{eq:periode} setzt sich also so zusammen:
 \begin{equation}
-  I = I_\text{D} + I_\text{S} + 2I_\text{G} + 2m_\text{G} a^2
+  I = I_\text{D} + I_\text{S, G}
 \end{equation}
-Hier bezeichnet $I_\text{S}$ das Trägheitsmoment der Stange und
-$I_\text{G}$ dasjenige eines Gewichts bezogen auf einer zur Drehachse
-parallen Achse durch den Schwerpunkt.  Da die verwendeten Gewichte
-zylinderförmig sind und der Stab, an dem diese befestigt ist, lang und
-dünn ist, ergibt sich schließlich für das Trägheitsmoment der Drillachse
-aus Formel~\eqref{eq:periode}:
+Hier bezeichnet $I_\text{S, G}$ das Gesamtträgheitsmoment des Stabes und
+der Gewichte.  Nach dem \name{Steiner}schen Satz ergibt sich weiter:
 \begin{equation}
-  \label{eq:traegheit-drillachse}
-  I_\text{D} = \frac{D T^2}{4 \pi^2} - \frac{1}{12} m_\text{S} l^2 -
-  m_\text{G} (R^2 - 2 a^2),
+  \label{eq:gesamttraegheitsmoment}
+  I = I_\text{D} + \left(I_\text{S} + 2I_\text{G} +  2m a^2\right),
 \end{equation}
-wobei $l$ die Länge des verwendeten Stabes ist und $R$ der halbe
-Durchmesser eines Zylinders.  Bei den angegeben Massen handelt es sich
-jeweils um die Massen eines der Gewichte bzw. des Stabes.  Es wird eine
-Meßreihe der Schwingungsdauer für zehn verschiedene Abstände~$a$ des
-Gewichts angefertigt.  Hieraus kann durch eine lineare Regression mit
-der Methode der kleinsten Quadrate das Eigenträgheitsmoment aus dem
-Ordinatenabschnitt bestimmt werden.
+wobei $I_\text{S}$ das Trägheitsmoment des verwendeten Stabes und
+$I_\text{G}$ das Trägheitsmoment eines Gewichts bei Rotation um eine
+Achse durch den Schwerpunkt parallel zur Rotationsachse der Drillachse
+bezeichnet.  Bei der angegebenen Masse handelt es sich um die Masse der
+Gewichte, die als gleich schwer angenommen werden.  Die Gleichung, die
+sich durch Einsetzen von $I$ in Gleichung~\eqref{eq:periode} ergibt,
+läßt sich so umstellen:
+\begin{equation}
+  \label{eq:regressionsform}
+  T^2 = \frac{8\pi^2 m}{D} a^2 + \frac{4\pi^2}{D}\big(I_\text{D} 
+  + I_\text{S} + 2I_\text{G}\big)
+\end{equation}
+Es wird eine Meßreihe der Schwingungsdauer für zehn verschiedene
+Abstände~$a$ des Gewichts angefertigt.  Aus
+Gleichung~\eqref{eq:regressionsform} geht hervor, daß hieraus kann durch
+eine lineare Regression mit der Methode der kleinsten Quadrate das
+Eigenträgheitsmoment aus dem Ordinatenabschnitt bestimmt werden.
 
 \subsection{Untersuchung des Trägheitsmoments}
 
