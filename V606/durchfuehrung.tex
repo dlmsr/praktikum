@@ -120,3 +120,62 @@ die Brücke mit eingelegter Probe auszugleichen und daraus die Änderung
 der Induktivität abzulesen.  Hier werden beide Möglichkeiten
 nacheinander ausgeführt, damit je zwei Meßwerte pro Messung erhalten
 werden.
+
+\subsection{Theoretische Vorhersage für die Suszeptibilitäten}
+
+Am Ende sollen die experimentell bestimmten Werte mit der theoretischen
+Vorhersage verglichen werden, um beurteilen zu können, wie gut das
+quantentheoretische Modell den Paramagnetismus beschreibt.  Dazu muß
+zunächst die Elektronenkonfiguration der 4f-Elektronen für die drei
+Verbindungen Dy$_2$O$_3$, Gd$_2$O$_3$ und Nd$_2$O$_3$ bestimmt werden.
+Hierfür werden die \name{Hund}schen Regeln verwendet.  Beispielhaft wird
+die Berechnung von Dysprosium(III)-oxid durchgeführt.  Die beiden
+Dysprosium-Atome haben die Elektronenkonfiguration [Xe]4f$^{10}$6s$^2$
+und müssen jeweils drei Elektronen für die Bindung abtreten, daher
+bleiben auf der 4f-Schale noch 9 Elektronen über.  Die Schale hat
+insgesamt Platz für 14 Elektronen, 7 mit Spin-Up und 7 mit Spin-Down.
+Nach der ersten \name{Hund}schen Regel ergibt sich, daß die 7 Plätze mit
+Spin-Up voll besetzt und die übrigen 2 Elektronen Plätze mit Spin-Down
+besetzen. Daher ist $S = 5/2$.  Nach der zweiten Regel ergeben besetzen
+die zwei Spin-Down die Plätze der beiden höchsten magnetischen
+Quantenzahlen 3 und 2.  Es gilt daher $L = 5$ und aus der dritten Regel,
+da die Schale mehr als halb besetzt ist, folgt für die
+Gesamtdrehimpulsquantenzahl $J = 15/2$.  Analog wird für die übrigen
+vorgegangen.  Die Ergebnisse sind in \cref{tab:proben-daten} zu sehen.
+
+\begin{table}
+  \centering\sisetup{
+    table-number-alignment = center,
+    table-figures-integer = 1
+    }
+  \begin{tabular}{l
+      S[table-figures-decimal=1]
+      S[table-figures-decimal=0]
+      S[table-figures-decimal=1]
+      S[table-figures-decimal=2]
+      S[table-figures-decimal=2,
+        table-figures-integer=3]
+      S[table-figures-decimal=4]
+      S[table-figures-decimal=2]
+      S[table-figures-decimal=4]}
+    \toprule
+    Verbindung & {$J$} & {$L$} & {$S$} & {$\rho/(\si{g/cm^3})$} &
+    {$M/(\si{g/mol})$} & {$N/(10^{28} \si{m^{-3}})$} & {$g_J$} & {$\chi$} \\
+    \midrule
+    Dy$_2$O$_3$ [Xe]4f$^{10}$6s$^2$ &
+    7.5 & 5 & 2.5 & 7.8  & 373 & 2.5186 & 1.33 & 0.0251\\
+    Nd$_2$O$_3$ [Xe]4f$^4$6s$^2$ &
+    4.5 & 6 & 1.5 & 7.34 & 336.48 & 2.6273 & 0.73 & 0.0030\\
+    Gd$_2$O$_3$ [Xe]4f$^7$5d6s$^2$ &
+    3.5 & 0 & 3.5 & 7.4  & 362.49 & 2.4588 & 2.00 & 0.0014\\
+    \bottomrule
+  \end{tabular}
+  \caption{Die Quantenzahlen ergeben sich aus den \name{Hund}schen
+    Regeln.  Die anderen Größen, die zur Berechnung der
+    Suszeptibilität~$\chi$ benötigt werden, sind ebenfalls gelistet.  Da
+    die Verbindung zwei Dy-Atome enthält gilt für die Teilchendichte $N
+    = 2 \rho/m$, wobei $m$ die Masse der Probe bezeichnet.  Der
+    \name{Landé}-Faktor, welcher sich aus den Quantenzahlen bestimmt,
+    ist ebenfalls angegeben.}
+  \label{tab:proben-daten}
+\end{table}
