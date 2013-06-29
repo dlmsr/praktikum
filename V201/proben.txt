@@ -1,0 +1,12 @@
+#U_w in mV	U_k in mV	U_m in mV
+#Blei: Masse = 588.6 g ; Dichte = 11.35 g/cm^3
+0.672	3.937	0.760
+0.938	3.948	1.067
+1.169	3.944	1.188
+#Kupfer: Masse = 237.9 g ; Dichte = 8.96 g/cm^3
+0.750	3.960	0.938
+#Zinn: Masse = 240.4 g ; Dichte = 7.28 g/cm^3
+1.084	4.003	1.152
+
+
+# Volumen des Wassers im Dewar-Gef‰ﬂ: 600 mL
