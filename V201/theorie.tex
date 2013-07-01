@@ -1,0 +1,134 @@
+% This work is licensed under the Creative Commons
+% Attribution-NonCommercial 3.0 Unported License.  To view a copy of
+% this license, visit http://creativecommons.org/licenses/by-nc/3.0/.
+
+\section{Theorie}
+\subsection{Wärmekapazität}
+%
+Als Wärmekapazität eines Festkörpers der Masse $m$ wird der 
+Proportionalitätsfaktor zwischen der Änderung der Wärmeenergie 
+$\Delta Q$ und der Temperaturänderung $\Delta T$ des Körpers 
+bezeichnet. Dieser Faktor hängt linear von der Masse des Körpers ab. 
+Deswegen lässt sich dieser Zusammenhang mit Formel~\eqref{eq:q} 
+ausdrücken. Dabei ist $c$ die massenunabhängige, materialspezifische 
+Wärmekapazität.
+%
+\begin{equation}
+\label{eq:q}
+\Delta Q = mc\Delta T
+\end{equation}
+%
+Von Interesse ist die sogenannte Molwärme $C$. Diese bezeichnet 
+die Energie, die umgesetzt wird, wenn ein Mol eines Stoffes seine 
+Temperatur ändert; also die Wärmekapazität für 1 Mol eines Stoffes.
+Der Wert der Molwärme hängt davon ab, ob die Wärmenergie einem Körper 
+bei konstantem Druck $p$ oder bei konstantem Volumen $V$ zugeführt wird.
+Es gilt
+%
+\begin{equation}
+\label{eq:cv}
+C_V = \left(\frac{dQ}{dT}\right)_V.
+\end{equation}
+%
+Da nach dem ersten Hauptsatz die Änderung der inneren Energie $dU$ 
+gleich der Änderung der Wärme- und mechanischen Energie ist, bei gleich 
+bleibendem Volumen allerdings keine mechanische Energie verrichtet wird, 
+lässt sich Gleichung~\eqref{eq:cv} schreiben als
+%
+\begin{equation}
+C_V = \left(\frac{dU}{dT}\right)_V
+\end{equation}
+%
+Der Zusammenhang zwischen Molwärme $C_V$ bei konstantem Volumen und 
+$C_p$ bei konstantem Druck ist durch Formel~\eqref{eq:cv-und-cp}
+gegeben.
+%
+\begin{equation}
+\label{eq:cv-und-cp}
+C_p - C_V = 9\alpha^2\kappa V_0T
+\end{equation}
+%
+Hierbei bezeichnet $\alpha$ den linearen Ausdehnungskoeffizieten, 
+$\kappa = V\left(\frac{\partial p}{\partial V}\right)_T$ den Kompressionsmodul 
+und $V_0$ das Molvolumen; also das Volumen, welches von einem Mol des 
+Stoffes bei Raumtemperatur eingenommen wird. 
+%
+\subsection{Klassische Betrachtung: Das Dulong-Petitsche Gesetz}
+In der klassischen Vorstellung besteht ein Festkörper aus Massenpunkten, 
+die aneinander durch Gitterkräfte gebunden sind. Besitzt der Festkörper 
+eine endliche Temperatur, so besitzt dieser eine innere Energie, welche 
+sich auf die Massenpunkte verteilt. Diese werden dadurch aus ihren 
+Gleichgewichtslagen ausgelenkt. Für kleine Auslenkungen gilt das 
+Hooksche Gesetz, sodass ein Massenpunkt harmonisch oszilliert. 
+Bekannterweise ist die mittlere kinetische Energie $\left<E_\text{kin}\right>$ 
+eines harmonischen Oszillators gleich seiner mittleren potentiellen Energie
+$\left<E_\text{pot}\right>$, sodass sich für die gesamte mittlere 
+Energie eines Atoms im Festkörper der in Formel~\eqref{eq:mittlere-energie} 
+wiedergegebene Zusammenhang ergibt.
+%
+\begin{equation}
+\label{eq:mittlere-energie}
+\left<u\right> = \left<E_\text{kin}\right> + \left<E_\text{pot}\right> = 2\left<E_\text{kin}\right>
+\end{equation}
+%
+Das Äquipartitionstheorem der kinetische Wärmetheorie ordnet einem Atom 
+im thermischen Gleichgewicht mit seiner Umgebung pro Freiheitsgrad eine 
+mittlere kinetische Energie von $\frac{1}{2}k_\text{B}T$ zu. 
+Da es drei Raumdimensionen gibt und ein Mol eines Stoffes 
+$N_\text{L} = 6.02\cdot10^{23} /\text{Mol}$ Atome besitzt, kann 
+Formel~\eqref{eq:mittlere-energie} mit der gesamten mittleren inneren Energie 
+$\left<U\right>$ umgeschrieben werden zu
+%
+\begin{equation}
+\left<U\right> = 3 N_\text{L} k_\text{B} T = 3RT .
+\end{equation}
+%
+$R$ bezeichnet die universelle Gaskonstante.
+Eingesetzt in Formel~\eqref{eq:cv} ergibt dies das Dulong-Petitsche 
+Gesetz, welches in Gleichung~\eqref{eq:dulong-petit} wiedergegeben ist.
+%
+\begin{equation}
+\label{eq:dulong-petit}
+C_V = 3R
+\end{equation}
+%
+\subsection{Quantenmechanische Betrachtung}
+In der Quantenmechanik sind die Energien des harmonischen Oszillators 
+gequantelt, d.h. die Energie des Oszillators kann nur vielfache des 
+reduzierten Planck'schen Wirkungsquantums $\hbar$ mal der Kreisfrequenz 
+$\omega$
+betragen. Ebenso können nur diese Energiequanten auf- und abgegeben werden. 
+Diese Aussage ist in Formel~\eqref{eq:quant} wiedergegeben.
+%
+\begin{equation}
+\label{eq:quant}
+\Delta u = n \hbar \omega
+\end{equation}
+%
+Die Wahrscheinlichkeit, bei gegebener Temperatur $T$ die mittlere Energie 
+$\left<u_\text{qu}\right>$ in einem eindimensionalen Oszilaltor des 
+Festkörpers vorzufinden ist durch Formel~\eqref{eq:wahrscheinlichkeit} 
+gegeben.
+%
+\begin{equation}
+\label{eq:wahrscheinlichkeit}
+\left<u_\text{qu}\right> = \frac{\hbar\omega}{\exp{(\hbar\omega/K_\text{B}T)}-1}
+\end{equation}
+%
+Wird nun angenommen, dass die Kreisfrequenzen eines oszillierdenden 
+Atoms in allen drei 
+Raumrichtungen dieselben sind, so kann die mittlere innere Energie eines 
+Festkörpers mit ein Mol Atomen $\left<U_\text{qu}\right>$ geschrieben 
+werden als
+%
+\begin{equation}
+\label{eq:quantenpetit}
+\left<U_\text{qu}\right> = \frac{3N_\text{L}\hbar\omega}{\exp{(\hbar\omega/K_\text{B}T)}-1}
+\end{equation}
+%
+Also hängt die mittlere innere Energie nicht mehr proportional von der 
+Temperatur ab, wie es in der klassischen Betrachtung festgestellt wurde.
+Nach dem Korrespondenzprinzip muss die klassische Physik aber als 
+Grenzfall der Quantenphysik in ihr enthalten sein. Tatsächlich wird der 
+Ausdruck~\eqref{eq:quantenpetit} im Grenzfall für $T \rightarrow \infty$ 
+wieder zum klassischen Dulong-Petit Gesetz~\eqref{eq:dulong-petit}.

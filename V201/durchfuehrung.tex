@@ -1,0 +1,130 @@
+% This work is licensed under the Creative Commons
+% Attribution-NonCommercial 3.0 Unported License.  To view a copy of
+% this license, visit http://creativecommons.org/licenses/by-nc/3.0/.
+
+\section{Aufbau und Durchführung}
+%
+\subsection{Messapparatur}
+%
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.8\textwidth]{apparatur}
+\caption{Schematische Darstellung der verwendeten Messapparatur.
+             Bei der Messwaage handelt es sich um eine Präzisionswaage.}
+\label{fig:apparatur}
+\end{figure}
+%
+In diesem Versuch werden ein Mischungskalorimeter, eine Heizplatte und 
+ein Thermoelement verwendet. Außerdem wird eine Waage verwendet, um 
+die Massen der zu untersuchenden Proben zu ermitteln.
+In Abb.~\ref{fig:apparatur} ist ein 
+schematischer Aufbau des Versuches zu sehen.
+Die gemessene Thermospannung $U_\text{th}$ wird mithilfe von 
+Formel~\eqref{eq:thermo} in die Temperaturdifferenz $T$ zwischen den 
+beiden Enden umgerechnet. Dabei ist die Spannung in \si{\milli\volt} 
+und die Temperatur in \si{\celsius} anzugeben.
+%
+\begin{equation}
+\label{eq:thermo}
+T = \num{25.157}\cdot U_\text{th} - \num{0.19}\cdot U_\text{th}^2
+\end{equation}
+%
+Ein Ende des Thermoelements wird in Eiswasser gehalten, welches eine 
+annähernd konstante Temperatur von \SI{0}{\celsius} besitzt, sodass die 
+mit Formel~\eqref{eq:thermo} errechnete Temperaturdifferenz der Temperatur 
+in \si{\celsius} entspricht.
+%
+\subsection{Messung der spezifischen Wärmekapazität verschiedener Elemente}
+In diesem Versuch werden drei Proben, welche aus Blei, Kupfer und Zinn 
+bestehen, verwendet.
+
+Als erstes werden die Massen der Proben $m_\text{k}$ mit der oben 
+genannten Waage ermittelt. 
+Da jede Probe an einem Deckel hängt, mit welchem beim 
+Einführen der Probe in das Mischkalorimeter eben jenes gegen die 
+Umgebung isoliert wird, wird das Deckelgewicht von der ermittelten 
+Gesamtmasse abgezogen.
+
+Das Mischkalorimeter wird mit \SI{600}{\milli\litre} Wasser gefüllt.
+Die Masse des Wassers im Kalorimeter wird mit $m_\text{w}$ bezeichnet,
+ die spezifische Wärmekapazität mit $c_\text{w}$.
+Die zu untersuchende Probe wird auf $\approx$\SI{100}{\celsius} erwärmt.
+Das Erwärmen der Probe wird dadurch erreicht, dass diese in ein Messbecher 
+mit Wasser gebracht wird, welcher durch eine Heizplatte so lange erwärmt 
+wird, bis das Wasser kocht.
+Besitzt die Probe die gewünschte Temperatur, so wird vor dem einführen 
+der Probe in das Kalorimeter sowohl die Wassertemperatur $T_\text{w}$ des 
+in dem Kalorimeter befindlichen Wassers, als auch die Probentemperatur 
+$T_\text{k}$ gemessen.
+Für letzteres sind spezielle Bohrlöcher in jeder Probe vorhanden.
+
+Ungefährt zwei Minuten nachdem die Probe in das Mischkalorimeter 
+eingelassen wurde, wird kaum noch eine weitere Temperaturänderung 
+registiert. Um schneller das thermische Gleichgewicht zwischen Probe und 
+Kalorimeterwasser zu erreichen, wird ein Rührfisch verwendet.
+ Nun wird die Mischtemperatur $T_\text{m}$ mit dem 
+Thermoelement gemessen.
+
+Dieser Messvorgang wird für Blei dreimal durchgeführt.
+Für die Kupfer- und Zinnproben aus Zeitmangel jeweils nur 
+einmal.
+
+Mit Formel~\eqref{eq:waermekapa} kann aus den gemessenen Daten und 
+der Wärmekapazität des Mischkalorimeters die spezifische Wärmekapazität 
+$c_\text{k}$ bestimmt werden, welche sich bei konstantem Druck ergibt.
+%
+\begin{equation}
+\label{eq:waermekapa}
+c_\text{k} = \frac{(c_\text{w}m_\text{w} + c_\text{g}m_\text{g})(T_\text{m} - T_\text{w})}{m_\text{k}(T_\text{k} - T_\text{m})}
+\end{equation}
+%
+\subsection{Messung der spezifischen Wärmekapazität des Kalorimeters}
+%
+Die durchscnittlich von allen Proben verdrängte Wassermenge ergibt 
+sich zu $\approx$\SI{40}{\milli\litre}.
+Es werden zwei Messbecher mit jeweils \SI{320}{\milli\litre} Wasser 
+gefüllt. Die Volumina werden mit $V_x$ und $V_y$ bezeichnet, 
+die Massen entsprechend mit $m_x$ und $m_y$. 
+
+Das Wasser des einen Messbechers wird in das Mischkalorimeter gegeben.
+Das Wasser des anderen Messbechers wird auf der Heizplatte erhizt.
+Sobald das Wasser anfängt zu kochen, wird dessen Temperatur $T_y$ 
+gemessen. Die Temperatur des im Kalorimeter befindlichen Wassers $T_x$ 
+wird ebenfalls gemessen. 
+
+Anschließend wird das erwärmte Wasser auch in das Kalorimeter eingefüllt.
+Nach kurzer Wartezeit wird die Mischtemperatur $T_m'$ gemessen.
+Gäbe es keinen Wärmeverlust durch das Kalorimeter, so wäre die Mischtemperatur
+\begin{equation}
+\label{eq:mischtemp1}
+T_\text{m} = \frac{T_x + T_y}{2},
+\end{equation}
+da $V_x = V_y$.
+Die Messung ergibt aufgrund der nicht verschwindenden Wärmekapazität 
+des Kalorimeters einen Mischtemperaturunterschied 
+\begin{equation}
+\label{eq:mischtemp2}
+\Delta T_\text{w} = T_\text{m} - T_\text{m}'
+\end{equation}
+Also muss das Kalorimeter die Wärmenergie $\Delta Q$,welche aufgrund 
+der Kenntniss der spezifischen Wärmekapazität von Wasser berechnet 
+werden kann, aufgenommen haben.
+Es gilt:
+\begin{equation}
+\label{eq:wasserkapa}
+\Delta Q = (m_x + m_y)c_\text{w}\Delta T_\text{w}
+\end{equation}
+%
+Die Temperaturänderung des Kalorimeters beträgt 
+\begin{equation}
+\label{eq:tempdiff}
+\Delta T = T_\text{m}' - T_x
+\end{equation}
+Aus den Gleichungen~\eqref{eq:wasserkapa} und~\eqref{eq:tempdiff} 
+kann nun leicht die Wärmekapazität $c_\text{g}m_\text{g}$des Kalorimeters 
+ mit Formel~\eqref{eq:kalorikapa}bestimmt werden. 
+%
+\begin{equation}
+\label{eq:kalorikapa}
+c_\text{g}m_\text{g} =\frac{\Delta Q}{\Delta T} = \frac{(m_x +m_y)\cdot c_\text{w}\cdot\left(\frac{T_x - T_y}{2} - T_\text{m}'\right)}{T_\text{m}' - T_x}
+\end{equation}
