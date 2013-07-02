@@ -1,7 +1,0 @@
-#U_x in mV	U_y in mV	U_m' in mV
-0.890	4.000	2.192
-0.872	3.965	2.265
-1.036	4.058	2.400
-
-# Mittleres verdr‰ngtes VOlumen: 40mL => 640 mL Wasser im Dewat-Gef‰ﬂ
-# V_x = 320 mL ; V_y = 320 mL

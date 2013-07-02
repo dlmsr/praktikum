@@ -1,0 +1,10 @@
+# Mittleres verdrängtes Volumen, das durch die Proben verdräng wird
+# beträgt: 40 cm^3
+
+# V_x in cm^3   V_y in cm^3   V_m in cm^3
+320   320   640
+
+# U_x in mV   U_y in mV   U_m' in mV
+0.890   4.000   2.192
+0.872   3.965   2.265
+1.036   4.058   2.400
