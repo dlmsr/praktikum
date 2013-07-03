@@ -1,7 +1,7 @@
 # Daten des verwendeten Wassers
-# Volumen in cm^3   spez. Wärmekap. in J/(g K)    Dichte in g/cm^3
+# Volumen in m^3   spez. Wärmekap. in J/(kg K)    Dichte in kg/m^3
 
-600   4.18   1.0
+6e-4   4180   1.0e3
 
 # U_w in mV   U_k in mV   U_m in mV
 

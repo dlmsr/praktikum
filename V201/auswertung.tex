@@ -4,3 +4,139 @@
 
 \section{Auswertung}
 
+Die Temperaturen sind mithilfe von Thermoelementen gemessen worden.
+Daher sind die erhaltenen Spannungen mit Formel~\eqref{eq:thermo} in
+Temperaturen umzurechnen.  Die Formel gibt die Temperatur in Grad
+Celsius aus, welche schließlich in Kelvin umgerechnet wurde.  Die Werte
+befinden sich in \cref{tab:temp1} und \cref{tab:temp2}.
+
+\begin{table}
+  \centering
+  \begin{tabular}{SSSSSS}
+\toprule
+{$U_x/\si{\mV}$}&
+{$U_y/\si{\mV}$} & 
+{$U_m'/\si{\mV}$} &
+{$T_x/\si{\K}$} &
+{$T_y/\si{\K}$} &
+{$T_m'/\si{\K}$} \\
+\midrule
+0.890 & 4.000 & 2.192 & 295.39 & 370.74 & 327.38 \\
+0.872 & 3.965 & 2.265 & 294.94 & 369.91 & 329.16 \\
+1.036 & 4.058 & 2.400 & 299.01 & 372.11 & 332.43 \\
+\bottomrule
+\end{tabular}
+
+\caption{Hier finden sich die gemessenen Thermospannungen aus der Meßreihe zur Bestimmung der Wärmekapazität des Kalorimeters.  Daneben befinden sich die gemäß Formel~\eqref{eq:thermo} errechneten Temperaturen in Kelvin.}
+\label{tab:temp2}
+\end{table}
+
+\begin{table}
+  \centering
+  \begin{tabular}{lSSSSSS}
+  \toprule
+  & {$U_w/\si{\mV}$}
+  & {$U_k/\si{\mV}$}
+  & {$U_m/\si{\mV}$} 
+  & {$T_w/\si{\K}$}
+  & {$T_k/\si{\K}$}
+  & {$T_m/\si{\K}$} \\
+  \midrule
+  Blei &
+  0.672 & 3.937 & 0.760 & 289.97 & 369.25 & 292.16 \\
+  & 
+  0.938 & 3.948 & 1.067 & 296.58 & 369.51 & 299.78 \\
+  &
+  1.169 & 3.944 & 1.188 & 302.30 & 369.41 &  302.77 \\
+  \midrule
+  Kupfer &
+  0.750 & 3.960 & 0.938 & 291.91 & 369.79 & 296.58 \\
+  \midrule
+  Zinn &
+  1.084 & 4.003 & 1.152 & 300.20 & 370.81 & 301.88 \\
+  \bottomrule
+\end{tabular}
+
+\caption{Hier werden die Thermospannungen zu den Meßreihen zur Bestimmung der spezifischen Wärmekapazitäten der Proben aufgeführt.  Daneben finden sich wieder die umgerechneten Temperaturen in Kelvin.}
+\label{tab:temp1}
+\end{table}
+
+
+\subsection{Wärmekapazität des Kalorimeters}
+
+Aus den Meßwerten in \cref{tab:temp2} ergibt sich gemäß
+Formel~\eqref{eq:kalorikapa} die Wärmekapazität des Kalorimeters.  Die
+Massen der verwendeten Wassermengen sind nicht direkt bekannt, sondern
+werden über die Dichte, die mit $\rho = \SI{1000}{\kg\per\cubic\metre}$
+angesetzt wird, aus dem gemessen Volumen ermittelt.  Die Volumina der
+beiden Wassermengen betragen jeweils $V_\text{x, y} =
+\SI{320}{\cubic\centi\metre}$.
+
+\begin{table}
+  \centering
+  \begin{tabular}{lS}
+    \toprule
+    & $c_g m_g/\si{\J\per\kelvin}$\\
+    \midrule
+    & 475 \\
+    & 255 \\
+    & 250 \\
+    \midrule
+    Mittelwert & 327(74) \\
+    \bottomrule
+  \end{tabular}
+
+  \caption{Diese Tabelle zeigt die ermittelte Wärmekapazität des
+    Kalorimeters, die in  drei Messungen bestimmt worden ist.  Darunter
+    befindet sich der Mittelwert aus den Messungen.}
+  \label{tab:waermekapkalori}
+\end{table}
+
+\subsection{Spezifische Wärmekapazitäten und Molwärmen der Proben}
+\label{sec:molwaerme}
+
+Mithilfe der gemessenen Temperaturen aus \cref{tab:temp1} und der
+Wärmekapazität des Kalorimeters erhält man nach Einsetzen in
+Formel~\eqref{eq:waermekapa} die gewünschten spezifischen
+Wärmekapazitäten der Proben.  Mit
+\begin{equation}
+  C_p = c_\text{k} \, M_\text{k}
+\end{equation}
+lassen sich daraus mithilfe der molaren Masse $M_\text{k}$ der Proben
+die Molwärmen bei konstantem Druck bestimmen.  Die Umrechnung von
+Molwärme bei konstantem Druck auf Molwärme bei konstantem Volumen
+geschieht nach Formel~\eqref{eq:cv-und-cp}.  In \cref{tab:molwaermen}
+finden sich die Ergebnisse dieser Rechnungen.  
+
+Beim Blei sind drei Messungen durchgeführt worden, wobei auffällt, daß
+der letzte ausreißt.  Da es zwei verschiedene Bleiproben gegeben hat,
+liegt die Vermutung nahe, daß die beiden verwechselt worden sind.  Daher
+werden für den Mittelwert der Molwärme nur die ersten beiden Meßwerte
+berücksichtigt.
+\begin{equation}
+  C_V = \SI{35(9)}{\J\per\K}.
+\end{equation}
+
+\begin{table}
+  \centering
+  \begin{tabular}{lSSS}
+    \toprule
+    & {$c_\text{k}/(\si{\J\per\kg\per\K})$}
+    & {$C_p/(\si{\J\per\mol})$}
+    & {$C_V/(\si{\J\per\mol})$} \\
+    \midrule
+    Blei & 136.8 &  28.4 & 26.7  \\
+    & 220.8 &  45.7 & 44.0  \\
+    &  33.9  &   7.0 &  5.3  \\
+    \midrule
+    Kupfer & 760.0 & 48.3  &   48.2  \\
+    \midrule
+    Zinn & 287.7 &   34.2 &   32.4  \\
+    \bottomrule
+  \end{tabular}
+  \caption{Spezifische Wärmekapazitäten der vermessenen Proben aus Blei,
+    Kupfer und Zinn.  Dazu sind die Molwärmen berechnet worden.}
+  \label{tab:molwaermen}
+\end{table}
+
+

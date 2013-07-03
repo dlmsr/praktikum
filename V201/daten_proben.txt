@@ -1,5 +1,5 @@
-# Masse in g   Dichte in g/cm^3   Molare Masse in g/mol   alpha in 1/K   kappa in cN/cm^2
+# Masse in kg   Dichte in kg/m^3   Molare Masse in kg/mol   alpha in 1/K   kappa in N/m^2
 
-588.6   11.35   207.2     29.0e-6    42e7   # Blei
-237.9    8.96    63.546   16.8e-6   136e7   # Kupfer
-240.4    7.28   118.71    26.0e-6    55e7   # Zinn
+5.886e-1   1.135e4   2.072e-1   2.90e-5   4.20e10   # Blei
+2.379e-1   8.960e4   6.355e-2   1.68e-5   1.36e11   # Kupfer
+2.404e-1   7.280e4   1.187e-1   2.70e-5   5.50e11   # Zinn
