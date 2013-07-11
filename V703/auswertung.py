@@ -31,25 +31,39 @@ ax1.plot(U, Z, '.-')
 Z = np.concatenate((Z[:8], Z[8:] - 300))
 ax1.plot(U[7:], Z[7:], 'r.-')
 
-ax2.plot(U[:2], Z[:2], 'xb')
-ax2.plot(U[2:12], Z[2:12], 'xr')
-ax2.plot(U[12:], Z[12:], 'xb')
+# Meßwerte für die lineare Ausgleichsrechnung markieren
+# Fehlerbalken drangeben
+
+# Spannung, Zählrate und stat. Fehler der Zählrate in eine Matrix
+plot_data = np.column_stack((U, Z, np.sqrt(Z)))
+split_list = np.hsplit(plot_data.T, [2, 12])
+
+for x, y, yerr in split_list:
+    if len(x) > 2:
+        ax2.errorbar(x, y, yerr=yerr, fmt='xr')
+    else:
+        ax2.errorbar(x, y, yerr=yerr, fmt='xb')
 
 # lineare Ausgleichsrechnung
 x = U[2:12]
 y = Z[2:12]
-m, s_m, b, s_b = linear_fit(x, y)
+M = linear_fit(x, y)
 
-x = np.linspace(300, 700)
+m = M[0]
+b = M[2]
+
+x = np.linspace(250, 750)
 ax2.plot(x, m*x+b, '--g')
 
 plt.savefig('charakteristik.pdf')
 plt.close()
 
 print('Länge des Plateau-Bereichs: {:.3f}'.format(U[12]-U[3]))
-print('Plateau-Steigung in % pro V: {:.3%}'.format(m))
+print('Parameter der Ausgleichsgeraden')
+print(M)
+print('Plateau-Anstieg: {:.3f}'.format( m*100/Z[2]))
 
-np.savetxt('teil_a.txt', np.array([U, Z]).T, fmt='%d',
+np.savetxt('teil_a.txt', np.array([U, Z, np.sqrt(Z)]).T, fmt='%d',
            delimiter=' & ', newline='\\\\\n')
 
 # Teil b)
@@ -68,19 +82,21 @@ T = (N1 + N2 - N12)/(2*N1*N2) # Totzeit in Sekunden
 print('Zwei Quellen-Methode')
 print('Totzeit in Sekunden: {:.3e}'.format(T))
 print('Oscilloscope')
-print('Totzeit in Sekounden: {:.3e}'.format(osci[0,0]*osci[0,1]))
+print('Totzeit in Sekunden: {:.3e}'.format(osci[0,0]*osci[0,1]))
 
 # Teil d)
 
-# Ablesefehler des Stromes
+# Strom in microAmp und Ablesefehler des Stromes
+I  = I * 1e-6
 DI = 0.02e-6
 
 # Zählrate
-N = Z/120
+N  = Z/120
+DN = np.sqrt(Z)/120
 
 # Ladung pro Teilchen
-Q = I/N *1e-6
-DQ = N/I**2 * DI * 1e12
+Q = I/N
+DQ = np.sqrt(( DI / N )**2 + (I/N**2 * DN)**2)
 
 plt.plot(U, Q/e, '+')
 plt.title('Pro Teilchen freigesetzte Ladung')
@@ -89,5 +105,6 @@ plt.ylabel('Freigesetzte Ladung in Elementarladungen')
 plt.grid()
 plt.savefig('freigesetzte_ladung.pdf')
 
-np.savetxt('teil_d.txt', np.array([U, I*1e3, Q/e*1e-6, DQ*1e-6]).T, fmt='%d', 
+np.savetxt('teil_d.txt', np.array([U, I*1e9, Q/e*1e-6, DQ/e*1e-6]).T, fmt='%d', 
            delimiter=' & ', newline='\\\\\n')
+plt.close()

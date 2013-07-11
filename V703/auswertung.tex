@@ -24,10 +24,15 @@ Innerhalb dieser Umgebung wird mit den rot markierten Meßwerten eine
 lineare Ausgleichsrechnung durchgeführt. Die Steigung des Plateaus ist
 dann ein Maß für die Güte des Zählrohrs. Da in diesem Fall die Meßwerte
 jedoch durch eine Störung des Versuchsaufbaus beeinträchtigt worden
-sind, ist die Steigung nicht aussagekräftig. Der ermittelte Wert beträgt
+sind, ist die Steigung nicht aussagekräftig. Die ermittelte
+Regressionsgerade lautet:
 %
 \begin{equation}
-  m_\text{Plateau} = \SI{74.5}{\percent\per\volt}.
+  Z = \SI{0.75(19)}{\per\volt} U + \num{11332(100)}
+\end{equation}
+Daraus berechnet sich der Plateau-Anstieg zu
+\begin{equation}
+  P = \num{0.6} \frac{\%}{100 \mathrm{V}}.
 \end{equation}
 
 \begin{figure}
@@ -48,32 +53,33 @@ sind, ist die Steigung nicht aussagekräftig. Der ermittelte Wert beträgt
 
 \begin{table}
   \centering\footnotesize
-  \begin{tabular}{SS}
+  \begin{tabular}{SSS}
     \toprule
     {Zählrohrspannung $U/\si{\volt}$} & {Impulszahl $Z$ in
-      \SI{120}{\second}}\\
+      \SI{120}{\second}} & {statist. Fehler $\Delta Z$ der Impulszahl}\\
     \midrule
-    320 & 11045\\
-    350 & 11450\\
-    380 & 11557\\
-    410 & 11630\\
-    440 & 11723\\
-    470 & 11700\\
-    500 & 11765\\
-    530 & 11659\\
-    560 & 11790\\
-    590 & 11719\\
-    620 & 11770\\
-    650 & 11842\\
-    680 & 12001\\
-    700 & 12546\\
+    320 & 11045 & 105\\
+    350 & 11450 & 107\\
+    380 & 11557 & 107\\
+    410 & 11630 & 107\\
+    440 & 11723 & 108\\
+    470 & 11700 & 108\\
+    500 & 11765 & 108\\
+    530 & 11659 & 107\\
+    560 & 11790 & 108\\
+    590 & 11719 & 108\\
+    620 & 11770 & 108\\
+    650 & 11842 & 108\\
+    680 & 12001 & 109\\
+    700 & 12546 & 112\\
     \bottomrule
   \end{tabular}
   \caption{Hier finden sich die Meßwerte mit den korrigierten
     Impulszahlen.  Der systematische Fehler ist auf 300 Impulse geschätzt
-    worden und ab dem 8. Meßwert subtrahiert worden.  In
-    \cref{fig:charakteristik} kann ein Eindruck von der Verschiebung
-    gewonnen werden. }
+    worden und ab dem 8. Meßwert subtrahiert worden.  Der Fehler ist
+    aufgetreten, weil die Probe losgeschraubt und dann wieder
+    festgestellt worden ist.  In \cref{fig:charakteristik} kann ein
+    Eindruck von der Verschiebung gewonnen werden. }
   \label{tab:charakteristik}
 \end{table}
 
@@ -135,7 +141,16 @@ Ladung in Einheiten der Elementarladung gegen die Spannung aufgetragen.
 Die Werte sind aus den gemessenen Zählrohrströmen gemäß
 Formel~\eqref{eq:ladungsmenge} bestimmt worden. Aus den gemessenen
 Impulsraten und Strömen ergibt sich die freigesetzte Ladung. In
-\cref{tab:frei-ladung} sind die Werte noch einmal gegenübergestellt.
+\cref{tab:frei-ladung} sind die Werte noch einmal gegenübergestellt.  Da
+die sowohl die gemessene Stromstärke mit einem Fehler von
+\SI{0.02}{\micro\ampere} behaftet sind und die Zählraten einen
+statistischen Fehler $\Delta N = \sqrt{N}$ besitzen, wird eine
+\name{Gauß}sche Fehlerfortpflanzung durchgeführt.  Die Formel lautet:
+\begin{equation}
+  \label{eq:gauss-ladungsmenge}
+  \Delta Q = \sqrt{ \left( \frac{\Delta I}{N}\right)^2 + \left(\frac{I
+        \Delta N}{N^2}\right)^2}.
+\end{equation}
 
 \begin{figure}
   \centering
@@ -153,27 +168,28 @@ Impulsraten und Strömen ergibt sich die freigesetzte Ladung. In
     {Strom $I/\si{\nano\ampere}$}&
     {Ladung $Q/(10^6\mathrm{e})$} \\
     \midrule
-    320 & 200 & 13562(46) \\
-    350 & 200 & 13082(47) \\
-    380 & 200 & 12961(48) \\
-    410 & 300 & 19320(21) \\
-    440 & 400 & 25555(12) \\
-    470 & 400 & 25606(12) \\
-    500 & 500 & 31830(7)  \\
-    530 & 600 & 38544(5)  \\
-    560 & 600 & 38116(5)  \\
-    590 & 600 & 38347(5)  \\
-    620 & 800 & 50907(3)  \\
-    650 & 800 & 50598(3)  \\
-    680 & 1000 & 62409(2) \\
-    700 & 1000 & 59698(2) \\
+    320 & 200 & 13562(1362) \\
+    350 & 200 & 13082(1313) \\
+    380 & 200 & 12961(1301) \\
+    410 & 300 & 19320(1300) \\
+    440 & 400 & 25555(1299) \\
+    470 & 400 & 25606(1302) \\
+    500 & 500 & 31830(1306) \\
+    530 & 600 & 38544(1333) \\
+    560 & 600 & 38116(1318) \\
+    590 & 600 & 38347(1326) \\
+    620 & 800 & 50907(1356) \\
+    650 & 800 & 50598(1347) \\
+    680 & 1000 & 62409(1372) \\
+    700 & 1000 & 59698(1307) \\
     \bottomrule
   \end{tabular}
   \caption{Die gemessenen Zählrohrströme zu den Zählrohrspannungen. In
     der rechten Spalte sind die gemäß Formel~\eqref{eq:ladungsmenge}
     bestimmten  Ladungen, die pro Teilchen freigesetzt werden,
     berechnet. Da die Ströme mit einem Ablesefehler von
-    \SI{0.02}{\micro\ampere} behaftet sind, wird eine \name{Gauß}sche
-    Fehlerfortpflanzung durchgeführt.}
+    \SI{0.02}{\micro\ampere} und die Zählraten mit einem statistischen
+    Fehler behaftet sind, wird eine \name{Gauß}sche
+    Fehlerfortpflanzung nach Gl.~\eqref{eq:gauss-ladungsmenge} durchgeführt.}
   \label{tab:frei-ladung}
 \end{table}
