@@ -108,7 +108,7 @@ print("Systematischer Fehler der direkten Messung = {}Volt".format(DUd))
 #Theoriekurve in Abh. von Ra
 
 def N(ra):
-    return U_0ges**2/Rges + (U_0ges - Rges*U_0ges/(Rges + ra))**2/ra
+    return (U_0ges - Rges*U_0ges/(Rges + ra))**2/ra
 
 linx = linspace(Rg[0]+0.001,Rg[10])
 plot(linx,N(linx),label = "Theoriekurve")
