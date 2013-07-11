@@ -1,0 +1,224 @@
+% This work is licensed under the Creative Commons
+% Attribution-NonCommercial 3.0 Unported License.  To view a copy of
+% this license, visit http://creativecommons.org/licenses/by-nc/3.0/.
+
+\section{Auswertung}
+\subsection{Leerlaufspannung und Innenwiderstand dreier Spannungsquellen}
+Die zu den verschiedenen Belastungswiderständen $R_\text{a}$ gemessenen 
+Klemmenspannungen $U_\text{K}$ und Stromstärken $I$ sind in 
+Tabelle~\ref{tab:rechtsin} sowohl für eine Rechteck- als auch für eine 
+Sinusspannungsquelle eingetragen.
+%
+\begin{table}[]
+  \centering
+  \begin{tabular}{SSS|SSS|SSS}
+    \toprule
+\multicolumn{3}{c|}{Monozelle}&\multicolumn{3}{c|}{Rechteckspannung}&
+\multicolumn{3}{c}{Sinusspannung}\\
+\midrule
+$\frac{R_\text{A}}{\SI{50}{\ohm}}${/}\si{\percent}&{I/}\si{\ampere}&
+$U_\text{K}${/}\si{\volt}&
+$\frac{R_\text{A}}{\SI{250}{\ohm}}${/}\si{\percent}&{I/}\si{\milli\ampere}&
+$U_\text{K}${/}\si{\milli\volt}&
+$\frac{R_\text{A}}{\SI{5}{\kilo\ohm}}${/}\si{\percent}&{I/}\si{\milli\ampere}&
+$U_\text{K}${/}\si{\milli\volt}\\
+\midrule
+0&0.084&0.22&0&7.10&195&0&1.7&480\\
+10&0.065&0.37&10&6.10&250&10&1.5&610\\
+20&0.053&0.59&20&4.50&320&20&0.95&950\\
+30&0.043&0.74	&30&3.50&380&30&0.72&1100\\
+50&0.032&0.95&50&2.60&460&50&0.48&1250\\
+60&0.029&1.00&60&2.30&480&60&0.40&1300\\
+70&0.026&1.05&70&2.05&490&70&0.33&1350\\
+80&0.023&1.10&80&1.75&510&80&0.30&1400\\
+90&0.021&1.15&90&1.70&520&90&0.26&1450\\
+100&0.020&1.20&100&1.60&520&100&0.24&1450\\
+\bottomrule
+  \end{tabular}
+  \caption{Gemessene Spannungen und Stromstärken für verschiedene 
+Belastungswiderstände. Die Messung wurde für eine Monozelle, eine 
+Rechteckspannung und eine Sinusspannung durchgeführt.}
+  \label{tab:rechtsin}
+\end{table}
+%
+
+Nun pro Spannungsquelle eine lineare Ausgleichrechnung\footnote{Dazu 
+wurde \texttt{ipython} in der Version 0.13  verwendet} 
+mithilfe von Formel~\eqref{Spannung}durchgeführt, 
+wobei die gemessenen Klemmspannungen gegen die 
+Stromstärken betrachtet werden. In Abb.~\ref{fig:leerlauf} 
+ist ein Plot der gemessenen Klemmenspannungen gegen die Stromstärke, 
+sowie die errechneten Ausgleichsgeraden zu sehen.
+
+\begin{figure}[]
+\centering
+\includegraphics[width=1.0\textwidth]{leerlauf.pdf}
+\caption{Plot der errechneten Regressionsgeraden durch die gemessenen 
+Klemmenspannungen gegen die Stromstärken. Im linken Subplot ist der Graph 
+der Gleichspannung zu sehen. Im rechten Subplot befinden sich die Ausgleichsgeraden 
+und Messwerte der Rechteck- und Sinusspannung.}
+\label{fig:leerlauf}
+\end{figure}
+
+Die errechneten Geradengleichungen lauten 
+\begin{align*}
+U_\text{K} &= \SI{-15.7}{\ohm}\cdot I + \SI{1.46}{\volt}\text{ für die Monozelle,}\\
+U_\text{K} &= \SI{-60.5}{\ohm}\cdot I + \SI{0.61}{\volt}\text{ für die Rechteckspannung,}\\
+U_\text{K} &= \SI{-654.6}{\ohm}\cdot I + \SI{1.58}{\volt}\text{ für die Sinusspannung.}
+\end{align*}
+%
+Aus diesen lassen sich nun die Innenwiderstände $R_\text{i}$ und 
+Leerlaufspannungen $U_0$
+der Spannungsquellen leicht ablesen. In Tabelle~\ref{tab:leerlaufergebnis} 
+sind diese aus den Geradengleichungen extrahierten Werte, sowie dessen 
+Fehler angegeben. Die Fehler sind die aus der 
+linearen Ausgleichsrechnung bestimmten Fehler.
+%
+\begin{table}[]
+  \centering
+  \sisetup {
+	table-number-alignment = center,
+	table-figures-integer = 2,
+	table-figures-decimal = 2
+  }
+  \begin{tabular}{S[table-figures-decimal = 1,table-figures-uncertainty = 1]
+				    S[table-figures-decimal = 2,table-figures-uncertainty = 2]|
+				    S[table-figures-decimal = 1,table-figures-uncertainty = 1]
+				    S[table-figures-decimal = 2,table-figures-uncertainty = 2]|
+				    S[table-figures-decimal = 1,table-figures-uncertainty = 1]
+				    S[table-figures-decimal = 2,table-figures-uncertainty = 2]}
+    \toprule
+\multicolumn{2}{c|}{Monozelle}&\multicolumn{2}{c|}{Rechteckspannung}&
+\multicolumn{2}{c}{Sinusspannung}\\
+\midrule
+$R_\text{i}${/}\si{\ohm}&$U_{0}${/}\si{\volt}&
+$R_\text{i}${/}\si{\ohm}&$U_{0}${/}\si{\volt}&
+$R_\text{i}${/}\si{\ohm}&$U_{0}${/}\si{\volt}\\
+\midrule
+15.7(7)&1.46(3)&60.5(22)&0.61(1)&654.6(130)&1.58(1)\\
+\bottomrule
+  \end{tabular}
+  \caption{Gemessene Spannungen und Stromstärken für verschiedene 
+Belastungswiderstände. Die Messung wurde für eine Monozelle, eine 
+Rechteckspannung und eine Sinusspannung durchgeführt.}
+  \label{tab:leerlaufergebnis}
+\end{table}
+%
+\FloatBarrier
+%
+\subsection{Weitere Analyse der Monozelle}
+%
+Die einmalige direkte Leerlaufspannungsmessung mit einem hochohmigen 
+Voltmeter mit einem Innenwiderstand von $R_\text{v} \ge$ \SI{10}{\mega\ohm} 
+ergibt einen Wert von
+\begin{equation}
+U_{0} = \SI{1.5}{\volt}
+\end{equation}
+%
+\subsubsection{Leerlaufspannung und Innenwiderstand mittels Gegenspannung}
+Der bei angelegter Gegenspannung von \SI{3.5}{\volt} am Belastungswiderstand 
+für verschiedene Widerstände $R_\text{a}$ gemessene Spannungsabfall 
+$U_\text{K}$ und die gemessenen Stromstärken $I$ sind in 
+Tabelle~\ref{tab:gegenspannung} aufgeführt.
+%
+\begin{table}[]
+  \centering
+  \begin{tabular}{SSS|SSS}
+    \toprule
+$\frac{R_\text{A}}{\SI{50}{\ohm}}${/}\si{\percent}&{I/}\si{\milli\ampere}&
+$U_\text{K}${/}\si{\volt}&
+$\frac{R_\text{A}}{\SI{50}{\ohm}}${/}\si{\percent}&{I/}\si{\milli\ampere}&
+$U_\text{K}${/}\si{\volt}\\
+\midrule
+0&110&3.5&60&40&2.2\\
+10&93&3.0&70&36&2.1\\
+20&76&2.7&80&32&2.1\\
+30&61&2.5&90&29&2.0\\
+40&53&2.4&100&27&1.95\\
+50&46&2.3&&\\
+\bottomrule
+  \end{tabular}
+  \caption{Gemessene Spannungen und Stromstärken für verschiedene 
+Belastungswiderstände. Die Messung wurde mit einer Monozelle als 
+Spannungsquelle durchgeführt, wobei eine Gegenspannung von 
+\SI{3.5}{\volt} angelegt wurde.}
+  \label{tab:gegenspannung}
+\end{table}
+%
+
+Mit den in dieser Tabelle eingetragenen Messwerten wird eine lineare 
+Ausgleichsrechnung durchgeführt. Es wird hierbei die Klemmenspannung 
+gegen die Stromstärke betrachtet. Ein Plot der Messwerte und der 
+Ausgleichsgeraden ist in Abb.~\ref{fig:gegenspannung} zu sehen.
+
+\begin{figure}[]
+\centering
+\includegraphics[width=0.8\textwidth]{gegenspannung.pdf}
+\caption{Plot der errechneten Regressionsgeraden durch die gemessenen 
+Klemmenspannungen gegen die Stromstärken bei angelegter Gegenspannung 
+von \SI{3.5}{\volt} an einer Monozelle.}
+\label{fig:gegenspannung}
+\end{figure}
+
+Die lineare Ausgleichsrechnung ergibt die Geradengleichung
+\begin{equation}
+U_{K} = \SI{17.1}{\ohm}\cdot I + \SI{1.50}{\volt}
+\end{equation}
+Ein Vergleich mit Formel~\eqref{gegenspannung} ergibt folgende 
+Werte für die Leerlaufspannung $U_{0}$ und den 
+Innenwiderstand $R_{i}$ der Monozelle:
+\begin{align*}
+R_{i}&=\SI{17.1(7)}{\ohm}\\
+U_{0}&=\SI{1.50(4)}{\volt}
+\end{align*}
+Die hier angegebenen Fehler sind wieder die Fehler der linearen 
+Ausgleichsrechnung.
+
+Das arithmetische Mittel zwischen diesen 
+Leerlaufspannungen und Innenwiderstände 
+und denen aus Tabelle~\ref{tab:leerlaufergebnis} gebildet, 
+ergibt sich 
+\begin{align*}
+R_{iges}&=\SI{16.4(7)}{\ohm}\\
+U_{0ges}&=\SI{1.48(4)}{\volt}
+\end{align*}
+Die Fehler sind durch eine Gaußsche Fehlerfortpflanzung des arithmetischen 
+Mittels errechnet worden, was einfach dem arithmetischen Mittel der 
+Einzelfehler entspricht.
+
+
+Der systematische Fehler, der bei der direkten Leerlaufspannung 
+gemacht wird, beträgt in Abhängigkeit von $R_{i}$
+\begin{equation*}
+\Delta U_{0} = \frac{R_{i}\cdot U_{K}}{R_{v}}
+\end{equation*}
+Als Mittelwert der einzelnen systematischen Fehler ergibt sich ein 
+Wert von 
+\begin{equation*}
+\Delta \overline{U_{0}} = \SI{1.4e-6}{\volt}.
+\end{equation*}
+%
+\subsubsection{Leistungsabfall am Belastungswiderstand}
+Die in Tabelle~\ref{tab:gegenspannung} eingetragenen Werte werden nun 
+verwendet, um die am Belastungswiderstand verrichtete Leistung 
+$N = U\cdot I$ zu berechnen. In Abb.~\ref{fig:leistung} ist diese Leistung 
+gegen den Belastungswiederstand $R_{a}$ aufgetragen. 
+Im selben Diagramm ist der nach Formel~\eqref{eq:leistungsformel} 
+berechnete theoretische Leistungsabfallverlauf in Abhängigkeit von 
+$R_\text{a}$ eingezeichnet.
+\begin{equation}
+\label{eq:leistungsformel}
+N(R_\text{a})=\frac{(U_{0}-\frac{R_{i}U_{0}}{R_{i}+R_{a}})^2}{R_{a}}
+\end{equation}
+Es werden hierbei die in diesem Protokoll errechneten Werte für den 
+Innenwiderstand $R_{i}$ und der Leerlaufspannung $U_{0}$ 
+verwendet.
+
+\begin{figure}[]
+\centering
+\includegraphics[width=0.8\textwidth]{leistung.pdf}
+\caption{Hier zu sehen ist der theoretische Verlauf des Leistungsabfall 
+am Belastungswiderstand, sowie der gemessene. Die Kurven ähneln sich 
+stark}
+\label{fig:leistung}
+\end{figure}
