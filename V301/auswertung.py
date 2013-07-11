@@ -5,19 +5,19 @@ import linregress
 (Rg,Ig,Ug,Rr,Ir,Ur,Rs,Is,Us) = loadtxt("a_b_und_d.txt",unpack = True)
 (Rc,Ic,Uc) = loadtxt("c.txt",unpack = True)
 #Alles in SI-Einheiten umrechnen
-Rg = Rg*50 #Ohm
+Rg = Rg*0.5 #Ohm
 Ig = Ig #Ampere
 Ug = Ug # Volt
 
-Rr = Rr*250 #Ohm
+Rr = Rr*2.5 #Ohm
 Ir = Ir*10**(-3)#Ampere
 Ur = Ur*10**(-3)#Volt
 
-Rs = Rs*5000#Ohm
+Rs = Rs*50#Ohm
 Is = Is*10**(-3)#Ampere
 Us = Us*10**(-3)#Volt
 
-Rc = Rc*50 #Ohm
+Rc = Rc*0.5 #Ohm
 Ic = Ic*10**(-3)#Ampere
 Uc = Uc#Volt
 
@@ -99,8 +99,8 @@ Ud_ber = -mg # Errechnete Leerlaufspannung
 
 Ri = Rges # Errechneter Innenwiderstand der Spannungsquelle
 
-DUd = Ri*mean(Ug)/(R_v) #Gauß
-
+DUd_array = Ri*Ug/(R_v) 
+DUd = mean(DUd_array)
 print("-------------------------------------")
 print("Systematischer Fehler der direkten Messung = {}Volt".format(DUd))
 
@@ -108,7 +108,7 @@ print("Systematischer Fehler der direkten Messung = {}Volt".format(DUd))
 #Theoriekurve in Abh. von Ra
 
 def N(ra):
-    return U_0ges**2/Rges - (U_0ges - Rges*U_0ges/(Rges + ra))**2/ra
+    return U_0ges**2/Rges + (U_0ges - Rges*U_0ges/(Rges + ra))**2/ra
 
 linx = linspace(Rg[0]+0.001,Rg[10])
 plot(linx,N(linx),label = "Theoriekurve")
@@ -122,6 +122,6 @@ savefig("leistung.pdf")
 close()
 
 print("----Leistungsbetrachtung----")
-print("Deutlich erkennbarer systematischer Fehler von ca. 10 Watt")
+print("Deutlich erkennbarer systematischer Fehler von ca. 12 Watt")
 print("Es fällt deutlich weniger Leistung am Belastungswiderstand ab als errechnet")
 print("Anscheinend hat das Messgerät diesen Fehler verursacht")
