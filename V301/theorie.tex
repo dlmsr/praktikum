@@ -1,0 +1,49 @@
+% This work is licensed under the Creative Commons
+% Attribution-NonCommercial 3.0 Unported License.  To view a copy of
+% this license, visit http://creativecommons.org/licenses/by-nc/3.0/.
+
+\section{Theorie}
+
+Eine Spannungsquelle ist ein elektrisches Gerät, das eine über die Zeit
+konstante Leistung liefert.  Beispiele sind der Dynamo am Fahrrad, eine
+Batterie oder ein Kraftwerk.  Kenngrößen einer Spannungsquelle sind
+hierbei die Leerlaufspannung~$U_0$, die gemessen werden kann, wenn die
+Spannungsquelle nicht durch einen Verbraucher belastet wird, und der
+Innenwiderstand, der eingeführt werden muß, um das Verhalten der
+Spannungsquelle bei Belastung, nämlich das Absinken der
+Klemmenspannung~$U_K$ zu erklären.  Um eine Beziehung zwischen den
+Größen Belastungswiderstand/-strom, Innenwiderstand, Leerlaufspannung
+und Klemmenspannung herstellen zu können, wird das Induktionsgesetz
+\eqref{eq:inductionsgesetz} aus den \name{Maxwell}-Gleichungen benötigt.
+\begin{equation}
+  \label{eq:inductionsgesetz}
+  \oint_{\partial A} \vec{E} \: \d\vec{s} = \iint_A \frac{\partial
+    \vec{B}}{\partial t} \: \d\vec{A}
+\end{equation}
+Bei Abwesenheit von magnetischen Feldänderungen kann dieses Gesetz in
+eine einfachere Form, die sogenannte Maschenregel von \name{Kirchhoff}
+gebracht werden.  Sie lautet dann:
+\begin{equation}
+  \label{eq:maschenregel}
+  \sum_j U_0^{(j)} = \sum_k R_k I_k
+\end{equation}
+
+In \cref{fig:ersatzschaltung} ist ein Ersatzschaltbild einer realen
+Spannungsquelle zu sehen.  Die Maschenregel ergibt in diesem
+Spezialfall:
+\begin{align}
+  U_0 = R_\text{i} I + R_\text{a} I\\
+\intertext{oder}
+  U_K = R_\text{a}I = U_0 - R_\text{i} I.
+\end{align}
+Hieraus ist unmittelbar ersichtlich, warum die Klemmenspannung mit
+zunehmendem Belastungsstrom sinkt.  Zur Messung der Leerlaufspannung
+wird ein hochohmiges Voltmeter verwendet, da somit der Term mit dem
+Innenwiderstand vernachlässigt werden kann und 
+\begin{equation}
+  U_K \to U_0 \text{ für } R_\text{i} \to 0
+\end{equation}
+gilt.  Aus der Existenz eines Innenwiderstandes ergibt sich auch die
+Notwendigkeit einer sogenannten Leistungsanpassung.  Der Spannungsquelle
+kann nämlich nicht nur eine beschränkte Leistung entnommen werden,
+sondern diese ist abhängig vom gewählten Belastungswiderstand~$R_a$.
