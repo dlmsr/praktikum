@@ -6,10 +6,10 @@
 \subsection{Leerlaufspannung und Innenwiderstand dreier Spannungsquellen}
 Die zu den verschiedenen Belastungswiderständen $R_\text{a}$ gemessenen 
 Klemmenspannungen $U_\text{K}$ und Stromstärken $I$ sind in 
-Tabelle~\ref{tab:rechtsin} sowohl für eine Rechteck- als auch für eine 
+Tabelle~\ref{tab:rechtsin} sowohl für eine Rechteck-, als auch für eine 
 Sinusspannungsquelle eingetragen.
 %
-\begin{table}[]
+\begin{table}[h]
   \centering
   \begin{tabular}{SSS|SSS|SSS}
     \toprule
@@ -42,12 +42,12 @@ Rechteckspannung und eine Sinusspannung durchgeführt.}
 \end{table}
 %
 
-Nun pro Spannungsquelle eine lineare Ausgleichrechnung\footnote{Dazu 
+Nun wird pro Spannungsquelle eine lineare Ausgleichrechnung\footnote{Dazu 
 wurde \texttt{ipython} in der Version 0.13  verwendet} 
-mithilfe von Formel~\eqref{Spannung}durchgeführt, 
-wobei die gemessenen Klemmspannungen gegen die 
+durchgeführt, 
+wobei die gemessenen Klemmenspannungen gegen die 
 Stromstärken betrachtet werden. In Abb.~\ref{fig:leerlauf} 
-ist ein Plot der gemessenen Klemmenspannungen gegen die Stromstärke, 
+ist ein Plot der gemessenen Klemmenspannungen gegen die Stromstärken, 
 sowie die errechneten Ausgleichsgeraden zu sehen.
 
 \begin{figure}[]
@@ -67,8 +67,8 @@ U_\text{K} &= \SI{-60.5}{\ohm}\cdot I + \SI{0.61}{\volt}\text{ für die Rechteck
 U_\text{K} &= \SI{-654.6}{\ohm}\cdot I + \SI{1.58}{\volt}\text{ für die Sinusspannung.}
 \end{align*}
 %
-Aus diesen lassen sich nun die Innenwiderstände $R_\text{i}$ und 
-Leerlaufspannungen $U_0$
+Aus diesen lassen sich nun mithilfe von Formel~\eqref{eq:klemme} die 
+Innenwiderstände $R_\text{i}$ und Leerlaufspannungen $U_0$
 der Spannungsquellen leicht ablesen. In Tabelle~\ref{tab:leerlaufergebnis} 
 sind diese aus den Geradengleichungen extrahierten Werte, sowie dessen 
 Fehler angegeben. Die Fehler sind die aus der 
@@ -121,7 +121,7 @@ für verschiedene Widerstände $R_\text{a}$ gemessene Spannungsabfall
 $U_\text{K}$ und die gemessenen Stromstärken $I$ sind in 
 Tabelle~\ref{tab:gegenspannung} aufgeführt.
 %
-\begin{table}[]
+\begin{table}[h]
   \centering
   \begin{tabular}{SSS|SSS}
     \toprule
@@ -164,7 +164,7 @@ Die lineare Ausgleichsrechnung ergibt die Geradengleichung
 \begin{equation}
 U_{K} = \SI{17.1}{\ohm}\cdot I + \SI{1.50}{\volt}
 \end{equation}
-Ein Vergleich mit Formel~\eqref{gegenspannung} ergibt folgende 
+Ein Vergleich mit Formel~\eqref{eq:klemme-gegenspannung} ergibt folgende 
 Werte für die Leerlaufspannung $U_{0}$ und den 
 Innenwiderstand $R_{i}$ der Monozelle:
 \begin{align*}
@@ -174,13 +174,13 @@ U_{0}&=\SI{1.50(4)}{\volt}
 Die hier angegebenen Fehler sind wieder die Fehler der linearen 
 Ausgleichsrechnung.
 
-Das arithmetische Mittel zwischen diesen 
-Leerlaufspannungen und Innenwiderstände 
+Wird das arithmetische Mittel zwischen diesen 
+Werten für die Leerlaufspannung und dem Innenwiderstand 
 und denen aus Tabelle~\ref{tab:leerlaufergebnis} gebildet, 
 ergibt sich 
 \begin{align*}
-R_{iges}&=\SI{16.4(7)}{\ohm}\\
-U_{0ges}&=\SI{1.48(4)}{\volt}
+R_{imon}&=\SI{16.4(7)}{\ohm}\\
+U_{0mon}&=\SI{1.48(4)}{\volt}
 \end{align*}
 Die Fehler sind durch eine Gaußsche Fehlerfortpflanzung des arithmetischen 
 Mittels errechnet worden, was einfach dem arithmetischen Mittel der 
@@ -222,3 +222,4 @@ am Belastungswiderstand, sowie der gemessene. Die Kurven ähneln sich
 stark}
 \label{fig:leistung}
 \end{figure}
+\FloatBarrier
