@@ -28,13 +28,22 @@ gebracht werden.  Sie lautet dann:
   \sum_j U_0^{(j)} = \sum_k R_k I_k
 \end{equation}
 
+\begin{figure}
+  \centering
+  \includegraphics{spannungsquelle}
+  \caption{Hier ist das Ersatzschaltbild einer realen Spannungsquelle
+    mit einem Belastungswiderstand in Reihe geschaltet.  Der
+    gestrichelte Kasten kennzeichnet das Ersatzschaltbild einer realen
+    Spannungsquelle. \cite{v301}}
+\end{figure}
+
 In \cref{fig:ersatzschaltung} ist ein Ersatzschaltbild einer realen
 Spannungsquelle zu sehen.  Die Maschenregel ergibt in diesem
 Spezialfall:
 \begin{align}
   U_0 = R_\text{i} I + R_\text{a} I\\
 \intertext{oder}
-  U_K = R_\text{a}I = U_0 - R_\text{i} I.
+  U_K = R_\text{a}I = U_0 - R_\text{i} I. \label{eq:klemme}
 \end{align}
 Hieraus ist unmittelbar ersichtlich, warum die Klemmenspannung mit
 zunehmendem Belastungsstrom sinkt.  Zur Messung der Leerlaufspannung

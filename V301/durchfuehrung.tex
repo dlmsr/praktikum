@@ -7,9 +7,41 @@
 \subsection{Aufbau}
 
 In diesem Versuch werden drei verschiedene Spannungsquellen untersucht.
-Eine Monozelle, eine Rechteckspannung und eine Sinusspannung.  Die
-letzten beiden werden von einem Funktionengenerator geliefert.  Dazu
-wird ein hochohmiges Voltmeter und ein Amperemeter zur Messung der
-Spannungen sowie Belastungsströme verwendet.
+Eine Monozelle, eine Rechteckspannung und eine Sinusspannung, die beide
+von einem Funktionengenerator geliefert werden.  Dazu wird ein
+hochohmiges Voltmeter und ein Amperemeter zur Messung der Spannungen
+sowie Belastungsströme verwendet.  Der Aufbau der Schaltungen ist in
+\cref{fig:schaltungsbild} zu erkennen.
+
+\begin{figure}
+  \centering
+  \includegraphics{schaltungsbild}
+  \caption{Hier ist der Aufbau der verwendeten Schaltung skizziert.
+    Einmal wird die Monozelle ohne Gegenspannung und einmal mit
+    Gegenspannung vermessen. \cite{v301}}
+  \label{fig:schaltungsbild}
+\end{figure}
 
 \subsection{Messung}
+
+Es werden drei verschiedene Spannungsquellen mit verschiedenen Methoden
+untersucht.  Zunächst wird die Leerlaufspannung mit einem hochohmigen
+Voltmeter direkt gemessen, wobei der Eingangswiderstand dieses
+Spannungsmeßgeräts notiert wird.  Danach wird die Klemmenspannung als
+Funktion des Belastungsstroms aufgenommen, wobei der
+Belastungswiderstand, mit dem der Strom gesteuert wird, im Bereich von
+\SIrange{0}{50}{\ohm} variert.  Dies wird für die Sinus- und
+Rechteckspannung ebenfalls durchgeführt.  Hierbei wird der
+Belastungswiderstand für die Sinusspannung im Bereich
+\SIrange{20}{250}{\ohm} und für die Rechteckspannung im Bereich
+\SIrange{0.1}{5}{\kilo\ohm} variert.
+
+Am Ende wird noch eine Gegenspannung (siehe \cref{fig:schaltungsbild})
+an die Monozelle angelegt, die ca. \SI{2}{\volt} größer ist. Dadurch
+fließt det Belastungsstrom in die andere Richtung und in der
+Formel~\eqref{eq:klemme} wechselt das Vorzeichen, so daß sich
+\begin{equation}
+  \label{eq:klemme-gegenspannung}
+  U_K = U_0 + I R_\text{i}
+\end{equation}
+ergibt.
