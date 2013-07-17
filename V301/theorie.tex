@@ -7,34 +7,35 @@
 Eine Spannungsquelle ist ein elektrisches Gerät, das eine über die Zeit
 konstante Leistung liefert.  Beispiele sind der Dynamo am Fahrrad, eine
 Batterie oder ein Kraftwerk.  Kenngrößen einer Spannungsquelle sind
-hierbei die Leerlaufspannung~$U_0$, die gemessen werden kann, wenn die
+hierbei die Leerlaufspannung~$U_0$, die anliegt, wenn die
 Spannungsquelle nicht durch einen Verbraucher belastet wird, und der
 Innenwiderstand, der eingeführt werden muß, um das Verhalten der
 Spannungsquelle bei Belastung, nämlich das Absinken der
-Klemmenspannung~$U_K$ zu erklären.  Um eine Beziehung zwischen den
-Größen Belastungswiderstand/-strom, Innenwiderstand, Leerlaufspannung
-und Klemmenspannung herstellen zu können, wird das Induktionsgesetz
-\eqref{eq:inductionsgesetz} aus den \name{Maxwell}-Gleichungen benötigt.
+Klemmenspannung~$U_\text{K}$ zu erklären.  Um eine Beziehung zwischen
+den Größen Belastungswiderstand/-strom, Innenwiderstand,
+Leerlaufspannung und Klemmenspannung herstellen zu können, wird das
+Induktionsgesetz
 \begin{equation}
   \label{eq:inductionsgesetz}
-  \oint_{\partial A} \vec{E} \: \d\vec{s} = \iint_A \frac{\partial
-    \vec{B}}{\partial t} \: \d\vec{A}
+  \oint_{\partial A} \vec{E} \cdot \d\vec{s} = \iint_A \frac{\partial
+    \vec{B}}{\partial t} \cdot \d\vec{A}
 \end{equation}
-Bei Abwesenheit von magnetischen Feldänderungen kann dieses Gesetz in
-eine einfachere Form, die sogenannte Maschenregel von \name{Kirchhoff}
-gebracht werden.  Sie lautet dann:
+aus den \name{Maxwell}-Gleichungen benötigt.  Bei Abwesenheit von
+magnetischen Feldänderungen kann dieses Gesetz in eine einfachere Form
 \begin{equation}
   \label{eq:maschenregel}
-  \sum_j U_0^{(j)} = \sum_k R_k I_k
+  \sum_j U_0^{(j)} = \sum_k R_k I_k,
 \end{equation}
+welche als sogenannte Maschenregel von \name{Kirchhoff} bezeichnet wird.
 
-\begin{figure}
+\begin{figure}[h]
   \centering
   \includegraphics{spannungsquelle}
   \caption{Hier ist das Ersatzschaltbild einer realen Spannungsquelle
     mit einem Belastungswiderstand in Reihe geschaltet.  Der
     gestrichelte Kasten kennzeichnet das Ersatzschaltbild einer realen
     Spannungsquelle. \cite{v301}}
+  \label{fig:ersatzschaltung}
 \end{figure}
 
 In \cref{fig:ersatzschaltung} ist ein Ersatzschaltbild einer realen
@@ -43,16 +44,37 @@ Spezialfall:
 \begin{align}
   U_0 = R_\text{i} I + R_\text{a} I\\
 \intertext{oder}
-  U_K = R_\text{a}I = U_0 - R_\text{i} I. \label{eq:klemme}
+  U_\text{K} = R_\text{a}I = U_0 - R_\text{i} I. \label{eq:klemme}
 \end{align}
 Hieraus ist unmittelbar ersichtlich, warum die Klemmenspannung mit
-zunehmendem Belastungsstrom sinkt.  Zur Messung der Leerlaufspannung
-wird ein hochohmiges Voltmeter verwendet, da somit der Term mit dem
-Innenwiderstand vernachlässigt werden kann und 
+zunehmendem Belastungsstrom sinkt.  Aus Gleichung~\eqref{eq:klemme}
+ergibt sich mit $I = U_\text{K}/R_\text{a}$:
 \begin{equation}
-  U_K \to U_0 \text{ für } R_\text{i} \to 0
+  U_\text{K} = \frac{U_0}{1 - \frac{R_\text{i}}{R_\text{a}}}.
 \end{equation}
-gilt.  Aus der Existenz eines Innenwiderstandes ergibt sich auch die
+Zur Messung der Leerlaufspannung wird ein Voltmeter mit einem im
+Vergleich zum Innenwiderstand der Spannungsquelle großen Meßwiderstand
+verwendet, wodurch für die Klemmenspannung im Grenzfall gilt:
+\begin{equation}
+  \lim_{R_\text{a}\to\infty} U_\text{K} = U_0.
+\end{equation}
+Die gemessene Klemmenspannung ist also eine Näherung für die
+Leerlaufspannung. 
+
+Aus der Existenz eines Innenwiderstandes ergibt sich auch die
 Notwendigkeit einer sogenannten Leistungsanpassung.  Der Spannungsquelle
-kann nämlich nicht nur eine beschränkte Leistung entnommen werden,
-sondern diese ist abhängig vom gewählten Belastungswiderstand~$R_a$.
+kann nämlich nur eine beschränkte Leistung entnommen werden, welche
+abhängig vom gewählten Belastungswiderstand~$R_a$ ist.  Die Leistung die
+am Verbraucher abgenommen wird, läßt als Funktion des
+Belastungswiderstandes auf"-fassen:
+\begin{equation}
+  P = I^2 R_\text{a} = U_0^2 \frac{R_a}{(R_\text{i} + R_\text{a})^2}.
+\end{equation}
+An lokalen Extremstellen der Funktion ergibt sich notwendigerweise:
+\begin{equation}
+  \td{P}{R_\text{a}} = U_0^2 \frac{R_\text{i} -
+    R_\text{a}}{(R_\text{i} + R_\text{a})^3} = 0 \iff R_\text{a} = R_\text{i}.
+\end{equation}
+Da überall $P \ge 0$ ist sowie $P(0) = 0$ und $P \to 0$ für $R_\text{a}
+\to \infty$ gilt, erreicht die Leistung für $R_\text{a} = R_\text{i}$
+ihr Maximum.
