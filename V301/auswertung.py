@@ -22,12 +22,11 @@ Ic = Ic*10**(-3)#Ampere
 Uc = Uc#Volt
 
 
-#1: U_K = f(I), K = g,r,s zeichnen
-subplot(121)
+#1: U_K = f(I) für die Monozelle zeichnen
+
 plot(Ig,Ug,"r*",label="Gleichspannung")
-subplot(122)
-plot(Ir,Ur,"k*",label="Rechteckspannung")
-plot(Is,Us,"b*",label="Sinusspannung")
+
+
 
 
 #2: Lineare Ausgleichrechnung, Steigung = -R_i, Ordinatenschnitt = U_0
@@ -37,24 +36,43 @@ plot(Is,Us,"b*",label="Sinusspannung")
 
 def f(x,A,B):
     return A*x+B
-xg=array((Ig[0],Ig[10]))
-xr=array((Ir[0],Ir[10]))
-xs=array((Is[0],Is[10]))
-subplot(121)
+
+xg= linspace(0,0.12,2)
 plot(xg,f(xg,mg,yg),"r")
+
+
+#Außerdem: Plot mit Gegenspannung
+
+plot(Ic,Uc,"b*",label="Gegenspannung")
+(mc,yc),(dmc,dyc) = linregress.linear_fit(Ic,Uc)
+xc = linspace(0,0.12,2)
+plot(xc,f(xc,mc,yc),"b")
+xlabel("I / A")
+ylabel("$U_K$ / V")
+grid()
+legend(loc="center right")
+savefig("mono.pdf")
+close()
+
+# U_K = f(I) für s und r zeichnen
+xr=linspace(0,0.01,2)
+plot(Ir,Ur,"k*",label="Messwerte(Rechteck)")
+plot(xr,f(xr,mr,yr),"k",label="Ausgleichsgerade")
 xlabel("I / A")
 ylabel("$U_K$ / V")
 grid()
 legend(loc="upper right")
-subplot(122)
-plot(xr,f(xr,mr,yr),"k")
-plot(xs,f(xs,ms,ys),"b")
+savefig("rechteck.pdf")
+close()
+
+xs=linspace(0,0.002,2)
+plot(Is,Us,"b*",label="Messwerte(Sinus)")
+plot(xs,f(xs,ms,ys),"b",label="Ausgleichsgerade")
 xlabel("I / A")
 ylabel("$U_K$ / V")
 grid()
 legend(loc="upper right")
-matplotlib.pyplot.gcf().set_size_inches(16,7)
-savefig("leerlauf.pdf")
+savefig("sinus.pdf")
 close()
 
 print("Spannungsquelle --- Innenwiderstand --- Leerlaufspannung")
@@ -63,17 +81,6 @@ print("rechtecksp. --- {} +- {} Ohm --- {} +- {} Volt".format(-mr,dmr,yr,dyr))
 print("Sinussp. --- {} +- {} Ohm --- {} +- {} Volt".format(-ms,dms,ys,dys))
 
 #3: Innenwiderstand und Leerlaufsp. der Monzelle (Gegenspannung)
-
-plot(Ic,Uc,"r*",label="Messwerte")
-(mc,yc),(dmc,dyc) = linregress.linear_fit(Ic,Uc)
-xc = array((Ic[0],Ic[10]))
-plot(xc,f(xc,mc,yc),"r",label="Ausgleichsgerade")
-grid()
-xlabel("I / A")
-ylabel("$U_K / V$")
-legend(loc="upper left")
-savefig("gegenspannung.pdf")
-close()
 
 print("--------------------------")
 print("Monozelle mit Gegenspannung")
@@ -110,10 +117,10 @@ print("Systematischer Fehler der direkten Messung = {}Volt".format(DUd))
 def N(ra):
     return (U_0ges - Rges*U_0ges/(Rges + ra))**2/ra
 
-linx = linspace(Rg[0]+0.001,Rg[10])
+linx = linspace(-0.1,52,1000)
 plot(linx,N(linx),label = "Theoriekurve")
 #Messwerte U*I gegen Ra
-plot(Rg,Ug*Ig, label = "Messwerte")
+plot(Rg,Ug*Ig,"*", label = "Messwerte")
 xlabel("$R_a$ in Ohm")
 ylabel("N in Watt")
 grid()
@@ -122,6 +129,4 @@ savefig("leistung.pdf")
 close()
 
 print("----Leistungsbetrachtung----")
-print("Deutlich erkennbarer systematischer Fehler von ca. 12 Watt")
-print("Es fällt deutlich weniger Leistung am Belastungswiderstand ab als errechnet")
-print("Anscheinend hat das Messgerät diesen Fehler verursacht")
+print("Theorie und Experiment stimmen überein")

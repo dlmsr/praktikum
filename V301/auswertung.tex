@@ -6,7 +6,8 @@
 \subsection{Leerlaufspannung und Innenwiderstand dreier Spannungsquellen}
 Die zu den verschiedenen Belastungswiderständen $R_\text{a}$ gemessenen 
 Klemmenspannungen $U_\text{K}$ und Stromstärken $I$ sind in 
-Tabelle~\ref{tab:rechtsin} sowohl für eine Rechteck-, als auch für eine 
+Tabelle~\ref{tab:rechtsin} sowohl für eine Monozelle, eine  Rechteck-, 
+als auch für eine 
 Sinusspannungsquelle eingetragen.
 %
 \begin{table}[h]
@@ -46,18 +47,38 @@ Nun wird pro Spannungsquelle eine lineare Ausgleichrechnung\footnote{Dazu
 wurde \texttt{ipython} in der Version 0.13  verwendet} 
 durchgeführt, 
 wobei die gemessenen Klemmenspannungen gegen die 
-Stromstärken betrachtet werden. In Abb.~\ref{fig:leerlauf} 
-ist ein Plot der gemessenen Klemmenspannungen gegen die Stromstärken, 
-sowie die errechneten Ausgleichsgeraden zu sehen.
+Stromstärken betrachtet werden. In den 
+Abbildungen~\ref{fig:mono},~\ref{fig:rechteck},~\ref{fig:sinus}
+sind jeweils Plots der gemessenen Klemmenspannungen gegen die 
+Stromstärken, 
+sowie der errechneten Ausgleichsgeraden zu sehen.
 
 \begin{figure}[]
 \centering
-\includegraphics[width=1.0\textwidth]{leerlauf.pdf}
+\includegraphics[width=0.8\textwidth]{mono.pdf}
 \caption{Plot der errechneten Regressionsgeraden durch die gemessenen 
-Klemmenspannungen gegen die Stromstärken. Im linken Subplot ist der Graph 
-der Gleichspannung zu sehen. Im rechten Subplot befinden sich die Ausgleichsgeraden 
-und Messwerte der Rechteck- und Sinusspannung.}
-\label{fig:leerlauf}
+Klemmenspannungen gegen die Stromstärken für die Monozelle. 
+Es sind sowohl die gemessenen 
+Spannungen mit als auch ohne angelgte Gegenspannung, sowie deren 
+Ausgleichsgeraden eingezeichnet. Die angelegte Gegenspannung 
+beträgt \SI{3.5}{\volt}}
+\label{fig:mono}
+\end{figure}
+%
+\begin{figure}[]
+\centering
+\includegraphics[width=0.8\textwidth]{rechteck.pdf}
+\caption{Plot der errechneten Regressionsgeraden durch die gemessenen 
+Klemmenspannungen gegen die Stromstärken für die Rechteckspannung.}
+\label{fig:rechteck}
+\end{figure}
+%
+\begin{figure}[]
+\centering
+\includegraphics[width=0.8\textwidth]{sinus.pdf}
+\caption{Plot der errechneten Regressionsgeraden durch die gemessenen 
+Klemmenspannungen gegen die Stromstärken für die Sinusspannung.}
+\label{fig:sinus}
 \end{figure}
 
 Die errechneten Geradengleichungen lauten 
@@ -67,7 +88,7 @@ U_\text{K} &= \SI{-60.5}{\ohm}\cdot I + \SI{0.61}{\volt}\text{ für die Rechteck
 U_\text{K} &= \SI{-654.6}{\ohm}\cdot I + \SI{1.58}{\volt}\text{ für die Sinusspannung.}
 \end{align*}
 %
-Aus diesen lassen sich nun mithilfe von Formel~\eqref{eq:klemme} die 
+Aus diesen lassen sich mithilfe von Formel~\eqref{eq:klemme} die 
 Innenwiderstände $R_\text{i}$ und Leerlaufspannungen $U_0$
 der Spannungsquellen leicht ablesen. In Tabelle~\ref{tab:leerlaufergebnis} 
 sind diese aus den Geradengleichungen extrahierten Werte, sowie dessen 
@@ -95,7 +116,7 @@ $R_\text{i}${/}\si{\ohm}&$U_{0}${/}\si{\volt}&
 $R_\text{i}${/}\si{\ohm}&$U_{0}${/}\si{\volt}&
 $R_\text{i}${/}\si{\ohm}&$U_{0}${/}\si{\volt}\\
 \midrule
-15.7(7)&1.46(3)&60.5(22)&0.61(1)&654.6(130)&1.58(1)\\
+15.7(7)&1.46(3)&60(2)&0.61(1)&650(100)&1.58(1)\\
 \bottomrule
   \end{tabular}
   \caption{Gemessene Spannungen und Stromstärken für verschiedene 
@@ -149,26 +170,17 @@ Spannungsquelle durchgeführt, wobei eine Gegenspannung von
 Mit den in dieser Tabelle eingetragenen Messwerten wird eine lineare 
 Ausgleichsrechnung durchgeführt. Es wird hierbei die Klemmenspannung 
 gegen die Stromstärke betrachtet. Ein Plot der Messwerte und der 
-Ausgleichsgeraden ist in Abb.~\ref{fig:gegenspannung} zu sehen.
-
-\begin{figure}[]
-\centering
-\includegraphics[width=0.8\textwidth]{gegenspannung.pdf}
-\caption{Plot der errechneten Regressionsgeraden durch die gemessenen 
-Klemmenspannungen gegen die Stromstärken bei angelegter Gegenspannung 
-von \SI{3.5}{\volt} an einer Monozelle.}
-\label{fig:gegenspannung}
-\end{figure}
+Ausgleichsgeraden ist in Abb.~\ref{fig:mono} zu sehen.
 
 Die lineare Ausgleichsrechnung ergibt die Geradengleichung
 \begin{equation}
-U_{K} = \SI{17.1}{\ohm}\cdot I + \SI{1.50}{\volt}
+U_\text{K} = \SI{17.1}{\ohm}\cdot I + \SI{1.50}{\volt}
 \end{equation}
 Ein Vergleich mit Formel~\eqref{eq:klemme-gegenspannung} ergibt folgende 
 Werte für die Leerlaufspannung $U_{0}$ und den 
 Innenwiderstand $R_{i}$ der Monozelle:
 \begin{align*}
-R_{i}&=\SI{17.1(7)}{\ohm}\\
+R_\text{i}&=\SI{17.1(7)}{\ohm}\\
 U_{0}&=\SI{1.50(4)}{\volt}
 \end{align*}
 Die hier angegebenen Fehler sind wieder die Fehler der linearen 
@@ -179,8 +191,8 @@ Werten für die Leerlaufspannung und dem Innenwiderstand
 und denen aus Tabelle~\ref{tab:leerlaufergebnis} gebildet, 
 ergibt sich 
 \begin{align*}
-R_{imon}&=\SI{16.4(7)}{\ohm}\\
-U_{0mon}&=\SI{1.48(4)}{\volt}
+R_\text{imon}&=\SI{16.4(7)}{\ohm}\\
+U_\text{0mon}&=\SI{1.48(4)}{\volt}
 \end{align*}
 Die Fehler sind durch eine Gaußsche Fehlerfortpflanzung des arithmetischen 
 Mittels errechnet worden, was einfach dem arithmetischen Mittel der 
@@ -202,13 +214,15 @@ Wert von
 Die in Tabelle~\ref{tab:gegenspannung} eingetragenen Werte werden nun 
 verwendet, um die am Belastungswiderstand verrichtete Leistung 
 $N = U\cdot I$ zu berechnen. In Abb.~\ref{fig:leistung} ist diese Leistung 
-gegen den Belastungswiederstand $R_{a}$ aufgetragen. 
+gegen den Belastungswiederstand $R_\text{a}$ aufgetragen. 
 Im selben Diagramm ist der nach Formel~\eqref{eq:leistungsformel} 
 berechnete theoretische Leistungsabfallverlauf in Abhängigkeit von 
 $R_\text{a}$ eingezeichnet.
 \begin{equation}
 \label{eq:leistungsformel}
-N(R_\text{a})=\frac{(U_{0}-\frac{R_{i}U_{0}}{R_{i}+R_{a}})^2}{R_{a}}
+N(R_\text{a})=\frac{(U_{0}-\frac{R_\text{i}U_{0}}
+{R_\text{i}+R_\text{a}})^2}{R_\text{a}} = \frac{U_{0}^2R_\text{a}}
+{(R_\text{a} + R_\text{i})^2}
 \end{equation}
 Es werden hierbei die in diesem Protokoll errechneten Werte für den 
 Innenwiderstand $R_{i}$ und der Leerlaufspannung $U_{0}$ 
