@@ -1,0 +1,233 @@
+#+TITLE: Versuch 351. Fourieranalyse und -synthese
+#+AUTHOR: Daniel Meißner \and{} Kevin Moch
+#+LATEX_CLASS: scrartcl
+#+LATEX_HEADER: \usepackage{amsmath}
+#+LATEX_HEADER: \usepackage{siunitx}
+#+LATEX_HEADER: \usepackage{lmodern}
+#+LATEX_HEADER: \usepackage[german]{babel}
+
+* Einleitung
+  Wir führen in unserem Versuch eine Fourieranalyse und -synthese von drei
+  verschiedenen Signalen durch (Rechtecksignal, Dreiecksignal und
+  Sägezahnsignal).
+
+* Mathematischer Hintergrund
+  Gegenstand der Fouriertheorie ist es, beliebige Funkionen mithilfe der
+  trigonometrischen Funktionen Sinus und Cosinus zu approximieren. Es werden
+  sogenannte Fourierpolynome definiert, aus denen dann eine sogenannte
+  Fourierreihe wird, wenn der Grad der Polynome gegen unendlich strebt.
+
+** Fourierpolynome
+   Das Fourierpolynom $n$-ten Grades zur quadratintegrablen Funktion $f$
+   in reeller Darstellung hat folgende Form: 
+
+   \begin{equation}
+     p_n(x) = a_0 + \sum_{k=1}^n (a_k \cos(kx) + b_k \sin(kx))
+   \end{equation}
+
+   Dabei gilt \(x \in \mathbb R\) und für die Koeffizienten $a_k$ und
+   $b_k$ (\(k = 1, 2, 3, \ldots\)) gilt:
+
+   \begin{align}
+     a_0 &= \frac{1}{2\pi} \int_{-\pi}^\pi f(x) dx\\
+     a_k &= \frac{1}{\pi} \int_{-\pi}^\pi f(x) \cos(kx) dx\\
+     b_k &= \frac{1}{\pi} \int_{-\pi}^\pi f(x) \sin(kx) dx
+   \end{align}
+
+** Der Fouriersche Entwicklungssatz
+   Der Fouriersche Entwicklungssatz besagt nun, daß eine Reihe
+
+   \begin{equation}
+     \Bigr(\sum_{k=1}^n p_n(x))\Bigr)\text{, }
+   \end{equation}
+
+   die im quadratischen Mittel gegen $f$ konvergiert, Fourierreihe von $f$
+   heißt. Häufig wird auch gesagt, $f$ werde in eine Fourierreihe entwickelt.
+
+** Das Gibbsche Phänomen
+   Das Gibbsche Phänomen tritt bei Funktionen auf, die Unstetigkeitsstellen
+   aufweisen. Möchte man diese Funktionen durch eine Fourier-Reihe
+   approximieren, gelingt dies an den Stellen, an denen die Funktion
+   unstetig ist, nicht. Statt dessen tritt dort eine endliche Abweichung
+   auf, die mit wachsendem Grad der Polynome nicht kleiner wird.
+   
+** Die Fouriertransformation
+   Die Fouriertransformation bietet die Möglichkeit das Frequenzspektrum
+   einer Funktion direkt zu bestimmen. Dabei erhält man eine Funktion
+   \(\mathcal Fx\), die zu einer gegebenen Frequenz $s$ die
+   entsprechende Amplitude ausgibt. Die Transformation lautet so:
+
+   Zu einer über \(\mathbb R\) integrierbaren Funktion $x$ ist die
+   Fouriertransformation definiert durch
+   \[
+   \mathcal Fx(s) = \int_{-\infty}^\infty \mathrm e^{-ist}x(t)\mathrm dt
+   \]
+   für \(s \in \mathbb R\).
+
+** Berechnung der Fourierreihen
+
+*** Rechteckspannung
+    Sei die Funktion $F\colon [0, 2\pi] \to \mathbb{R}$ definiert durch
+    \begin{equation}
+    F(t) = 
+    \begin{cases} 
+    A, & 0 \le t \le \pi\\
+    0, & \pi < t \le 2\pi
+    \end{cases}.
+    \end{equation}
+    Die Fourierreihe lautet dann:
+    \begin{equation}
+    F(t) = A/2 + \sum_{n = 1}^\infty \frac{2 A}{(2n - 1) \pi} \sin(2n - 1) t.
+    \end{equation}
+
+*** Dreieckspannung
+    Sei die Funktion $F\colon [0, 2\pi] \to \mathbb{R}$ definiert durch
+    \begin{equation}
+    F(t) = 
+    \begin{cases}
+    A(1 - t/\pi), & 0 \le t \le \pi\\
+    -A(1 - t/\pi), & \pi < t \le 2\pi
+    \end{cases}.
+    \end{equation}
+    Dann lautet die Fourierreihe:
+    \begin{equation}
+    F(t) = A/2 - \frac{4 A}{\pi^2} \sum_{n = 1}^\infty 
+    \frac{\sin(2n - 1)t}{(2n - 1)^2}.
+    \end{equation}
+
+*** Sägezahnspannung
+    Sei die Funktion $F\colon [0, 2\pi] \to \mathbb{R}$ definiert durch
+    \begin{equation}
+    F(t) = \frac{A t}{2 \pi} \text{ für } 0 \le t \le 2\pi.
+    \end{equation}
+    Dann ist die Fourierreihe gegeben durch:
+    \begin{equation}
+    F(t) = A/2 - A/\pi \sum_{n=1}^\infty \frac{\sin(nt)}{n}.
+    \end{equation}
+
+* Durchführung und Auswertung
+  
+** Fourier-Analyse mit FFT
+   
+   Bei der Fourier-Analyse lassen wir uns vom Funktionsgenerator jeweils
+   eine Dreieck-, Rechteck- und Sägezahnspannung generieren.  Die
+   erzeugten Signale werden vom Oszilloskop mittels einer
+   Fast-Fourier-Transformation (FFT) in das Frequenzspektrum umgerechnet
+   und angezeigt. Die Amplituden und Frequenzen vermessen wir mithilfe
+   des Cursors am Oszilloskop.
+   
+   Die Spannung V_pp (Volts from peak to peak) beträgt bei allen
+   Kurvenformen 10 V. Die Frequenz beträgt immer 100 kHz.
+   
+   In den nachfolgenden Tabellen ist der relative Fehler nur für die
+   Amplitudenverhältnisse angegeben. Dafür verwenden wir die folgende Formel
+   
+   \begin{equation}
+   \Delta A/A_t = \left\vert \frac{A_g-A_t}{A_t} \right\vert
+   \end{equation}
+   
+   Hierbei ist $A_g$ der gemessene Wert und $A_t$ der aus der Theorie
+   bestimmte Wert. In den Tabellen sind die Oberschwingungen gelistet, wobei
+   die 0. Oberschwingung die Grundschwingung bezeichnet.
+   
+*** Dreieckspannung
+
+    In Tabelle 1 sieht man die vom Oszilloskop errechneten Amplitudenwerte
+    für die jeweiligen Frequenzen im Spektrum. Dabei treten natürlich nur
+    ungerade Vielfache der Grundschwingung auf wie man es im Theorieteil
+    erkennen kann. Dieses Spektrum kann man auch in der Abbildung 1 sehen.
+    
+*** Rechteckspannung
+
+    Die vom Oszilloskop bestimmten Amplitudenwerte des Frequenzspektrums
+    kann man der Tabelle 2 entnehmen. Auch hier treten nur ungerade
+    Vielfache der Grundschwingung auf. Das Spektrum ist in Abbildung 2 zu
+    sehen.
+
+*** Sägezahnspannung
+
+    Das Oszilloskop hat die in Tabelle 3 dargestellten Werte für die
+    Amplituden des Frequenzspektrums errechnet. Ein Plot des Spektrums ist
+    in Abbildung 3 dargestellt.
+
+** Fourier-Synthese
+
+   Bei der Fourier-Synthese werden mit einem Oberwellengenerator bis zu neun
+   Sinus-Schwingungen mit ganzzahligen Frequenzverhältnissen so eingestellt,
+   daß die Amplitudenverhältnisse und Phasen denjenigen der Komponenten in
+   Relation zur Grundschwingung mit denen der berechneten
+   übereinstimmen. Die Amplituden werden mithilfe eines Millivoltmeters
+   überprüft und eingestellt.
+
+   Die Phasen werden eingestellt, indem man die Grundschwingung auf den
+   X-Eingang des Oszilloskop und die einzustellende Oberschwingung auf
+   den Y-Eingang legt. Nachdem der XY-Modus des Oszilloskops
+   eingeschaltet worden ist, erkennt man auf dem Monitor eine
+   Lissajous-Figur. Da wir nur gerade Funktionen synthetisieren wollen,
+   müssen alle Phasen $\phi = 0$ sein. Dazu haben wir bei allen
+   Komponenten die Phase so eingestellt, daß wir entartete Figuren sehen
+   konnten, d. h. die ungeraden Phasen $\phi = 0$ und die geraden Phasen
+   $\phi = \pi/2$. Dann wird mit den Kippschaltern am
+   Oberwellengenerator gearbeitet, um die geraden Phasen auf null zu
+   kippen. Das wird gemacht, weil man an den entarteten Figuren besser
+   erkennen kann, welche Phase eingestellt ist.
+
+   Anschließend wird die Summenspannung auf dem Oszilloskop
+   ausgegeben. Dieses Vorgehen wenden wir bei allen drei zu erzeugenden
+   Kurvenformen an.
+
+   Wenn die synthetisierte Kurvenform zu stark von der gewünschten abweicht,
+   schalten wir nur die Grundschwingung ein und dann nacheinander die
+   Oberschwingungen, um erkennen zu können, wo das Problem liegt. Dann
+   benutzen wir die Kippschalter am Oberwellengenerator, um die Phasen um
+   90, 180 oder 270 Grad zu kippen.
+
+*** Dreieckspannung
+
+    In der Tabelle 4 sind die eingestellten und theoretischen Amplituden mit
+    ihren relativen Fehlern dargestellt. Das Ergebnis der Synthese kann man
+    in Abbildung 4 erkennen. Natürlich wurden nur die Oberschwingungen zur
+    Summenspannung hinzugenommen, die ein ungerades Frequenzverhältnis zur
+    Grundschwingung haben.
+
+*** Rechteckspannung
+
+    In Tabelle 5 sind die theoretischen und verwendeten Amplituden samt
+    ihrer relativen Fehler gelistet. In Abbildung 5 kann man das Ergebnis
+    der Synthese betrachten. Auch hier werden nur diejenigen
+    Oberschwingungen eingeschaltet, die ein ungerades Frequenzverhältnis
+    haben.
+    
+*** Sägezahnspannung
+
+    Tabelle 6 stellt die verwendeten und berechneten Amplituden mit ihren
+    relativen Fehlern dar. Es werden hier alle Oberschwingungen, die mit dem
+    Oberwellengenerator eingestellt werden können, verwendet. Das Ergebnis
+    sieht man in Abbildung 6.
+   
+* Diskussion
+  
+** Zur Fourier-Transformation
+   
+   Bei der Fourier-Transformation gibt es einen systematischer Fehler bei
+   den Frequenzen. Diese sind immer exakt 12.5 kHz größer als die
+   berechneten Frequenzen. Dies liegt sehr wahrscheinlich daran, dass die
+   gesamte Frequenzachse auf dem Oszilloskop um 12,5 kHz verschoben ist.
+   Die gemessenen Amplitudenverhältnisse passen sehr gut zur Theorie.
+   Die relativen Fehler betragen maximal 12.7 %, meistens aber deutlich
+   weniger.  Diese Fehler lassen sich nicht vermeiden, da das
+   Oszilloskop nur über einen endlichen Zeitraum Meßwerte aufnehmen kann.
+   
+** Zur Fourier-Synthese
+   
+   Die benötigten Amplitudenverhältnisse sind bis zu 3.6 % (einmal 12.4
+   %) genau eingestellt, allerdings war die Phase zunächst nicht bei
+   allen Komponenten korrekt, aber nach Betätigen der Kippschalter wurde
+   die synthetisierte Kurvenform deutlich besser.  Lediglich bei der
+   Sägezahnspannung weicht das Ergebnis vom erwünschten Ergebnis stark
+   ab. Da die Amplitudenverhältnisse sehr genau eingestellt wurden, kann
+   diese Abweichung nur von inkorrekten Phasen in einigen Komponenten
+   herrühren.
+   
+* Literatur
+  Arens, T. et al. Mathematik. Spectrum Verlag
