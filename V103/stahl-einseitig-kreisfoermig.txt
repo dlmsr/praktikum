@@ -2,7 +2,7 @@
 # Attribution-NonCommercial 3.0 Unported License. To view a copy of this
 # license, visit http://creativecommons.org/licenses/by-nc/3.0/.  
 
-# x/cm  D_v/μm  D_n/μm
+# x/cm  D_v/mum  D_n/mum
   2.7     550     510 
   5.0     600     470 
   9.0     600     220 
