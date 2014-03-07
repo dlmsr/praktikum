@@ -1,0 +1,3 @@
+#Zeitlicher Abstand zwischen Einlaufendem & refl. Signal in ns
+#rot	#schwarz	#gruen	#trommel
+18	116	85	822
