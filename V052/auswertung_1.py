@@ -1,7 +1,6 @@
 from numpy import *
 from matplotlib.pyplot import *
 from scipy.optimize import curve_fit
-import linregress
 
 #Konstanten
 c= 2.998*10**8 #m/s  Lichtgeschwindigkeit
@@ -13,7 +12,7 @@ v_schwarz,C_schwarz,L_schwarz,R_schwarz = loadtxt("RLC_Messung_schwarz.txt",unpa
 v_trommel,C_trommel,L_trommel,R_trommel = loadtxt("RLC_Messung_trommel.txt",unpack=True)
 zeit_rot,zeit_schwarz,zeit_gruen,zeit_trommel = loadtxt("Laengenmessung.txt",unpack=True)
 
-ampl_vorher,ampl_nachher = loadtxt("FTT.txt",unpack=True)
+ampl_vorher,ampl_nachher = loadtxt("FFT.txt",unpack=True)
 
 t1,U1 = loadtxt("k2b3.txt",unpack=True)
 t2,U2 = loadtxt("k2b4.txt",unpack=True)
@@ -61,8 +60,11 @@ def G(R,C,L):
     return R*C/L
 
 G_rot = G(R_rot,C_rot,L_rot) #Siemens/m
+G_rot_ges = G_rot*laenge_rot #Siemens
 G_schwarz = G(R_schwarz,C_schwarz,L_schwarz) #Siemens/m
+G_schwarz_ges =G_schwarz*laenge_schwarz #Siemens
 G_trommel = G(R_trommel,C_trommel,L_trommel) #Siemens/m
+G_trommel_ges = G_trommel*laenge_trommel #Siemens
 
 ##Plot der Werte
 #Widerstände
@@ -111,7 +113,7 @@ show()
 
 
 #Dämpfungskonstante
-#Einfach FTT-Amplitude Vorher/Nachher
+#Einfach FFT-Amplitude Vorher/Nachher
 a_array = ampl_vorher/ampl_nachher
 a = mean(a_array)
 da = std(a_array)/sqrt(len(a_array))
