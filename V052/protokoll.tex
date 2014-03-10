@@ -52,6 +52,8 @@ letzten kommen durch die endliche Leitfähigkeit des
 Leitermaterials (Längsspannungsverluste) und dielektrische
 Verlustströme zwischen der Isolierung der beiden Leiter zustande.
 
+\subsection{Telegraphengleichung}
+
 Im allgemeinen ergibt sich durch Betrachtung der Ersatzschaltung
 ein System gekoppelter partieller Differentialgln. für $U$ und
 $I$.  Im Falle konstanter Beläge kann dieses entkoppelt werden
@@ -63,18 +65,50 @@ und es folgt eine verallgemeinerte Wellengleichung:
 \end{equation}
 %
 Diese Gleichung wird auch oft als Telegraphengleichung
-bezeichnet.  Die Lösungen sind gedämpfte, hin- und
-rücklaufende harmonische Wellen:
+bezeichnet.  Die Lösungen sind gedämpfte, hin- und rücklaufende
+harmonische Wellen:
 %
 \begin{equation}
 \label{eq:loesung}
-U(t, x) = U_0 \,e^{\mathrm{i}\omega t - \gamma x}
+U(t, x) = U_0 \,e^{\mathrm{i}\omega t \pm \gamma x}
 \end{equation}
 %
 Der Faktor $\gamma = \alpha + \mathrm{i}\beta
 = \sqrt{(R+\mathrm{i} \omega L)(G + \mathrm{i} \omega C)}$ heißt
 Ausbreitungskonstante, $\alpha$ heißt Dämpfungsbelag und $\beta$
-heißt Phasenbelag.
+heißt Phasenbelag.  Die Phasengeschwindigkeit der Welle ist daher
+frequenzabhängig und führt zu einer Verzerrung des Signals.
+
+\subsection{Leitungswellenwiderstand}
+
+Die Art der Verzerrung wird vom Leitungswellenwiderstand
+beeinflußt, welcher durch das Verhältnis von Strom- und
+Spannungswellen, die sich in eine gemeinsame Richtung ausbreiten,
+bestimmt ist.  Für ein sinusförmiges Signal mit der Frequenz
+$\omega$ ist der Wellenwiderstand daher
+%
+\begin{equation}
+\label{eq:wellenwiderstand}
+Z_0 = \frac{U(\omega)}{I(\omega)} = \sqrt{\frac{R + \mathrm{i} \omega
+L}{G + \mathrm{j} \omega C}}.
+\end{equation}
+%
+
+\subsection{Spannungs- und Strompulse}
+
+In der Digital- und Nachrichtentechnik haben die Signale, die
+über eine Leitung übertragen werden, oft die Form eines Pulses.
+Die Lösungen der entsprechenden Telegraphengleichung haben dann
+die Form eines hin- und rücklaufenden Pulses, der durch die
+Reflexion am Leitungsende entsteht.  Der Quotient
+%
+\begin{equation}
+\Gamma = \frac{U_\text{r}}{U_0} = \frac{Z_L - Z_0}{Z_L + Z_0}
+\end{equation}
+%
+heißt Reflexionsfaktor.  Mit seiner Hilfe kann die Form der
+rücklaufenden Welle aus dem Eingangspuls berechnet werden.  Dazu
+wird die \name{Laplace}-Transformation verwendet.
 
 \section{Durchführung}
 
