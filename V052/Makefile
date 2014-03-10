@@ -7,12 +7,12 @@
 all : ersatzschaltung.eps protokoll.pdf
 
 clean:
-	rm -f protokoll.aux protokoll.log protokoll.pdf	\
+	-rm protokoll.aux protokoll.log protokoll.pdf	\
 	protokoll.out protokoll.run.xml protokoll.toc	\
 	protokoll.bcf ersatzschaltung.eps
 
 %.pdf : %.tex
-	pdflatex $<
+	@pdflatex $< > /dev/null
 
 %.eps : %.svgz
-	inkscape --export-eps=$@ $<
+	@inkscape --export-eps=$@ $<

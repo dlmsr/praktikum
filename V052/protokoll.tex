@@ -33,15 +33,32 @@ Kevin Moch\\
 
 \section{Einleitung}
 
+In diesem Versuch soll das Verhalten von elektrischen Signalen in 
+Leitungen, insbesondere in Koaxialkabeln, untersucht werden.
+Dabei werden sowohl leitungsspezifische Konstanten bestimmt, 
+als auch zeitliche Verläufe von Signalen beobachtet.
+\FloatBarrier
+
 \section{Theorie}
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.6]{ersatzschaltung}
+\label{fig:ersatz}
+\caption{%
+Ersatzschaltung eines Koaxialkabels zwischen $x$ und $x + \d x$.  Die
+Größen $R, L, G, C$ heißen Leitungskonstanten oder Leitungsbeläge.  Bei
+einer verlustfreien Leitung ist $R = G = 0$.  Durch eine Betrachtung
+dieser Ersatzschaltung kann die Telegraphengleichung hergeleitet
+werden.}
+\end{figure}
 
 Die Beschreibung der Ausbreitung von Signalen auf Leitungen ist
 Gegenstand der Leitungstheorie.  Eine Leitung (zum Beispiel eine
-Koaxialleitung, die in diesem Versuch verwendet wird) kann durch
-zwei parallel verlaufende Leiter modelliert werden.  Ziel der
-Leitungstheorie ist es, den zeitlichen Verlauf von Stromstärke
-$I(t, x)$ und Spannung $U(t, x)$ an jedem Ort $x$ der Leitung zu
-bestimmen.
+Koaxialleitung, die in diesem Versuch verwendet wird) kann durch zwei
+parallel verlaufende Leiter modelliert werden.  Grundaufgabe der
+Leitungstheorie ist es, den zeitlichen Verlauf von Stromstärke $I(t, x)$
+und Spannung $U(t, x)$ an jedem Ort $x$ der Leitung zu bestimmen.
 
 Dazu wird ein Leitungstück von $x$ nach $x + \d x$ durch die
 Ersatzschaltung aus Abbildung~\ref{fig:ersatz} dargestellt.  Die
@@ -90,7 +107,7 @@ $\omega$ ist der Wellenwiderstand daher
 \begin{equation}
 \label{eq:wellenwiderstand}
 Z_0 = \frac{U(\omega)}{I(\omega)} = \sqrt{\frac{R + \mathrm{i} \omega
-L}{G + \mathrm{j} \omega C}}.
+L}{G + \mathrm{j} \omega C}}\:.
 \end{equation}
 %
 
@@ -108,7 +125,19 @@ Reflexion am Leitungsende entsteht.  Der Quotient
 %
 heißt Reflexionsfaktor.  Mit seiner Hilfe kann die Form der
 rücklaufenden Welle aus dem Eingangspuls berechnet werden.  Dazu
-wird die \name{Laplace}-Transformation verwendet.
+wird die \name{Laplace}-Transformation verwendet.  Sei nämlich
+$\tilde{U}_0(s)$ die \name{Laplace}-Transformierte der Spannung
+des einlaufenden und $\tilde{U}_\text{r}(s)$
+die \name{Laplace}-Transformierte der Spannung des reflektierten
+Signals am Ort $x$ zur Zeit $t$, dann gilt
+%
+\begin{equation}
+\tilde{U}_\text{r}(s) = \Gamma\, \tilde{U}_0(s).
+\end{equation}
+%
+Aus der Umkehrung dieser Formel unter Ausnutzung der
+inversen \name{Laplace}-Transformation der zeitliche Verlauf der
+Spannung $U_\text{r}(t, x)$ bestimmt werden.
 
 \section{Durchführung}
 
