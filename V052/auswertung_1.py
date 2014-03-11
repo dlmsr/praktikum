@@ -1,9 +1,9 @@
+# encoding: utf-8
+
 from numpy import *
 from matplotlib.pyplot import *
 from scipy.optimize import curve_fit
-
-#Konstanten
-c= 2.998*10**8 #m/s  Lichtgeschwindigkeit
+from scipy.constants import c #importiere Lichtgeschwindigkeit
 
 #Messwerte laden
 
@@ -72,7 +72,7 @@ subplot(221)
 plot(v_rot*10**(-3),R_rot,'r*',label="Rotes Kabel")
 plot(v_schwarz*10**(-3),R_schwarz,'k*',label="schwarzes Kabel")
 plot(v_trommel*10**(-3),R_trommel,'b*',label="Kabeltrommel")
-title("Widerstandsbeläge")
+title(u"Widerstandsbeläge")
 xlabel("Frequenz v in kHz")
 ylabel("Ohm/m")
 legend(loc='center')
@@ -82,7 +82,7 @@ subplot(222)
 plot(v_rot*10**(-3),L_rot*10**6,'r*',label="Rotes Kabel")
 plot(v_schwarz*10**(-3),L_schwarz*10**6,'k*',label="schwarzes Kabel")
 plot(v_trommel*10**(-3),L_trommel*10**6,'b*',label="Kabeltrommel")
-title("Induktivitätsbeläge")
+title(u"Induktivitätsbeläge")
 xlabel("Frequenz v in kHz")
 ylabel("mikroH/m")
 legend(loc='center')
@@ -92,7 +92,7 @@ subplot(223)
 plot(v_rot*10**(-3),C_rot*10**9,'r*',label="Rotes Kabel")
 plot(v_schwarz*10**(-3),C_schwarz*10**9,'k*',label="schwarzes Kabel")
 plot(v_trommel*10**(-3),C_trommel*10**9,'b*',label="Kabeltrommel")
-title("Kapazitätsbeläge")
+title(u"Kapazitätsbeläge")
 xlabel("Frequenz v in kHz")
 ylabel("nF/m")
 legend(loc='center')
@@ -102,7 +102,7 @@ subplot(224)
 plot(v_rot*10**(-3),G_rot*10**6,'r*',label="Rotes Kabel")
 plot(v_schwarz*10**(-3),G_schwarz*10**6,'k*',label="schwarzes Kabel")
 plot(v_trommel*10**(-3),G_trommel*10**6,'b*',label="Kabeltrommel")
-title("Querleitbeläge")
+title(u"Querleitbeläge")
 xlabel("Frequenz v in kHz")
 ylabel("mikroS/m")
 legend(loc='center')
