@@ -9,6 +9,7 @@
 \newcommand{\pd}[2]{%
 \ensuremath{\frac{\partial #1}{\partial #2}}}
 \renewcommand{\d}{\ensuremath{\mathrm{d}}}
+\newcommand{\iunt}{\ensuremath{\mathrm{i}}} % imaginary unit
 
 \titlehead{{TU Dortmund \hfill WS~13/14\\}
 Fakultät Physik\\ Fortgeschrittenenpraktikum}
@@ -46,11 +47,11 @@ als auch zeitliche Verläufe von Signalen beobachtet.
 \includegraphics[scale=0.6]{ersatzschaltung}
 \label{fig:ersatz}
 \caption{%
-Ersatzschaltung eines Koaxialkabels zwischen $x$ und $x + \d x$.  Die
-Größen $R, L, G, C$ heißen Leitungskonstanten oder Leitungsbeläge.  Bei
-einer verlustfreien Leitung ist $R = G = 0$.  Durch eine Betrachtung
-dieser Ersatzschaltung kann die Telegraphengleichung hergeleitet
-werden.}
+Ersatzschaltung eines Koaxialkabels zwischen $x$ und $x + \d x$.
+Die Größen $R, L, G, C$ heißen Leitungskonstanten oder
+Leitungsbeläge.  Bei einer verlustfreien Leitung ist $R = G = 0$.
+Durch eine Betrachtung dieser Ersatzschaltung kann die
+Telegraphengleichung hergeleitet werden.}
 \end{figure}
 
 Die Beschreibung der Ausbreitung von Signalen auf Leitungen ist
@@ -87,11 +88,11 @@ harmonische Wellen:
 %
 \begin{equation}
 \label{eq:loesung}
-U(t, x) = U_0 \,e^{\mathrm{i}\omega t \pm \gamma x}
+U(t, x) = U_0 \,e^{\iunt\omega t \pm \gamma x}
 \end{equation}
 %
-Der Faktor $\gamma = \alpha + \mathrm{i}\beta
-= \sqrt{(R+\mathrm{i} \omega L)(G + \mathrm{i} \omega C)}$ heißt
+Der Faktor $\gamma = \alpha + \iunt \beta
+= \sqrt{(R+\iunt \omega L)(G + \iunt \omega C)}$ heißt
 Ausbreitungskonstante, $\alpha$ heißt Dämpfungsbelag und $\beta$
 heißt Phasenbelag.  Die Phasengeschwindigkeit der Welle ist daher
 frequenzabhängig und führt zu einer Verzerrung des Signals.
@@ -106,8 +107,8 @@ $\omega$ ist der Wellenwiderstand daher
 %
 \begin{equation}
 \label{eq:wellenwiderstand}
-Z_0 = \frac{U(\omega)}{I(\omega)} = \sqrt{\frac{R + \mathrm{i} \omega
-L}{G + \mathrm{j} \omega C}}\:.
+Z_0 = \frac{U(\omega)}{I(\omega)} = \sqrt{\frac{R + \iunt \omega
+L}{G + \iunt \omega C}}\:.
 \end{equation}
 %
 
@@ -120,25 +121,120 @@ die Form eines hin- und rücklaufenden Pulses, der durch die
 Reflexion am Leitungsende entsteht.  Der Quotient
 %
 \begin{equation}
-\Gamma = \frac{U_\text{r}}{U_0} = \frac{Z_L - Z_0}{Z_L + Z_0}
+\Gamma = \frac{U_\text{r}}{U_0} = \frac{Z_\text{L} - Z_0}{Z_\text{L} + Z_0}
 \end{equation}
 %
-heißt Reflexionsfaktor.  Mit seiner Hilfe kann die Form der
-rücklaufenden Welle aus dem Eingangspuls berechnet werden.  Dazu
-wird die \name{Laplace}-Transformation verwendet.  Sei nämlich
-$\tilde{U}_0(s)$ die \name{Laplace}-Transformierte der Spannung
-des einlaufenden und $\tilde{U}_\text{r}(s)$
-die \name{Laplace}-Transformierte der Spannung des reflektierten
-Signals am Ort $x$ zur Zeit $t$, dann gilt
+heißt Reflexionsfaktor, wobei $Z_L$ hier die Lastimpedanz am Verbraucher
+darstellt.  Mit seiner Hilfe kann die Form der rücklaufenden Welle aus
+dem Eingangspuls berechnet werden.  Dazu wird
+die \name{Laplace}-Transformation verwendet.  Sei nämlich
+$\tilde{U}_0(s)$ die \name{Laplace}-Transformierte der Spannung des
+einlaufenden und $\tilde{U}_\text{r}(s)$
+die \name{Laplace}-Transformierte der Spannung des reflektierten Signals
+am Ort $x$ zur Zeit $t$, dann gilt
 %
 \begin{equation}
+\label{eq:reflex}
 \tilde{U}_\text{r}(s) = \Gamma\, \tilde{U}_0(s).
 \end{equation}
 %
 Aus der Umkehrung dieser Formel unter Ausnutzung der
 inversen \name{Laplace}-Transformation der zeitliche Verlauf der
-Spannung $U_\text{r}(t, x)$ bestimmt werden.
+Spannung $U_\text{r}(t, x)$ bestimmt werden.  Je nach
+Leitungsabschluß ergeben sich hier verschiedene Signalformen.  Im
+Fall $Z_\text{L} = Z_0$ liegt die sogenannte Leitungsanpassung vor,
+d.\,h. der Reflexionsfaktor $\Gamma = 0$ und es gibt keine
+reflektierte Welle.
 
-\section{Durchführung}
+\subsection{Ausgewählte Leitungsabschlüsse}
+In diesem Abschnitt werden die Signalverläufe zu drei verschiedenen
+Abschlußwiderständen berechnet.  Die erhaltenen Funktionen werden später
+verwendet, um eine Ausgleichsrechnung mit den aufgenommenen Meßwerten
+durchzuführen.  Der einlaufende Signalverlauf\footnote{Die Amplitude
+wird hier auf 1 normiert, um die Rechnungen nicht zu überladen.  Da
+die \name{Laplace}-Transformation eine lineare Abbildung ist, kann ein
+Faktor für die Amplitude nachträglich hinzugefügt werden.}
+kann mit der \name{Heaviside}-Funktion~$\Theta$ so geschrieben werden:
+%
+\begin{equation}
+U_0(t) = \Theta(t).
+\end{equation}
+%
+Die \name{Laplace}-Transformierte lautet dann $\tilde{U}_0(s) = s^{-1}$.
+Mit Formel~\eqref{eq:reflex} wird daraus der Reflex am Leitungsende
+berechnet.
+
+\paragraph{Abschluß durch Induktivität}  Im Falle einer Induktivität als
+Abschluß ist $Z_\text{L} = \iunt\omega L$  und damit ergibt sich für $s
+= \iunt\omega$ der Reflexionsfaktor zu
+%
+\begin{equation}
+\Gamma = \frac{sL - Z_0}{sL + Z_0} = \frac{s - \tau^{-1}}{s + \tau^{-1}}
+\end{equation}
+%
+mit $\tau := L/Z_0$. Jetzt wird gemäß Formel~\eqref{eq:reflex} das
+reflektierte Signal berechnet.  Zerlege dazu $\Gamma \tilde{U}_0(s)$ in
+Partialbrüche:
+%
+\begin{equation}
+\tilde{U}_\text{r}(s) = \Gamma\tilde{U}_0(s) = \frac{s - \tau^{-1}}{s(s
++ \tau^{-1})} = \frac{2}{s + \tau^{-1}} - \frac{1}{s}
+\end{equation}
+%
+Nach den Eigenschaften der \name{Laplace}-Transformation bezüglich
+Translation das reflektierte Signal für $t>0$ erhalten:
+%
+\begin{equation}
+\label{eq:ind_reflex}
+U_\text{r}(t) = 2e^{-\frac{t}{\tau}} - 1.
+\end{equation}
+
+\paragraph{Abschluß durch Induktivität und ohmschen Widerstand}  In
+diesem Fall wird $Z_\text{L} = R + \iunt \omega L$ und der
+Reflexionsfaktor lautet 
+%
+\begin{equation}
+\Gamma = \frac{R + sL - Z_0}{R + sL - Z_0} = \frac{s + (R-Z_0)L^{-1}}{s + \tau^{-1}}
+\end{equation}
+%
+mit $\tau = L/(Z_0 + R)$.  Jetzt wird analog zu oben verfahren.  Eine
+Partialbruchzerlegung von $\Gamma \tilde{U}_0(s)$ liefert:
+%
+\begin{equation}
+\tilde{U}_\text{r} (s) = \Gamma \tilde{U}_0(s) = \frac{s + (R -
+Z_0)L^{-1}}{s(s + \tau^{-1})} = \frac{\Gamma_0}{s} + \frac{1
+- \Gamma_0}{s + \tau^{-1}}
+\end{equation}
+%
+mit $\Gamma_0 = \frac{R - Z_0}{R + Z_0}$.  Daraus wird das reflektierte
+Signal durch Rücktransformation erhalten:
+%
+\begin{equation}
+\label{eq:ind_ohm_reflex}
+U_\text{r}(t) = \Gamma_0 + (1 - \Gamma_0) e^{-t/\tau}.
+\end{equation}
+
+\paragraph{Abschluß durch Kapazität und ohmschen Widerstand}  Hier ist
+$Z_\text{L} = R + \frac{1}{\iunt \omega C}$.
+
+\subsection{Mehrfachreflexionen}
+
+\section{Versuchsaufbau und Durchführung}
+
+Zum Versuch werden verschiedene Meßgeräte, einige Abschlußwiderstände
+und die zu untersuchenden Koaxialkabel selbst benötigt.  Dazu stehen vier
+verschiedene Koaxialkabel zur Verfügung.
+
+\subsection{Bestimmung der Kabellänge}
+
+Um die Länge eines Kabels zu bestimmen, wird ein Spannungspuls auf das
+Kabel gegeben und dann mithilfe eines Oszilloskops die Zeitdifferenz
+zwischen einlaufendem und reflektiertem Signal bestimmt.
+
+\subsection{Bestimmung der Leitungskonstanten}
+
+Zur Bestimmung der Leitungskonstanten wird das zu vermessene Kabel an
+das RLC-Meßgerät angeschlossen, welches automatisch die entsprechenden
+Gesamtimpedanzen anzeigt.
 
 \end{document}
