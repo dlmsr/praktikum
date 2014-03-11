@@ -12,7 +12,10 @@ clean:
 	protokoll.bcf ersatzschaltung.eps
 
 %.pdf : %.tex
-	@pdflatex $< > /dev/null
+	@pdflatex \\nonstopmode\\input{$(*F)}
+	-@bibtex $(*F)
+	@pdflatex \\nonstopmode\\input{$(*F)}
+	@pdflatex \\nonstopmode\\input{$(*F)}
 
 %.eps : %.svgz
 	@inkscape --export-eps=$@ $<
