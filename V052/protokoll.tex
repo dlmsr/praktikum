@@ -197,7 +197,7 @@ Reflexionsfaktor lautet
 \Gamma = \frac{R + sL - Z_0}{R + sL - Z_0} = \frac{s + (R-Z_0)L^{-1}}{s + \tau^{-1}}
 \end{equation}
 %
-mit $\tau = L/(Z_0 + R)$.  Jetzt wird analog zu oben verfahren.  Eine
+mit $\tau := L/(Z_0 + R)$.  Jetzt wird analog zu oben verfahren.  Eine
 Partialbruchzerlegung von $\Gamma \tilde{U}_0(s)$ liefert:
 %
 \begin{equation}
@@ -206,35 +206,63 @@ Z_0)L^{-1}}{s(s + \tau^{-1})} = \frac{\Gamma_0}{s} + \frac{1
 - \Gamma_0}{s + \tau^{-1}}
 \end{equation}
 %
-mit $\Gamma_0 = \frac{R - Z_0}{R + Z_0}$.  Daraus wird das reflektierte
+mit $\Gamma_0 := \frac{R - Z_0}{R + Z_0}$.  Daraus wird das reflektierte
 Signal durch Rücktransformation erhalten:
 %
 \begin{equation}
 \label{eq:ind_ohm_reflex}
-U_\text{r}(t) = \Gamma_0 + (1 - \Gamma_0) e^{-t/\tau}.
+U_\text{r}(t) = \Gamma_0 + (1 - \Gamma_0) e^{-\frac{t}{\tau}}.
 \end{equation}
 
 \paragraph{Abschluß durch Kapazität und ohmschen Widerstand}  Hier ist
-$Z_\text{L} = R + \frac{1}{\iunt \omega C}$.
+$Z_\text{L} = R + \frac{1}{\iunt \omega C}$ und der Reflexionsfaktor
+lautet dann:
+%
+\begin{equation}
+\Gamma = \frac{\frac{1}{sC} + R - Z_0}{\frac{1}{sC} + R + Z_0}
+= \frac{\Gamma_0 s + \tau^{-1}}{s + \tau^{-1}} 
+\end{equation}
+%
+mit $\Gamma_0$ wie oben und $\tau := (R+Z_0) C$.  Nach der
+Partialbruchzerlegung
+%
+\begin{equation}
+\Gamma \tilde{U}_0(s) = \frac{1}{s} + \frac{\Gamma_0 - 1}{s + \tau^{-1}}
+\end{equation}
+%
+lautet nach Rücktransformation das reflektierte Signal so:
+%
+\begin{equation}
+\label{eq:cap_ohm_reflex}
+U_\text{r}(t) = 1 + (\Gamma_0 - 1) e^{-\frac{t}{\tau}}.
+\end{equation}
 
 \subsection{Mehrfachreflexionen}
 
 \section{Versuchsaufbau und Durchführung}
 
 Zum Versuch werden verschiedene Meßgeräte, einige Abschlußwiderstände
-und die zu untersuchenden Koaxialkabel selbst benötigt.  Dazu stehen vier
-verschiedene Koaxialkabel zur Verfügung.
+und die zu untersuchenden Koaxialkabel selbst benötigt.  Dazu stehen
+vier verschiedene Koaxialkabel zur Verfügung.
 
 \subsection{Bestimmung der Kabellänge}
 
 Um die Länge eines Kabels zu bestimmen, wird ein Spannungspuls auf das
 Kabel gegeben und dann mithilfe eines Oszilloskops die Zeitdifferenz
-zwischen einlaufendem und reflektiertem Signal bestimmt.
+zwischen einlaufendem und reflektiertem Signal bestimmt.  Da sich das
+Signal innerhalb der Leitung mit der Ausbreitungsgeschwindigkeit $c =
+c_0/\sqrt{\epsilon_\text{r}}$ bewegt, gilt für die Länge des Kabels
+daher:
+%
+\begin{equation}
+\label{eq:laenge}
+l = c \frac{\Delta t}{2} = \frac{c_0 \Delta t}{2 \sqrt{\epsilon_r}}.
+\end{equation}
 
 \subsection{Bestimmung der Leitungskonstanten}
 
 Zur Bestimmung der Leitungskonstanten wird das zu vermessene Kabel an
-das RLC-Meßgerät angeschlossen, welches automatisch die entsprechenden
-Gesamtimpedanzen anzeigt.
+das RLC-Meßgerät angeschlossen, welches automatisch die Art des
+Abschlußwiderstands erkennt und die entsprechenden Impedanzen anzeigt.
 
 \end{document}
