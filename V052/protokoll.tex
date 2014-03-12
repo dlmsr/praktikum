@@ -243,7 +243,9 @@ U_\text{r}(t) = 1 + (\Gamma_0 - 1) e^{-\frac{t}{\tau}}.
 
 Zum Versuch werden verschiedene Meßgeräte, einige Abschlußwiderstände
 und die zu untersuchenden Koaxialkabel selbst benötigt.  Dazu stehen
-vier verschiedene Koaxialkabel zur Verfügung.
+vier verschiedene Koaxialkabel zur Verfügung.  Jeder Versuchsabschnitt
+ist im wesentlichen aus drei Komponenten aufgebaut: Meßgerät,
+Signalgenerator und zu messendes Kabel.
 
 \subsection{Bestimmung der Kabellänge}
 
@@ -256,7 +258,7 @@ daher:
 %
 \begin{equation}
 \label{eq:laenge}
-l = c \frac{\Delta t}{2} = \frac{c_0 \Delta t}{2 \sqrt{\epsilon_r}}.
+L = c \frac{\Delta t}{2} = \frac{c_0 \Delta t}{2 \sqrt{\epsilon_r}}.
 \end{equation}
 
 \subsection{Bestimmung der Leitungskonstanten}
@@ -264,5 +266,23 @@ l = c \frac{\Delta t}{2} = \frac{c_0 \Delta t}{2 \sqrt{\epsilon_r}}.
 Zur Bestimmung der Leitungskonstanten wird das zu vermessene Kabel an
 das RLC-Meßgerät angeschlossen, welches automatisch die Art des
 Abschlußwiderstands erkennt und die entsprechenden Impedanzen anzeigt.
+
+\subsection{Bestimmung der Dämpfung}
+
+Zur Bestimmung der Dämpfung wird ein Rechteckpuls durch ein kurzes Kabel
+an einen Spektrumsanalysator geschickt und dort mithilfe
+einer \textit{Fast Fourier Transform} spektral analysiert.  Für das
+kurze Kabel wird keine Dämpfung angenommen und die Amplituden der ersten
+Oberwellen werden notiert.
+
+Für ein zweites längeres Kabel wird dieselbe Prozedur durchgeführt und
+die so erhaltenen Amplituden mit denjenigen, die mit kurzen Kabel
+erhalten worden sind, verglichen.
+
+\subsection{Mehrfachreflexion}
+
+\subsection{Untersuchung der Abschlußwiderstände}
+
+\input{auswertung.tex}
 
 \end{document}
