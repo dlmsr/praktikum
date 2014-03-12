@@ -117,6 +117,9 @@ show()
 a_array = ampl_vorher/ampl_nachher
 a = mean(a_array)
 da = std(a_array)/sqrt(len(a_array))
+aprom_array = a_array/laenge_trommel
+aprom = mean(aprom_array)
+daprom = std(aprom_array)/sqrt(len(aprom_array))
 
 #Mehrfachreflexion
 Sprung1 = 50 #V (reinkommendes Signal)
@@ -151,7 +154,7 @@ show()
 #k2b4
 
 def verlauf2(t,A,T):
-    return 44.0*(A+ (1-A)*exp(-t/T))    #Volt
+    return U2[0]/2 *(2- A*(1-exp(-t/T)))    #Volt
 
 
 opt2,cov2 = curve_fit(verlauf2,t2,U2)
@@ -170,7 +173,7 @@ show()
 #k3b6
 
 def verlauf3(t,A,T):
-    return 10.2*(A*T+ (1-A*T)*exp(-t/T))    #Volt
+    return   U3[0]/(1+A) *(2 +(A-1)*exp(-t/T))  #Volt
 
 
 opt3,cov3 = curve_fit(verlauf3,t3,U3)
