@@ -115,6 +115,7 @@ grid()
 
 tight_layout()
 savefig("4er.pdf")
+close()
 
 
 #Dämpfungskonstante
@@ -158,7 +159,7 @@ xlim(-20,475)
 ylim(-3,92)
 grid()
 savefig("fit_k2b3.pdf")
-
+close()
 #k2b4
 
 def verlauf2(t,A,T):
@@ -177,6 +178,7 @@ ylabel("Spannung U in V")
 legend(loc='upper right')
 grid()
 savefig("fit_k2b4.pdf")
+close()
 
 #k3b6
 
@@ -196,3 +198,4 @@ ylabel("Spannung U in V")
 legend(loc='lower right')
 grid()
 savefig("fit_k3b6.pdf")
+close()

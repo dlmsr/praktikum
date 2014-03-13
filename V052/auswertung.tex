@@ -311,7 +311,11 @@ In diesem Abschnitt werden die erhaltenen Signalspannungen
 für verschiedene unbekannte Abschlusswiderstände mit den im 
 Theorieteil berechneten Signalspannungen verglichen, um so 
 auf die Art des Abschlusses und die dazugehörige Zeitkonstante 
-zu schliessen.\\
+zu schliessen.\footnote{zum fitten der Messwerte wird 
+der Befehl curve\_fit aus der Bibliothek scipy.optimize 
+von \texttt{ipython} in der Version 3.2.3  verwendet}\\
+Dabei ist zu beachten, dass sich das reflektierte Signal mit dem 
+einlaufenden Signal überlagtert.\\
 Die Paragraphen sind nach den verwendeten Kästen und Buchsen 
 benannt.\\\\
 
@@ -322,7 +326,9 @@ Funktion~\eqref{eq:ind_ohm_reflex}, welche zu dem in Reihe geschalteten
 ohmschen Widerstand und einer Induktivität gehört, liefert das 
 beste Ergebnis. Das Ergebnis dieses Fits ist in 
 Formel~\eqref{eq:fit_k2b3} wiedergegeben.\\
-Daraus ergibt sich die Zeitkonstante in~\eqref{eq:zeit_k2b3}.\\
+Daraus ergibt sich die Zeitkonstante in~\eqref{eq:zeit_k2b3}.
+Der Fehler der sich durch den Fit ergibt, ist so klein, dass er hier 
+nicht mit angegeben wird.\\
 Plot~\ref{fig:fit_k2b3} zeigt die gefittete Kurve durch Punkte, die 
 am Oszilloskop aus dem Signalverlauf abgelesen wurden.\\
 %
@@ -337,15 +343,98 @@ am Oszilloskop aus dem Signalverlauf abgelesen wurden.\\
 U(t) = \SI{41.625}{\volt}\cdot\left(2 - 
 1.87\left(1-\exp{\left(\frac{-t}{\SI{4.89}{\second}}\right)}
 \right)\right)
+\label{eq:fit_k2b3}
 \end{equation}
 %
 \begin{equation}
-\tau = \frac{L}{Z_0 + R} = \SI{1}{\second}
+\tau = \frac{L}{Z_0 + R} = \SI{4.89}{\second}
+\label{eq:zeit_k2b3}
 \end{equation}
 %
-3 versch. Abschlusswiderstände 
-3 Bilder
+\begin{figure}[]
+\centering
+\includegraphics[width=0.8\textwidth]{fit_k2b3.pdf}
+\caption{K2B3FIT}
+\label{fig:fit_k2b3}
+\end{figure}
+%
+\FloatBarrier
+%
+\paragraph{Kasten 2 Buchse 4}
+Bild~\ref{fig:k2b4} zeigt den sich ergebenden Signalverlauf 
+bei diesem Abschluss. 
+Wie bei dem vorherigen Abschluss passt der Fit mit der 
+Funktion~\eqref{eq:ind_ohm_reflex}, also dem in Reihe geschalteten 
+ohmschen Widerstand und einer Induktivität, am besten. 
+Der Fit ergibt Formel~\eqref{eq:fit_k2b4}.\\
+Hier ergibt sich die Zeitkonstante in~\eqref{eq:zeit_k2b4}. 
+Messwerte und Fit sind in Plot~\ref{fig:fit_k2b4} zu sehen.\\
+%
+\begin{figure}[]
+\centering
+\includegraphics[width=0.8\textwidth]{k2b4.png}
+\caption{K2B4OSZI}
+\label{fig:k2b4}
+\end{figure}
+%
+\begin{equation}
+U(t) = \SI{22.0}{\volt}\cdot\left(2 - 
+2.182\left(1-\exp{\left(\frac{-t}{\SI{2.62}{\micro\second}}\right)}
+\right)\right)
+\label{eq:fit_k2b4}
+\end{equation}
+%
+\begin{equation}
+\tau = \frac{L}{Z_0 + R} = \SI{2.61(8)}{\micro\second}
+\label{eq:zeit_k2b4}
+\end{equation}
+%
+\begin{figure}[]
+\centering
+\includegraphics[width=0.8\textwidth]{fit_k2b4.pdf}
+\caption{K2B4FIT}
+\label{fig:fit_k2b4}
+\end{figure}
+%
+\FloatBarrier
+%
+\paragraph{Kasten 3 Buchse 6}
+Das Signal des letzten Abschlusses ist in Bild~\ref{fig:k3b6} zu 
+sehen. 
+Diesmal passt der Fit mit der 
+Funktion~\eqref{eq:cap_ohm_reflex}, dem in Reihe geschalteten 
+ohmschen Widerstand und einer Kapazität, sehr gut.\\
+Formel~\eqref{eq:fit_k3b6} gibt das Ergebnis des Fits an.\\
+Bei diesem Abschluss ergibt sich die Zeitkonstante 
+in~\eqref{eq:zeit_k3b6}. 
+Plot~\ref{fig:fit_k3b6} zeigt Messwerte und gefittete Kurve.\\
+%
+\begin{figure}[]
+\centering
+\includegraphics[width=0.8\textwidth]{k3b6.png}
+\caption{K3B6OSZI}
+\label{fig:k3b6}
+\end{figure}
+%
+\begin{equation}
+U(t) = \SI{53.9}{\volt}\cdot\left(2 + 
+\left(-8.1 - 1\right)\exp{\frac{-t}{\SI{2.51}{\micro\second}}}\right)
+\label{eq:fit_k3b6}
+\end{equation}
+%
+\begin{equation}
+\tau = (Z_0 + R)C = \SI{2.51(6)}{\micro\second}
+\label{eq:zeit_k3b6}
+\end{equation}
+%
+\begin{figure}[]
+\centering
+\includegraphics[width=0.8\textwidth]{fit_k3b6.pdf}
+\caption{K3B6FIT}
+\label{fig:fit_k3b6}
+\end{figure}
+%
+\FloatBarrier
+%
 Tabelle mit Messwerten
-Funktion aus Theorie
-Fit ( Bilder + Parameter => Zeitkonst.)
 %
