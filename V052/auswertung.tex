@@ -68,14 +68,14 @@ L = \frac{c\cdot\Delta t}{2\cdot\sqrt{2,25}}
 %
 \subsection{Belagsmessung}
 %
-Die mit einem LRC-Messgerät bestimmten Induktivitäten ${L}_{g}$, 
-Widerstände ${R}_{g}$ und Kapazitäten ${C}_{g}$ bei verschiedenen 
+Die mit einem LRC-Messgerät bestimmten Induktivitäten ${L}_\text{g}$, 
+Widerstände ${R}_\text{g}$ und Kapazitäten ${C}_\text{g}$ bei verschiedenen 
 Frequenzen f sind für das rote Kabel in 
 Tabelle~\ref{tab:RLC_rot}, für das schwarze Kabel in 
 Tabelle~\ref{tab:RLC_schwarz}, und für die Kabeltrommel in 
 Tabelle~\ref{tab:RLC_trommel} aufgeführt.
 Ebenfalls in diesen Tabellen sind sowohl die mit
-Formel~\eqref{eq:G-FORMEL} berechneten Querleitwerte ${G}_{g}$ 
+Formel~\eqref{eq:belagsformel} berechneten Querleitwerte ${G}_\text{g}$ 
 der jeweiligen Kabel aufgeführt, als auch die durch die Längen der 
 Kabel errechneten Beläge R, L, C und G.
 %
@@ -190,7 +190,12 @@ ${G}_\text{g}${/}\si{\milli\siemens}&{G/}\si{\milli\siemens\per\metre}\\
 Einen Plot der Leitungsbelagswerte in Abhängigkeit von der Frequenz 
 für die verschiedenen Kabel ist in Plot~\ref{fig:belaege} zu sehen.
 %
-HIER 4ER PLOT REIN
+\begin{figure}[]
+\centering
+\includegraphics[width=1\textwidth]{4er.pdf}
+\caption{4ER}
+\label{fig:belaege}
+\end{figure}
 %
 \FloatBarrier
 %
@@ -225,17 +230,17 @@ Kabels, so ergibt sich die gesuchte Dämpfungskonstante $\alpha$.
   \centering
   \begin{tabular}{SSSSS}
     \toprule
-{Nr.}&${U}_\text{ungedämpft}${/}\si{\volt}&${U}_\text{gedämpft}{ /}\si{\volt}$&
+{Nr.}&${U}_\text{ungedämpft}${/}\si{\milli\volt}&${U}_\text{gedämpft}{ /}\si{\milli\volt}$&
 $\frac{{U}_\text{ungedämpft}}{{U}_\text{gedämpft}}$&
 $\alpha${ /}\si{\per\metre}\\
 \midrule
-1&9.8&8.4&1.17&0.014\\
-2&4.4&3.4&1.30&0.016\\
-3&3.2&2.4&1.34&0.016\\
-4&2.6&2.0&1.3&0.016\\
-5&2.3&1.1&2.10&0.025\\
+1&6.005&6.053&0.992&0.012\\
+2&4.130&3.027&1.364&0.017\\
+3&2.744&1.871&1.467&0.018\\
+4&2.069&1.365&1.516&0.018\\
+5&1.656&1.088&1.522&0.019\\
 \midrule
-\multicolumn{3}{c}{Mittelwerte: }&\SI{1.44(15)}{}&\SI{0.017(2)}{}\\
+\multicolumn{3}{c}{Mittelwerte: }&\SI{1.372(89)}{}&\SI{0.017(1)}{}\\
 \bottomrule
   \end{tabular}
   \caption{DÄMPFUNG}
@@ -248,13 +253,95 @@ Nun wird das Signal untersucht, welches entsteht, wenn zwei
 Kabel mit unterschiedlichen Ohmschen Widerständen in Reihe geschaltet 
 werden. Das erste Kabel besitzt einen Ohmschen Widerstand von 
 \SI{50}{\ohm}, das zweite \SI{75}{\ohm}.\\
-Abbildung~\ref{fig:fahrplan} zeigt den dazugehörigen 
-Impulsfahrplan, Abbildung~\ref{fig:mehrfachreflexl} das mit einem 
+Abbildung~\ref{fig:impulsfahrplan} zeigt den dazugehörigen 
+Impulsfahrplan, Abbildung~\ref{fig:mehrfachreflex} das mit einem 
 Oszilloskopen aufgenommene Bild.\\
 Tabelle~\ref{tab:mehrfachreflex} enthält die gemessenen Sprunghöhen 
-in der Spannung und die daraus berechneten Reflexionskoeffizienten.
+in der Spannung und die daraus berechneten Reflexionskoeffizienten. 
+Dabei bezeichnet $\Gamma_{50}$ den Reflexionsfaktor am Ende des 
+\SI{50}{\ohm} Kabels und $\Gamma_{75}$ entsprechend den 
+Reflexionsfaktor am Ende des \SI{75}{\ohm} Kabels, also dem offenen 
+Ende.\\
+Wie bereits in der Durchführung erwähnt, wird der Sprung zwischen 
+Sprung Zwei und Drei nicht gemessen, da vernachlässigbar.\\
+Dadurch ergeben sich durch einfache Überlegungen die in 
+den Formeln~\eqref{eq:sprung1}, ~\eqref{eq:sprung2} 
+und ~\eqref{eq:sprung3} angegebenen Relationen.
+%
+\begin{equation}
+\text{Sprung1} = U_0
+\end{equation}
+%
+\begin{equation}
+\frac{\text{Sprung2}}{\text{Sprung1}} = \Gamma_{50}
+\end{equation}
+%
+\begin{equation}
+\frac{\text{Sprung3}}{\text{Sprung1}\cdot\left(1 - \Gamma_{50}\right)} = \Gamma_{75}
+\end{equation}
+%
+\begin{figure}[]
+\centering
+\includegraphics[width=0.8\textwidth]{reflex.png}
+\caption{MEHRFACHREFLEX}
+\label{fig:mehrfachreflex}
+\end{figure}
+%
+\begin{table}[h]
+  \centering
+  \begin{tabular}{SS|SS}
+    \toprule
+{Sprung Nr.}&{Sprunghöhe /}\si{\volt}&
+{Größe}&{Wert}\\
+\midrule
+1&50&{$U_0$}&50\si{\volt}\\
+2&8.2&{$\Gamma_{50}$}&0.16\\
+3&44.5&{$\Gamma_{75}$}&1.06\\
+\bottomrule
+  \end{tabular}
+  \caption{MEHRFACHREFLEX}
+  \label{tab:mehrfachreflex}
+\end{table}
+%
+\FloatBarrier
 %
 \subsection{Verschiedene Abschlusswiderstände}
+%
+In diesem Abschnitt werden die erhaltenen Signalspannungen 
+für verschiedene unbekannte Abschlusswiderstände mit den im 
+Theorieteil berechneten Signalspannungen verglichen, um so 
+auf die Art des Abschlusses und die dazugehörige Zeitkonstante 
+zu schliessen.\\
+Die Paragraphen sind nach den verwendeten Kästen und Buchsen 
+benannt.\\\\
+
+\paragraph{Kasten 2 Buchse 3}
+Der sich bei diesem Abschluss ergebende Signalverlauf ist in 
+Bild~\ref{fig:k2b3} zu sehen. Der Fit mit der 
+Funktion~\eqref{eq:ind_ohm_reflex}, welche zu dem in Reihe geschalteten 
+ohmschen Widerstand und einer Induktivität gehört, liefert das 
+beste Ergebnis. Das Ergebnis dieses Fits ist in 
+Formel~\eqref{eq:fit_k2b3} wiedergegeben.\\
+Daraus ergibt sich die Zeitkonstante in~\eqref{eq:zeit_k2b3}.\\
+Plot~\ref{fig:fit_k2b3} zeigt die gefittete Kurve durch Punkte, die 
+am Oszilloskop aus dem Signalverlauf abgelesen wurden.\\
+%
+\begin{figure}[]
+\centering
+\includegraphics[width=0.8\textwidth]{k2b3.png}
+\caption{K2B3OSZI}
+\label{fig:k2b3}
+\end{figure}
+%
+\begin{equation}
+U(t) = \SI{41.625}{\volt}\cdot\left(2 - 
+1.87\left(1-\exp{\left(\frac{-t}{\SI{4.89}{\second}}\right)}
+\right)\right)
+\end{equation}
+%
+\begin{equation}
+\tau = \frac{L}{Z_0 + R} = \SI{1}{\second}
+\end{equation}
 %
 3 versch. Abschlusswiderstände 
 3 Bilder

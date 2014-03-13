@@ -72,44 +72,49 @@ subplot(221)
 plot(v_rot*10**(-3),R_rot,'r*',label="Rotes Kabel")
 plot(v_schwarz*10**(-3),R_schwarz,'k*',label="schwarzes Kabel")
 plot(v_trommel*10**(-3),R_trommel,'b*',label="Kabeltrommel")
-title(u"Widerstandsbeläge")
+semilogx()
+title("Widerstandsbeläge")
 xlabel("Frequenz v in kHz")
 ylabel("Ohm/m")
 legend(loc='center')
+xlim(2.5*10**(-2),2*10*2)
 grid()
 #Induktivitäten
 subplot(222)
 plot(v_rot*10**(-3),L_rot*10**6,'r*',label="Rotes Kabel")
 plot(v_schwarz*10**(-3),L_schwarz*10**6,'k*',label="schwarzes Kabel")
 plot(v_trommel*10**(-3),L_trommel*10**6,'b*',label="Kabeltrommel")
-title(u"Induktivitätsbeläge")
+semilogx()
+title("Induktivitätsbeläge")
 xlabel("Frequenz v in kHz")
-ylabel("mikroH/m")
-legend(loc='center')
+ylabel("µH/m")
+xlim(2.5*10**(-2),2*10*2)
 grid()
 #Kapazitäten
 subplot(223)
 plot(v_rot*10**(-3),C_rot*10**9,'r*',label="Rotes Kabel")
 plot(v_schwarz*10**(-3),C_schwarz*10**9,'k*',label="schwarzes Kabel")
 plot(v_trommel*10**(-3),C_trommel*10**9,'b*',label="Kabeltrommel")
-title(u"Kapazitätsbeläge")
+semilogx()
+title("Kapazitätsbeläge")
 xlabel("Frequenz v in kHz")
 ylabel("nF/m")
-legend(loc='center')
+xlim(2.5*10**(-2),2*10*2)
 grid()
 #Querleitbeläge
 subplot(224)
 plot(v_rot*10**(-3),G_rot*10**6,'r*',label="Rotes Kabel")
 plot(v_schwarz*10**(-3),G_schwarz*10**6,'k*',label="schwarzes Kabel")
 plot(v_trommel*10**(-3),G_trommel*10**6,'b*',label="Kabeltrommel")
-title(u"Querleitbeläge")
+semilogx()
+title("Querleitbeläge")
 xlabel("Frequenz v in kHz")
-ylabel("mikroS/m")
-legend(loc='center')
+ylabel("µS/m")
+xlim(2.5*10**(-2),2*10*2)
 grid()
 
 tight_layout()
-show()
+savefig("4er.pdf")
 
 
 #Dämpfungskonstante
@@ -123,24 +128,27 @@ daprom = std(aprom_array)/sqrt(len(aprom_array))
 
 #Mehrfachreflexion
 Sprung1 = 50 #V (reinkommendes Signal)
-Sprung2 = 15.2 #V (an 50 Ohm reflektiert)
-Sprung3 = 44.5 #V (an 75 Ohm reflektiert)
+Sprung2 = 8.2 #V (an 75 Ohm reflektiert)
+Sprung3 = 44.5 #V (an Ende reflektiert)
 
 gamma_50 = Sprung2/Sprung1
-gamma_75 = Sprung3/Sprung1
+gamma_75 = Sprung3/(Sprung1*(1-gamma_50))
+
+print("Zur Mehrfachreflexion")
+print("gamma_50 = {} --- gamma_75 = {}".format(gamma_50,gamma_75))
 
 ##Versch. Kästen (k) und Buchsen (b) als Abschlusswiderstände -> Messwerte fitten
 #k2b3
 
-def verlauf1(t,T):
-    return 83.25*exp(-t/T)    #Volt
+def verlauf1(t,A,T):
+    return U1[0]/2 *(2- A*(1-exp(-t/T)))    #Volt
 
 
 opt1,cov1 = curve_fit(verlauf1,t1,U1)
 
 x1=linspace(-1*10**(-8),5*10**(-7),1000)
 plot(t1*10**9,U1,'r*',label="Messwerte")
-plot(x1*10**9,verlauf1(x1,opt1[0]),'k',label="Fit")
+plot(x1*10**9,verlauf1(x1,opt1[0],opt1[1]),'k',label="Fit")
 
 title("Kasten 2 Buchse 3")
 xlabel("Zeit t in ns")
@@ -149,7 +157,7 @@ legend(loc='upper right')
 xlim(-20,475)
 ylim(-3,92)
 grid()
-show()
+savefig("fit_k2b3.pdf")
 
 #k2b4
 
@@ -168,7 +176,7 @@ xlabel("Zeit t in ns")
 ylabel("Spannung U in V")
 legend(loc='upper right')
 grid()
-show()
+savefig("fit_k2b4.pdf")
 
 #k3b6
 
@@ -185,6 +193,6 @@ plot(x3*10**9,verlauf3(x3,opt3[0],opt3[1]),'k',label="Fit")
 title("Kasten 3 Buchse 6")
 xlabel("Zeit t in ns")
 ylabel("Spannung U in V")
-legend(loc='upper right')
+legend(loc='lower right')
 grid()
-show()
+savefig("fit_k3b6.pdf")
