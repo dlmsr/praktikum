@@ -34,32 +34,34 @@ Kevin Moch\\
 
 \section{Einleitung}
 
-In diesem Versuch soll das Verhalten von elektrischen Signalen in 
+In diesem Versuch soll das Verhalten von elektrischen Signalen in
 Leitungen, insbesondere in Koaxialkabeln, untersucht werden.
-Dabei werden sowohl leitungsspezifische Konstanten bestimmt, 
-als auch zeitliche Verläufe von Signalen beobachtet.
+Dabei werden sowohl leitungsspezifische Konstanten bestimmt, als
+auch zeitliche Verläufe von Signalen beobachtet. 
+
 \FloatBarrier
 
 \section{Theorie}
 
 \begin{figure}
-\centering
-\includegraphics[scale=0.6]{ersatzschaltung}
-\label{fig:ersatz}
-\caption{%
-Ersatzschaltung eines Koaxialkabels zwischen $x$ und $x + \d x$.
-Die Größen $R, L, G, C$ heißen Leitungskonstanten oder
-Leitungsbeläge.  Bei einer verlustfreien Leitung ist $R = G = 0$.
-Durch eine Betrachtung dieser Ersatzschaltung kann die
-Telegraphengleichung hergeleitet werden.}
+  \centering
+  \includegraphics[scale=0.6]{ersatzschaltung}
+  \caption{%
+    Ersatzschaltung eines Koaxialkabels zwischen $x$ und $x + \d
+    x$.  Die Größen $R, L, G, C$ heißen Leitungskonstanten oder
+    Leitungsbeläge.  Bei einer verlustfreien Leitung ist $R = G =
+    0$.  Durch eine Betrachtung dieser Ersatzschaltung kann die
+    Telegraphengleichung hergeleitet werden.}
+  \label{fig:ersatz}
 \end{figure}
 
 Die Beschreibung der Ausbreitung von Signalen auf Leitungen ist
 Gegenstand der Leitungstheorie.  Eine Leitung (zum Beispiel eine
-Koaxialleitung, die in diesem Versuch verwendet wird) kann durch zwei
-parallel verlaufende Leiter modelliert werden.  Grundaufgabe der
-Leitungstheorie ist es, den zeitlichen Verlauf von Stromstärke $I(t, x)$
-und Spannung $U(t, x)$ an jedem Ort $x$ der Leitung zu bestimmen.
+Koaxialleitung, die in diesem Versuch verwendet wird) kann durch
+zwei parallel verlaufende Leiter modelliert werden.  Grundaufgabe
+der Leitungstheorie ist es, den zeitlichen Verlauf von
+Stromstärke $I(t, x)$ und Spannung $U(t, x)$ an jedem Ort $x$ der
+Leitung zu bestimmen.
 
 Dazu wird ein Leitungstück von $x$ nach $x + \d x$ durch die
 Ersatzschaltung aus Abbildung~\ref{fig:ersatz} dargestellt.  Die
@@ -68,7 +70,14 @@ und $C$ heißen Induktivitäts- bzw. Kapazitätsbelag, $R$ und $G$
 heißen ohmscher Belag bzw. Querleitfähigkeitsbelag.  Die beiden
 letzten kommen durch die endliche Leitfähigkeit des
 Leitermaterials (Längsspannungsverluste) und dielektrische
-Verlustströme zwischen der Isolierung der beiden Leiter zustande.
+Verlustströme zwischen der Isolierung der beiden Leiter
+zustande.  Zwischen den Leitungsbelägen gibt es folgenden
+Zusammenhang:
+%
+\begin{equation}
+  \label{eq:belagsformel}
+  G = \frac{RC}{L}
+\end{equation}
 
 \subsection{Telegraphengleichung}
 
@@ -91,11 +100,11 @@ harmonische Wellen:
 U(t, x) = U_0 \,e^{\iunt\omega t \pm \gamma x}
 \end{equation}
 %
-Der Faktor $\gamma = \alpha + \iunt \beta
-= \sqrt{(R+\iunt \omega L)(G + \iunt \omega C)}$ heißt
-Ausbreitungskonstante, $\alpha$ heißt Dämpfungsbelag und $\beta$
-heißt Phasenbelag.  Die Phasengeschwindigkeit der Welle ist daher
-frequenzabhängig und führt zu einer Verzerrung des Signals.
+Der Faktor $\gamma = \alpha + \iunt \beta = \sqrt{(R+\iunt \omega
+  L)(G + \iunt \omega C)}$ heißt Ausbreitungskonstante, $\alpha$
+heißt Dämpfungsbelag und $\beta$ heißt Phasenbelag.  Die
+Phasengeschwindigkeit der Welle ist daher frequenzabhängig und
+führt zu einer Verzerrung des Signals.
 
 \subsection{Leitungswellenwiderstand}
 
@@ -124,14 +133,14 @@ Reflexion am Leitungsende entsteht.  Der Quotient
 \Gamma = \frac{U_\text{r}}{U_0} = \frac{Z_\text{L} - Z_0}{Z_\text{L} + Z_0}
 \end{equation}
 %
-heißt Reflexionsfaktor, wobei $Z_L$ hier die Lastimpedanz am Verbraucher
-darstellt.  Mit seiner Hilfe kann die Form der rücklaufenden Welle aus
-dem Eingangspuls berechnet werden.  Dazu wird
-die \name{Laplace}-Transformation verwendet.  Sei nämlich
-$\tilde{U}_0(s)$ die \name{Laplace}-Transformierte der Spannung des
-einlaufenden und $\tilde{U}_\text{r}(s)$
-die \name{Laplace}-Transformierte der Spannung des reflektierten Signals
-am Ort $x$ zur Zeit $t$, dann gilt
+heißt Reflexionsfaktor, wobei $Z_L$ hier die Lastimpedanz am
+Verbraucher darstellt.  Mit seiner Hilfe kann die Form der
+rücklaufenden Welle aus dem Eingangspuls berechnet werden.  Dazu
+wird die \name{Laplace}-Transformation verwendet.  Sei nämlich
+$\tilde{U}_0(s)$ die \name{Laplace}-Transformierte der Spannung
+des einlaufenden und $\tilde{U}_\text{r}(s)$ die
+\name{Laplace}-Transformierte der Spannung des reflektierten
+Signals am Ort $x$ zur Zeit $t$, dann gilt
 %
 \begin{equation}
 \label{eq:reflex}
@@ -146,23 +155,55 @@ Fall $Z_\text{L} = Z_0$ liegt die sogenannte Leitungsanpassung vor,
 d.\,h. der Reflexionsfaktor $\Gamma = 0$ und es gibt keine
 reflektierte Welle.
 
+\subsection{Mehrfachreflexionen}
+
+Ein Signal, das durch die Leitung läuft, wird nicht nur am Ende
+der Leitung reflektiert, sondern auch am Anfang, wenn der Reflex
+wieder dort ankommt.  So ergibt sich eine Reihe von
+Mehrfachreflexionen zwischen den Kabelenden.  Bei jedem Reflex
+wird die Amplitude des Signals um einen entsprechenden
+Reflexionsfaktor $\Gamma$ geschwächt.  Sei der Reflexionsfaktor
+des Kabelanfangs $\Gamma_\text{a}$ und der des Kabelendes
+$\Gamma_\text{e}$, dann gilt im Grenzfall unendlicher Reflexion
+für die Amplitude der Signalspannung:
+%
+\begin{equation}
+  U_\infty = U_0(1 + \Gamma_\text{e} + \Gamma_\text{a} \Gamma_\text{e}
+  + \Gamma_\text{a} \Gamma_\text{e}^2 + \Gamma_\text{a}^2
+  \Gamma_\text{e}^2 + \dotsb) = U_0 \:\frac{1 + \Gamma_\text{e}}{1
+    - \Gamma_\text{a} \Gamma_\text{e}}
+\end{equation}
+%
+
+Befinden sich im Kabel zusätzlich Störstellen (z.\,B. wenn zwei
+verschiedene Kabel aneinander gesteckt sind), gibt es auch an
+diesen Stellen Reflexionen.  Um den Überblick zu behalten, kann
+es in solchen Fällen hilfreich sein, einen sogenannten
+Impulsfahrplan anzufertigen.  In
+Abschnitt~\ref{sec:durchfuehrung-mehrfachreflexion} wird eine
+Situationen, in der zwei unterschiedliche Kabel verbunden sind,
+beschrieben.
+
 \subsection{Ausgewählte Leitungsabschlüsse}
-In diesem Abschnitt werden die Signalverläufe zu drei verschiedenen
-Abschlußwiderständen berechnet.  Die erhaltenen Funktionen werden später
-verwendet, um eine Ausgleichsrechnung mit den aufgenommenen Meßwerten
-durchzuführen.  Der einlaufende Signalverlauf\footnote{Die Amplitude
-wird hier auf 1 normiert, um die Rechnungen nicht zu überladen.  Da
-die \name{Laplace}-Transformation eine lineare Abbildung ist, kann ein
-Faktor für die Amplitude nachträglich hinzugefügt werden.}
-kann mit der \name{Heaviside}-Funktion~$\Theta$ so geschrieben werden:
+
+In diesem Abschnitt werden die Signalverläufe zu drei
+verschiedenen Abschlußwiderständen berechnet.  Die erhaltenen
+Funktionen werden später verwendet, um eine Ausgleichsrechnung
+mit den aufgenommenen Meßwerten durchzuführen.  Der einlaufende
+Signalverlauf\footnote{Die Amplitude wird hier auf 1 normiert, um
+  die Rechnungen nicht zu überladen.  Da die
+  \name{Laplace}-Transformation eine lineare Abbildung ist, kann
+  ein Faktor für die Amplitude nachträglich hinzugefügt werden.}
+kann mit der \name{Heaviside}-Funktion~$\Theta$ so geschrieben
+werden:
 %
 \begin{equation}
 U_0(t) = \Theta(t).
 \end{equation}
 %
-Die \name{Laplace}-Transformierte lautet dann $\tilde{U}_0(s) = s^{-1}$.
-Mit Formel~\eqref{eq:reflex} wird daraus der Reflex am Leitungsende
-berechnet.
+Die \name{Laplace}-Transformierte lautet dann $\tilde{U}_0(s) =
+s^{-1}$.  Mit Formel~\eqref{eq:reflex} wird daraus durch
+Rücktransformation der Reflex am Leitungsende berechnet.
 
 \paragraph{Abschluß durch Induktivität}  Im Falle einer Induktivität als
 Abschluß ist $Z_\text{L} = \iunt\omega L$  und damit ergibt sich für $s
@@ -237,8 +278,6 @@ lautet nach Rücktransformation das reflektierte Signal so:
 U_\text{r}(t) = 1 + (\Gamma_0 - 1) e^{-\frac{t}{\tau}}.
 \end{equation}
 
-\subsection{Mehrfachreflexionen}
-
 \section{Versuchsaufbau und Durchführung}
 
 Zum Versuch werden verschiedene Meßgeräte, einige Abschlußwiderstände
@@ -267,22 +306,55 @@ Zur Bestimmung der Leitungskonstanten wird das zu vermessene Kabel an
 das RLC-Meßgerät angeschlossen, welches automatisch die Art des
 Abschlußwiderstands erkennt und die entsprechenden Impedanzen anzeigt.
 
-\subsection{Bestimmung der Dämpfung}
+\subsection{Bestimmung des Dämpfungsbelags}
 
-Zur Bestimmung der Dämpfung wird ein Rechteckpuls durch ein kurzes Kabel
-an einen Spektrumsanalysator geschickt und dort mithilfe
-einer \textit{Fast Fourier Transform} spektral analysiert.  Für das
-kurze Kabel wird keine Dämpfung angenommen und die Amplituden der ersten
-Oberwellen werden notiert.
+Zur Bestimmung des Dämpfungsbelags wird ein Rechteckpuls durch
+ein kurzes Kabel an einen Spektrumsanalysator geschickt und dort
+mithilfe einer \textit{Fast Fourier Transform} spektral
+analysiert.  Für das kurze Kabel wird keine Dämpfung angenommen
+und die Amplituden der ersten Oberwellen werden notiert.
 
 Für ein zweites längeres Kabel wird dieselbe Prozedur durchgeführt und
 die so erhaltenen Amplituden mit denjenigen, die mit kurzen Kabel
 erhalten worden sind, verglichen.
 
 \subsection{Mehrfachreflexion}
+\label{sec:durchfuehrung-mehrfachreflexion}
+
+In diesem Versuchsteil werden zwei unterschiedliche Koaxialkabel
+(\SI{50}{\ohm} und \SI{75}{\ohm}) miteinander verbunden und ein
+Spannungspuls auf das Kabel gegeben.  Die Leitung darf nicht
+angepaßt sein, da es sonst zu keiner Reflexion kommt, welche hier
+beobachtet werden soll, aber außer dem kann der Abschluß beliebig
+sein.
+
+Wie bereits im Abschnitt über Mehrfachreflexion aus dem
+Theorieteil beschrieben, kommt es innerhalb des Kabels zu
+mehreren Reflexionen sowohl an Kabelanfang und -ende, als auch an
+der Verbindungsstelle der Kabel.  Ein Impulsfahrplan ist in
+Abbildung~\ref{fig:impulsfahrplan} zu sehen.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.8\textwidth]{impulsfahrplan}
+  \caption{Der Impulsfahrplan für die Mehrfachreflexion des
+    Signals, der sich aus der Verbindung zweier Koaxialkabel
+    (\SI{50}{\ohm} und \SI{75}{\ohm}) ergibt.  In der Auswertung
+    sind nur die Spannungssprünge 1 und 2, die von den Reflexen
+    an den Punkten 1 und 3 kommen, zu sehen, da der Reflex von
+    Punkt 2 bereits zu schwach ist.}
+  \label{fig:impulsfahrplan}
+\end{figure}
 
 \subsection{Untersuchung der Abschlußwiderstände}
 
-\input{auswertung.tex}
+Der letzte Teil des Versuchs besteht in der Untersuchung
+unbekannter Abschlußwiderstände.  Es wird ein Spannungspuls auf
+ein Kabel gegeben und der zeitliche Signalverlauf auf dem
+Oszilloskop betrachtet.  Aus der Form des Verlaufs können
+Rückschlüsse auf die Art der des Abschlußwiderstandes gezogen
+werden und die Zeitkonstanten bestimmt werden.
+
+\input{auswertung}
 
 \end{document}

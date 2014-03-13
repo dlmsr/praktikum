@@ -1,0 +1,610 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="550.25098"
+   height="191.00409"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.3.1 r9886"
+   sodipodi:docname="impulsfahrplan.svgz">
+  <defs
+     id="defs4">
+    <marker
+       inkscape:stockid="Arrow1Mend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Mend"
+       style="overflow:visible">
+      <path
+         id="path3808"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         inkscape:connector-curvature="0" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="2.9162965"
+     inkscape:cx="278.97612"
+     inkscape:cy="113.70267"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     units="mm"
+     inkscape:window-width="1676"
+     inkscape:window-height="1032"
+     inkscape:window-x="0"
+     inkscape:window-y="14"
+     inkscape:window-maximized="0"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0">
+    <inkscape:grid
+       type="xygrid"
+       id="grid2985"
+       empspacing="5"
+       visible="true"
+       enabled="true"
+       snapvisiblegridlinesonly="true"
+       originx="25.251px"
+       originy="25.12px" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(25.251,-886.47813)">
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.77165353;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       d="m 5,152.16534 520,0"
+       id="path2987"
+       inkscape:connector-curvature="0"
+       transform="translate(0,875.19688)"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.77165353;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       d="m 5,12.165344 520,0"
+       id="path2989"
+       inkscape:connector-curvature="0"
+       transform="translate(0,875.19688)" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.77165353;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       d="m 5,112.16534 520,0"
+       id="path2991"
+       inkscape:connector-curvature="0"
+       transform="translate(0,875.19688)" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.77165353;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       d="m 5,152.16534 70,-40 70,40"
+       id="path2995"
+       inkscape:connector-curvature="0"
+       transform="translate(0,875.19688)" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path2997"
+       d="m 145,1027.3622 70,-39.99998 70,39.99998"
+       style="fill:none;stroke:#000000;stroke-width:1.77165353;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.77165353;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       d="M 75,112.16534 245,12.165344"
+       id="path2999"
+       inkscape:connector-curvature="0"
+       transform="translate(0,875.19688)" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path3001"
+       d="m 415,987.36222 -170,-100"
+       style="fill:none;stroke:#000000;stroke-width:1.77165353;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path3003"
+       d="M 485,1027.3622 415,987.36222"
+       style="fill:none;stroke:#000000;stroke-width:1.77165353;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.77165353;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       d="m 145,152.16534 0,5"
+       id="path3005"
+       inkscape:connector-curvature="0"
+       transform="translate(0,875.19688)" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.77165353;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       d="m 485,152.16534 0,5"
+       id="path3007"
+       inkscape:connector-curvature="0"
+       transform="translate(0,875.19688)" />
+    <text
+       xml:space="preserve"
+       style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
+       x="50"
+       y="1042.3622"
+       id="text3009"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="50"
+         y="1042.3622"
+         id="tspan3013"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Linux Libertine Display O;-inkscape-font-specification:Linux Libertine Display O">Sprung 1</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
+       x="280"
+       y="1042.3622"
+       id="text3017"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3019"
+         x="280"
+         y="1042.3622"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Linux Libertine O;-inkscape-font-specification:Linux Libertine O">Sprung 2</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.77165353;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       d="m 285,1027.3622 70,-39.99998 70,39.99998"
+       id="path3021"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.77165353;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow1Mend)"
+       d="m 260,162.16534 -115,0"
+       id="path3023"
+       inkscape:connector-curvature="0"
+       transform="translate(0,875.19688)" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.77165353;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow1Mend)"
+       d="m 355,162.16534 130,0"
+       id="path3025"
+       inkscape:connector-curvature="0"
+       transform="translate(0,875.19688)" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.77165353;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow1Mend)"
+       d="m 110,162.16534 35,0"
+       id="path4421"
+       inkscape:connector-curvature="0"
+       transform="translate(0,875.19688)" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.77165353;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow1Mend)"
+       d="m 45,162.16534 -40,0"
+       id="path4605"
+       inkscape:connector-curvature="0"
+       transform="translate(0,875.19688)" />
+    <g
+       id="g4816"
+       transform="translate(-35,59.999981)"
+       style="stroke-width:1.77165353;stroke-miterlimit:4;stroke-dasharray:none">
+      <text
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;baseline-shift:baseline;stroke-width:1.77165353;stroke-miterlimit:4;stroke-dasharray:none;font-family:Linux Libertine Display O;-inkscape-font-specification:Linux Libertine Display O Italic"
+         id="text4808"
+         y="945.0343"
+         x="55.950214"
+         xml:space="preserve"><tspan
+           y="945.0343"
+           x="55.950214"
+           id="tspan4810"
+           sodipodi:role="line">U</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text4812"
+         y="942.36224"
+         x="65"
+         style="font-size:65.00091553%;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;baseline-shift:sub;fill:#000000;fill-opacity:1;stroke:none;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
+         xml:space="preserve"><tspan
+           y="942.36224"
+           x="65"
+           id="tspan4814"
+           sodipodi:role="line">0</tspan></text>
+    </g>
+    <g
+       id="g5341">
+      <g
+         id="g4979"
+         transform="translate(54,60.090338)"
+         style="stroke-width:1.77165353;stroke-miterlimit:4;stroke-dasharray:none">
+        <text
+           xml:space="preserve"
+           style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Linux Libertine O;-inkscape-font-specification:Linux Libertine O"
+           x="55"
+           y="942.36224"
+           id="text4953"
+           sodipodi:linespacing="125%"><tspan
+             sodipodi:role="line"
+             x="55"
+             y="942.36224"
+             id="tspan4957">Γ</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-size:65.00091553%;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;baseline-shift:sub;fill:#000000;fill-opacity:1;stroke:none;font-family:Linux Libertine O;-inkscape-font-specification:Linux Libertine O"
+           x="59.093723"
+           y="939.86621"
+           id="text4961"
+           sodipodi:linespacing="125%"><tspan
+             sodipodi:role="line"
+             id="tspan4963"
+             x="59.093723"
+             y="939.86621">50</tspan></text>
+      </g>
+      <g
+         id="g4985"
+         transform="translate(65,57.602105)"
+         style="stroke-width:1.77165353;stroke-miterlimit:4;stroke-dasharray:none">
+        <text
+           style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;baseline-shift:baseline;stroke-width:1.77165353;stroke-miterlimit:4;stroke-dasharray:none;font-family:Linux Libertine Display O;-inkscape-font-specification:Linux Libertine Display O Italic"
+           id="text4987"
+           y="945.0343"
+           x="55.950214"
+           xml:space="preserve"><tspan
+             y="945.0343"
+             x="55.950214"
+             id="tspan4989"
+             sodipodi:role="line">U</tspan></text>
+        <text
+           sodipodi:linespacing="125%"
+           id="text4991"
+           y="942.36224"
+           x="65"
+           style="font-size:65.00091553%;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;baseline-shift:sub;fill:#000000;fill-opacity:1;stroke:none;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
+           xml:space="preserve"><tspan
+             y="942.36224"
+             x="65"
+             id="tspan4993"
+             sodipodi:role="line">0</tspan></text>
+      </g>
+    </g>
+    <g
+       id="g5068"
+       transform="translate(-12,-2)"
+       style="stroke-width:1.77165353;stroke-miterlimit:4;stroke-dasharray:none">
+      <g
+         transform="translate(140,108)"
+         id="g5036"
+         style="stroke-width:1.77165353;stroke-miterlimit:4;stroke-dasharray:none">
+        <text
+           sodipodi:linespacing="125%"
+           id="text5038"
+           y="912.36224"
+           x="50"
+           style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Linux Libertine O;-inkscape-font-specification:Linux Libertine O"
+           xml:space="preserve"><tspan
+             id="tspan5040"
+             y="912.36224"
+             x="50"
+             sodipodi:role="line">Γ</tspan></text>
+        <text
+           sodipodi:linespacing="125%"
+           id="text5042"
+           y="910.63098"
+           x="54.808228"
+           style="font-size:65.00091553%;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;baseline-shift:sub;fill:#000000;fill-opacity:1;stroke:none;font-family:Linux Libertine O;-inkscape-font-specification:Linux Libertine O"
+           xml:space="preserve"><tspan
+             y="910.63098"
+             x="54.808228"
+             id="tspan5044"
+             sodipodi:role="line">E</tspan></text>
+      </g>
+      <g
+         id="g5046"
+         transform="translate(168,88)"
+         style="stroke-width:1.77165353;stroke-miterlimit:4;stroke-dasharray:none">
+        <g
+           id="g5048"
+           transform="translate(-22,-9.9096619)"
+           style="stroke-width:1.77165353;stroke-miterlimit:4;stroke-dasharray:none">
+          <text
+             xml:space="preserve"
+             style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Linux Libertine O;-inkscape-font-specification:Linux Libertine O"
+             x="55"
+             y="942.36224"
+             id="text5050"
+             sodipodi:linespacing="125%"><tspan
+               sodipodi:role="line"
+               x="55"
+               y="942.36224"
+               id="tspan5052">Γ</tspan></text>
+          <text
+             xml:space="preserve"
+             style="font-size:65.00091553%;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;baseline-shift:sub;fill:#000000;fill-opacity:1;stroke:none;font-family:Linux Libertine O;-inkscape-font-specification:Linux Libertine O"
+             x="59.093723"
+             y="939.86621"
+             id="text5054"
+             sodipodi:linespacing="125%"><tspan
+               sodipodi:role="line"
+               id="tspan5056"
+               x="59.093723"
+               y="939.86621">50</tspan></text>
+        </g>
+        <g
+           id="g5058"
+           transform="translate(-11,-12.397895)"
+           style="stroke-width:1.77165353;stroke-miterlimit:4;stroke-dasharray:none">
+          <text
+             style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;baseline-shift:baseline;stroke-width:1.77165353;stroke-miterlimit:4;stroke-dasharray:none;font-family:Linux Libertine Display O;-inkscape-font-specification:Linux Libertine Display O Italic"
+             id="text5060"
+             y="945.0343"
+             x="55.950214"
+             xml:space="preserve"><tspan
+               y="945.0343"
+               x="55.950214"
+               id="tspan5062"
+               sodipodi:role="line">U</tspan></text>
+          <text
+             sodipodi:linespacing="125%"
+             id="text5064"
+             y="942.36224"
+             x="65"
+             style="font-size:65.00091553%;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;baseline-shift:sub;fill:#000000;fill-opacity:1;stroke:none;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
+             xml:space="preserve"><tspan
+               y="942.36224"
+               x="65"
+               id="tspan5066"
+               sodipodi:role="line">0</tspan></text>
+        </g>
+      </g>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Linux Libertine O;-inkscape-font-specification:Linux Libertine O"
+       x="66.522728"
+       y="104.8133"
+       id="text5086"
+       sodipodi:linespacing="125%"
+       transform="translate(0,875.19688)"><tspan
+         sodipodi:role="line"
+         x="66.522728"
+         y="104.8133"
+         id="tspan5090">1</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Linux Libertine O;-inkscape-font-specification:Linux Libertine O"
+       x="207.4549"
+       y="104.1275"
+       id="text5094"
+       sodipodi:linespacing="125%"
+       transform="translate(0,875.19688)"><tspan
+         sodipodi:role="line"
+         id="tspan5096"
+         x="207.4549"
+         y="104.1275">2</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Linux Libertine O;-inkscape-font-specification:Linux Libertine O"
+       x="242.77367"
+       y="28.003553"
+       id="text5098"
+       sodipodi:linespacing="125%"
+       transform="translate(0,875.19688)"><tspan
+         sodipodi:role="line"
+         id="tspan5100"
+         x="242.77367"
+         y="28.003553">3</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.77165353;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       d="m 5,152.16534 0,5"
+       id="path5288"
+       inkscape:connector-curvature="0"
+       transform="translate(0,875.19688)" />
+    <g
+       id="g5391"
+       transform="translate(140,66)">
+      <g
+         id="g5304"
+         transform="translate(76,64)"
+         style="stroke-width:1.77165353;stroke-miterlimit:4;stroke-dasharray:none">
+        <g
+           id="g5290"
+           transform="translate(-22,-71.909662)"
+           style="stroke-width:1.77165353;stroke-miterlimit:4;stroke-dasharray:none">
+          <text
+             xml:space="preserve"
+             style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Linux Libertine O;-inkscape-font-specification:Linux Libertine O"
+             x="55"
+             y="942.36224"
+             id="text5292"
+             sodipodi:linespacing="125%"><tspan
+               sodipodi:role="line"
+               x="55"
+               y="942.36224"
+               id="tspan5294">Γ</tspan></text>
+          <text
+             xml:space="preserve"
+             style="font-size:65.00091553%;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;baseline-shift:sub;fill:#000000;fill-opacity:1;stroke:none;font-family:Linux Libertine O;-inkscape-font-specification:Linux Libertine O"
+             x="59.093723"
+             y="939.86621"
+             id="text5296"
+             sodipodi:linespacing="125%"><tspan
+               sodipodi:role="line"
+               id="tspan5298"
+               x="59.093723"
+               y="939.86621">50</tspan></text>
+        </g>
+        <text
+           sodipodi:linespacing="125%"
+           id="text5300"
+           y="874.16357"
+           x="39.818409"
+           style="font-size:65.00091553%;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;baseline-shift:super;fill:#000000;fill-opacity:1;stroke:none;font-family:Linux Libertine O;-inkscape-font-specification:Linux Libertine O"
+           xml:space="preserve"><tspan
+             y="874.16357"
+             x="39.818409"
+             id="tspan5302"
+             sodipodi:role="line">2</tspan></text>
+      </g>
+      <g
+         transform="translate(50,22)"
+         id="g5313"
+         style="stroke-width:1.77165353;stroke-miterlimit:4;stroke-dasharray:none">
+        <text
+           sodipodi:linespacing="125%"
+           id="text5315"
+           y="912.36224"
+           x="50"
+           style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Linux Libertine O;-inkscape-font-specification:Linux Libertine O"
+           xml:space="preserve"><tspan
+             id="tspan5317"
+             y="912.36224"
+             x="50"
+             sodipodi:role="line">Γ</tspan></text>
+        <text
+           sodipodi:linespacing="125%"
+           id="text5319"
+           y="910.63098"
+           x="54.808228"
+           style="font-size:65.00091553%;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;baseline-shift:sub;fill:#000000;fill-opacity:1;stroke:none;font-family:Linux Libertine O;-inkscape-font-specification:Linux Libertine O"
+           xml:space="preserve"><tspan
+             y="910.63098"
+             x="54.808228"
+             id="tspan5321"
+             sodipodi:role="line">E</tspan></text>
+      </g>
+      <g
+         id="g5368"
+         transform="translate(65,-10.000019)"
+         style="stroke-width:1.77165353;stroke-miterlimit:4;stroke-dasharray:none">
+        <text
+           style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;baseline-shift:baseline;stroke-width:1.77165353;stroke-miterlimit:4;stroke-dasharray:none;font-family:Linux Libertine Display O;-inkscape-font-specification:Linux Libertine Display O Italic"
+           id="text5370"
+           y="945.0343"
+           x="55.950214"
+           xml:space="preserve"><tspan
+             y="945.0343"
+             x="55.950214"
+             id="tspan5372"
+             sodipodi:role="line">U</tspan></text>
+        <text
+           sodipodi:linespacing="125%"
+           id="text5374"
+           y="942.36224"
+           x="65"
+           style="font-size:65.00091553%;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;baseline-shift:sub;fill:#000000;fill-opacity:1;stroke:none;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
+           xml:space="preserve"><tspan
+             y="942.36224"
+             x="65"
+             id="tspan5376"
+             sodipodi:role="line">0</tspan></text>
+      </g>
+    </g>
+    <g
+       id="g5421"
+       transform="translate(292,0)">
+      <g
+         style="stroke-width:1.77165353;stroke-miterlimit:4;stroke-dasharray:none"
+         id="g5020">
+        <text
+           sodipodi:linespacing="125%"
+           id="text4971"
+           y="937.36224"
+           x="45"
+           style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Linux Libertine O;-inkscape-font-specification:Linux Libertine O"
+           xml:space="preserve"><tspan
+             id="tspan4973"
+             y="937.36224"
+             x="45"
+             sodipodi:role="line">Γ</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-size:65.00091553%;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;baseline-shift:sub;fill:#000000;fill-opacity:1;stroke:none;font-family:Linux Libertine O;-inkscape-font-specification:Linux Libertine O"
+           x="50.179832"
+           y="934.63251"
+           id="text5016"
+           sodipodi:linespacing="125%"><tspan
+             sodipodi:role="line"
+             id="tspan5018"
+             x="50.179832"
+             y="934.63251">75</tspan></text>
+      </g>
+      <g
+         id="g5411"
+         transform="translate(1,-8.000019)"
+         style="stroke-width:1.77165353;stroke-miterlimit:4;stroke-dasharray:none">
+        <text
+           style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;baseline-shift:baseline;stroke-width:1.77165353;stroke-miterlimit:4;stroke-dasharray:none;font-family:Linux Libertine Display O;-inkscape-font-specification:Linux Libertine Display O Italic"
+           id="text5413"
+           y="945.0343"
+           x="55.950214"
+           xml:space="preserve"><tspan
+             y="945.0343"
+             x="55.950214"
+             id="tspan5415"
+             sodipodi:role="line">U</tspan></text>
+        <text
+           sodipodi:linespacing="125%"
+           id="text5417"
+           y="942.36224"
+           x="65"
+           style="font-size:65.00091553%;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;baseline-shift:sub;fill:#000000;fill-opacity:1;stroke:none;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
+           xml:space="preserve"><tspan
+             y="942.36224"
+             x="65"
+             id="tspan5419"
+             sodipodi:role="line">0</tspan></text>
+      </g>
+    </g>
+    <g
+       id="g5441"
+       transform="translate(3.125,-47.874976)">
+      <path
+         style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Mend)"
+         d="m -13.125,1065.2372 0,-55"
+         id="path5286"
+         inkscape:connector-curvature="0" />
+      <text
+         transform="matrix(0,-1,1,0,0,0)"
+         sodipodi:linespacing="125%"
+         id="text5433"
+         y="-20"
+         x="-1072.3622"
+         style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Linux Libertine O;-inkscape-font-specification:Linux Libertine O"
+         xml:space="preserve"><tspan
+           y="-20"
+           x="-1072.3622"
+           id="tspan5435"
+           sodipodi:role="line">Abstand von der Meßstelle</tspan></text>
+    </g>
+    <g
+       id="g5446"
+       transform="translate(0,4.1621094e-5)">
+      <path
+         transform="translate(0,875.19688)"
+         inkscape:connector-curvature="0"
+         id="path5102"
+         d="m 5,192.16534 55,0"
+         style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Mend)" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text5437"
+         y="1077.3622"
+         x="20"
+         style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Linux Libertine O;-inkscape-font-specification:Linux Libertine O"
+         xml:space="preserve"><tspan
+           y="1077.3622"
+           x="20"
+           id="tspan5439"
+           sodipodi:role="line">Zeit</tspan></text>
+    </g>
+  </g>
+</svg>

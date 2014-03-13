@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="337.97244"
+   height="188.22484"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.3.1 r9886"
+   sodipodi:docname="ersatzschaltung.svgz">
+  <defs
+     id="defs4">
+    <marker
+       inkscape:stockid="DotM"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="DotM"
+       style="overflow:visible">
+      <path
+         id="path3827"
+         d="m -2.5,-1 c 0,2.76 -2.24,5 -5,5 -2.76,0 -5,-2.24 -5,-5 0,-2.76 2.24,-5 5,-5 2.76,0 5,2.24 5,5 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         transform="matrix(0.4,0,0,0.4,2.96,0.4)"
+         inkscape:connector-curvature="0" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.4246724"
+     inkscape:cx="-12.702394"
+     inkscape:cy="171.54753"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     units="mm"
+     showguides="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="1676"
+     inkscape:window-height="1032"
+     inkscape:window-x="0"
+     inkscape:window-y="14"
+     inkscape:window-maximized="0">
+    <inkscape:grid
+       type="xygrid"
+       id="grid2985"
+       empspacing="5"
+       visible="true"
+       enabled="true"
+       snapvisiblegridlinesonly="true"
+       originx="49.057087px"
+       originy="-11.013772px" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+        <cc:license
+           rdf:resource="http://creativecommons.org/licenses/by-nc/3.0/" />
+      </cc:Work>
+      <cc:License
+         rdf:about="http://creativecommons.org/licenses/by-nc/3.0/">
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Reproduction" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Distribution" />
+        <cc:requires
+           rdf:resource="http://creativecommons.org/ns#Notice" />
+        <cc:requires
+           rdf:resource="http://creativecommons.org/ns#Attribution" />
+        <cc:prohibits
+           rdf:resource="http://creativecommons.org/ns#CommercialUse" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#DerivativeWorks" />
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(49.057087,-853.12361)">
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.77165353;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-start:url(#DotM);marker-end:none"
+       d="m -45,897.36223 155,-5e-5"
+       id="path2987"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.77165353;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-start:url(#DotM);marker-end:url(#DotM)"
+       d="m -45,162.16539 330,-5e-5"
+       id="path2989"
+       inkscape:connector-curvature="0"
+       transform="translate(0,875.19684)"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.77165353;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       d="m 110,887.36218 0,20 55,0 0,-20 z"
+       id="path4931"
+       inkscape:connector-curvature="0" />
+    <g
+       id="g5961">
+      <path
+         transform="translate(0,875.19684)"
+         inkscape:connector-curvature="0"
+         id="path4984"
+         d="m 80,22.165344 0,60 20,0 -40,0"
+         style="fill:none;stroke:#000000;stroke-width:1.77165353;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-start:url(#DotM)" />
+      <path
+         transform="translate(0,875.19684)"
+         inkscape:connector-curvature="0"
+         id="path4986"
+         d="m 60,92.165344 40,0 -20,0 0,69.999996"
+         style="fill:none;stroke:#000000;stroke-width:1.77165353;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#DotM)" />
+    </g>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.77165353;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#DotM)"
+       d="m 185,897.36218 c 0.1836,-8.7907 15.25645,-10.24672 19.57129,-3.27457 4.2971,5.06072 -0.48947,13.96579 -7.13425,12.49207 -6.66188,-1.19276 -6.63102,-10.33006 -2.43704,-14.2175 5.08297,-5.96556 16.5645,-6.12164 19.82174,1.81332 3.52995,5.52763 -3.50596,15.22258 -8.95386,9.20924 -4.82407,-5.86737 1.92808,-14.30952 8.5637,-14.4251 7.45924,-1.26313 15.89653,6.99373 12.24367,14.37772 -3.27127,5.95391 -11.58599,-0.16258 -9.55325,-5.60952 2.00973,-9.02474 14.8372,-14.6128 21.99549,-7.77544 5.26386,4.5735 2.23483,15.26819 -5.15735,14.94654 -6.26805,-0.73782 -5.71427,-9.65786 -1.12533,-12.35198 6.18164,-5.64184 18.50322,-4.1359 21.07124,4.53057 1.77184,6.16909 -6.0286,11.95024 -11.25236,7.97528 -5.07678,-4.37263 -0.59511,-12.64411 5.13697,-13.79017 6.137,-2.20293 10.60106,3.21546 15.38452,5.90116 1.12196,0.53919 5.57477,0.19803 6.82482,0.19838 l 15,0"
+       id="path5365"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccccccccccccccc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.77165353;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       d="m 165,22.165344 20,0"
+       id="path5402"
+       inkscape:connector-curvature="0"
+       transform="translate(0,875.19684)" />
+    <g
+       id="g5956">
+      <path
+         transform="translate(10.942913,885.90625)"
+         inkscape:connector-curvature="0"
+         id="path5586"
+         d="m -5.942913,11.455978 0,40"
+         style="fill:none;stroke:#000000;stroke-width:1.77165353;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-start:url(#DotM)" />
+      <path
+         style="fill:none;stroke:#000000;stroke-width:1.77165353;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+         d="m 15,937.36223 -20,0 0,55 20,0 z"
+         id="path5588"
+         inkscape:connector-curvature="0" />
+      <path
+         transform="translate(10.942913,885.90625)"
+         inkscape:connector-curvature="0"
+         id="path5590"
+         d="m -5.942913,106.45598 0,45"
+         style="fill:none;stroke:#000000;stroke-width:1.77165353;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#DotM)" />
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-size:32px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
+       x="-38.627831"
+       y="981.62976"
+       id="text6022"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="-38.627831"
+         y="981.62976"
+         style="font-size:32px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Linux Libertine O;-inkscape-font-specification:Linux Libertine O"
+         id="tspan6030">G</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="36.663601"
+       y="981.62976"
+       id="text6034"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan6036"
+         x="36.663601"
+         y="981.62976"
+         style="font-size:32px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Linux Libertine O;-inkscape-font-specification:Linux Libertine O">C</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="126.31724"
+       y="879.20361"
+       id="text6038"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan6040"
+         x="126.31724"
+         y="879.20361"
+         style="font-size:32px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Linux Libertine O;-inkscape-font-specification:Linux Libertine O">R</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
+       x="210.61533"
+       y="879.13959"
+       id="text6042"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan6044"
+         x="210.61533"
+         y="879.13959"
+         style="font-size:32px;-inkscape-font-specification:Linux Libertine O;font-family:Linux Libertine O;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal">L</tspan></text>
+  </g>
+</svg>

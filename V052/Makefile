@@ -4,12 +4,16 @@
 
 .PHONY: all clean
 
-all : ersatzschaltung.eps protokoll.pdf
+all : protokoll.pdf
 
 clean:
 	-rm protokoll.aux protokoll.log protokoll.pdf	\
 	protokoll.out protokoll.run.xml protokoll.toc	\
 	protokoll.bcf ersatzschaltung.eps
+
+
+protokoll.pdf : ersatzschaltung.eps impulsfahrplan.eps
+
 
 %.pdf : %.tex
 	@pdflatex \\nonstopmode\\input{$(*F)}
@@ -17,5 +21,5 @@ clean:
 	@pdflatex \\nonstopmode\\input{$(*F)}
 	@pdflatex \\nonstopmode\\input{$(*F)}
 
-%.eps : %.svgz
+%.eps : %.svg
 	@inkscape --export-eps=$@ $<
