@@ -30,7 +30,9 @@ L = \frac{c\cdot\Delta t}{2\cdot\sqrt{2,25}}
 {Trommel}&822&82.1\\
 \bottomrule
   \end{tabular}
-  \caption{LÄNGENMSSSUNG.}
+  \caption{Mit dem Oszilloskop bestimmte zeitliche Abstände 
+zwischen einlaufendem und reflektiertem Signal und die daraus 
+berechneten Kabellängen.}
   \label{tab:laengenmessung}
 \end{table}
 %
@@ -61,7 +63,9 @@ L = \frac{c\cdot\Delta t}{2\cdot\sqrt{2,25}}
     \label{fig:laenge_trommel}
   \end{subfigure}
 
-  \caption{Längenmessung}
+  \caption{Aufgenommene Oszilloskopenbilder zur Bestimmung der 
+jeweiligen Kabellängen. Der zeitliche Abstand der Signale wird an 
+den roten Markierungen abgelesen.}
 \end{figure}
 %
 \FloatBarrier
@@ -111,7 +115,12 @@ ${G}_\text{g}${/}\si{\micro\siemens}&{G/}\si{\micro\siemens\per\metre}\\
 100.00&2.60&1.45&2.6&1.45&138.6&77.1&138.6&77.1\\
 \bottomrule
   \end{tabular}
-  \caption{RLCROT}
+  \caption{Mit dem RLC-Messgerät gemessene Widerstands-, 
+Induktivitäts- und Kapazitätswerte für verschiedene Frequenzen 
+des Sinussignals des Messgeräts für das rote Kabel. 
+Aus diesen wird der Querleitwiderstand berechnet. 
+Aus der oben bestimmten Länge des 
+Kabels werden schlussendlich die Beläge bestimmt.}
   \label{tab:RLC_rot}
 \end{table}
 %
@@ -147,7 +156,9 @@ ${G}_\text{g}${/}\si{\micro\siemens}&{G/}\si{\micro\siemens\per\metre}\\
 100.00&2.60&0.22&5.2&0.45&990&85.4&495.0&42.7\\
 \bottomrule
   \end{tabular}
-  \caption{RLCSCHWARZ}
+  \caption{In dieser Tabelle sind die gleichen Daten 
+wie in Tabelle~\ref{tab:RLC_rot} eingetragen. Hier aber 
+für das schwarze Kabel.}
   \label{tab:RLC_schwarz}
 \end{table}
 %
@@ -183,7 +194,9 @@ ${G}_\text{g}${/}\si{\milli\siemens}&{G/}\si{\milli\siemens\per\metre}\\
 100.00&5.29&0.06&26.4&0.32&8.75&0.11&1.75&0.20\\
 \bottomrule
   \end{tabular}
-  \caption{RLCTROMMEL}
+  \caption{Die Kabeltrommel liefert diese Werte für 
+die Beläge. Die Größen sind die gleichen wie in 
+Tabelle~\ref{tab:RLC_rot}}
   \label{tab:RLC_trommel}
 \end{table}
 %
@@ -193,7 +206,9 @@ für die verschiedenen Kabel ist in Plot~\ref{fig:belaege} zu sehen.
 \begin{figure}[]
 \centering
 \includegraphics[width=1\textwidth]{4er.pdf}
-\caption{4ER}
+\caption{Gemessene und berechnete Beläge der vier verwendeten 
+Kabel. Die Frequenzachse ist logarithmisiert, um eine bessere 
+visualisierung zu erhalten.}
 \label{fig:belaege}
 \end{figure}
 %
@@ -215,14 +230,22 @@ Kabels, so ergibt sich die gesuchte Dämpfungskonstante $\alpha$.
 \begin{figure}[]
 \centering
 \includegraphics[width=0.8\textwidth]{daempfung_kurz.png}
-\caption{KURZ}
+\caption{Die Fast-Fourier-Transformation eines Rechtecksignals, 
+welches auf einem kurzen Kabel geführt wird, sodass die 
+Dämpfung vernachlässigbar ist. Die Amplituden können direkt abgelesen 
+werden.}
 \label{fig:daempfung_kurz}
 \end{figure}
 %
 \begin{figure}[]
 \centering
 \includegraphics[width=0.8\textwidth]{daempfung_lang.png}
-\caption{LANG}
+\caption{Die Fast-Fourier-Transformation eines Rechtecksignals, 
+welches auf einem langen Kabel geführt wird. Hierbei wird die 
+in diesem Versuch verwendete Kabeltrommel genommen. 
+Es ist zu erkennen, dass die Amplituden, bis auf die erste, kleiner 
+sind. Dies kommt durch die erhöhte Dämpfung dieses Kabels 
+zustande.}
 \label{fig:daempfung_lang}
 \end{figure}
 %
@@ -243,7 +266,10 @@ $\alpha${ /}\si{\per\metre}\\
 \multicolumn{3}{c}{Mittelwerte: }&\SI{1.372(89)}{}&\SI{0.017(1)}{}\\
 \bottomrule
   \end{tabular}
-  \caption{DÄMPFUNG}
+  \caption{Diese Tabelle führt die sich durch die 
+Fast-Fourier-Transformation ergebenden Amplituden auf.
+Damit wird die Dämpfung, sowie die Dämpfungskonstante als 
+Dämpfung pro Länge errechnet.}
   \label{tab:daempfung}
 \end{table}
 %
@@ -270,20 +296,26 @@ und ~\eqref{eq:sprung3} angegebenen Relationen.
 %
 \begin{equation}
 \text{Sprung1} = U_0
+\label{eq:sprung1}
 \end{equation}
 %
 \begin{equation}
 \frac{\text{Sprung2}}{\text{Sprung1}} = \Gamma_{50}
+\label{eq:sprung2}
 \end{equation}
 %
 \begin{equation}
 \frac{\text{Sprung3}}{\text{Sprung1}\cdot\left(1 - \Gamma_{50}\right)} = \Gamma_{75}
+\label{eq:sprung3}
 \end{equation}
 %
 \begin{figure}[]
 \centering
 \includegraphics[width=0.8\textwidth]{reflex.png}
-\caption{MEHRFACHREFLEX}
+\caption{Das Oszilloskopenbild bei Mehrfachreflexion. Es sind 
+Drei ausgeprägte Sprünge zu sehen. Die Schwankungen in der Spannung 
+zwischen diesen Sprüngen ist auf das schlecht generierte 
+Rechtecksignal des Funktionengenerators zurückzuführen.}
 \label{fig:mehrfachreflex}
 \end{figure}
 %
@@ -299,7 +331,8 @@ und ~\eqref{eq:sprung3} angegebenen Relationen.
 3&44.5&{$\Gamma_{75}$}&1.06\\
 \bottomrule
   \end{tabular}
-  \caption{MEHRFACHREFLEX}
+  \caption{Sprunghöhen und die daraus resultierenden 
+Reflexionsfaktoren bei Mehrfachreflexion.}
   \label{tab:mehrfachreflex}
 \end{table}
 %
@@ -311,11 +344,17 @@ In diesem Abschnitt werden die erhaltenen Signalspannungen
 für verschiedene unbekannte Abschlusswiderstände mit den im 
 Theorieteil berechneten Signalspannungen verglichen, um so 
 auf die Art des Abschlusses und die dazugehörige Zeitkonstante 
-zu schliessen.\footnote{zum fitten der Messwerte wird 
+zu schliessen.\\
+Dazu werden die im Theorieteil gefundenen Funktionen durch 
+Messwerte gefittet, die zuvor mithilfe der Cursorfunktion des im 
+Versuch verwendeten Oszilloskopen bestimmt wurden.
+\footnote{Zum fitten der Messwerte wird 
 der Befehl curve\_fit aus der Bibliothek scipy.optimize 
 von \texttt{ipython} in der Version 3.2.3  verwendet}\\
 Dabei ist zu beachten, dass sich das reflektierte Signal mit dem 
 einlaufenden Signal überlagtert.\\
+Tabelle~\ref{tab:fit_messwerte} beinhaltet die für die verschiedenen 
+Signalspannungen abgelesenen Messwerte.\\
 Die Paragraphen sind nach den verwendeten Kästen und Buchsen 
 benannt.\\\\
 
@@ -335,7 +374,9 @@ am Oszilloskop aus dem Signalverlauf abgelesen wurden.\\
 \begin{figure}[]
 \centering
 \includegraphics[width=0.8\textwidth]{k2b3.png}
-\caption{K2B3OSZI}
+\caption{Aufgenommenes Oszilloskopenbild für den Abschluss 
+an Kasten Zwei, Buchse Drei. Hier wird eine Reihenschaltung von 
+ohmschen Widerstand und Induktivität festgestellt.}
 \label{fig:k2b3}
 \end{figure}
 %
@@ -354,7 +395,9 @@ U(t) = \SI{41.625}{\volt}\cdot\left(2 -
 \begin{figure}[]
 \centering
 \includegraphics[width=0.8\textwidth]{fit_k2b3.pdf}
-\caption{K2B3FIT}
+\caption{Gefittete Kurve, welche durch Messwerte verläuft, welche 
+am Oszilloskop abgelesen wurden. Hierbei wird Kasten Zwei Buchse 
+ Drei als Kabelabschluss verwendet.}
 \label{fig:fit_k2b3}
 \end{figure}
 %
@@ -373,7 +416,9 @@ Messwerte und Fit sind in Plot~\ref{fig:fit_k2b4} zu sehen.\\
 \begin{figure}[]
 \centering
 \includegraphics[width=0.8\textwidth]{k2b4.png}
-\caption{K2B4OSZI}
+\caption{Aufgenommener Signalverlauf bei Kabelabschluss an 
+Kasten Zwei, Buchse Vier. Auch bei diesem Abschluss wird eine 
+Reihenschaltung von ohmschen Widerstand und Induktivität festgestellt.}
 \label{fig:k2b4}
 \end{figure}
 %
@@ -392,7 +437,8 @@ U(t) = \SI{22.0}{\volt}\cdot\left(2 -
 \begin{figure}[]
 \centering
 \includegraphics[width=0.8\textwidth]{fit_k2b4.pdf}
-\caption{K2B4FIT}
+\caption{Fit durch am Oszilloskop abgelesenen Punkten bei 
+Kabelabschluss Kasten Zwei, Buchse Vier.}
 \label{fig:fit_k2b4}
 \end{figure}
 %
@@ -412,7 +458,9 @@ Plot~\ref{fig:fit_k3b6} zeigt Messwerte und gefittete Kurve.\\
 \begin{figure}[]
 \centering
 \includegraphics[width=0.8\textwidth]{k3b6.png}
-\caption{K3B6OSZI}
+\caption{Dieser Signalverlauf ergibt sich, wenn als Kabelabschluss 
+Kasten Drei, Buchse Sechs gewählt wird. Diesmal handelt es sich 
+um eine Reihenschaltung aus ohmschen Widerstand und Kapazität.}
 \label{fig:k3b6}
 \end{figure}
 %
@@ -430,11 +478,42 @@ U(t) = \SI{53.9}{\volt}\cdot\left(2 +
 \begin{figure}[]
 \centering
 \includegraphics[width=0.8\textwidth]{fit_k3b6.pdf}
-\caption{K3B6FIT}
+\caption{Messwerte und durch diese für den Abschluss mit 
+Kasten Drei, Buchse Sechs.}
 \label{fig:fit_k3b6}
 \end{figure}
 %
 \FloatBarrier
 %
-Tabelle mit Messwerten
+\begin{table}[h]
+  \centering
+  \begin{tabular}{SS|SS|SS}
+    \toprule
+\multicolumn{2}{c}{Kasten 2 Buchse 3}&
+\multicolumn{2}{c}{Kasten 2 Buchse 4}&
+\multicolumn{2}{c}{Kasten 3 Buchse 6}\\
+\midrule
+{Zeit t /}\si{\nano\second}&{U /}\si{\volt}&
+{Zeit t /}\si{\nano\second}&{U /}\si{\volt}&
+{Zeit t /}\si{\nano\second}&{U /}\si{\volt}\\
+\midrule
+0&83.25&0&44.0&0&10.2\\
+10&69.0&130&41.7&280&18.2\\
+20&56.0&280&39.5&500&25.7\\
+30&48.0&470&36.2&760&34.7\\
+50&33.0&670&33.7&1180&47.2\\
+70&24.5&910&30.2&2260&69.0\\
+155&8.0&1360&24.2&3800&87.0\\
+300&5.8&2450&14.2&4740&93.5\\
+400&5.0&3540&8.7&6120&100.0\\
+     &      &5000&3.2&9300&105.0\\
+     &      &        &     &18660&107.0\\
+\bottomrule
+  \end{tabular}
+  \caption{Hier zu sehen sind die Messwerte, welche auf den Kurven 
+der sich ergebenden Signalspannungen liegen, wenn als Abschlüsse 
+des Kabels die über den Spalten genannten Kästen und Buchsen 
+verwendet werden.}
+  \label{tab:fit_messwerte}
+\end{table}
 %
