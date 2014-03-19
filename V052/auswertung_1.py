@@ -1,4 +1,6 @@
-# encoding: utf-8
+# -*- encoding: utf-8 -*-
+
+from __future__ import unicode_literals
 
 from numpy import *
 from matplotlib.pyplot import *
