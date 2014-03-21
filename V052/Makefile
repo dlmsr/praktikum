@@ -7,12 +7,12 @@
 all : protokoll.pdf
 
 clean:
-	-rm protokoll.aux protokoll.log protokoll.pdf	\
-	protokoll.out protokoll.run.xml protokoll.toc	\
-	protokoll.bcf ersatzschaltung.eps
+	-rm protokoll.aux protokoll.log protokoll.pdf protokoll.out	\
+	protokoll.run.xml protokoll.toc protokoll.bcf protokoll.bbl	\
+	protokoll.blg ersatzschaltung.eps
 
 
-protokoll.pdf : ersatzschaltung.eps impulsfahrplan.eps
+protokoll.pdf : ersatzschaltung.eps impulsfahrplan.eps tex
 
 
 %.pdf : %.tex
