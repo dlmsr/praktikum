@@ -6,6 +6,59 @@
 
 \subsection{Messung des Kontrasts}
 
+Zur Auswertung der Meßdaten, die sich bei Kontrastmessung ergeben haben,
+benutzen wir eine nichtlineare Ausgleichsrechnung.%
+\footnote{Die numerische Berechnung wird von der Funktion
+  \texttt{scipy.optimize.curve\_fit} aus der Python-Bibliothek
+  \texttt{scipy} in der Version 0.10.1 durchgeführt} Die zu messenden
+Intensitäten wurden über entsprechend proportionale Spannungen bestimmt.
+Wir nehmen einen Zusammenhang $U = f(\phi)$ zwischen $\phi$ und den
+gemessenen Spannungen an, der durch die Funktion $f\colon [0,\pi] \to
+\R$ mit
+%
+\begin{equation}
+  \label{eq:contrast_reg}
+  f(\phi) = A \pm A\sin(2 \phi + B) + C
+\end{equation}
+%
+gegeben ist.  Im Fall der maximalen Intensität wird das positive
+Vorzeichen gewählt, im anderen Fall das negative.  Diese Funktion ergibt
+sich wegen Formel~\eqref{eq:intens_contrast} aus dem Theorieteil.  Die
+Ergebnisse der Ausgleichsrechnung sind in \cref{tab:contrast} und
+\cref{fig:contrast} dargestellt.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.75\textwidth]{figures/contrast}
+  \caption{Dargestellt sind die Meßwerte und der geschätzte funktionale
+    Zusammenhang gemäß \cref{eq:contrast_reg}.  Im oberen Plot sind die
+    Meßwerte der maximalen Intensität und im unteren Plot diejenigen der
+    minimalen Intensität}
+  \label{fig:contrast}
+\end{figure}
+
+\begin{table}
+  \centering
+  \begin{tabular}{lSSSSSS}
+    \toprule
+    & 
+    {$A/\si{\volt}$} & {$\frac{\sigma_A}{A}$} &
+    {$B$} & {$\frac{\sigma_B}{B}$} &
+    {$C/\si{\volt}$} & {$\frac{\sigma_C}{C}$} \\
+    \midrule
+    max. Intens. &
+    1.4694 & 0.056 & 0.7559 & 0.0748 & -0.37826 & 0.2725 \\
+    min. Intens. &
+    1.1867 & 0.0588 & -0.8667 & 0.0681 & -0.3009 & 0.2879\\
+    \bottomrule
+  \end{tabular}
+  \caption{Ergebnisse der Ausgleichsrechnung.  Die Größen $\sigma_i$
+    bezeichnen die Standardabweichungen der geschätzten Parameter.  Die
+    Phase $B$ ist im Bogenmaß angegeben.}
+  \label{tab:contrast}
+\end{table}
+
 \subsection{Messung der Brechzahl von Glas}
 
 \subsection{Messung der Brechzahl von Gasen}
+
