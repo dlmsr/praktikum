@@ -1,12 +1,4 @@
 # refraction index of glass
-# vacuum wavelength/nanometers
-632.8
-# slab thickness/nanometers
-1000000
-# delta phi/deg
-10
-# phi_1/deg
-10
 # counts
 48
 48

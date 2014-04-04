@@ -1,0 +1,6 @@
+# vacuum wavelength/nanometers
+# slab thickness/millimeters
+# delta phi/deg
+# starting angle phi/deg
+# gas cell length/millimeters
+632.8  1  10  10  100
