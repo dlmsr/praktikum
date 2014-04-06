@@ -130,15 +130,17 @@ aprom = mean(aprom_array)
 daprom = std(aprom_array)/sqrt(len(aprom_array))
 
 #Mehrfachreflexion
-Sprung1 = 50 #V (reinkommendes Signal)
-Sprung2 = 8.2 #V (an 75 Ohm reflektiert)
-Sprung3 = 44.5 #V (an Ende reflektiert)
+S1 = 50 #V (reinkommendes Signal)
+S2 = 8.2 #V
+S3 = 44.5 #V
+S4 = -3*20/7 #Volt
 
-gamma_50 = Sprung2/Sprung1
-gamma_75 = Sprung3/(Sprung1*(1-gamma_50))
+gamma_75 = S2/S1
+gamma_e = +sqrt( (S3**2 - S2*S4)/(S1**2 - S2**2) )
+gamma_50 = S3*S1/S2**2 - gamma_e*S1**2/S2**2 + gamma_e
 
 print("Zur Mehrfachreflexion")
-print("gamma_50 = {} --- gamma_75 = {}".format(gamma_50,gamma_75))
+print("gamma_50 = {} --- gamma_75 = {} --- gamma_e = {}".format(gamma_50,gamma_75,gamma_e))
 
 ##Versch. Kästen (k) und Buchsen (b) als Abschlusswiderstände -> Messwerte fitten
 #k2b3
@@ -149,9 +151,17 @@ def verlauf1(t,A,T):
 
 opt1,cov1 = curve_fit(verlauf1,t1,U1)
 
+def verlauf1mehr(t,A,L,R):
+    return U1[0]/2 *(2- A*(1-exp(-t/(L/(50+R)))))    #Volt
+
+opt1mehr,cov1mehr = curve_fit(verlauf1mehr,t1,U1)
+
+fehlertau1 = sqrt((6.9*10**(-6)/(50 + opt1mehr[2]))**2 + (opt1mehr[1]*60/(50 + opt1mehr[2])**2)**2)
+
 x1=linspace(-1*10**(-8),5*10**(-7),1000)
 plot(t1*10**9,U1,'r*',label="Messwerte")
 plot(x1*10**9,verlauf1(x1,opt1[0],opt1[1]),'k',label="Fit")
+#plot(x1*10**9,verlauf1mehr(x1,opt1mehr[0],opt1mehr[1],opt1mehr[2]),'b',label="neu")
 
 title("Kasten 2 Buchse 3")
 xlabel("Zeit t in ns")
@@ -170,9 +180,18 @@ def verlauf2(t,A,T):
 
 opt2,cov2 = curve_fit(verlauf2,t2,U2)
 
+def verlauf2mehr(t,A,L,R):
+    return U2[0]/2 *(2- A*(1-exp(-t/(L/(50 + R)))))    #Volt
+
+opt2mehr,cov2mehr = curve_fit(verlauf2mehr,t2,U2)
+
+fehlertau2 = sqrt((7.8*10**(-3)/(50 + opt2mehr[2]))**2 + (opt2mehr[1]*2142/(50 + opt2mehr[2])**2)**2)
+
 x2=linspace(-1*10**(-8),5*10**(-6),1000)
 plot(t2*10**9,U2,'r*',label="Messwerte")
 plot(x2*10**9,verlauf2(x2,opt2[0],opt2[1]),'k',label="Fit")
+#plot(x2*10**9,verlauf2mehr(x2,opt2mehr[0],opt2mehr[1],opt2mehr[2]),'b',label="neu")
+
 
 title("Kasten 2 Buchse 4")
 xlabel("Zeit t in ns")
@@ -188,11 +207,19 @@ def verlauf3(t,A,T):
     return   U3[0]/(1+A) *(2 +(A-1)*exp(-t/T))  #Volt
 
 
+
 opt3,cov3 = curve_fit(verlauf3,t3,U3)
+
+def verlauf3mehr(t,R,C):
+    return   U3[0]/(1+opt3[0]) *(2 +(opt3[0]-1)*exp(-t/(C*(50+R))))  #Volt
+
+
+opt3mehr,cov3mehr = curve_fit(verlauf3mehr,t3,U3, p0=(50,1*10**(-9)))
 
 x3=linspace(-1*10**(-8),20*10**(-6),1000)
 plot(t3*10**9,U3,'r*',label="Messwerte")
 plot(x3*10**9,verlauf3(x3,opt3[0],opt3[1]),'k',label="Fit")
+#plot(x3*10**9,verlauf3mehr(x3,opt3mehr[0],opt3mehr[1]),'b',label="neu")
 
 title("Kasten 3 Buchse 6")
 xlabel("Zeit t in ns")

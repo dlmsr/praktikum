@@ -271,21 +271,22 @@ ergibt sich die gesuchte Dämpfungskonstante $\alpha$.
 \subsection{Mehrfacheflexion}
 %
 Nun wird das Signal untersucht, welches entsteht, wenn zwei Kabel mit
-unterschiedlichen Ohmschen Widerständen in Reihe geschaltet werden. Das
-erste Kabel besitzt einen Ohmschen Widerstand von \SI{50}{\ohm}, das
+unterschiedlichen ohmschen Widerständen in Reihe geschaltet werden. Das
+erste Kabel besitzt einen ohmschen Widerstand von \SI{50}{\ohm}, das
 zweite \SI{75}{\ohm}.  Abbildung~\ref{fig:impulsfahrplan} zeigt den
 dazugehörigen Impulsfahrplan, Abbildung~\ref{fig:mehrfachreflex} das mit
 einem Oszilloskopen aufgenommene Bild.  Tabelle~\ref{tab:mehrfachreflex}
 enthält die gemessenen Sprunghöhen in der Spannung und die daraus
 berechneten Reflexionskoeffizienten.  Dabei bezeichnet $\Gamma_{50}$ den
-Reflexionsfaktor am Ende des \SI{50}{\ohm} Kabels und $\Gamma_{75}$
-entsprechend den Reflexionsfaktor am Ende des \SI{75}{\ohm} Kabels, also
-dem offenen Ende.
-
-Wie bereits in der Durchführung erwähnt, wird der Sprung zwischen Sprung
-Zwei und Drei nicht gemessen, da vernachlässigbar.  Dadurch ergeben sich
-durch einfache Überlegungen die in den Formeln~\eqref{eq:sprung1},
-~\eqref{eq:sprung2} und ~\eqref{eq:sprung3} angegebenen Relationen.
+Reflexionsfaktor am Anfang des \SI{50}{\ohm} Kabels und $\Gamma_{75}$
+entsprechend den Reflexionsfaktor am Anfang des \SI{75}{\ohm} Kabels 
+und $\Gamma_\text{E}$ den Reflexionsfaktor des offenen Endes.\\
+Der erste Sprung in der Spannung bezeichnet die Eingangsspannung, 
+was durch Gleichung~\eqref{eq:sprung1} ausgedrückt wird.
+Nach längerer Rechnung und Beachtung der Phasensprünge des Signals 
+ergeben sich für die Reflexionsfaktoren die in den 
+Gleichungen~\eqref{eq:gamma75},~\eqref{eq:gammae} 
+und~\eqref{eq:gamma50} angegebenen Formeln.\\
 %
 \begin{equation}
   \text{Sprung1} = U_0
@@ -293,19 +294,28 @@ durch einfache Überlegungen die in den Formeln~\eqref{eq:sprung1},
 \end{equation}
 %
 \begin{equation}
-  \frac{\text{Sprung2}}{\text{Sprung1}} = \Gamma_{50}
-  \label{eq:sprung2}
+  \Gamma_{75} = \frac{\text{Sprung2}}{\text{Sprung1}}
+  \label{eq:gamma75}
 \end{equation}
 %
 \begin{equation}
-  \frac{\text{Sprung3}}{\text{Sprung1}\cdot\left(1 - \Gamma_{50}\right)} = \Gamma_{75}
-  \label{eq:sprung3}
+ \Gamma_\text{E} = \sqrt{\frac{\text{Sprung3}^2 -\text{Sprung2}\cdot \text{Sprung4}}
+{\text{Sprung1}^2 -\text{Sprung2}^2}}
+  \label{eq:gammae}
+\end{equation}
+%
+\begin{equation}
+\Gamma_{50} = \frac{\text{Sprung3}\cdot \text{Sprung1}}
+{\text{Sprung2}^2}
+-\Gamma_\text{E}\frac{\text{Sprung1}^2}{\text{Sprung2}^2}
++\Gamma_\text{E}
+\label{eq:gamma50}
 \end{equation}
 %
 \begin{figure}[]
   \centering
   \includegraphics[width=0.8\textwidth]{reflex.png}
-  \caption{Das Oszilloskopenbild bei Mehrfachreflexion. Es sind Drei
+  \caption{Das Oszilloskopenbild bei Mehrfachreflexion. Es sind Vieri
     ausgeprägte Sprünge zu sehen. Die Schwankungen in der Spannung
     zwischen diesen Sprüngen ist auf das schlecht generierte
     Rechtecksignal des Funktionengenerators zurückzuführen.}
@@ -320,8 +330,9 @@ durch einfache Überlegungen die in den Formeln~\eqref{eq:sprung1},
     {Größe}&{Wert}\\
     \cmidrule(r){1-2} \cmidrule(l){3-4}
     1&50&{$U_0$}&50\si{\volt}\\
-    2&8.2&{$\Gamma_{50}$}&0.16\\
-    3&44.5&{$\Gamma_{75}$}&1.06\\
+    2&8.2&{$\Gamma_{75}$}&0.16\\
+    3&44.5&{$\Gamma_{E}$}&0.92\\
+    4&-8.6&{$\Gamma_{50}$}&-0.13\\
     \bottomrule
   \end{tabular}
   \caption{Sprunghöhen und die daraus resultierenden 
@@ -353,21 +364,33 @@ Bild~\ref{fig:k2b3} zu sehen. Der Fit mit der
 Funktion~\eqref{eq:ind_ohm_reflex}, welche zu dem in Reihe geschalteten
 ohmschen Widerstand und einer Induktivität gehört, liefert das beste
 Ergebnis. Das Ergebnis dieses Fits ist in Formel~\eqref{eq:fit_k2b3}
-wiedergegeben.  Daraus ergibt sich die Zeitkonstante
-in~\eqref{eq:zeit_k2b3}.  Der Fehler der sich durch den Fit ergibt, ist
-so klein, dass er hier nicht mit angegeben wird.  Der Plot in
-Abb.~\ref{fig:k2b3} zeigt die gefittete Kurve durch Punkte, die am
+wiedergegeben.  Daraus ergeben sich bei einem Wellenwiderstand des 
+Kabels von $Z_0 =$ \SI{50}{\ohm} die Induktivität und der Widerstand 
+des Abschlusses in~\eqref{eq:zeit_k2b3}. Die dazugehörige 
+Zeitkonstante ist ebenfalls angegeben. 
+Die Fehler für die Induktivität und den Widerstand durch die 
+Fitfunktion sind gigantisch und übersteigen die sich durch den Fit 
+ergebenden Fehler um mehrere Größenordnungen. 
+Deswegen sind diese 
+hier nicht angegeben. Für einen Grund dieser Fehler sei auf 
+die Sektion Diskussion verwiesen. Bei allen folgenden Abschlüssen 
+zeigt sich das selbe Verhalten.\\
+Der Fehler für die Zeitkonstante wird durch einen seperaten Fit mit 
+der Zeitkonstante als eigenen Anpassungsparameter ermittelt.\\
+Der Plot in Abb.~\ref{fig:k2b3} zeigt die gefittete Kurve durch Punkte, die am
 Oszilloskop aus dem Signalverlauf abgelesen wurden.
 %
 \begin{equation}
   U(t) = \SI{41.625}{\volt}\cdot\left(2 - 
-    1.87\left(1-\exp{\left(\frac{-t}{\SI{4.89}{\second}}\right)}
+    1.87\left(1-\exp{\left(\frac{-t}{\SI{48.9}{\nano\second}}\right)}
     \right)\right)
   \label{eq:fit_k2b3}
 \end{equation}
 %
 \begin{equation}
-  \tau = \frac{L}{Z_0 + R} = \SI{4.89}{\second}
+  \tau = \frac{L}{Z_0 + R} = \frac{\SI{44.8}{\micro\henry}}
+{\SI{50}{\ohm} + \SI{846}{\ohm}} 
+=\SI{48.9(6)}{\nano\second}
   \label{eq:zeit_k2b3}
 \end{equation}
 %
@@ -394,8 +417,11 @@ Bild~\ref{fig:k2b4} zeigt den sich ergebenden Signalverlauf bei diesem
 Abschluss.  Wie bei dem vorherigen Abschluss passt der Fit mit der
 Funktion~\eqref{eq:ind_ohm_reflex}, also dem in Reihe geschalteten
 ohmschen Widerstand und einer Induktivität, am besten.  Der Fit ergibt
-Formel~\eqref{eq:fit_k2b4}.  Hier ergibt sich die Zeitkonstante
-in~\eqref{eq:zeit_k2b4}.  Messwerte und Fit sind ebenfalls in
+Formel~\eqref{eq:fit_k2b4}.  Hier ergeben sich die Induktivität, der 
+Widerstand und die Zeitkonstante in~\eqref{eq:zeit_k2b4}.
+Der Fehler der Zeitkonstanten wird wieder mit einem seperaten 
+Fit mit der Zeitkonstanten als Parameter bestimmt. 
+Messwerte und Fit sind in
 Abb.~\ref{fig:k2b4} zu sehen.
 %
 \begin{equation}
@@ -406,7 +432,9 @@ Abb.~\ref{fig:k2b4} zu sehen.
 \end{equation}
 %
 \begin{equation}
-  \tau = \frac{L}{Z_0 + R} = \SI{2.61(8)}{\micro\second}
+  \tau = \frac{L}{Z_0 + R} = 
+\frac{\SI{21.8}{\milli\henry}}{\SI{50}{\ohm} + 
+\SI{8260}{\ohm}} =\SI{2.62(8)}{\micro\second}
   \label{eq:zeit_k2b4}
 \end{equation}
 %
@@ -434,17 +462,21 @@ Das Signal des letzten Abschlusses ist in Bild~\ref{fig:k3b6} zu sehen.
 Diesmal passt der Fit mit der Funktion~\eqref{eq:cap_ohm_reflex}, dem in
 Reihe geschalteten ohmschen Widerstand und einer Kapazität, sehr gut.
 Formel~\eqref{eq:fit_k3b6} gibt das Ergebnis des Fits an.  Bei diesem
-Abschluss ergibt sich die Zeitkonstante in~\eqref{eq:zeit_k3b6}.  Plot
+Abschluss ergeben sich Widerstand und Kapazität, sowie die 
+Zeitkonstante in~\eqref{eq:zeit_k3b6}. Der  Plot
 in Abb.~\ref{fig:k3b6} zeigt Messwerte und gefittete Kurve.
 %
 \begin{equation}
   U(t) = \SI{53.9}{\volt}\cdot\left(2 + 
-    \left(-8.1 - 1\right)\exp{\frac{-t}{\SI{2.51}{\micro\second}}}\right)
+    \left(-8.1 - 1\right)\exp{\left(\frac{-t}
+{\SI{2.51}{\micro\second}}\right)}\right)
   \label{eq:fit_k3b6}
 \end{equation}
 %
 \begin{equation}
-  \tau = (Z_0 + R)C = \SI{2.51(6)}{\micro\second}
+  \tau = (Z_0 + R)C = 
+(\SI{50}{\ohm}+\SI{436}{\ohm})\cdot\SI{5.2}{\nano\farad}= 
+\SI{2.51(6)}{\micro\second}
   \label{eq:zeit_k3b6}
 \end{equation}
 %
