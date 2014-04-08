@@ -41,21 +41,6 @@
 % Deutsche Zeichenketten
 \usepackage[german]{babel}
 
-% ==========================================================================
-%                  Aufzählungen, Referenzen und Links
-% ==========================================================================
-
-\usepackage{enumitem}
-
-% Verlinkungen innerhalb und außerhalb des PDF-Dokuments
-\usepackage{hyperref}
-\usepackage{cleveref}
-
-% Formattiert URLs, so dass sie sich z.B. besser vom Text abheben
-\usepackage{url}
-
-% TrueType-Schrift für URLs		
-% \urlstyle{tt}		
 
 % ==========================================================================
 %                        Bibliograhphie und Anhang
@@ -93,7 +78,7 @@
 \usepackage{subcaption}
 
 % Beinhaltet \FloatBarrier , sodass nach diesem Befehl keine Floats mehr erscheinen
-\usepackage{placeins}
+\usepackage[section]{placeins}
 
 % Text umläuft Fließobjekte
 %\usepackage{wrapfig}
@@ -152,6 +137,24 @@
 % Kürzen von Einheiten in SIUnitX ermöglichen
 % \usepackage{cancel}
 
+% ==========================================================================
+%                  Aufzählungen, Referenzen und Links
+% ==========================================================================
+
+\usepackage{enumitem}
+
+% Formattiert URLs, so dass sie sich z.B. besser vom Text abheben
+\usepackage{url}
+
+% TrueType-Schrift für URLs
+% \urlstyle{tt}
+
+
+% Verlinkungen innerhalb und außerhalb des PDF-Dokuments
+\usepackage[colorlinks=true]{hyperref}
+
+% intelligente Verlinkungen
+\usepackage{cleveref}
 
 % ==========================================================================
 %                            Textsatzparameter
@@ -165,4 +168,3 @@
 % Einstellungen benötigt.
 \widowpenalty = 3000
 \displaywidowpenalty = 3000
-
