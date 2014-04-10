@@ -7,10 +7,11 @@
 \subsection{Messung des Kontrasts}
 
 Zur Auswertung der Meßdaten, die sich bei Kontrastmessung ergeben haben,
-benutzen wir eine nichtlineare Ausgleichsrechnung.\footnote{%
+benutzen wir eine nichtlineare Ausgleichsrechnung\footnote{%
   Die numerische Berechnung wird von der Funktion
   \texttt{scipy.optimize.curve\_fit} aus der Python-Bibliothek
-  \texttt{scipy} in der Version 0.10.1 durchgeführt}%
+  \texttt{scipy} in der Version 0.10.1 durchgeführt}.
+%
 Die zu messenden Intensitäten wurden über entsprechend proportionale
 Spannungen bestimmt.  Wir nehmen einen Zusammenhang $U = f(\phi)$
 zwischen $\phi$ und den gemessenen Spannungen an, der durch die Funktion
@@ -79,7 +80,7 @@ Abhängigkeit zwischen Kontrast und Polarisationswinkel beschreibt.
   \label{tab:intensity}
 \end{table}
 
-\subsection{Messung des Brechungsindex von Glas}
+\subsection{Messung des Brechungsindex' von Glas}
 
 Die ermittelte Anzahl der Minima und Maxima werden gemäß
 \eqref{eq:ref_index_glass} in die entsprechenden Brechindices
@@ -109,7 +110,7 @@ enhaltenen Brechindices errechnet.  Es ergibt sich:
   \label{tab:tech_data}
 \end{table}
 % 
-\subsection{Messung der Brechungsindices von Gasen}
+\subsection{Bestimmung der Brechungsindices von Luft und Kohlendioxid}
 
 Gemäß Formel~\eqref{eq:gasfringes} wird zur gemessenen Anzahl der
 Brechungsindex bestimmt.  Die Aparaturkonstanten sind in
@@ -121,7 +122,8 @@ einer Geraden liegen, nehmen wir eine lineare
 Regressionsrechnung\footnote{%
   Zur Bestimmung der Parameter verwenden wir die Funktion
   \texttt{scipy.stats.linregress} aus der \texttt{scipy}-Bibliothek in
-  der Version 0.10.1}%
+  der Version 0.10.1}
+%
 vor.  Die Ergebnisse für die Parameter sind in \cref{tab:linreg}
 dargestellt, außerdem sind entsprechende Ausgleichsgeraden in
 \cref{fig:gas} eingezeichnet.  Mithilfe der Ausgleichsgeraden werden
