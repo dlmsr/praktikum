@@ -14,7 +14,7 @@ v_schwarz,C_schwarz,L_schwarz,R_schwarz = loadtxt("RLC_Messung_schwarz.txt",unpa
 v_trommel,C_trommel,L_trommel,R_trommel = loadtxt("RLC_Messung_trommel.txt",unpack=True)
 zeit_rot,zeit_schwarz,zeit_gruen,zeit_trommel = loadtxt("Laengenmessung.txt",unpack=True)
 
-ampl_vorher,ampl_nachher = loadtxt("FFT.txt",unpack=True)
+ampl_vorher,ampl_nachher = loadtxt("FFT.txt",unpack=True) #mV
 
 t1,U1 = loadtxt("k2b3.txt",unpack=True)
 t2,U2 = loadtxt("k2b4.txt",unpack=True)
@@ -122,13 +122,16 @@ close()
 
 #Dämpfungskonstante
 #Einfach FFT-Amplitude Vorher/Nachher
-a_array = ampl_vorher/ampl_nachher
+a_array = log(ampl_vorher/ampl_nachher)
 a = mean(a_array)
 da = std(a_array)/sqrt(len(a_array))
 aprom_array = a_array/laenge_trommel
 aprom = mean(aprom_array)
 daprom = std(aprom_array)/sqrt(len(aprom_array))
-
+dampl_vorher = array((0.060,0.041,0.027,0.020,0.016))
+dampl_nachher = array((0.060,0.030,0.018,0.013,0.010))
+gauss = sqrt((dampl_vorher/ampl_vorher)**2 + (dampl_nachher/ampl_nachher)**2)
+apromgauss = sqrt((gauss/laenge_trommel)**2 + (a_array*8.2/laenge_trommel**2)**2)
 #Mehrfachreflexion
 S1 = 50 #V (reinkommendes Signal)
 S2 = 8.2 #V

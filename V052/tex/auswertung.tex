@@ -15,7 +15,15 @@ Tabelle~\ref{tab:laengenmessung} sind die abgelesenen Zeitabstände
 eingetragen. Ebenso in dieser Tabelle sind die mit den Zeitabständen mit
 Hilfe von Formel~\eqref{eq:laenge} errechneten Längen der Kabel
 eingetragen.  Die Dielektrizitätszahl der Kabel wird mit
-$\epsilon_\text{r} = \num{2.25}$ angenommen.
+$\epsilon_\text{r} = \num{2.25}$ angenommen.\\
+Der Fehler der Kabellänge wird mit einer Gausschen 
+Fehlerfortpflanzung bestimmt, welche in 
+Gleichung~\eqref{eq:gausslaenge} angegeben ist.\\
+%
+\begin{equation}
+\delta L = \frac{c_0}{2\sqrt{\epsilon_\text{r}}}\delta t
+\label{eq:gausslaenge}
+\end{equation}
 %
 \begin{table}[h]
   \centering
@@ -23,10 +31,10 @@ $\epsilon_\text{r} = \num{2.25}$ angenommen.
     \toprule
     {Kabel}&{Signalabstand }$\Delta${t/}\si{\nano\second}&{Kabellänge/}\si{\metre}\\
     \midrule
-    {Rot}&18&1.8\\
-    {Schwarz}&116&11.6\\
-    {Grün}&85&8.5\\
-    {Trommel}&822&82.1\\
+    {Rot}&18(2)&1.8(2)\\
+    {Schwarz}&116(12)&11.6(12)\\
+    {Grün}&85(9)&8.5(9)\\
+    {Trommel}&822(82)&82.1(82)\\
     \bottomrule
   \end{tabular}
   \caption{Mit dem Oszilloskop wurden die zeitlichen Abstände 
@@ -109,6 +117,8 @@ die durch die Längen der Kabel errechneten Beläge $R, L, C$ und $G$.
     18.00&2.59&1.44&2.8&1.56&138.5&77.0&128.1&71.2\\
     20.00&2.60&1.45&2.7&1.50&138.5&77.0&133.4&74.1\\
     100.00&2.60&1.45&2.6&1.45&138.6&77.1&138.6&77.1\\
+    \midrule
+     \multicolumn{2}{c}{Literaturwert}&0.8&\%&\%&\%&63.0&\%&\%\\
     \bottomrule
   \end{tabular}
   \caption{Mit dem RLC-Messgerät gemessene Widerstands-, 
@@ -116,7 +126,9 @@ die durch die Längen der Kabel errechneten Beläge $R, L, C$ und $G$.
     des Sinussignals des Messgeräts für das rote Kabel. 
     Aus diesen wird der Querleitwiderstand berechnet. 
     Aus der oben bestimmten Länge des 
-    Kabels werden schlussendlich die Beläge bestimmt.}
+    Kabels werden schlussendlich die Beläge bestimmt.
+    Die Literaturwerte werden aus \cite{kabel-kusch} für ein 
+    Rg 179 B/U Kabel entnommen.}
   \label{tab:RLC_rot}
 \end{table}
 %
@@ -150,11 +162,14 @@ die durch die Längen der Kabel errechneten Beläge $R, L, C$ und $G$.
     18.00&2.46&0.21&5.4&0.47&988&85.2&450.1&38.8\\
     20.00&2.46&0.21&5.4&0.47&988&85.2&450.1&38.8\\
     100.00&2.60&0.22&5.2&0.45&990&85.4&495.0&42.7\\
+    \midrule
+     \multicolumn{2}{c}{Literaturwert}&0.05&\%&\%&\%&0.10&\%&\%\\
     \bottomrule
   \end{tabular}
   \caption{In dieser Tabelle sind die gleichen Daten 
     wie in Tabelle~\ref{tab:RLC_rot} eingetragen. Hier aber 
-    für das schwarze Kabel.}
+    für das schwarze Kabel. Es handelt sich um den Kabeltyp Rg 
+    58 C/U. Die Literaturwerte stammen aus \cite{faberkabel}.}
   \label{tab:RLC_schwarz}
 \end{table}
 %
@@ -188,11 +203,14 @@ die durch die Längen der Kabel errechneten Beläge $R, L, C$ und $G$.
     18.00&4.44&0.05&25.9&0.32&8.51&0.10&1.46&0.02\\
     20.00&4.45&0.05&25.9&0.32&8.51&0.10&1.46&0.02\\
     100.00&5.29&0.06&26.4&0.32&8.75&0.11&1.75&0.20\\
+    \midrule
+     \multicolumn{2}{c}{Literaturwert}&0.05&\%&\%&\%&0.10&\%&\%\\
     \bottomrule
   \end{tabular}
   \caption{Die Kabeltrommel liefert diese Werte für 
     die Beläge. Die Größen sind die gleichen wie in 
-    Tabelle~\ref{tab:RLC_rot}}
+    Tabelle~\ref{tab:RLC_rot}. Die Kabeltrommel ist 
+    vom selben Kabeltyp wie das schwarze Kabel.}
   \label{tab:RLC_trommel}
 \end{table}
 %
@@ -218,10 +236,13 @@ sehr kurzes Kabel und die Kabeltrommen erhaltenen FFT-Bilder sind in den
 Bildern~\ref{fig:daempfung_kurz} und~\ref{fig:daempfung_lang} zu sehen.
 
 In Tabelle~\ref{tab:daempfung} sind die abgelesenen Amplituden der
-erkennbaren Maxima eingetragen, sowie das Verhältnis von den
+erkennbaren Maxima eingetragen, sowie das der logarithmus naturalis 
+vom Verhältnis von den
 ungedämpften zu den gedämpften Amplituden, welches die Dämpfung
 angibt. Teilt man diese durch die Länge des verwendeten Kabels, so
 ergibt sich die gesuchte Dämpfungskonstante $\alpha$.
+Die angegebenen Fehler der Dämpfung und der Dämpfungskonstanten 
+wird durch eine Gaussche Fehlerfortpflanzung errechnet.
 %
 \begin{figure}[]
   \centering
@@ -249,16 +270,16 @@ ergibt sich die gesuchte Dämpfungskonstante $\alpha$.
   \begin{tabular}{SSSSS}
     \toprule
     {Nr.}&${U}_\text{ungedämpft}${/}\si{\milli\volt}&${U}_\text{gedämpft}{ /}\si{\milli\volt}$&
-    $\frac{{U}_\text{ungedämpft}}{{U}_\text{gedämpft}}$&
+    {ln}$\frac{{U}_\text{ungedämpft}}{{U}_\text{gedämpft}}$&
     $\alpha${ /}\si{\per\metre}\\
     \midrule
-    1&6.005&6.053&0.992&0.012\\
-    2&4.130&3.027&1.364&0.017\\
-    3&2.744&1.871&1.467&0.018\\
-    4&2.069&1.365&1.516&0.018\\
-    5&1.656&1.088&1.522&0.019\\
+    1&6.055(60)&6.053(60)&0.0003(140)&4.0e-6\\
+    2&4.130(41)&3.027(30)&0.31(1)&3.8e-3\\
+    3&2.744(27)&1.871(18)&0.38(1)&4.7e-3\\
+    4&2.069(20)&1.365(13)&0.42(1)&5.0e-3\\
+    5&1.656(16)&1.088(10)&0.42(1)&5.1e-3\\
     \midrule
-    \multicolumn{3}{c}{Mittelwerte: }&\SI{1.372(89)}{}&\SI{0.017(1)}{}\\
+    \multicolumn{3}{c}{Mittelwerte: }&\SI{0.31(7)}{}&\SI{0.004(1)}{}\\
     \bottomrule
   \end{tabular}
   \caption{Diese Tabelle führt die sich durch die 
