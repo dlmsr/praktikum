@@ -49,12 +49,56 @@ Bei \SI{100}{\kilo\hertz} sind leichte Abweichungen in den Widerstands-
 und Kapazitätsbelägen von dem vorher konstanten Wert zu erkennen. Bei
 den Induktivitäts- und Querleitbelägen treten diese
 Frequenzabhängigkeiten bereits ab ca. \SI{1}{\kilo\hertz} auf.
-
-Allgemein ist die Richtigkeit der Belagswerte nicht zu überschätzen, da
+In Tabelle~\ref{tab:diskussion_belaege} sind noch einmal die 
+Mittelwerte der gemessenen Beläge mit den Literaturwerten aus 
+den Quellen \cite{kabel-kusch} und \cite{faberkabel}, sowie 
+die relative Abweichung angegeben. Die in diesem Versuch 
+ermittelten Werte stimmen für die Kabeltrommel perfekt mit den 
+Literaturwerten überein, während bei dem roten Kabel eine 
+maximale Abweichung von \SI{75}{\percent} und bei dem 
+schwarzen Kabel sogar eine maximale Abweichung von 
+\SI{320}{\percent} von den Literaturwerten vorliegt.\\
+Zum einen ist die Bildung des Belagsmittelwertes hier nur 
+näherungsweise sinnvoll, da die Beläge bei den verwendeten 
+Frequenzen bereits eine leichte Frequenzabhängigkeit zeigen.
+Zum anderen ist die Richtigkeit der Belagswerte nicht zu 
+überschätzen, da
 die Messvorrichtung aufgrund von verwendeten Klemmen sehr empfindlich
 ist. Leichte Änderungen der Klemmenposition führt direkt zu anderen
 Messwerten. Es wurde versucht, diese Störung durch geschickte
-Platzierung der Klemmen zu unterdrücken.
+Platzierung der Klemmen zu unterdrücken. Anscheinend ist dies 
+bei dem schwarzen Kabel nicht gelungen.
+%
+\begin{table}[h]
+  \centering
+  \sisetup {
+    per-mode = fraction
+  }
+  \begin{tabular}{S|SS|SS|SS}
+    \toprule
+    &\multicolumn{2}{c}{Rot}&\multicolumn{2}{c}{Schwarz}&
+    \multicolumn{2}{c}{Kabeltrommel}\\
+    &{R /}\si{\ohm\per\metre}&{C /}\si{\pico\farad\per\metre}&
+    {R /}\si{\ohm\per\metre}&{C /}\si{\pico\farad\per\metre}&
+    {R /}\si{\ohm\per\metre}&{C /}\si{\nano\farad\per\metre}\\
+    \midrule
+    {Gemessen}&1.4&77.1&0.21&85.8&0.05&0.10\\
+    {Literaturwert}&0.8&63.0&0.05&100.0&0.05&0.10\\
+    {rel. Abweichung}&\SI{75}{\percent}&\SI{22}{\percent}&
+    \SI{320}{\percent}&\SI{14}{\percent}&
+    \SI{0}{\percent}&\SI{0}{\percent}\\
+    \bottomrule
+  \end{tabular}
+  \caption{Vergleich zwischen den ermittelten Kabelbelägen und 
+    den auf den in der angegebenen Literatur gefundenen 
+    Datenblattwerten für den Widerstand und die Kapazität pro 
+    Länge.}
+  \label{tab:diskussion_belaege}
+\end{table}
+%
+
+
+
 
 \paragraph{Zur Dämpfungskonstanten}
 Die Methode, die Dämpfung mittels Betrachtung der

@@ -163,7 +163,7 @@ die durch die Längen der Kabel errechneten Beläge $R, L, C$ und $G$.
     20.00&2.46&0.21&5.4&0.47&988&85.2&450.1&38.8\\
     100.00&2.60&0.22&5.2&0.45&990&85.4&495.0&42.7\\
     \midrule
-     \multicolumn{2}{c}{Literaturwert}&0.05&\%&\%&\%&0.10&\%&\%\\
+     \multicolumn{2}{c}{Literaturwert}&0.05&\%&\%&\%&100.0&\%&\%\\
     \bottomrule
   \end{tabular}
   \caption{In dieser Tabelle sind die gleichen Daten 
@@ -267,19 +267,21 @@ wird durch eine Gaussche Fehlerfortpflanzung errechnet.
 %
 \begin{table}[h]
   \centering
-  \begin{tabular}{SSSSS}
+\setlength{\tabcolsep}{0.5cm}
+  \begin{tabular}{cccc}
     \toprule
-    {Nr.}&${U}_\text{ungedämpft}${/}\si{\milli\volt}&${U}_\text{gedämpft}{ /}\si{\milli\volt}$&
-    {ln}$\frac{{U}_\text{ungedämpft}}{{U}_\text{gedämpft}}$&
-    $\alpha${ /}\si{\per\metre}\\
+    ${U}_\text{ungedämpft}${/}\si{\milli\volt}&${U}_\text{gedämpft}{ /}\si{\milli\volt}$&
+    {ln (}$\frac{{U}_\text{ungedämpft}}{{U}_\text{gedämpft}}${)}&
+    $\alpha${/}\si{\per\metre}\\
     \midrule
-    1&6.055(60)&6.053(60)&0.0003(140)&4.0e-6\\
-    2&4.130(41)&3.027(30)&0.31(1)&3.8e-3\\
-    3&2.744(27)&1.871(18)&0.38(1)&4.7e-3\\
-    4&2.069(20)&1.365(13)&0.42(1)&5.0e-3\\
-    5&1.656(16)&1.088(10)&0.42(1)&5.1e-3\\
+    \SI{6.055(60)}{}&\SI{6.053(60)}{}&\SI{3e-4}{}$\pm$\SI{1e-2}{}
+    &\SI{4.0e-6}{}$\pm$\SI{2e-4}{}\\
+    \SI{4.130(41)}{}&\SI{3.027(30)}{}&\SI{0.31(1)}{}&\SI{0.0038(4)}{}\\
+    \SI{2.744(27)}{}&\SI{1.871(18)}{}&\SI{0.38(1)}{}&\SI{0.0047(5)}{}\\
+    \SI{2.069(20)}{}&\SI{1.365(13)}{}&\SI{0.42(1)}{}&\SI{0.005(5)}{}\\
+    \SI{1.656(16)}{}&\SI{1.088(10)}{}&\SI{0.42(1)}{}&\SI{0.0051(5)}{}\\
     \midrule
-    \multicolumn{3}{c}{Mittelwerte: }&\SI{0.31(7)}{}&\SI{0.004(1)}{}\\
+    \multicolumn{2}{c}{Mittelwerte: }&\SI{0.31(7)}{}&\SI{0.004(1)}{}\\
     \bottomrule
   \end{tabular}
   \caption{Diese Tabelle führt die sich durch die 
