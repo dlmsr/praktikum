@@ -133,6 +133,7 @@ die durch die Längen der Kabel errechneten Beläge $R, L, C$ und $G$.
 \end{table}
 %
 \begin{table}[h]
+\small
   \centering
   \sisetup {
     per-mode = fraction
@@ -174,6 +175,7 @@ die durch die Längen der Kabel errechneten Beläge $R, L, C$ und $G$.
 \end{table}
 %
 \begin{table}[h]
+\small
   \centering
   \sisetup {
     per-mode = fraction
@@ -246,7 +248,7 @@ wird durch eine Gaussche Fehlerfortpflanzung errechnet.
 %
 \begin{figure}[]
   \centering
-  \includegraphics[width=0.8\textwidth]{daempfung_kurz.png}
+  \includegraphics[width=0.7\textwidth]{daempfung_kurz.png}
   \caption{Die Fast-Fourier-Transformation eines Rechtecksignals,
     welches auf einem kurzen Kabel geführt wird, sodass die Dämpfung
     vernachlässigbar ist. Die Amplituden können direkt abgelesen
@@ -256,7 +258,7 @@ wird durch eine Gaussche Fehlerfortpflanzung errechnet.
 %
 \begin{figure}[]
   \centering
-  \includegraphics[width=0.8\textwidth]{daempfung_lang.png}
+  \includegraphics[width=0.7\textwidth]{daempfung_lang.png}
   \caption{Die Fast-Fourier-Transformation eines Rechtecksignals,
     welches auf einem langen Kabel geführt wird. Hierbei wird die in
     diesem Versuch verwendete Kabeltrommel genommen.  Es ist zu
@@ -290,6 +292,7 @@ wird durch eine Gaussche Fehlerfortpflanzung errechnet.
     Dämpfung pro Länge errechnet.}
   \label{tab:daempfung}
 \end{table}
+\FloatBarrier
 %
 \subsection{Mehrfacheflexion}
 %
@@ -380,7 +383,39 @@ dass sich das reflektierte Signal mit dem einlaufenden Signal
 überlagtert.  Tabelle~\ref{tab:fit_messwerte} beinhaltet die für die
 verschiedenen Signalspannungen abgelesenen Messwerte.  Die Paragraphen
 sind nach den verwendeten Kästen und Buchsen benannt.
-
+%
+\begin{table}[h!]
+  \centering
+  \begin{tabular}{SSSSSS}
+    \toprule
+    \multicolumn{2}{c}{Kasten 2 Buchse 3}&
+    \multicolumn{2}{c}{Kasten 2 Buchse 4}&
+    \multicolumn{2}{c}{Kasten 3 Buchse 6}\\
+    \cmidrule(r){1-2} \cmidrule(rl){3-4} \cmidrule(l){5-6}
+    {Zeit t /}\si{\nano\second}&{U /}\si{\volt}&
+    {Zeit t /}\si{\nano\second}&{U /}\si{\volt}&
+    {Zeit t /}\si{\nano\second}&{U /}\si{\volt}\\
+    \midrule
+    0&83.25&0&44.0&0&10.2\\
+    10&69.0&130&41.7&280&18.2\\
+    20&56.0&280&39.5&500&25.7\\
+    30&48.0&470&36.2&760&34.7\\
+    50&33.0&670&33.7&1180&47.2\\
+    70&24.5&910&30.2&2260&69.0\\
+    155&8.0&1360&24.2&3800&87.0\\
+    300&5.8&2450&14.2&4740&93.5\\
+    400&5.0&3540&8.7&6120&100.0\\
+    &      &5000&3.2&9300&105.0\\
+    &      &        &     &18660&107.0\\
+    \bottomrule
+  \end{tabular}
+  \caption{Hier zu sehen sind die Messwerte, welche auf den Kurven 
+    der sich ergebenden Signalspannungen liegen, wenn als Abschlüsse 
+    des Kabels die über den Spalten genannten Kästen und Buchsen 
+    verwendet werden.}
+  \label{tab:fit_messwerte}
+\end{table}
+%
 \paragraph{Kasten 2, Buchse 3}
 Der sich bei diesem Abschluss ergebende Signalverlauf ist in
 Bild~\ref{fig:k2b3} zu sehen. Der Fit mit der
@@ -522,34 +557,3 @@ in Abb.~\ref{fig:k3b6} zeigt Messwerte und gefittete Kurve.
   \label{fig:k3b6}
 \end{figure}
 %
-\begin{table}[]
-  \centering
-  \begin{tabular}{SSSSSS}
-    \toprule
-    \multicolumn{2}{c}{Kasten 2 Buchse 3}&
-    \multicolumn{2}{c}{Kasten 2 Buchse 4}&
-    \multicolumn{2}{c}{Kasten 3 Buchse 6}\\
-    \cmidrule(r){1-2} \cmidrule(rl){3-4} \cmidrule(l){5-6}
-    {Zeit t /}\si{\nano\second}&{U /}\si{\volt}&
-    {Zeit t /}\si{\nano\second}&{U /}\si{\volt}&
-    {Zeit t /}\si{\nano\second}&{U /}\si{\volt}\\
-    \midrule
-    0&83.25&0&44.0&0&10.2\\
-    10&69.0&130&41.7&280&18.2\\
-    20&56.0&280&39.5&500&25.7\\
-    30&48.0&470&36.2&760&34.7\\
-    50&33.0&670&33.7&1180&47.2\\
-    70&24.5&910&30.2&2260&69.0\\
-    155&8.0&1360&24.2&3800&87.0\\
-    300&5.8&2450&14.2&4740&93.5\\
-    400&5.0&3540&8.7&6120&100.0\\
-    &      &5000&3.2&9300&105.0\\
-    &      &        &     &18660&107.0\\
-    \bottomrule
-  \end{tabular}
-  \caption{Hier zu sehen sind die Messwerte, welche auf den Kurven 
-    der sich ergebenden Signalspannungen liegen, wenn als Abschlüsse 
-    des Kabels die über den Spalten genannten Kästen und Buchsen 
-    verwendet werden.}
-  \label{tab:fit_messwerte}
-\end{table}
