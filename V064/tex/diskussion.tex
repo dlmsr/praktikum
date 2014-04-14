@@ -18,15 +18,17 @@ bestimmten Werte zeigen dennoch gute Übereinstimmung mit der Theorie.
 
 Die Bestimmung des Brechungsindex' von Glas erweist sich als
 außerordentlich präzise.  Eine Meßreihe von 30 Werten weicht nur in
-wenigen Fällen von einer Anzahl von 48 Minima bzw. Maxima ab, so daß
-die geschätzte Standardabweichung des Mittelwerts sehr gering ausfällt.
+wenigen Fällen von einer Anzahl von 48 Minima bzw. Maxima ab, so daß die
+geschätzte Standardabweichung des Mittelwerts sehr gering ausfällt.
 Vergleicht man den gemessenen Wert mit einer Auswahl von Literaturwerten
+(siehe \cref{tab:lit_ref_index_glass}), so zeigt sich, daß der bestimmte
+Wert realistisch ist.
 
 \begin{table}
   \centering
   \begin{tabular}{lS}
     \toprule
-    Material & Brechungsindex (bei \SI{589}{nm}) \\
+    Material & {Brechungsindex (bei \SI{589}{nm})} \\
     \midrule
     FK3 & 1.464 \\
     BK7 & 1.516 \\
@@ -35,8 +37,41 @@ Vergleicht man den gemessenen Wert mit einer Auswahl von Literaturwerten
   \end{tabular}
   \caption{Einige Literaturwerte zu den Brechungsindices verschiedener
     Gläser und durchsichtiger Stoffe entnommen aus
-    \textcite[][223]{demtröder-2}.}
+    \textcite[][223]{demtroeder-2}.}
   \label{tab:lit_ref_index_glass}
 \end{table}
 
 \subsection{Bestimmung der Brechungsindices von Luft und Kohlendioxid}
+
+Die Messung der Brechungsindices der beiden Gase Luft und Kohlendioxid
+zeigt ebenfalls gute Ergebnisse.  Die geschätzten Standardabweichungen
+der Parameter fallen sehr gering aus (siehe \cref{tab:linreg}).  In
+\cref{tab:lit_ref_index_gas} sind einige Werte für den Brechungsindex
+von Luft angegeben.  Der von uns ermittelte Wert fügt sich gut ein.
+
+Für den Wert von Kohlendioxid findet sich auf Wikipedia $n =
+\num{1.0004493}$ bei \SI{0}{\degreeCelsius} und \SI{101.325}{kPa}.  Der
+von uns bestimmte Wert liegt bei \num{1.000332}.  Die Abweichung läßt
+sich dadurch erklären, daß nicht bei \SI{0}{\degreeCelsius} gemessen
+wurde.
+
+\begin{table}
+  \centering
+  \begin{tabular}{SS}
+    \toprule
+    {Wellenlänge in \si{nm}} & {Brechungsindex} \\
+    \midrule
+    300 & 1.0002915 \\
+    400 & 1.0002825 \\
+    500 & 1.0002790 \\
+    600 & 1.0002770 \\
+    700 & 1.0002758 \\
+    800 & 1.0002750 \\
+    900 & 1.0002745 \\
+    \bottomrule
+  \end{tabular}
+  \caption{Brechungsindices von trockener Luft bei
+    \SI{20}{\degreeCelsius} und \SI{1000}{\milli\bar}. Die Werte
+    stammen aus \cite[][222]{demtroeder-2}.}
+  \label{tab:lit_ref_index_gas}
+\end{table}
