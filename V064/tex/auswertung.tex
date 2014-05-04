@@ -82,18 +82,23 @@ Abhängigkeit zwischen Kontrast und Polarisationswinkel beschreibt.
 
 \subsection{Messung des Brechungsindex' von Glas}
 
-Die ermittelte Anzahl der Minima und Maxima werden gemäß
+Die ermittelte Anzahl der $2\pi$-Phasenshifts werden gemäß
 \eqref{eq:ref_index_glass} in die entsprechenden Brechindices
 umgerechnet.
 %
 \begin{equation}
   \label{eq:ref_index_glass}
-   n = \frac{1}{1 - \frac{M \lambda_\text{vac}}{T (\theta_2^2 - \theta_1^2)}}
+  n = \frac{1}{1 - \frac{\Delta M \lambda_\text{vac}}{T (\Theta_2^2 - \Theta_1^2)}}
 \end{equation}
 %
-Hierbei werden für die Größen $T, \lambda_\text{vac},
-\theta_{1, 2}$ die Werte aus \cref{tab:tech_data} eingesetzt.  Da diese
-Messung mehrfach durchgeführt worden ist, werden danach das
+Hierbei werden für die Größen $T, \lambda_\text{vac}, \Theta_{1, 2}$ die
+Werte aus \cref{tab:tech_data} eingesetzt. Die Formel ergibt sich aus
+der Betrachtung der Formel \eqref{eq:glasfringes}.  Die Differenz
+$\Delta M = M(\Theta_2) - M(\Theta_1)$ ist gerade die Anzahl der
+$2\pi$-Phasenshifts. Durch Umstellen nach $n$ ergibt sich
+\cref{eq:ref_index_glass}.
+
+Da diese Messung mehrfach durchgeführt worden ist, werden danach das
 arithmetische Mittel und die Standardabweichung vom Mittelwert der
 enhaltenen Brechindices errechnet.  Es ergibt sich:
 %
@@ -105,24 +110,28 @@ enhaltenen Brechindices errechnet.  Es ergibt sich:
   \centering
   \begin{tabular}{SSSSS}
     \toprule
-    {$\lambda_\text{vac}/\si{nm}$} & {$T/\si{mm}$} & {$\theta_1$} &
-    {$\theta_2$} & {$L/\si{mm}$} \\
+    {$\lambda_\text{vac}/\si{nm}$} & {$T/\si{mm}$} & {$\Theta_1$} &
+    {$\Theta_2$} & {$L/\si{mm}$} \\
     \midrule
-    632.8 & 1 & 0.1745 & 0.1745 & 100 \\
+    632.8 & 1 & 0.1745 & 0.3491 & 100 \\
     \bottomrule
   \end{tabular}
   \caption{Hier sind die Kenngrößen der Apparatur, die in
-    \cref{eq:ref_index_glass} eingehen, gelistet.  Die Winkel $\theta_1,
-    \theta_2$ sind im Bogenmaß angegeben.}
+    \cref{eq:ref_index_glass} eingehen, gelistet.  Die Winkel $\Theta_1,
+    \Theta_2$ sind im Bogenmaß angegeben. Hierbei ist $\Theta_1$ der
+    Winkel, unter dem die Glasplatten in Strahlrichtung stehen, bevor die
+    Platten gedreht werden und $\Theta_2$ der entsprechende Winkel nach
+    der Drehung.}
   \label{tab:tech_data}
 \end{table}
 % 
 \subsection{Bestimmung der Brechungsindices von Luft und Kohlendioxid}
 
 Gemäß Formel~\eqref{eq:gasfringes} wird zur gemessenen Anzahl der
-Brechungsindex bestimmt.  Die Apparaturkonstanten sind in
-\cref{tab:tech_data} angegeben.  In \cref{tab:gas} sind die Ergebnisse
-eingetragen und in \cref{fig:gas} graphisch dargestellt.
+$2\pi$-Phasenshifts der Brechungsindex bestimmt.  Die
+Apparaturkonstanten sind in \cref{tab:tech_data} angegeben.  In
+\cref{tab:gas} sind die Ergebnisse eingetragen und in \cref{fig:gas}
+graphisch dargestellt.
 
 Da der Plot der Meßdaten die Vermutung nahe legt, daß die Meßpunkte auf
 einer Geraden liegen, nehmen wir eine lineare
@@ -133,16 +142,16 @@ Regressionsrechnung\footnote{%
 %
 vor.  Die Ergebnisse für die Parameter sind in \cref{tab:linreg}
 dargestellt, außerdem sind entsprechende Ausgleichsgeraden in
-\cref{fig:gas} eingezeichnet.  Mithilfe der Ausgleichsgeraden werden
+\cref{fig:gas} eingezeichnet.  Mit Hilfe der Ausgleichsgeraden werden
 Werte für die Brechungsindices von Luft und Kohlendioxid bei Normaldruck
 bestimmt. Die Ergebnisse sind ebenfalls in \cref{tab:linreg} zu finden.
 Zur Fehlerabschätzung sind in der Gleichung $n = \beta_0 p + \beta_1$
 die Steigung $\beta_0$ und der Achsenabschnitt $\beta_1$ als
 fehlerbehaftet betrachet.  Eine \name{Gauß}sche Fehlerfortpflanzung
-liefert für den Fehler des Brechungsindex 
+liefert für den Fehler des Brechungsindex
 %
 \begin{equation}
-  n = \sqrt{p^2 \sigma_{\beta_0}^2 + \sigma_{\beta_1}^2}
+  \sigma_n = \sqrt{p^2 \sigma_{\beta_0}^2 + \sigma_{\beta_1}^2}
 \label{eq:ref_index_error}
 \end{equation}
 
