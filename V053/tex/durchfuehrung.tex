@@ -8,7 +8,7 @@ Da verschiedene Eigenschaften der Mikrowellen und des Klystron
 untersucht werden, ist der Aufbau dieses Versuchs flexibel.  Je nach
 Versuchsteil müssen verschiedene Elemente aufgebaut werden.  Der
 grundlegende Aufbau bleibt aber derselbe und ist in \cref{fig:aufbau}
-dargestell.
+dargestellt.
 
 Links steht das Klystron, das für die Erzeugung der Mikrowellen
 zuständig ist, dicht gefolgt von einem Isolator, dem Frequenzzähler,
@@ -21,3 +21,183 @@ Ein sogenanntes \emph{Standing Wave Ratio (SWR)} Meter und ein
 Oszilloskop.
 
 \section{Durchführung}
+
+\subsection{Erster Versuchsteil: Inbetriebnahme und Modenmessung}
+
+In diesem Teil des Versuchs geht es darum, das Klystron in Betrieb zu
+nehmen und verschiedene Moden zu untersuchen.  Hinter das Dämpfungsglied
+wird die Detektorvorrichtung montiert und an das SWR-Meter
+angeschlossen.  Zur Messung der Ausgangsleistung mit einem SWR-Meter muß
+das Klystron amplitudenmoduliert werden.  Wir verwenden dazu eine
+Rechteckmodulation.  Für zwei verschiedene Reflektorspannungen wird der
+Ausschlag am Meßgerät betrachtet.  Danach wird mit dem Frequenzmesser
+die Frequenz gemessen.  Dazu stimmt man den Frequenzmesser ab, bis man
+im Auschlag des SWR-Meters einen Rückgang sieht.  Die Stellung des
+Frequenzmessers im Minimum dieses Rückgangs gibt die Schwingungsfrequenz
+des Klystrons an.  Am Ende wird das Klystron auf eine bestimmte Frequenz
+abgestimmt.  Dazu betätigt man den Abstimmknopf am Klystron und folgt
+mit Reflektorspannung und Frequenzmesser.
+
+Jetzt wird das SWR-Meßgerät durch ein Oszilloskop ersetzt.  Die
+Horizontalablenkung des Oszilloskops wird jetzt durch ein Sinus-Signal,
+das vom Klystron-Netzgerät kommt gespeist.  Die Vertikalablenkung wird
+gleichspannungsgekoppelt mit dem Detektor verbunden.  Jetzt müssen die
+Feinheit der Vertikalablenkung und die Reflektorspannung so eingestellt
+werden, daß eine Modenkurve zu sehen ist.  Nachdem das Klystron auf
+\SI{9}{GHz} abgestimmt worden ist und das Maximum der Modenkurve auf
+Mittellinie des Oszilloskops gebracht und die Vertikalempfindlichkeit
+und/oder Dämpfung so eingestellt worden ist, daß man volle vertikale
+Auslenkung erhält, wird mit der Vermessung von drei Moden begonnen.  Das
+Vorgehen ist dabei wie folgt:
+%
+\begin{enumerate}
+\item Ablesen der Reflektorspannung $V_0$, Amplitude $A_0$ des Modus und
+  Frequenz $f_0$ der Modenspitze.
+\item Ändern der Reflektorspannung bis rechte Flanke des Signals links
+  von der Mittellinie liegt.  Reflektorspannung $V_1$ ablesen.
+\item Ändern der Reflektorspannung bis linke Flanke des Signals rechts
+  von der Mittellinie liegt.  Reflektorspannung $V_2$ ablesen.
+\item Nächste Mode einstellen
+\end{enumerate}
+
+Im letzten Teil dieses Abschnitts wird noch auf die elektronische
+Abstimmung eingegangen.  Dazu wird das Klystron auf \SI{9000}{MHz}
+eingestimmt und der höchste Modus ausgewählt.  Mit dem Frequenzmesser
+wird jetzt wieder eine Delle in der Modenkurve erzeugt.  Wenn sich diese
+genau in der Mitte der Modenkurve befinded, wird Frequenz und
+Reflektorspannung abgelesen.  Dann wird die Modenkurve mit Hilfe der
+Reflektorspannung so verschoben wie in 1. bei der Modenvermessung und
+die Delle in den Usprung des Koordinatenkreuzes auf dem Schirm des
+Oszilloskops verschoben.  Wieder wird die Frequenz und die
+Reflektorspannung abgelesen.  Ebenso wird wie in 2. verfahren, die Delle
+entsprechend verschoben und Frequenz und Reflektorspannung abgelesen.
+
+\subsection{%
+  Zweiter Versuchsteil: Messung von Frequenz, Wellenlänge und Dämpfung}
+
+Das Ziel in diesem Versuchsteil ist es, die Frequenz des Klystrons über
+die Wellenlänge einer Welle in einer rechteckigen Hohlleitung zu
+bestimmen und die Dämpfung zu messen.  Der Aufbau variert je nach dem,
+was gemessen werden soll.  Er ist in \cref{fig:fwd-aufbau} dargestellt.
+
+Zunächst wird die Frequenz zum späteren Vergleich direkt mit dem
+Frequenzmesser bestimmt.  Dazu wird so vorgegangen wie in Teil 1 des
+Versuchs.  Der Aufbau ist dieses Mal jedoch ein wenig anders: Nach dem
+Dämpfungsglied befindet sich nun ein Stehwellendetektor, an den das
+SWR-Meßgerät angeschlossen ist.  Dahinter befindet sich ein Abschluß zur
+Leitungsanpassung.  Der Ausschlag im SWR-Meßgerät wird mithilfe des
+Frequenzmessers auf ein Minimum eingeregelt.  Dann wird die Frequenz
+abgelesen.
+
+Für die Wellenlängenmessung muß der Abschluß durch den einstellbaren
+Kurzschluß ersetzt werden.  Falls der Frequenzmesser aus der vorherigen
+Messung noch gestimmt ist, muß er nun verstimmt werden.  Der Kurzschluß
+ist erforderlich, damit sich im Hohlleiter eine stehende Welle
+ausbildet, dessen Wellenlänge mit dem Stehwellendetektor ausgemessen
+werden kann.  Dazu werden mit der Sonde entlang der Meßleitung zwei Minima
+auf dem SWR-Meter gesucht.  Der doppelte Abstand dieser Minima
+entspricht der Hohlleitungswellenlänge.  Nachdem die Innenabmessung der
+Längsseite des Hohlleiters bestimmt worden ist, kann mithilfe
+\cref{eq:freq-hohl} die Frequenz ausgerechnet werden.
+
+Zum Schluß soll noch eine Dämpfungsmessung durchgeführt werden.  Diese
+wird mit der sogennanten Methode der Leistungsverhältnisse
+durchgeführt. Der einstellbare Kurzschluß wird wieder durch den Abschluß
+ersetzt.  Dann wird das Klystron auf 9.0 GHz abgestimmt.  Dann muß durch
+Einstellen der Verstärkung am SWR-Meter und/oder der Dämpfung ein
+Vollausschlag im \SI{30}{dB}-Meßbereich erreicht werden.  Die
+Einstellung der Mikrometerschraube und der Leistungspegel am SWR-Meter
+werden notiert.  Daraufhin wird die Dämpfung nach und nach in 2 dB
+Schritten gesteigert und die Mikrometereinstellung am Dämpfungsglied
+notiert.  In der Auswertung werden die Ergebnisse mit der Eichkurve auf
+dem Dämpfungsglied verglichen.
+
+\subsection{%
+  Dritter Versuchsteil: Stehwellen-Messungen}
+
+Im letzten Versuchsteil geht es darum, sich mit den grundlegenden
+Techniken der Welligkeitsmessung mit der Meßleitung und dem Gebrauch des
+SWR-Meters vertraut zu machen.
+
+Ein Signal in einer Übertragungsleitung läßt sich als Superposition von
+einfallenden und rücklaufenden Welle schreiben.  Die rücklaufende Welle
+entsteht durch Reflexion an Unstetigkeiten der Leitung oder an einer
+nicht angepaßten Lastimpedanz. Der Spannungsreflexionskoeffizient $\rho$
+ist durch das Verhältnis zwischen den elektrischen Feldstärken der
+reflektierten und einfallenden Welle gegeben. Er ist daher eine komplexe
+Zahl, d.\,h. von der Phasenlage und vom Ort entlang der
+Übertragungsleitung abhängig.  Eine ideale Anpassung liegt vor, wenn
+$|\rho = 0|$.  Das Stehwellenverhältnis (SWR) oder auch Welligkeit
+genannt ist definiert als das Verhältnis zwischen maximaler und
+minimaler Feldstärke auf der Leitung.  Bei idealer Anpassung gilt
+$\text{SWR} = 1$.  Eine vollständige Fehlanpassung bedeutet, daß $|\rho|
+= 1$, bzw. $\text{SWR} = \infty$.  Entsprechend gelten die Formeln
+%
+\begin{gather}
+  \rho = \frac{E_1}{E_0},\\
+  S = \frac{E_\text{max}}{E_\text{min}} = \frac{|E_0| + |E_1|}{|E_0| -
+    |E_1|},\\
+  |\rho| = \frac{S-1}{S+1},
+\end{gather}
+%
+wobei $S$ die Welligkeit und $E_0,E_1$ die elektrische Feldstärke der
+einlaufenden bzw. rücklaufenden Welle bezeichnet.
+
+Der Versuchsaufbau ist ähnlich wie zuvor.  An das Dämpfungsglied wird
+wieder der Stehwellendetektor angeschlossen, mit dem auch wieder das
+SWR-Meßgerät verbunden wird.  Nach dem Stehwellendetektor wird dann ein
+Gleitschraubentransformator angeschlossen, der mit einem Abschluß
+beendet wird. Im Stehwellendetektor wird kleiner Teil des Feldes über
+Antenne ausgekoppelt und detektiert.  Wir werden das SWR auf drei
+verschiedene Arten messen: mit der direkten Methode, mit der
+\SI{3}{dB}-Methode und mit der Abschwächer-Methode.
+
+Bei der direkten Methode kann das SWR direkt am SWR-Meter abgelesen
+werden. Das funktioniert aber nur, solange die Sonde noch nicht tief
+genug eindringt, also Feld nicht merklich gestört wird.  Außerdem muß
+die Gleichrichterdiode im Detektor im quadratischen Bereich arbeiten,
+d.\,h. die Ausgangsspannung muß proportional zur Eingangsspannung
+sein. Bei großen SWR muß die Sondentiefe allerdings erhöht werden und es
+kommt zu Feldverzerrungen und/oder hohe Leistung am Detektor, so daß der
+quadratische Bereich verlassen wird.
+
+Eine Möglichkeit, die Wirkung der Sondenüberlastung zu überwinden,
+besteht in der \SI{3}{dB}-Methode.  Hier wird der Abstand zwischen den
+Punkten gemessen, an welchen die Detektor-Ausgangsspannung den doppelten
+Wert des Minimums erreicht.  Das SWR wird dann durch
+%
+\begin{equation}
+  S = \sqrt{ 1 + \frac{1}{\sin^2 \frac{\pi(d_1-d_2)}{\lambda_g}}}
+  \approx = \frac{\lambda_g}{\pi(d_1-d_2)}
+\end{equation}
+bestimmt. Hier wird also der quadratische Bereich nicht verlassen.  Um
+die Wirkung der Abweichungen vom quadratischen Verhalten des Detektors
+einzudämmen, kann die Abschwächermethode verwendet werden: Mit dem
+Dämpfungsglied wird das Signal des Maximums dem des Minimums
+gleichgemacht.  Die Differenz der Einstellungen des Dämpfungsglied
+ergibt das SWR gemäß
+%
+\begin{equation}
+  A_2 - A_1 = 20 \log S.
+\end{equation}
+
+Bei der direkten Messung wird die Sondentiefe fest eingestellt.  Dann
+wird die Sonde der Meßleitung in ein Maximum bewegt, die Verstärkung so
+eingestellt, daß \num{1.0} angezeigt wird, und danach die Sonde in ein
+Minimum bewegt.  Dann kann man das SWR auf der oberen Skala
+ablesen. Dies wird für drei verschiedene Sondentiefen durchgeführt.
+
+Bei der \SI{3}{dB}-Methode wird die Sonde der Meßleitung in ein Minimum
+gefahren und die Verstärkung des SWR so eingestellt, daß \SI{3}{dB}
+angezeigt wird.  Jetzt wird die Sonde nach links verschoben bis sich ein
+Vollausschlag ergibt.  Die Sondenstellung $d_1$ ablesen.  Das gleiche
+wird noch einmal gemacht, diesmal wird aber die Sonde nach rechts
+verschoben.  Dann wird die Stellung $d_2$ abgelesen.
+
+Auch bei der Abschwächermethode wird die Sonde in ein Minimum gefahren.
+Dann wird das Dämpfungsglied auf $A_1 = \SI{20}{dB}$ und die Verstärkung
+des SWR-Meters so eingestellt, daß sich ein Ausschlag von \SI{3}{dB}
+ergibt.  Jetzt wird mit der Sonde entlang der Meßleitung gefahren und
+mit der Einstellung des Dämpfungsgliedes gefolgt, so daß der Ausschlag
+des SWR-Meters im Skalenbereich bleibt.  Auf diese Weise wird ein relatives
+Minimum gesucht.  Die Dämpfungseinstellung $A_2$ wird notiert.
