@@ -60,8 +60,50 @@ transversal elektrische Moden und transversal magnetische Moden.  Das
 elektrische Feld eines transversal elektrischen Modus (TE-Modus) ist
 überall senkrecht zur Ausbreitungsrichtung im Hohlleiter.  Ebenso hat
 ein transversal magnetischer Modus (TM-Modus) ein magnetisches Feld, das
-überall senkrecht zur Ausbreitungsrichtung ist.
+überall senkrecht zur Ausbreitungsrichtung ist.  Die Moden werden
+jeweils mit TE$_{mn}$ bzw. TM$_{mn}$, wobei die Indices die Anzahl der
+Halbwellen-Änderungen des elektrischen bzw. magnetischen Feldes in zwei
+Hauptrichtungen kennzeichnen.
 
-% TODO: Kennzeichnung der Moden
+Aus den Abmessungen des Hohlleiters und der Hohlleiterwellenlänge kann
+die Frequenz der elektromagnetischen Welle berechnet werden. Im freien
+Raum gilt für für die Frequenz $f = c/\lambda_0$, wobei $c$ die
+Lichtgeschwindigkeit und $\lambda_0$ die Wellenlänge im freien Raum
+bezeichnet.  Diese Wellenlänge hängt mit der Hohlleiterwellenlänge
+$\lambda_g$ auf folgende Art und Weise zusammen:
+%
+\begin{equation}
+  \lambda_g = \frac{\lambda_0}{\sqrt{1 - \left(\frac{\lambda_0}{\lambda_\text{c}}\right)^2}}
+\end{equation}
+%
+Die Grenzwellenlänge $\lambda_c$ ist von der Geometrie des Hohlleiters
+abhängig und je nach verwendetem Modus unterschiedlich. Bei rechteckigen
+Hohlleitern, wie sie hier verwendet werden, gilt:
+\begin{equation}
+  \lambda_c = \frac{2}{\sqrt{\left(\frac{m}{a}\right)^2 + \left(\frac{n}{b}\right)^2}},
+\end{equation}
+%
+wobei $a$ und $b$ die Abmessungen des Hohleiters sind und $n, m$ die
+Indices des jeweiligen TE- oder TM-Modus.  Diese Formeln können nun
+benutzt werden, um die Frequenz aus Hohlleiterwellenlänge und
+Abmessungen zu bestimmen. Für den Fall des TE$_{10}$-Modus ergibt sich
+bspw. für die Frequenz
+%
+\begin{equation}
+  \label{eq:freq-hohl}
+  f = \frac{c}{\lambda_0} = c \sqrt{\Big(\frac{1}{\lambda_g}\Big)^2 + \Big(\frac{1}{2a}\Big)^2}.
+\end{equation}
 
-% TODO: Wellenlänge, Frequenz und Dämpfung
+Eine Dämpfung des Signals wird gewöhnlich in Dezibel (dB) angegeben.  Es
+handelt sich dabei um den Logarithmus eines gewissen
+Leistungsverhältnisses:
+%
+\begin{equation}
+  \left(\frac{P_1}{P_2}\right)_\text{dB} = 10 \log \frac{P_1}{P_2}.
+\end{equation}
+Das verwendetet Dämpfungsglied PM 7110X trägt eine Eichkurve, aus der
+die eingestellte Dämpfung abgelesen werden kann.  Das
+Leistungsverhältnis ist hierbei zwischen der Leistung, die ohne
+Dämpfungsglied ankäme, und der Leistung, die mit Dämpfungsglied ankommt,
+genommen.  Dies gilt aber nur dann, wenn das betrachtete System
+abgeschlossen ist, d.\,h. keine stehenden Wellen auftreten.
