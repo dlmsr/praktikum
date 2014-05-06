@@ -7,7 +7,7 @@
 %
 Freie Elektronen der Masse $m_\text{e}$ gehorchen der 
 Dispersionsrelation in Gleichung~\eqref{eq:dispersion_frei}. 
-$\epsilon$ bezeichnet dabei die Energie des Elektrons, $k$ die 
+Das $\epsilon$ bezeichnet dabei die Energie des Elektrons, $k$ die 
 De-Broglie-Wellenzahl und $\hbar$ das reduzierte Planck'sche 
 Wirkungsquantum.
 
@@ -19,8 +19,8 @@ Wirkungsquantum.
 Befindet sich ein Elektron hingegen in einem Kristall, so 
 lässt sich dies näherungsweise dadurch beschreiben, dass 
 der Raumbereich, in welchem sich das Elektron bewegen darf 
-auf das Kristallvolumen beschränkt ist, und dass im Kristallinneren 
-ein periodisches Potential befindet. 
+auf das Kristallvolumen beschränkt ist, und dass sich im 
+Kristallinneren ein periodisches Potential befindet. 
 
 Ein solches Elektron kann ähnlich wie ein freies Elektron beschrieben 
 werden, wenn anstelle der Elektronenmasse $m_\text{e}$ eine 
@@ -69,17 +69,17 @@ als Überlagerung einer links- und einer rechtspolarisierten
 elektromagnetischen Welle beschrieben wird und es zwei 
 verschiedene Brechungsindices für die beiden Wellenanteile in 
 dem Kristall gibt. Kristalle, die diese Eigenschaft besitzen, werden 
-als zirkular Doppelbrechend bezeichnet.
+als zirkular doppelbrechend bezeichnet.
 
 Nach Formel~\eqref{eq:newton} kann die Bewegungsgleichung für 
-ein gebundenes Elektron der Ladung $e_0$ durch die 
+ein gebundenes Elektron der Ladung $e_0$ und Masse $m$ durch die 
 Differentialgleichung~\eqref{eq:bewgl} modelliert werden. 
 Hierbei ist $\vec{r}$ die Auslenkung aus der Gleichgewichtslage, 
 K die Rückstellkonstante durch die Bindung des Elektrons, 
 $\vec{B}$ das von außen angelegte Magnetfeld und $\vec{E}$ die 
 elektrische Feldstärke der elektromagnetischen Welle.
 
-Im folgendem seien die Ausrichtung des Magnetfeldes 
+Im Folgenden seien die Ausrichtung des Magnetfeldes 
 und die Ausbreitungsrichtung des Lichtes die 
 z-Richtung.
 
@@ -106,7 +106,7 @@ Allgemeinen ein Tensor zweiter Stufe ist.
 
 \begin{equation}
 \vec{P} = \epsilon_0\chi\vec{E}
-=
+=\epsilon_0
 \left(
 \begin{matrix}
 \chi_{xx} & \chi_{xy} &\chi_{xz} \\
@@ -114,6 +114,7 @@ Allgemeinen ein Tensor zweiter Stufe ist.
 \chi_{zx}&\chi_{zy} & \chi_{zz} \\
 \end{matrix}
 \right)
+\cdot\vec{E}
 \label{eq:polarisation}
 \end{equation}
 
@@ -121,11 +122,12 @@ Es stellt sich heraus, dass der Eintrag $\chi_{xy}$ für den
 Faraday-Effekt besonders wichtig ist.
 Die Rechnung ergibt für diesen den Ausdruck in~\eqref{eq:suszept}.
 Dieser wird weiter unten benötigt.
+Dabei bezeichnet $N$ die Elektronendichte des Materials.
 
 \begin{equation}
 \chi_{xy} = i\frac{Ne_0^3\omega B}{\epsilon_0\left((-m
 \omega^2 + K)^2 - (e_0\omega B)^2\right)}
-= -\chi{yx}
+= -\chi_{yx}
 \label{eq:suszept}
 \end{equation}
 %
@@ -134,7 +136,7 @@ Die Wellengleichung des Lichtes in Materie ist in~\eqref{eq:maxwell}
 angegeben. Der harmonische Ansatz~\eqref{eq:harm} ergibt zwei 
 Wellen mit unterschiedlichen Wellenvektoren $k_+$ und $k_-$, von 
 denen eine Welle links- und die andere rechtszirkulär polarisiert 
-ist, falls $\chi_xy = - \chi_yx$ gilt. Die Werte der Wellenzahlen 
+ist, falls $\chi_{xy} = - \chi_{yx}$ gilt. Die Werte der Wellenzahlen 
 sind in~\eqref{eq:kplusminus} angegeben.
 
 \begin{equation}
@@ -171,8 +173,9 @@ des Mediums der Länge L gedreht hat.
 \end{equation}
 
 Werden hierfür die in den Gleichungen~\eqref{eq:kplusminus} 
-angegebenen Wellenzahlen eingesetzt, sowie die Suszeptibilität 
-aus~\eqref{eq:suszept}, folgt schlussendlich die 
+angegebenen Wellenzahlen eingesetzt, der Ausdruck für einen in diesem 
+Versuch erlaubten Fall genähert, sowie die Suszeptibilität 
+aus~\eqref{eq:suszept} eingesetzt, folgt schlussendlich die 
 Formel~\eqref{eq:winkel} für den Winkel $\Theta$. 
 
 \begin{equation}
@@ -183,7 +186,8 @@ Formel~\eqref{eq:winkel} für den Winkel $\Theta$.
 \end{equation}
 
 Mit n wird der Brechnungsindex des verwendeten Materials ohne 
-angelegstes Magnetfeld bezeichnet.
+angelegtes Magnetfeld bezeichnet. Der Ausdruck $\sqrt{1+\chi_{xx}}$ 
+wurde durch einen Ausdruck ersetzt, der den Brechungsindex besitzt.
 
 Eine Näherung für die in diesem Versuch verwendeten Messfrequenzen, 
 sowie der Übergang
@@ -192,7 +196,7 @@ K \rightarrow 0
 \end{equation*}
 liefern den Einfluss der quasifreien Bandelektronen auf den 
 Drehwinkel. Dieser Einfluss wird mit $\Theta_\text{frei}$ 
-bezeichnet und ist in Formel~eqref{eq:winkelfrei} angegeben.
+bezeichnet und ist in Formel~\eqref{eq:winkelfrei} angegeben.
 
 \begin{equation}
 \Theta_\text{frei} = \frac{e_0^3\lambda^2}{8\pi^2\epsilon_0c^3m^2}
