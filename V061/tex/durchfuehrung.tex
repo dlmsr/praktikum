@@ -6,25 +6,31 @@
 \subsection{Helium-Neon-Laser}
 Der HeNe-Laser ist ein Gaslaser mit einem Gemisch aus He- und Ne-Atomen
 im Verhältnis 5 zu 1 bei einem Druck von etwa \SI{1}{Torr}, was in etwa
-\SI{133.3224}{Pa} entspricht.  Die Besetzungszahlinversion wird über
+\SI{133.3224}{Pa} entspricht.  Die Besetzungsinversion wird über
 eine Gasentladung erreicht.  Am Anfang und Ende des Laserrohres, in dem
-das Gas eingeschlossen ist, befinden sich \name{Brewster}-Fenster, um
-möglichst verlustfreien Durchlaß von Licht zu ermöglichen.  Die Fenster
-sind im \name{Brewster}-Winkel zur Strahlrichtung ausgerichtet, so daß
+das Gas eingeschlossen ist, befinden sich \name{Brewster}-Fenster, um 
+einen möglichst verlustfreien Durchlaß von Licht zu ermöglichen.  Die Fenster
+sind im \name{Brewster}-Winkel zur Strahlrichtung ausgerichtet, so dass
 nur die s-polarisierte Komponente teilweise reflektiert wird (siehe
 \cref{fig:brewster-window}.  Dadurch wird das Laserlicht p-polarisiert
-und kann ohne Verlust die Fenster passieren. Von den beiden Gasen Helium
-funktioniert als Pumpgas, das die Energie durch Entladung aufnimmt und
-dann an Neon über Stöße weiterreicht.  Neon ist also das eigentliche
+und kann ohne Verlust die Fenster passieren. Von den beiden Gasen 
+funktioniert das Helium als Pumpgas, das die Energie durch Entladung 
+aufnimmt und
+dann an die Neonatome über Stöße weiterreicht.  
+Neon ist also das eigentliche
 Lasermaterial.  Lasertätigkeit kann auf mehreren Linien beobachtet
-werden, wobei die rote Linie mit $\lambda = \SI{632.8}{nm}$ ist am
-intensivsten ist.  Für diese Linie ist der Übergang von 3s zu 3p in Neon
-verantwortlich (siehe \cref{fig:hene-schema}).
+werden, wobei die rote Linie mit $\lambda = \SI{632.8}{nm}$ am
+intensivsten ist.  Für diese Linie ist der Übergang von 3s zu 2p in Neon
+verantwortlich (siehe \cref{fig:laser-schema}).
 
-\begin{figure}
+\begin{figure}[h]
   \centering
   \includegraphics[width=0.5\textwidth]{figures/Brewster_window}
-  \caption{Das Energie-Schema des HeNe-Lasers.  Die Abbildung ist aus
+  \caption{Zur Funktionsweise eines Brewsterfensters. Nur die 
+    Komponente des Lichtes, welche parallel zur Einfallsebenen liegt, 
+    wird 
+    durchgelassen. Die andere Komponente wird reflektiert. 
+    Die Abbildung ist aus
     der englischen Wikipedia entnommen \cite{wikipedia:brewster_angle}
     und ist unter der Creative Commons Attribution-Share Alike 3.0
     Unported lizensiert.}
@@ -33,29 +39,30 @@ verantwortlich (siehe \cref{fig:hene-schema}).
 
 \begin{figure}
   \centering
-  \includegraphics[width=0.8\textwidth]{figures/HeNe-Laserschema}
-  \caption{Das Energie-Schema des HeNe-Lasers.  Die Abbildung ist aus
-    der deutschen Wikipedia entnommen \cite{wikipedia:laser} und ist
-    unter der Creative Commons Attribution-Share Alike 3.0 Unported
-    lizensiert.}
-  \label{fig:hene-schema}
+  \includegraphics[width=0.8\textwidth]{figures/HeNe-Laser}
+  \caption{Der grundlegende Aufbau des HeNe-Lasers.  Die Abbildung ist
+    aus der deutschen Wikipedia entnommen \cite{wikipedia:laser} und ist
+    unter der GNU Free Documentation License, Version 1.2 lizensiert.}
+  \label{fig:laser}
 \end{figure}
 
 \subsection{Aufbau der Apparatur}
 Auf einer Schiene befestigt sind ein Justierlaser (Wellenlänge
 \SI{532}{nm} mit reduzierter Leistung von \SI{0.2}{mW}), die
 Resonatorspiegel, das Laserrohr und Beugungsblenden mit Fadenkreuz.  Das
-Laserrohr ist mit HeNe-Gemisch gefüllt, ist ca. \SI{408}{mm} lang und
+Laserrohr ist mit einem HeNe-Gemisch gefüllt, ist ca. \SI{408}{mm} lang und 
 hat einen Durchmesser von \SI{1.1}{mm}.  Als Resonatorspiegel stehen
-vier verschiedene Spiegel mit Durchmesser \SI{12.7}{mm} zur Verfügung.
-In \cref{fig:laser-schema} ist eine Skizze des Laseraufbaus dargestellt.
+vier verschiedene Spiegel mit Durchmessern von je \SI{12.7}{mm} zur 
+Verfügung.
+In \cref{fig:laser} ist eine Skizze des Laseraufbaus dargestellt.
 
 \begin{figure}
   \centering
   \includegraphics[width=0.8\textwidth]{figures/HeNe-Laser-Energieschema}
-  \caption{Der grundlegende Aufbau des HeNe-Lasers.  Die Abbildung ist
-    aus der deutschen Wikipedia entnommen \cite{wikipedia:laser} und ist
-    unter der GNU Free Documentation License, Version 1.2 lizensiert.}
+  \caption{Das Energie-Schema des HeNe-Lasers.  Die Abbildung ist aus
+    der deutschen Wikipedia entnommen \cite{wikipedia:laser} und ist
+    unter der Creative Commons Attribution-Share Alike 3.0 Unported
+    lizensiert.}
   \label{fig:laser-schema}
 \end{figure}
 
@@ -77,7 +84,7 @@ dürfte beim Laser noch keine Lasertätigkeit einsetzen.  Durch Justage an
 den Stellschrauben der Resonatorspiegel setzt die Lasertätigkeit ein.
 
 Zur Überprüfung der Stabilitätsbedingung wird folgendermaßen
-vorgegangen.  Unter Zuhilfenahme der Photodiode, die die Intensität des
+vorgegangen:  Unter Zuhilfenahme der Photodiode, die die Intensität des
 Laserlichts mißt, wird der Laser mit den Resonatorstellschrauben auf die
 maximale Leistung einjustiert.  Bei laufendem Laser wird jetzt der
 Resonatorspiegel verschoben und die Laserleistung nachjustiert.  Die

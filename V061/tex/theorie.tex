@@ -7,26 +7,29 @@ Ein Laser emittiert monochromatisches Licht hoher Intensität und
 Kohärenz.  Er besteht aus drei grundlegenden Komponenten: Lasermedium,
 Pumpquelle und Resonator.  Das Lasermedium bestimmt durch die möglichen
 Energieübergänge das Strahlungsspektrum des Lasers.  Die Pumpquelle
-erzeugt die benötigte Besetzungszahlinversion durch stimulierte
+erzeugt die benötigte Besetzungsinversion durch stimulierte
 Emission, um eine Lasertätigkeit zu erhalten.  Der Resonator sorgt für
 einen selbsterregenden Oszillator durch Rückkopplung des Lichts, um das
 Strahlungsfeld des Lichts zu verstärken.  Kurz gefaßt: Das grundlegende
 Prinzip eines Lasers ist die Verstärkung des einfallenden Lichts durch
 Wechselwirkung mit Lasermaterial.  Das einfachste Modell ist der
-sogenannte Zwei-Niveau-Laser, welcher jedoch nicht funktioniert.
+sogenannte Zwei-Niveau-Laser, welcher jedoch nur theoretisch 
+funktioniert.
 
 \subsection{Zwei Niveau-Laser}
 Für einen Zwei-Niveau-Laser wird ein Zwei-Niveau-System benötigt,
-z. B. ein Grundzustand und einen angeregten Zustand in einem Atom.  Ein
-einfallendes Photon wird dann absorbiert, wenn es passende Energie hat.
-Dadurch findet ein Zustandswechsel in ein höheres Niveau, dem angeregten
+z. B. ein Grundzustand und ein angeregter Zustand in einem Atom.  Ein
+einfallendes Photon wird dann absorbiert, wenn es die passende 
+Energie hat.
+Dadurch findet ein Zustandswechsel in ein höheres Niveau, den angeregten
 Zustand, statt.  Ein Übergang in den Grundzustand unter Aussendung eines
 Photons kann nun spontan oder durch stimulierte Emission geschehen.  Bei
-stimulierte Emission hat das emittierte Photon die gleiche Energie,
+stimulierter Emission hat das emittierte Photon die gleiche Energie,
 Phase und Ausbreitungsrichtung wie das einfallende Photon. Im
 Lasermedium wird der Besetzungszustand durch die Besetzungsdichten $n_1$
 (Grundzustand) und $n_2$ (angeregter Zustand) beschrieben.  Bei
-Wechselwirkung mit Strahlungsfeld $\rho$ erhöht sich Besetzungsdichte
+Wechselwirkung mit dem Strahlungsfeld $\rho$ erhöht sich 
+Besetzungsdichte 
 $n_2$ durch Absorption und vermindert sich durch spontane und induzierte
 Emission.  Wenn keine Verluste auftreten, ergeben sich entsprechend die
 Gleichungen:
@@ -37,11 +40,12 @@ Gleichungen:
 mit den Einstein-Koeffizienten $A_{21}$, $B_{12}$, $B_{21}$, die ein Maß
 für die Wahrscheinlichkeit von Absorption und spontaner bzw. induzierter
 Emission darstellen.  Ein solches Zwei-Niveau-System kann aber nicht als
-Laser funktionieren, da Besetzungszahlinversion stationär sein muß.  Aus
-den Gleichungen folgt aber, daß im stationären Betrieb die Inversion
-nicht aufrechterhalten werden kann, da die Wahrscheinlichkeit dafür, daß
+Laser funktionieren, da die Besetzungsinversion stationär sein muss.  
+Aus
+den Gleichungen folgt aber, dass im stationären Betrieb die Inversion
+nicht aufrechterhalten werden kann, da die Wahrscheinlichkeit dafür, dass
 im unteren Niveau ein Photon absorbiert wird, genauso groß ist wie die
-Wahrscheinlichkeit, daß im oberen Niveau ein Photon durch stimulierte
+Wahrscheinlichkeit, dass im oberen Niveau ein Photon durch stimulierte
 Emission abgegeben wird, sobald die Hälfte aller Teilchen im oberen
 Niveau ist.
 
@@ -53,10 +57,10 @@ wie das einfallende Photon hat.  Im thermischen Gleichgewicht ist jedoch
 nach der \name{Maxwell}-\name{Boltzmann}-Verteilung der Grundzustand am
 häufigsten besetzt.  Daher wird durch äußere Energiezufuhr, das
 sogenannte Pumpen, dem Medium Energie zugeführt, damit die angeregten
-Zustände höher besetzt sind als Grundzustände.  Dieses Pumpen kann dabei
-durch Elektronenstöße oder durch Anregegung geschehen.  Die Verstärkung
-wächst exponentiell mit Länge des Laufweges der Photonen im aktiven
-Medium an.
+Zustände höher besetzt sind als die Grundzustände.  Dieses Pumpen kann dabei
+durch Elektronenstöße oder durch optische Anregung geschehen.  Die Verstärkung
+wächst exponentiell mit der Länge des Laufweges der Photonen im 
+aktiven Medium an.
 
 \subsection{Der optische Resonator}
 Der optische Resonator sorgt daher dafür, daß das Licht einen möglichst
@@ -71,12 +75,12 @@ Der Resonator heißt optisch stabil, wenn die Verluste geringer sind als
 die Verstärkung durch induzierte Emission, so daß die Lasertätigkeit
 einsetzen kann.  Dabei gilt folgende Stabilitätsbedingung:
 \begin{equation}
-  0 \le g_1 g_2 < 1,
+  0 \le g_1 g_2 \le 1,
 \end{equation}
 mit den Resonatorparametern $g_i = 1 - L/r_i$, wobei $r_i$ die
 Krümmungsradien der Spiegel und $L$ die Resonatorlänge bedeuten.
 
-Da die Resonatorlänge sehr viel größer als Wellenlänge des Lasers ist,
+Da die Resonatorlänge sehr viel größer als die Wellenlänge des Lasers ist,
 gibt es viele Frequenzen, die die Resonanzbedingung für stehenden Wellen
 im Resonator erfüllen.  Die Moden werden mit $q$ durchnumeriert und
 longitudinale Moden genannt.  Aufgrund von unvollkommenen Spiegeln
@@ -92,3 +96,4 @@ Gauß-Verteilung beschrieben:
 \begin{equation}
   I(r) = I_0 e^{-\frac{2r^2}{w^2}}
 \end{equation}
+\FloatBarrier

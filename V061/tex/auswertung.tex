@@ -37,12 +37,12 @@ Das Ergebnis ist ebenfalls in Tabelle~\ref{tab:welle} zu sehen.
      -8&2.2&-0.353&633.85&-3&10.2&-0.274&627.92\\
      -7&7.8&-0.297&633.75&-2&21.3&-0.163&628.95\\
      -6&12.8&-0.247&634.45&-1&30.0&-0.076&622.20\\
-     -5&17.5&-0.200&632.46&0&37.6&0.000&\% \\
+     -5&17.5&-0.200&632.46&0&37.6&0.000&{-} \\
      -4&21.8&-0.157&632.86&1&45.1&0.075&614.30\\
      -3&26.0&-0.115&627.47&2&53.5&0.159&615.65\\
      -2&30.0&-0.075&620.17&3&64.5&0.269&620.05\\
      -1&33.3&-0.042&698.29& &      &        &          \\
-      0&37.5&0.000&\%&        &      &        &          \\
+      0&37.5&0.000& {-} &    &      &        &          \\
       1&41.4&0.039&648.63&   &      &        &          \\
       2&45.2&0.077&636.45&   &      &        &          \\
       3&49.2&0.117&637.98&   &      &        &           \\
@@ -73,9 +73,9 @@ Das Ergebnis ist ebenfalls in Tabelle~\ref{tab:welle} zu sehen.
 %
 
 Das arithmetische Mittel der beiden ermittelten Wellenlängenwerte 	
-$\lambda_1$ und $\lambda_2$ ergibt als die in diesem Versuch 
-bestimmte Wellenlänge des verwendeten Lasers den Wert 
-in~\eqref{eq:wellenwert}.
+$\lambda_1$ und $\lambda_2$ ergibt die in diesem Versuch 
+bestimmte Wellenlänge des verwendeten Lasers, welcher in 
+~\eqref{eq:wellenwert} angegeben ist.
 \begin{equation}
 \lambda = \frac{\lambda_1 + \lambda_2}{2} = \SI{629.32(420)}{\nano\metre}
 \label{eq:wellenwert}
@@ -98,9 +98,9 @@ $\phi_\text{max} =$ \SI{135}{\degree}.
   }
   \begin{tabular}{SS|SS|SS}
     \toprule
-    $\phi${/}\si{\degree}&{Photostrom I/}\si{\milli\ampere}&
-    $\phi${/}\si{\degree}&{Photostrom I/}\si{\milli\ampere}&
-    $\phi${/}\si{\degree}&{Photostrom I/}\si{\milli\ampere}\\
+    $\phi${/}\si{\degree}&{Photostrom $I$/}\si{\milli\ampere}&
+    $\phi${/}\si{\degree}&{Photostrom $I$/}\si{\milli\ampere}&
+    $\phi${/}\si{\degree}&{Photostrom $I$/}\si{\milli\ampere}\\
     \midrule
     0&0.122&125&0.215&245&0.016\\
     5&0.090&130&0.225&250&0.026\\
@@ -129,13 +129,13 @@ $\phi_\text{max} =$ \SI{135}{\degree}.
   120&0.210&     &        &     &       \\
     \bottomrule
   \end{tabular}
-  \caption{Die Aufgenommenen Photoströme I in Abhängigkeit des 
+  \caption{Die Aufgenommenen Photoströme $I$ in Abhängigkeit des 
                eingestellten Polarisationsfilterwinkels $\phi$.}
   \label{tab:polarisation}
 \end{table}
 %
 
-Eine Bessere Methode der Bestimmung der Polarisationsrichtung des 
+Eine bessere Methode der Bestimmung der Polarisationsrichtung des 
 verwendeten Laserlichtes besteht darin, die 
 Funktion~\eqref{eq:polarisation} durch die Messwerte zu fitten. Der 
 in dieser Formel angegebene Winkel $\delta$ entspricht dann dem 
@@ -183,7 +183,7 @@ Nach Abzug von v von den Photodiodenpositionen ergeben sich
 die Photoströme in Abhängigkeit vom Abstand der Diode zur 
 optischen Achse. Diese umgerechneten Werte sind ebenfalls 
 in Tabelle~\ref{tab:mode1} eingetragen, sowie in dem 
-Plot~\ref{fig:mode1} 
+Abb.~\ref{fig:mode1} 
 der Messwerte und des Fits als x-Achse verwendet worden.
 
 \begin{equation}
@@ -200,7 +200,7 @@ I(r) = I_0 \cdot \exp{\left(-\frac{2(r-v)^2}{w^2}\right)}
   \begin{tabular}{SSS}
     \toprule
     {Pos./}\si{\milli\metre}&
-    {Photostrom I/}\si{\micro\ampere}&
+    {Photostrom $I$/}\si{\micro\ampere}&
     {r/}\si{\milli\metre}\\
     \midrule
     -5&0.01&-10.37\\
@@ -239,7 +239,7 @@ w = \SI{4.17(18)}{\milli\metre}
 abgelesen.
 
 \begin{equation}
-\text{I}_\text{fit} = \SI{0.95}{\micro\ampere}\cdot\exp{\left(-\frac{2r^2}{4.17^2}\right)}
+I_\text{fit} = \SI{0.95}{\micro\ampere}\cdot\exp{\left(-\frac{2r^2}{4.17^2}\right)}
 \label{eq:mode1fit}
 \end{equation}
 
@@ -249,7 +249,7 @@ abgelesen.
   \includegraphics[width=0.8\textwidth]{mode1.pdf}
   \caption{Aufgenommene Photoströme für verschiedene Abstände 
 zur optischen Achse, sowie das Ergebnis eines Fits, für welchen 
-eine Gaussfunktione als Fitfunktion verwendet wird.}
+eine Gaussfunktion als Fitfunktion verwendet wird.}
 \label{fig:mode1}
 \end{figure}
 
@@ -257,7 +257,7 @@ eine Gaussfunktione als Fitfunktion verwendet wird.}
 %
 \paragraph{$\text{TEM}_{010}$ Oberschwingung}
 
-Analog zum Vorgehen im Paragraphen zur Grundmode, 
+Analog zum Vorgehen im Kapitel zur Grundmode, 
 sind in Tabelle~\ref{tab:mode2} die entsprechenden Größen 
 eingetragen. 
 
@@ -270,10 +270,10 @@ eingetragen.
   \begin{tabular}{SSS|SSS}
     \toprule
     {Pos./}\si{\milli\metre}&
-    {Photostrom I/}\si{\micro\ampere}&
+    {Photostrom $I$/}\si{\micro\ampere}&
     {r/}\si{\milli\metre}&
     {Pos./}\si{\milli\metre}&
-    {Photostrom I/}\si{\micro\ampere}&
+    {Photostrom $I$/}\si{\micro\ampere}&
     {r/}\si{\milli\metre}\\
     \midrule
     0&0&-10.66&10&1&-0.66\\
@@ -289,7 +289,7 @@ eingetragen.
     \bottomrule
   \end{tabular}
   \caption{Gemessener Photostrom bei verschiedenen Positionen 
-    der Photodiode für die Vermessung der erstem TEM-Oberschwingung. 
+    der Photodiode für die Vermessung der ersten TEM-Oberschwingung. 
      Mit r wird der Abstand zur optischen Achse bezeichnet, welcher 
      sich nach dem Fit als Differenz der Position und dem 
      lokalen, mittigen Minimum der Funktion~\eqref{eq:zweigauss} ergibt.}
@@ -297,12 +297,12 @@ eingetragen.
 \end{table}
 %
 
-Die Funtkion, die durch diese Messwerte gefittert wird, ist eine 
+Die Funktion, die durch diese Messwerte gefittert wird, ist eine 
 punktweise Überlagerung zweier Gaussfunktionen. Die explizite 
 Fitfunktion ist in Gleichung~\eqref{eq:zweigauss} angegeben.
 
 \begin{equation}
-\text{I}(r) = I_1 \cdot \exp{\left(-\frac{2(r-v_1)^2}{w_1^2}\right)}+
+I(r) = I_1 \cdot \exp{\left(-\frac{2(r-v_1)^2}{w_1^2}\right)}+
          I_2 \cdot \exp{\left(-\frac{2(r-v_2)^2}{w_2^2}\right)}
 \label{eq:zweigauss}
 \end{equation}
@@ -314,7 +314,7 @@ Funktion und der Messwerte gegen r, dem Abstand zur
 optischen Achse, ist in Abb.~\ref{fig:mode2} zu sehen.
 
 \begin{equation}
-\text{I}_\text{fit} = 
+I_\text{fit} = 
 \SI{54.13}{\micro\ampere}\cdot 
 \exp{\left(-\frac{2(r)^2}{\SI{2.84}{\milli\metre}^2}\right)}+
 \SI{9.77}{\micro\ampere}\cdot 
@@ -357,7 +357,7 @@ r_1 = \SI{1}{\metre}\text{ ; }r_2=\SI{1.4}{\metre}\text{ für Geometrie b}
 
 In Tabelle~\ref{tab:stabil} sind die maximal einstellbaren 
 Intensitäten des Laserstrahls für verschiedene Spiegelabstände 
-eingetragen. Plot~\ref{fig:stabil} zeigt schematisch den 
+eingetragen. Abbildung~\ref{fig:stabil} zeigt schematisch den 
 Vergleich zwischen experimentell ermittelten Stabilitätsgebieten 
 und theoretisch vorhergesagten Stabilitätsgebieten, wobei 
 angenommen wird, dass zwischen kleinstem gemessenen 
@@ -374,8 +374,8 @@ Stabilitätsbedingung auch experimentell erfüllt ist.
     \toprule
     \multicolumn{2}{c||}{Spiegelgeometrie a}&
     \multicolumn{2}{c}{Spiegelgeometrie b}\\
-    {Abstand L/}\si{\metre}&{Photostrom I/}\si{\milli\ampere}&
-    {Abstand L/}\si{\metre}&{Photostrom I/}\si{\milli\ampere}\\
+    {Abstand L/}\si{\metre}&{Photostrom $I$/}\si{\milli\ampere}&
+    {Abstand L/}\si{\metre}&{Photostrom $I$/}\si{\milli\ampere}\\
     \midrule
  1.92&0.080&0.61&7.44\\
  1.82&  0.087&0.81&8.73\\
