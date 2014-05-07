@@ -1,0 +1,16 @@
+# GaAs n-dotiert
+# N in 1/cm³
+2.8e18 NaN NaN NaN NaN 
+# Probenlänge in mm
+1.296 NaN NaN NaN NaN 
+# theta1   theta2   lambda
+# Grad Bogenminuten   Grad Bogenminuten   Mikrometer
+320 40	333 0	1.06
+333 0	323 0	1.29
+321 20	330 40	1.45
+333 0	324 0	1.72
+328 0	339 0	1.96
+340 0	327 0	2.156
+350 30	369 0	2.34
+21  0	13  0	2.51
+331 35	347 0	2.65
