@@ -17,7 +17,7 @@ from scipy.constants import m_e, c, e, epsilon_0
 # Brechungsindex von GaAs bei verwendeter Wellenlänge
 n = 3.455
 
-# printing settings
+# Genauigkeit bei der Ausgabe
 np.set_printoptions(precision=5)
 
 z, B = np.loadtxt("../messwerte/magnetfeld", unpack=True)
@@ -30,6 +30,7 @@ plt.ylabel("Flußdichte in Millitesla")
 plt.plot(z, B, "o")
 
 plt.savefig("../abbildungen/magnetfeld.pdf")
+plt.close()
 
 from numpy import zeros
 theta1 = zeros((9,3))
@@ -69,7 +70,7 @@ print(65*"-")
 print("Analyse der Faraday-Rotationen\n")
 
 fig, ax = plt.subplots(3, 1, sharex=True)
-ax[2].set_xlabel("Wellelänge in Quadrat-Mikrometer")
+ax[2].set_xlabel("$\\lambda/\\mathrm{\mu m}$")
 for i in np.arange(3):
     ax[i].plot(wavelen, theta[:,i], "o")
     ax[i].set_ylabel("$\\theta$ in Grad")
@@ -77,23 +78,23 @@ fig.tight_layout()
 fig.savefig("../abbildungen/faraday-rotation.pdf")
 
 fig, ax = plt.subplots(2, 1, sharex=True)
-ax[1].set_xlabel("Wellenlängenquadrat in Quadrat-Mikrometer")
+ax[1].set_xlabel("$\\lambda^2/\\mathrm{\mu m}^2$")
 
 for i in np.arange(2):
-    ax[i].set_ylabel("Drehwinkel-Differenz in Grad")
+    ax[i].set_ylabel("$\\Delta\\theta$ (Bogenmaß)")
 
     x = wavelen**2
-    y = theta[:,i+1] - theta[:,0]
+    y = np.radians(theta[:,i+1] - theta[:,0])
 
     ax[i].plot(x, y, "o")
     beta0, beta1, r_val, p_val, std_err = stats.linregress(x,y)
     print("beta0: {:.4e}\nbeta1: {:.4e}".format(beta0,beta1))
-    # calculate standard deviations of parameters
+    # berechne geschätzte Standardabweichung der Parameter
     d = len(x)
-
     from numpy import mean, var
     s_beta0 = std_err * np.sqrt(1/d * (1 + mean(x)**2/var(x)))
     s_beta1 = std_err * np.sqrt(1/d * 1/var(x))
+    # berechne effektive Masse
     m[i] = np.sqrt(e**3/8/np.pi**2/epsilon_0/c**3 * N[i]*B.max()*L[i]/n * 1/beta0)
     print("s_beta0: {:.4e}\ns_beta1: {:.4e}".format(s_beta0,s_beta1))
 
@@ -103,9 +104,9 @@ for i in np.arange(2):
     ax[i].plot(x, beta0*x + beta1)
     print(5*"-")
 
-print(m.mean())
-print((m/m_e).mean())
+print("Mittelwerte")
+print("m*: {:.4e}".format(m.mean()))
+print("m*/m_e: {:.4f}".format((m/m_e).mean()))
 
 fig.tight_layout()
 fig.savefig("../abbildungen/effektive_masse.pdf")
-plt.close()
