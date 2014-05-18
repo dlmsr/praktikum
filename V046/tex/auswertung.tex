@@ -18,7 +18,7 @@ beträgt $B_\text{max} = \SI{448}{mT}$.
   \sisetup {
     per-mode = fraction
   }
-  \begin{tabular}{SS|SS|SS|SS}
+  \begin{tabular}{SSSSSSSS}
     \toprule
     {Pos./}\si{\milli\metre}&{B/}\si{\milli\tesla}&
 {Pos./}\si{\milli\metre}&{B/}\si{\milli\tesla}&
@@ -92,7 +92,7 @@ Ergebnis der Rechnung ist in \cref{tab:linregress} numerisch und in
 effektiver Masse und dem Parameter $\beta_0$ gilt:
 %
 \begin{equation}
-m* = \sqrt{\frac{e_0^3}{8\pi^2\varepsilon_0c^3\beta_0} \frac{NBL}{n}}
+m^{*} = \sqrt{\frac{e_0^3}{8\pi^2\varepsilon_0c^3\beta_0} \frac{NBL}{n}}
 \label{eq:effekt}
 \end{equation}
 %
@@ -166,10 +166,10 @@ kurz diskutiert.
   \centering
   \includegraphics[width=0.8\textwidth]{abbildungen/effektive_masse}
   \caption{Hier sind die Differenzen der Faraday-Rotationen von
-    dotierter und hochreiner Probe gegen das Wellenlängenquadrat
-    aufgetragen.  Nach Formel \eqref{eq:winkelfrei} ist ein linearer
-    Zusammenhang zu vermuten.  Die eingezeichneten Geraden zeigen die
-    Ergebnisse einer linearen Regressionsrechnung.}
+    dotierter und hochreiner Probe im Bogenmaß gegen das
+    Wellenlängenquadrat aufgetragen.  Nach Formel \eqref{eq:winkelfrei}
+    ist ein linearer Zusammenhang zu vermuten.  Die eingezeichneten
+    Geraden zeigen die Ergebnisse einer linearen Regressionsrechnung.}
   \label{fig:linregress}
 \end{figure}
 
@@ -178,16 +178,16 @@ kurz diskutiert.
   \begin{tabular}{lSSSS}
     \toprule
     {Dotierung} &
-    {$\beta_0/\si{\degree\per\meter}$} &
-    {$\beta_1/\si{\degree}$} &
-    {$m^*/(10^{-31}\si{kg})$} &
+    {$\beta_0/(10^{10}\si{\per\meter\squared})$} &
+    {$\beta_1/10^{-2}$} &
+    {$m^*/(10^{-32}\si{kg})$} &
     {$m^*/m_\text{e}$}
     \\
     \midrule
-    schwach & 0.982(236) & -4.369(54) & 2.170 & 0.238 \\
-    stark & 1.474(345) & -4.766(79) & 2.640 & 0.290 \\
+    schwach & 1.713(412) & -7.626 & 5.193 & 0.057 \\
+    stark & 2.573(603) & -8.318 & 6.319 & 0.069 \\
     \midrule
-    Mittelwerte & & & 2.405 & 0.264\\
+    Mittelwerte & & & 5.756 & 0.063\\
     \bottomrule
   \end{tabular}
   \caption{Hier sind die Ergebnisse der linearen Ausgleichsrechnung und
@@ -195,6 +195,8 @@ kurz diskutiert.
     effektiven Massen sind nicht eingetragen, da diese die Werte der 
     Massen nach einer 
     Fehlerfortpflanzung der Formel~\eqref{eq:effekt} um ca. drei 
-    Größenordnungen übersteigen.}
+    Größenordnungen übersteigen.  Auch die Fehler für den Parameter
+    $\beta_1$ sind nicht angegeben, da er mehrerer Größenordnungen über
+    dem Parameter selbst liegt.}
   \label{tab:linregress}
 \end{table}

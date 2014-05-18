@@ -46,21 +46,21 @@ theta2[:,0] = messwerte[:,2] + messwerte[:,3]/60.0
 
 messwerte = np.loadtxt("../messwerte/GaAs_n1_2")
 
-N[0] = messwerte[0,0] * 1e-6 # reziproce Kubikmeter
+N[0] = messwerte[0,0] * 1e6 # reziproce Kubikmeter
 L[0] = messwerte[1,0] * 1e-3 # Meter
 theta1[:,1] = messwerte[2:,0] + messwerte[2:,1]/60.0
 theta2[:,1] = messwerte[2:,2] + messwerte[2:,3]/60.0
 
 messwerte = np.loadtxt("../messwerte/GaAs_n2_8")
 
-N[1] = messwerte[0,0] * 1e-6 # reziproce Kubikmeter
+N[1] = messwerte[0,0] * 1e6 # reziproce Kubikmeter
 L[1] = messwerte[1,0] * 1e-3 # Meter
 theta1[:,2] = messwerte[2:,0] + messwerte[2:,1]/60.0
 theta2[:,2] = messwerte[2:,2] + messwerte[2:,3]/60.0
 
 m = zeros(2)
 theta   = 0.5*np.abs(theta1-theta2)
-wavelen = messwerte[2:,4]
+wavelen = messwerte[2:,4] # Mikrometer
 
 print(np.column_stack((wavelen, theta1[:,0], theta2[:,0], theta[:,0],
                        theta1[:,1], theta2[:,1], theta[:,1],
@@ -78,12 +78,12 @@ fig.tight_layout()
 fig.savefig("../abbildungen/faraday-rotation.pdf")
 
 fig, ax = plt.subplots(2, 1, sharex=True)
-ax[1].set_xlabel("$\\lambda^2/\\mathrm{\mu m}^2$")
+ax[1].set_xlabel("$\\lambda^2/\\mathrm{m}^2$")
 
 for i in np.arange(2):
     ax[i].set_ylabel("$\\Delta\\theta$ (Bogenmaß)")
 
-    x = wavelen**2
+    x = (wavelen*1e-6)**2 # Quadratmeter
     y = np.radians(theta[:,i+1] - theta[:,0])
 
     ax[i].plot(x, y, "o")
@@ -95,7 +95,7 @@ for i in np.arange(2):
     s_beta0 = std_err * np.sqrt(1/d * (1 + mean(x)**2/var(x)))
     s_beta1 = std_err * np.sqrt(1/d * 1/var(x))
     # berechne effektive Masse
-    m[i] = np.sqrt(e**3/8/np.pi**2/epsilon_0/c**3 * N[i]*B.max()*L[i]/n * 1/beta0)
+    m[i] = np.sqrt(e**3/8/np.pi**2/epsilon_0/c**3 * N[i]*B.max()*1e-3*L[i]/n * 1/beta0)
     print("s_beta0: {:.4e}\ns_beta1: {:.4e}".format(s_beta0,s_beta1))
 
     print("Effektive Masse\nm*: {:.4e}".format(m[i]))
@@ -107,6 +107,8 @@ for i in np.arange(2):
 print("Mittelwerte")
 print("m*: {:.4e}".format(m.mean()))
 print("m*/m_e: {:.4f}".format((m/m_e).mean()))
+print("Abweichung Literatur")
+print("|m* - m*l|/m*l: {:.4e}".format(abs((m/m_e).mean() - 0.067)/0.067))
 
 fig.tight_layout()
 fig.savefig("../abbildungen/effektive_masse.pdf")
