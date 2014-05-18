@@ -6,11 +6,11 @@
 
 \subsection{Magnetfeldmessung}
 Nach der Justage der Apparatur wird die Komponente des Magnetfeldes,
-welche parallel zum Lichtstrahl verläuft, gemessen.  Dies geschieht mit
+welche parallel zum Lichtstrahl verläuft, vermessen.  Dies geschieht mit
 einer Hallsonde.  Die örtliche Abhängigkeit des Magnetfeldes ist in
 \cref{fig:magnetfeld} zu sehen. Die dazugehörigen Messwerte befinden 
 sich in Tabelle~\ref{tab:magnetmess}. 
-Die maximale magnetische Flußdichte
+Die maximale magnetische Flussdichte
 beträgt $B_\text{max} = \SI{448}{mT}$.
 
 \begin{table}[h]
@@ -57,10 +57,12 @@ beträgt $B_\text{max} = \SI{448}{mT}$.
 \FloatBarrier
 \subsection{Die effektiven Masse der Leitungselektronen in GaAs}
 
-In \cref{fig:faraday-rot} ist die Faraday-Rotation der drei vermessenen
-Proben gegen die Wellenlänge aufgetragen.  Die Faraday-Rotation wird aus
-den erhaltenen Meßdaten gemäß \cref{eq:drehwinkel} berechnet. Das ist in
-\cref{tab:faraday-rotation} dargestellt.
+In \cref{fig:faraday-rot} sind die Faraday-Rotationswinkel der 
+drei vermessenen Proben gegen die Wellenlänge aufgetragen. 
+Diese Winkel werden aus den erhaltenen 
+Messdaten gemäß \cref{eq:drehwinkel} berechnet. Die Messwerte und 
+die errechneten Faraday-Rotationswinkel sind in 
+\cref{tab:faraday-rotation} eingetragen.
 
 Zur Berechnung der effektiven Masse der freien Leitungselektronen
 bestimmen wir die Differenz $\Delta\theta$ der Faraday-Rotationen von
@@ -88,7 +90,7 @@ $\beta_1$ und die Standardabweichung $s$ berechnet.  Gemäß den Formeln
 werden dann die Standardabweichungen der Parameter geschätzt.  Das
 Ergebnis der Rechnung ist in \cref{tab:linregress} numerisch und in
 \cref{fig:linregress} graphisch gegeben.  Aus Formel
-\eqref{eq:winkelfrei} wird abgelesen, daß für den Zusammenhang zwischen
+\eqref{eq:winkelfrei} wird abgelesen, dass für den Zusammenhang zwischen
 effektiver Masse und dem Parameter $\beta_0$ gilt:
 %
 \begin{equation}
@@ -165,7 +167,7 @@ kurz diskutiert.
 \begin{figure}
   \centering
   \includegraphics[width=0.8\textwidth]{abbildungen/effektive_masse}
-  \caption{Hier sind die Differenzen der Faraday-Rotationen von
+  \caption{Hier sind die Differenzen der Faraday-Rotationeswinkel von 
     dotierter und hochreiner Probe im Bogenmaß gegen das
     Wellenlängenquadrat aufgetragen.  Nach Formel \eqref{eq:winkelfrei}
     ist ein linearer Zusammenhang zu vermuten.  Die eingezeichneten
@@ -174,29 +176,29 @@ kurz diskutiert.
 \end{figure}
 
 \begin{table}
-  \centering
-  \begin{tabular}{lSSSS}
+\centering
+  \begin{tabular}{ccccc}
     \toprule
     {Dotierung} &
-    {$\beta_0/(10^{10}\si{\per\meter\squared})$} &
+    {$\beta_0/(10^{10}\si{\per\meter\squared})$}&
     {$\beta_1/10^{-2}$} &
     {$m^*/(10^{-32}\si{kg})$} &
     {$m^*/m_\text{e}$}
     \\
     \midrule
-    schwach & 1.713(412) & -7.626 & 5.193 & 0.057 \\
-    stark & 2.573(603) & -8.318 & 6.319 & 0.069 \\
+    schwach& 1.713$\pm$0.412 & -7.626 & 5.193$\pm$0.001 & 0.057$\pm$0.001\\
+    stark & 2.573$\pm$0.603 & -8.318 & 6.319$\pm$0.001 & 0.069$\pm$0.001 \\
     \midrule
-    Mittelwerte & & & 5.756 & 0.063\\
+    Mittelwerte & & & 5.756$\pm$0.001 & 0.063$\pm$0.001\\
     \bottomrule
   \end{tabular}
   \caption{Hier sind die Ergebnisse der linearen Ausgleichsrechnung und
     die Berechnung der effektiven Masse dargestellt. Die Fehler der 
-    effektiven Massen sind nicht eingetragen, da diese die Werte der 
-    Massen nach einer 
-    Fehlerfortpflanzung der Formel~\eqref{eq:effekt} um ca. drei 
-    Größenordnungen übersteigen.  Auch die Fehler für den Parameter
+    effektiven Massen sind nach einer 
+    Fehlerfortpflanzung von Formel~\eqref{eq:effekt} entstanden.
+     Die Fehler für den Parameter
     $\beta_1$ sind nicht angegeben, da er mehrerer Größenordnungen über
-    dem Parameter selbst liegt.}
+    dem Parameter selbst liegt, in die Berechnung der effektiven 
+     Masse aber nicht eingeht.}
   \label{tab:linregress}
 \end{table}
