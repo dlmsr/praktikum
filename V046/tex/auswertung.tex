@@ -21,20 +21,23 @@ beträgt $B_\text{max} = \SI{448}{mT}$.
   \begin{tabular}{SSSSSSSS}
     \toprule
     {Pos./}\si{\milli\metre}&{B/}\si{\milli\tesla}&
-{Pos./}\si{\milli\metre}&{B/}\si{\milli\tesla}&
-{Pos./}\si{\milli\metre}&{B/}\si{\milli\tesla}&
-{Pos./}\si{\milli\metre}&{B/}\si{\milli\tesla}\\
-    \midrule
-0&0&95&3&121&446&135&60\\
-10&1&100&12&122&444&140&12\\
-20&1&105&58&123&439&145&3\\
-30&0&110&267&124&432&150&1\\
-40&1&115&429&125&422&160&0\\
-50&1&116&437&126&409&170&0\\
-60&0&117&442&127&390&180&0\\
-70&0&118&446&128&364&190&1\\
-80&0&119&447&129&328&200&1\\
-90&1&120&448&130&281& & \\
+    {Pos./}\si{\milli\metre}&{B/}\si{\milli\tesla}&
+    {Pos./}\si{\milli\metre}&{B/}\si{\milli\tesla}&
+    {Pos./}\si{\milli\metre}&{B/}\si{\milli\tesla}\\
+    \cmidrule(rl){1-2}
+    \cmidrule(rl){3-4}
+    \cmidrule(rl){5-6}
+    \cmidrule(rl){7-8}
+    0&0&95&3&121&446&135&60\\
+    10&1&100&12&122&444&140&12\\
+    20&1&105&58&123&439&145&3\\
+    30&0&110&267&124&432&150&1\\
+    40&1&115&429&125&422&160&0\\
+    50&1&116&437&126&409&170&0\\
+    60&0&117&442&127&390&180&0\\
+    70&0&118&446&128&364&190&1\\
+    80&0&119&447&129&328&200&1\\
+    90&1&120&448&130&281& & \\
     \bottomrule
   \end{tabular}
   \caption{Die mit einer Hallsonde aufgenommenen 
@@ -65,11 +68,11 @@ die errechneten Faraday-Rotationswinkel sind in
 \cref{tab:faraday-rotation} eingetragen.
 
 Zur Berechnung der effektiven Masse der freien Leitungselektronen
-bestimmen wir die Differenz $\Delta\theta$ der Faraday-Rotationen von
-jeweils einer dotierten und der hochreinen Probe.  Gemäß Formel
-\eqref{eq:winkelfrei} kann ein lineares Regressionmodell für die
-Meßdaten $y = (y_i) = (\Delta\theta_i)$ und $x = (x_i) = (\lambda_i^2)$
-zugrundegelegt werden:
+bestimmen wir die auf die Probenlänge normierte Differenz $\Delta\theta$ der
+Faraday-Rotationen von jeweils einer dotierten und der hochreinen Probe.
+Gemäß Formel \eqref{eq:winkelfrei} kann ein lineares Regressionmodell
+für die Meßdaten $y = (y_i) = (\Delta\theta_i)$ und $x = (x_i) =
+(\lambda_i^2)$ zugrundegelegt werden:
 %
 \begin{equation}
   \label{eq:linregress}
@@ -94,7 +97,7 @@ Ergebnis der Rechnung ist in \cref{tab:linregress} numerisch und in
 effektiver Masse und dem Parameter $\beta_0$ gilt:
 %
 \begin{equation}
-m^{*} = \sqrt{\frac{e_0^3}{8\pi^2\varepsilon_0c^3\beta_0} \frac{NBL}{n}}
+m^{*} = \sqrt{\frac{e_0^3}{8\pi^2\varepsilon_0c^3\beta_0} \frac{NB}{n}}
 \label{eq:effekt}
 \end{equation}
 %
@@ -126,22 +129,15 @@ kurz diskutiert.
     {$\theta/\si{\degree}$}
     \\
     \midrule
-    1.06 & 315. & 337.67 & 11.33 & 75. &  64.5 &  5.25 &
-    320.67 & 333. & 6.17\\
-    1.29 & 335. & 320. & 7.5 & 64.7 & 72.55 & 3.925 & 333. & 323. &
-    5.\\
-    1.45 & 320.33 & 333. & 6.33 & 74. & 62.42 & 5.79 &
-    321.33 &  330.67 & 4.67\\
-    1.72 & 332.57 & 324. & 4.28 & 61.6 & 71.5 & 4.95 & 333. & 324. &
-    4.5\\
-    1.96 & 330.75 & 337.25 & 3.25 & 336. & 329. & 3.5 & 328. & 339. &
-    5.5\\
-    2.16 & 336. & 329.58 & 3.21 & 59. & 66. & 3.5 & 340. & 327. & 6.5\\
-    2.34 & 355.83 & 358.53 & 1.35 & 43. & 35. & 4. & 350.5 & 369. &
-    9.25\\
-    2.51 & 13. & 22. & 4.5 & 19.33 & 11.42 & 3.96 & 21. & 13. & 4. \\
-    2.65 & 53.43 & 58.67 & 2.62 & 345. & 335.67 & 4.67 & 331.56 & 347. &
-    7.71\\ 
+    1.06 & 315. & 337.7 & 11.3 & 75. &  64.5 &  5.5 & 320.7 & 333. & 6.2\\
+    1.29 & 335. & 320. & 7.5 & 64.7 & 72.6 & 3.9 & 333. & 323. & 5.\\
+    1.45 & 320.3 & 333. & 6.3 & 74. & 62.4 & 5.8 & 321.3 &  330.7 & 4.7\\
+    1.72 & 332.6 & 324. & 4.3 & 61.6 & 71.5 & 5.0 & 333. & 324. & 4.5\\
+    1.96 & 330.8 & 337.3 & 3.3 & 336. & 329. & 3.5 & 328. & 339. & 5.5\\
+    2.16 & 336. & 329.6 & 3.2 & 59. & 66. & 3.5 & 340. & 327. & 6.5\\
+    2.34 & 355.8 & 358.5 & 1.4 & 43. & 35. & 4. & 350.5 & 369. & 9.3\\
+    2.51 & 13. & 22. & 4.5 & 19.3 & 11.4 & 4.0 & 21. & 13. & 4. \\
+    2.65 & 53.4 & 58.7 & 2.6 & 345. & 335.7 & 4.7 & 331.6 & 347. & 7.7\\ 
     \bottomrule
    \end{tabular}
    \caption{Hier sind die gemessenen Winkel $\theta_1$ und $\theta_2$
@@ -149,7 +145,7 @@ kurz diskutiert.
      ausgerechnet worden.  Die schwach dotierte Probe hat eine
      Ladungsträgerdichte $N=\SI{1.2e18}{cm^{-3}}$ und ist \SI{1.296}{mm}
        lang, die stark dotierte Probe hat $n=\SI{2.8e18}{cm^{-3}}$ und
-       ist \SI{1.36}{mm}.}
+       ist \SI{1.36}{mm} lang.}
   \label{tab:faraday-rotation}
 \end{table}
 
@@ -176,29 +172,36 @@ kurz diskutiert.
 \end{figure}
 
 \begin{table}
-\centering
-  \begin{tabular}{ccccc}
+  \centering
+  \sisetup{
+    table-figures-integer  = 1,
+    table-figures-decimal  = 1,
+    table-figures-uncertainty = 1,
+    table-number-alignment = center,
+    retain-unity-mantissa  = false
+  }
+  \begin{tabular}{lSSSS[table-figures-decimal=2]}
     \toprule
     {Dotierung} &
-    {$\beta_0/(10^{10}\si{\per\meter\squared})$}&
-    {$\beta_1/10^{-2}$} &
-    {$m^*/(10^{-32}\si{kg})$} &
+    {$\beta_0/(\SI{1e12}{\per\meter})$}&
+    {$\beta_1/(\SI{1e-2}{\per\meter})$} &
+    {$m^*/(\SI{1e-31}{kg})$} &
     {$m^*/m_\text{e}$}
     \\
     \midrule
-    schwach& 1.713$\pm$0.412 & -7.626 & 5.193$\pm$0.001 & 0.057$\pm$0.001\\
-    stark & 2.573$\pm$0.603 & -8.318 & 6.319$\pm$0.001 & 0.069$\pm$0.001 \\
+    schwach& 1.8(13) & 3.2 & 1.4(5) & 0.15(5)\\
+    stark  & 8.3(30) & 3.0 & 1.0(2) & 0.11(2)\\
     \midrule
-    Mittelwerte & & & 5.756$\pm$0.001 & 0.063$\pm$0.001\\
+    Mittelwerte & & & 1.2(3) & 0.13(4)\\
     \bottomrule
   \end{tabular}
   \caption{Hier sind die Ergebnisse der linearen Ausgleichsrechnung und
     die Berechnung der effektiven Masse dargestellt. Die Fehler der 
     effektiven Massen sind nach einer 
     Fehlerfortpflanzung von Formel~\eqref{eq:effekt} entstanden.
-     Die Fehler für den Parameter
+    Die Fehler für den Parameter
     $\beta_1$ sind nicht angegeben, da er mehrerer Größenordnungen über
     dem Parameter selbst liegt, in die Berechnung der effektiven 
-     Masse aber nicht eingeht.}
+    Masse aber nicht eingeht.}
   \label{tab:linregress}
 \end{table}
