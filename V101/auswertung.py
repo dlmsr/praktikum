@@ -1,6 +1,7 @@
 from numpy import *
 from matplotlib.pyplot import *
-import linregress
+
+from scipy import stats
 
 ####Winkelrichtgröße D bestimmen#####
 
@@ -34,7 +35,8 @@ M = mean(m)
 dM = mean(m)/sqrt(len(m))
 
 #Ausgleichsgerade
-(A,dA,B,dB) = linregress.linear_fit(a*a,T*T)
+A, B, _, _, dA = stats.linregress(a*a,T*T)
+dB = dA * np.sqrt(1/(a.size) * np.sum((a*a)**2))
 
 def f(x):
     return A*x+B

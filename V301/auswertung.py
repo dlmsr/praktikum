@@ -1,6 +1,8 @@
+import numpy as np
 from numpy import *
 from matplotlib.pyplot import *
-import linregress
+
+from scipy import stats
 
 (Rg,Ig,Ug,Rr,Ir,Ur,Rs,Is,Us) = loadtxt("a_b_und_d.txt",unpack = True)
 (Rc,Ic,Uc) = loadtxt("c.txt",unpack = True)
@@ -30,9 +32,14 @@ plot(Ig,Ug,"r*",label="Gleichspannung")
 
 
 #2: Lineare Ausgleichrechnung, Steigung = -R_i, Ordinatenschnitt = U_0
-(mg,yg),(dmg,dyg) = linregress.linear_fit(Ig,Ug)
-(mr,yr),(dmr,dyr) = linregress.linear_fit(Ir,Ur)
-(ms,ys),(dms,dys) = linregress.linear_fit(Is,Us)
+mg, yg, _, _, dmg = stats.linregress(Ig, Ug)
+mr, yr, _, _, dmr = stats.linregress(Ir, Ur)
+ms, ys, _, _, dms = stats.linregress(Is, Us)
+
+dyg = dmg * np.sqrt(1/(Ig.size) * np.sum(Ig**2))
+dyr = dmr * np.sqrt(1/(Ir.size) * np.sum(Ir**2))
+dys = dms * np.sqrt(1/(Is.size) * np.sum(Is**2))
+
 
 def f(x,A,B):
     return A*x+B
@@ -44,7 +51,9 @@ plot(xg,f(xg,mg,yg),"r")
 #Außerdem: Plot mit Gegenspannung
 
 plot(Ic,Uc,"b*",label="Gegenspannung")
-(mc,yc),(dmc,dyc) = linregress.linear_fit(Ic,Uc)
+mc, yc, _, _, dmc = stats.linregress(Ic, Uc)
+dyc = dmc * np.sqrt(1/(Ic.size) * np.sum(Ic**2))
+
 xc = linspace(0,0.12,2)
 plot(xc,f(xc,mc,yc),"b")
 xlabel("I / A")
