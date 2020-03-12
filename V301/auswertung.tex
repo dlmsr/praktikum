@@ -43,42 +43,24 @@ Rechteckspannung und eine Sinusspannung durchgeführt.}
 \end{table}
 %
 
-Nun wird pro Spannungsquelle eine lineare Ausgleichrechnung\footnote{Dazu 
-wurde \texttt{ipython} in der Version 0.13  verwendet} 
-durchgeführt, 
-wobei die gemessenen Klemmenspannungen gegen die 
-Stromstärken betrachtet werden. In den 
-Abbildungen~\ref{fig:mono},~\ref{fig:rechteck},~\ref{fig:sinus}
-sind jeweils Plots der gemessenen Klemmenspannungen gegen die 
-Stromstärken, 
-sowie der errechneten Ausgleichsgeraden zu sehen.
+Nun wird pro Spannungsquelle eine lineare
+Ausgleichrechnung\footnote{Dazu wurde die Funktion
+  \texttt{scipy.stats.linregress} aus der Python-Bibliothek
+  \texttt{scipy} in der Version 1.4.1 verwendet} durchgeführt, wobei
+die gemessenen Klemmenspannungen gegen die Stromstärken betrachtet
+werden. In Abbildung~\ref{fig:linregress} sind jeweils Plots der
+gemessenen Klemmenspannungen gegen die Stromstärken, sowie der
+errechneten Ausgleichsgeraden zu sehen.
 
-\begin{figure}[]
+\begin{figure}
 \centering
-\includegraphics[width=0.8\textwidth]{mono.pdf}
-\caption{Plot der errechneten Regressionsgeraden durch die gemessenen 
-Klemmenspannungen gegen die Stromstärken für die Monozelle. 
-Es sind sowohl die gemessenen 
-Spannungen mit als auch ohne angelgte Gegenspannung, sowie deren 
-Ausgleichsgeraden eingezeichnet. Die angelegte Gegenspannung 
-beträgt \SI{3.5}{\volt}}
-\label{fig:mono}
-\end{figure}
-%
-\begin{figure}[]
-\centering
-\includegraphics[width=0.8\textwidth]{rechteck.pdf}
-\caption{Plot der errechneten Regressionsgeraden durch die gemessenen 
-Klemmenspannungen gegen die Stromstärken für die Rechteckspannung.}
-\label{fig:rechteck}
-\end{figure}
-%
-\begin{figure}[]
-\centering
-\includegraphics[width=0.8\textwidth]{sinus.pdf}
-\caption{Plot der errechneten Regressionsgeraden durch die gemessenen 
-Klemmenspannungen gegen die Stromstärken für die Sinusspannung.}
-\label{fig:sinus}
+\includegraphics{linregress.pdf}
+\caption{Plots der errechneten Regressionsgeraden durch die gemessenen
+  Klemmenspannungen gegen die Stromstärken.  Für die Monozelle sind
+  sowohl die gemessenen Spannungen mit als auch ohne angelgte
+  Gegenspannung, sowie deren Ausgleichsgeraden eingezeichnet. Die
+  angelegte Gegenspannung beträgt \SI{3.5}{\volt}.}
+\label{fig:linregress}
 \end{figure}
 
 Die errechneten Geradengleichungen lauten 
@@ -228,9 +210,9 @@ Es werden hierbei die in diesem Protokoll errechneten Werte für den
 Innenwiderstand $R_{i}$ und der Leerlaufspannung $U_{0}$ 
 verwendet.
 
-\begin{figure}[]
+\begin{figure}
 \centering
-\includegraphics[width=0.8\textwidth]{leistung.pdf}
+\includegraphics{leistung.pdf}
 \caption{Hier zu sehen ist der theoretische Verlauf des Leistungsabfall 
 am Belastungswiderstand, sowie der gemessene. Die Kurven ähneln sich 
 stark}
